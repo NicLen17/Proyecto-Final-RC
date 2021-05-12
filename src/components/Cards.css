@@ -1,0 +1,8 @@
+.flexcard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    justify-content: space-around;
+}

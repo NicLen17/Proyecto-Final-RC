@@ -5,7 +5,7 @@ import './Carro.css';
 export default function Carro() {
     return (
         <div>
-            <Carousel className="Carro">
+            <Carousel className="Carro" fade>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
