@@ -2,7 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Carro from './components/Carro';
 import NavReactB from "./components/NavReactB"
-import Cards from './components/Cards'
+import SCards from './components/SCards'
+import Spublicidad from './components/Spublicidad'
 
 function App() {
   return (
@@ -12,13 +13,11 @@ function App() {
 
       <Carro />
 
-      <Cards />
+      <SCards />
 
-      {/* <Spublicidad />
-
-    <SAbout/> */}
-
-
+      <Spublicidad />
+{/* 
+      <SAbout/>  */}
 
     </div>
   );

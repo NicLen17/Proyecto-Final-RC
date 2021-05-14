@@ -8,7 +8,7 @@ export default function Carro() {
             <Carousel className="Carro" fade>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block"
                         src="https://i.blogs.es/577f1e/imagen-lest/1366_2000.jpg"
                         alt="First slide"
                     />
@@ -19,7 +19,7 @@ export default function Carro() {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block"
                         src="https://www.muycomputer.com/wp-content/uploads/2021/02/Samsung-Galaxy-F62-e1613391724450.jpg"
                         alt="Second slide"
                     />
@@ -31,7 +31,7 @@ export default function Carro() {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className="d-block"
                         src="https://cdn.pocket-lint.com/r/s/970x/assets/images/156147-phones-news-samsung-main-pics-image1-uhsmkahfla.jpg"
                         alt="Third slide"
                     />

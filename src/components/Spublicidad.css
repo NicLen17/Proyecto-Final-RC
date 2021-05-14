@@ -1,0 +1,21 @@
+.publicidad {
+    margin-top: 170px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ofertas img {
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 80px;
+    width: 750px;
+    height: 750px;
+}
+
+.ofertas2 img {
+    margin-left: 130px;
+    background-color: white;
+    border-radius: 80px;
+    width: 850px;
+    height: 340px;
+}

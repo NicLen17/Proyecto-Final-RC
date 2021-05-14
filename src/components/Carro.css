@@ -1,4 +1,15 @@
 .Carro img{
-    width: 100%;
+    margin: auto;
+    width: 1800px;
     max-height: 800px;
+    border-radius: 50px;
   }
+
+.Carro {
+  margin-top: 50px;
+}
+
+.Carro h3, p {
+  font-family: "Roboto", sans-serif;
+  color: black;
+}

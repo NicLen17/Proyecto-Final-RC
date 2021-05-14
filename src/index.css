@@ -1,79 +1,17 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(
-      45deg,
-      rgb(46, 46, 46) 0%,
-      rgb(46, 46, 46) 22%,
-      rgb(81, 81, 81) 22%,
-      rgb(81, 81, 81) 75%,
-      rgb(115, 115, 115) 75%,
-      rgb(115, 115, 115) 77%,
-      rgb(150, 150, 150) 77%,
-      rgb(150, 150, 150) 82%,
-      rgb(184, 184, 184) 82%,
-      rgb(184, 184, 184) 93%,
-      rgb(219, 219, 219) 93%,
-      rgb(219, 219, 219) 98%,
-      rgb(253, 253, 253) 98%,
-      rgb(253, 253, 253) 100%
-    ),
-    linear-gradient(
-      135deg,
-      rgb(46, 46, 46) 0%,
-      rgb(46, 46, 46) 22%,
-      rgb(81, 81, 81) 22%,
-      rgb(81, 81, 81) 75%,
-      rgb(115, 115, 115) 75%,
-      rgb(115, 115, 115) 77%,
-      rgb(150, 150, 150) 77%,
-      rgb(150, 150, 150) 82%,
-      rgb(184, 184, 184) 82%,
-      rgb(184, 184, 184) 93%,
-      rgb(219, 219, 219) 93%,
-      rgb(219, 219, 219) 98%,
-      rgb(253, 253, 253) 98%,
-      rgb(253, 253, 253) 100%
-    ),
-    linear-gradient(
-      22.5deg,
-      rgb(46, 46, 46) 0%,
-      rgb(46, 46, 46) 22%,
-      rgb(81, 81, 81) 22%,
-      rgb(81, 81, 81) 75%,
-      rgb(115, 115, 115) 75%,
-      rgb(115, 115, 115) 77%,
-      rgb(150, 150, 150) 77%,
-      rgb(150, 150, 150) 82%,
-      rgb(184, 184, 184) 82%,
-      rgb(184, 184, 184) 93%,
-      rgb(219, 219, 219) 93%,
-      rgb(219, 219, 219) 98%,
-      rgb(253, 253, 253) 98%,
-      rgb(253, 253, 253) 100%
-    ),
-    linear-gradient(
+  background-image: repeating-linear-gradient(
       157.5deg,
-      rgb(46, 46, 46) 0%,
-      rgb(46, 46, 46) 22%,
-      rgb(81, 81, 81) 22%,
-      rgb(81, 81, 81) 75%,
-      rgb(115, 115, 115) 75%,
-      rgb(115, 115, 115) 77%,
-      rgb(150, 150, 150) 77%,
-      rgb(150, 150, 150) 82%,
-      rgb(184, 184, 184) 82%,
-      rgb(184, 184, 184) 93%,
-      rgb(219, 219, 219) 93%,
-      rgb(219, 219, 219) 98%,
-      rgb(253, 253, 253) 98%,
-      rgb(253, 253, 253) 100%
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 10px,
+      transparent 10px,
+      transparent 11px
     ),
-    linear-gradient(90deg, rgb(58, 58, 58), rgb(76, 76, 76));
-  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+    repeating-linear-gradient(67.5deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 10px, transparent 10px, transparent 11px),
+    linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
 }
 
 code {
