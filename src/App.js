@@ -4,6 +4,8 @@ import Carro from './components/Carro';
 import NavReactB from "./components/NavReactB"
 import SCards from './components/SCards'
 import Spublicidad from './components/Spublicidad'
+import Sabout from './components/Sabout'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
       <SCards />
 
       <Spublicidad />
-{/* 
-      <SAbout/>  */}
+
+      <Sabout/> 
+
+      <Footer/>
 
     </div>
   );

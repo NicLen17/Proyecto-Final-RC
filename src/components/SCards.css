@@ -10,8 +10,14 @@
 .titulo {
     margin-top: 55px;
     font-size: 50px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
-    background-color: white;
-    border-bottom: black 6px solid;
+    text-shadow: 5px 4px 2px #4b4b4b;
+    /* border-bottom: rgb(255, 255, 255) 6px solid; */
+}
+
+.cards:hover {
+    transition: 0.6s ease;
+    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px -50px 15px -27px rgba(255,21,21,0); 
+box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px -50px 15px -27px rgba(255,21,21,0);
 }

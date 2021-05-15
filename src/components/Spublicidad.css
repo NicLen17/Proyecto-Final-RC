@@ -1,12 +1,24 @@
+.titulo2 {
+    margin-top: 85px;
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    text-shadow: 5px 4px 2px #df2121;
+    /* border-bottom: rgb(255, 255, 255) 6px solid; */
+}
+
 .publicidad {
-    margin-top: 170px;
+    background-color: white;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .ofertas img {
-    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     background-color: white;
+    border: rgb(0, 0, 0) 6px solid;
     border-radius: 80px;
     width: 750px;
     height: 750px;
@@ -18,4 +30,47 @@
     border-radius: 80px;
     width: 850px;
     height: 340px;
+    border: rgb(0, 0, 0) 6px solid;
+}
+
+.ofertasecundarias {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ofertas img:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    transition: 0.6s;
+}
+
+.ofertas2 img:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    transition: 0.6s;
+}
+
+.pagos {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.metodos img {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.metodos p {
+    font-size: 20px;
+    margin-top: 16px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 5px 4px 2px #ff0000;
 }
