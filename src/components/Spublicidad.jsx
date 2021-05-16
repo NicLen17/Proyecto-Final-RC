@@ -22,8 +22,8 @@ export default function Spublicidad() {
         </div>
             <section className="pagos">
                 <div className="metodos">
-                <img src="https://bowa.com.ar/wp-content/uploads/2020/08/3-cuotas-sin-interes.png" alt="" />
-                <p>Hasta 6 Cuotas sin interes</p>
+                <img src="https://media.istockphoto.com/vectors/delivery-truck-icon-vector-cargo-van-moving-fast-shipping-vector-id637864518?k=6&m=637864518&s=612x612&w=0&h=dhCH-S5hDTmau_t1clY0arGlahWyW9w3-Py_knkQbCs=" alt="" />
+                <p>Envio gratis</p>
                 </div>
                 <div className="metodos">
                 <img src="https://w7.pngwing.com/pngs/816/12/png-transparent-credit-card-online-banking-payment-mobile-banking-cards-rectangle-service-logo-thumbnail.png" alt="" />
@@ -34,7 +34,7 @@ export default function Spublicidad() {
                 <p>Compra en efectivo</p>
                 </div>
                 <div className="metodos">
-                <img src="https://s3.eu-west-2.amazonaws.com/transeop/Blog/metodos-pago.jpg" alt="" />
+                <img className="otrosmetodos" src="https://s3.eu-west-2.amazonaws.com/transeop/Blog/metodos-pago.jpg" alt="" />
                 <p>Otros metodos de pago</p>
                 </div>
             </section>

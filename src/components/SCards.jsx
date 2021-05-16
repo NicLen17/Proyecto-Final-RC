@@ -1,4 +1,4 @@
-import { Card, Button, Navbar, Nav } from 'react-bootstrap'
+import { Card, Button, Navbar, Nav, NavLink } from 'react-bootstrap'
 import React from 'react'
 import './SCards.css'
 
@@ -11,9 +11,9 @@ export default function Cards() {
             <div>
                 <Navbar className="navinicio" bg="light" variant="light">
                     <Nav className="mx-auto">
-                        <Nav.Link href="#home">Celulares</Nav.Link>
-                        <Nav.Link href="#features">Smartphones</Nav.Link>
-                        <Nav.Link href="#pricing">Accesorios</Nav.Link>
+                        <NavLink href="#home">Celulares</NavLink>
+                        <NavLink href="#features">Smartphones</NavLink>
+                        <NavLink href="#pricing">Accesorios</NavLink>
                     </Nav>
                 </Navbar>
             </div>
