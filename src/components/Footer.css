@@ -1,0 +1,18 @@
+.footer{
+    height: 15em;
+}
+
+.links ul  {
+    list-style: none;
+    padding: 20px 2px;
+}
+.marcas ul {
+    list-style: none;
+}
+.datosEmpresa ul{
+    list-style: none;
+}
+.contenedorli ul a{
+    text-decoration: none;
+    color:white;
+}
