@@ -4,9 +4,14 @@
     font-size: 50px;
 }
 
-.mapa {
+.subtitulo h3 {
+    font-family: "Roboto", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.slogan {
     max-width: 100%;
+    max-height: 350px;
     margin-bottom: 100px;
-    border: solid black 6px;
-    border-radius: 50px;
 }

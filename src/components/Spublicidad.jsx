@@ -1,5 +1,15 @@
 import React from 'react'
 import './Spublicidad.css'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css"
+// import Swiper core and required modules
+import SwiperCore, {Pagination} from 'swiper/core';
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
 
 export default function Spublicidad() {
     return (
@@ -7,6 +17,10 @@ export default function Spublicidad() {
         <div className="titulo2">
             <h1>Aprobecha nuestras ofertas mensuales</h1>
         </div>
+        <Swiper loop={true} slidesPerView={1} spaceBetween={0} pagination={{
+                            "clickable": true
+                        }} className="mySwiper">
+                            <SwiperSlide>
         <div className="publicidad">
             <div className="ofertas">
                 <img src="https://images.samsung.com/is/image/samsung/assets/ar/p6_gro2/684x684-Hotweek.jpg?$684_684_JPG$" alt="" />
@@ -20,6 +34,23 @@ export default function Spublicidad() {
             </div>
                 </div>
         </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className="publicidad">
+            <div className="ofertas">
+                <img src="https://tiaecuador.vteximg.com.br/arquivos/ids/177592-1000-1000/131076001c.png?v=637535789174930000" alt="" />
+            </div>
+                <div className="ofertasecundarias">
+            <div className="ofertas2">
+                <img src="https://www.tusequipos.com/wp-content/uploads/2017/06/ofertas_Samsung_Phone_House_01.jpg" alt="" />
+            </div>
+            <div className="ofertas2">
+                <img src="https://img.global.news.samsung.com/mx/wp-content/uploads/2019/07/MG_GALAXY-FEST-OK.jpeg" alt="" />
+            </div>
+                </div>
+        </div>
+        </SwiperSlide>
+        </Swiper>
             <section className="pagos">
                 <div className="metodos">
                 <img src="https://media.istockphoto.com/vectors/delivery-truck-icon-vector-cargo-van-moving-fast-shipping-vector-id637864518?k=6&m=637864518&s=612x612&w=0&h=dhCH-S5hDTmau_t1clY0arGlahWyW9w3-Py_knkQbCs=" alt="" />

@@ -21,7 +21,7 @@ function App() {
 
       <Sabout/> 
 
-      <Footer/>
+      {/* <Footer/>  */}
 
     </div>
   );
