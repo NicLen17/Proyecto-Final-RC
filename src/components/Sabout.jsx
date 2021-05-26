@@ -9,9 +9,11 @@ import "swiper/components/pagination/pagination.min.css"
 import SwiperCore, {
     Pagination
 } from 'swiper/core';
+import  {Autoplay, Navigation} from 'swiper/core';
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay,Pagination,Navigation]);
 
 function Sabout() {
     return (
@@ -21,7 +23,7 @@ function Sabout() {
                 <div className="subtitulo">
                     <h3>Somos la nueva empresa de telefonia al alcance de todos</h3>
                     <>
-                        <Swiper loop={true} slidesPerView={1} spaceBetween={30} pagination={{
+                        <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={30} pagination={{
                             "clickable": true
                         }} className="mySwiper">
                             <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/lanzamiento-samsung-galaxy-s21-evoucher-claro-desktop.jpg" alt="" /></SwiperSlide>

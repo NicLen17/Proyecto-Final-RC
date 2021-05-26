@@ -17,6 +17,14 @@
   margin-top: 50px;
 }
 
+.cimg {
+  width: 1700px !important;
+  max-width: 100%;
+  border-radius: 50px;
+  margin: auto;
+  height: 700px;
+}
+
 .Carro h3, p {
   font-family: "Roboto", sans-serif;
   color: black;

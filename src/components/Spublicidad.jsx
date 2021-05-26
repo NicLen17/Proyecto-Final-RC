@@ -7,9 +7,11 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
 // import Swiper core and required modules
 import SwiperCore, {Pagination} from 'swiper/core';
+import  {Autoplay, Navigation} from 'swiper/core';
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay,Pagination,Navigation]);
 
 export default function Spublicidad() {
     return (
@@ -17,7 +19,7 @@ export default function Spublicidad() {
         <div className="titulo2">
             <h1>Aprobecha nuestras ofertas mensuales</h1>
         </div>
-        <Swiper loop={true} slidesPerView={1} spaceBetween={0} pagination={{
+        <Swiper loop={true} autoplay={true} slidesPerView={1} spaceBetween={0} pagination={{
                             "clickable": true
                         }} className="mySwiper">
                             <SwiperSlide>

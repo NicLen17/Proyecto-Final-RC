@@ -17,16 +17,18 @@ export default function App() {
 
     return (
         <>
-            <Swiper className="Carro" autoplay={true} loop={true} spaceBetween={30} effect={'fade'} navigation={true} pagination={{
+            <Swiper autoplay={true} loop={true} spaceBetween={30} effect={'fade'} navigation={true} pagination={{
                 "clickable": true
-            }} className="mySwiper">
-                <SwiperSlide><img src="https://i.blogs.es/577f1e/imagen-lest/1366_2000.jpg" alt="imagencarro" /></SwiperSlide>
-                <SwiperSlide><img src="https://www.muycomputer.com/wp-content/uploads/2021/02/Samsung-Galaxy-F62-e1613391724450.jpg" alt="imagencarro" />
-                </SwiperSlide><SwiperSlide><img src="https://cdn.pocket-lint.com/r/s/970x/assets/images/156147-phones-news-samsung-main-pics-image1-uhsmkahfla.jpg" alt="imagencarro" /></SwiperSlide>
+            }} className="mySwiper Carro">
+                <SwiperSlide><img className="cimg" src="https://i.blogs.es/577f1e/imagen-lest/1366_2000.jpg" alt="imagencarro" /></SwiperSlide>
+                <SwiperSlide><img className="cimg" src="https://www.muycomputer.com/wp-content/uploads/2021/02/Samsung-Galaxy-F62-e1613391724450.jpg" alt="imagencarro" />
+                </SwiperSlide><SwiperSlide><img className="cimg" src="https://cdn.pocket-lint.com/r/s/970x/assets/images/156147-phones-news-samsung-main-pics-image1-uhsmkahfla.jpg" alt="imagencarro" /></SwiperSlide>
             </Swiper>
         </>
     )
 }
+
+// style={{ width: '18rem' }}
 // export default function Carro() {
 //     return (
 //         <div>
