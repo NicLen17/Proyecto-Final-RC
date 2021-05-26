@@ -24,7 +24,7 @@ export default function NavReactB() {
           </Nav>
             </Navbar.Collapse>
             <Nav className="">
-          <a className="me-5" href=""><FontAwesomeIcon icon={faShoppingCart} style={{ color: '', fontSize: '2.6em'}} /></a>
+          <a className="me-5" href=""><FontAwesomeIcon icon={faShoppingCart} style={{ color: '', fontSize: '2.6em'}} /></a> 
           </Nav>
       </Navbar>
     );

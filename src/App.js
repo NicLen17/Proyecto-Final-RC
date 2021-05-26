@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Carro from './components/Carro';
-// import NavReactB from "./components/NavReactB"
+import NavReactB from "./components/NavReactB"
 import SCards from './components/SCards'
 import Spublicidad from './components/Spublicidad'
 import Sabout from './components/Sabout'
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
 
-      {/* <NavReactB /> */}
+      <NavReactB />
 
       <Carro />
 
@@ -21,7 +21,7 @@ function App() {
 
       <Sabout/> 
 
-      {/* <Footer/>  */}
+      <Footer/> 
 
     </div>
   );
