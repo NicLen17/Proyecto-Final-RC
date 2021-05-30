@@ -6,13 +6,21 @@ import SCards from './components/SCards'
 import Spublicidad from './components/Spublicidad'
 import Sabout from './components/Sabout'
 import Footer from './components/Footer'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
+import Productos from './components/Pages/Productos'
 
 function App() {
   return (
     <div className="App">
 
-      <NavReactB />
-
+      <Router>
+        <NavReactB />    
+        <Route path="/productos" exact>
+          <Productos />
+        </Route>
+      </Router>
+        
       <Carro />
 
       <SCards />
@@ -22,6 +30,9 @@ function App() {
       <Sabout/> 
 
       <Footer/> 
+
+      
+    
 
     </div>
   );

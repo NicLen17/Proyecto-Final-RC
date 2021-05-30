@@ -11,6 +11,7 @@ export default function NavReactB() {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
           <Nav className="mr-auto linknav">
             <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="productos" activeClassName="active">Productos</Nav.Link>
             <NavDropdown title="Celulares" id="basic-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Samsung</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Motorola</NavDropdown.Item>

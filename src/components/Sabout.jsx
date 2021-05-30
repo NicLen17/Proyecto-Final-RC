@@ -19,11 +19,12 @@ function Sabout() {
     return (
         <div className="about">
             <div className="contentabout">
+                <br />
                 <p>P h o n e    P i x e l</p>
                 <div className="subtitulo">
                     <h3>Somos la nueva empresa de telefonia al alcance de todos</h3>
                     <>
-                        <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={30} pagination={{
+                        <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={0} pagination={{
                             "clickable": true
                         }} className="mySwiper">
                             <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/lanzamiento-samsung-galaxy-s21-evoucher-claro-desktop.jpg" alt="" /></SwiperSlide>
