@@ -10,7 +10,7 @@ export default function NavReactB() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
           <Nav className="mr-auto linknav">
-            <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="productos" activeClassName="active">Productos</Nav.Link>
             <NavDropdown title="Celulares" id="basic-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Samsung</NavDropdown.Item>

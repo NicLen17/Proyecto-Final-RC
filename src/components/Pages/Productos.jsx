@@ -7,14 +7,17 @@ function Productos() {
         <div className="sidebar">
             <div class="d-flex" id="wrapper">
                 <div class="border-end bg-white" id="sidebar-wrapper">
-                    <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+                    <div class="sidebar-heading border-bottom bg-light">Productos</div>
                     <div class="list-group list-group-flush">
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Celulares</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Tablets</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Accesorios</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Ofertas</a>
+                        <br />
+                        <br />
+                        <div class="sidebar-heading border-bottom bg-light">Ayuda</div>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Perfil</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Configuraciones</a>
                     </div>
                 </div>
                 <div id="page-content-wrapper">
@@ -29,39 +32,7 @@ function Productos() {
                         </div>
                     </nav>
                     <div>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
+                    
                     </div>
                 </div>
             </div>

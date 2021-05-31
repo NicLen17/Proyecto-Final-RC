@@ -32,7 +32,7 @@ export default function Spublicidad() {
                 <img src="https://www.tec.com.pe/wp-content/uploads/2020/02/Galaxy-S20-S20-5G-e1581442508473.jpg" alt="" />
             </div>
             <div className="ofertas2">
-                <img src="https://i.blogs.es/a3ceaf/galaxy-a12-a02s/1366_2000.jpg" alt="" />
+                <img src="https://www.trecebits.com/wp-content/uploads/2020/01/Samsung-S10-Lite-800x445.jpg" alt="" />
             </div>
                 </div>
         </div>
@@ -47,7 +47,7 @@ export default function Spublicidad() {
                 <img src="https://www.tusequipos.com/wp-content/uploads/2017/06/ofertas_Samsung_Phone_House_01.jpg" alt="" />
             </div>
             <div className="ofertas2">
-                <img src="https://img.global.news.samsung.com/mx/wp-content/uploads/2019/07/MG_GALAXY-FEST-OK.jpeg" alt="" />
+                <img src="https://personal.vteximg.com.br/arquivos/h1-samsung-tienda-mobile02.jpg?v=637432871816100000" alt="" />
             </div>
                 </div>
         </div>
