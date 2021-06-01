@@ -32,7 +32,60 @@ function Productos() {
                         </div>
                     </nav>
                     <div>
-                    
+                    <div className="flexcardp">
+                        <Card className="carsp" style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg" />
+                            <Card.Body>
+                                <Card.Title>50.000</Card.Title>
+                                <Card.Text>
+                                    <li>Samsumg</li>
+                                    <li>Samsung Galaxy A50</li>
+                                    <li>64GB de Almacenamiento</li>
+                                    <li>4GB Ram</li>
+                                </Card.Text>
+                                <Button variant="primary">Agregar al carrito</Button>
+                            </Card.Body>
+                        </Card>
+                        <Card className="carsp" style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg" />
+                            <Card.Body>
+                                <Card.Title>50.000</Card.Title>
+                                <Card.Text>
+                                    <li>Samsumg</li>
+                                    <li>Samsung Galaxy A50</li>
+                                    <li>64GB de Almacenamiento</li>
+                                    <li>4GB Ram</li>
+                                </Card.Text>
+                                <Button variant="primary">Agregar al carrito</Button>
+                            </Card.Body>
+                        </Card>
+                        <Card className="carsp" style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg" />
+                            <Card.Body>
+                                <Card.Title>50.000</Card.Title>
+                                <Card.Text>
+                                    <li>Samsumg</li>
+                                    <li>Samsung Galaxy A50</li>
+                                    <li>64GB de Almacenamiento</li>
+                                    <li>4GB Ram</li>
+                                </Card.Text>
+                                <Button variant="primary">Agregar al carrito</Button>
+                            </Card.Body>
+                        </Card>
+                        <Card className="carsp" style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg" />
+                            <Card.Body>
+                                <Card.Title>50.000</Card.Title>
+                                <Card.Text>
+                                    <li>Samsumg</li>
+                                    <li>Samsung Galaxy A50</li>
+                                    <li>64GB de Almacenamiento</li>
+                                    <li>4GB Ram</li>
+                                </Card.Text>
+                                <Button variant="primary">Agregar al carrito</Button>
+                            </Card.Body>
+                        </Card>
+                        </div>
                     </div>
                 </div>
             </div>

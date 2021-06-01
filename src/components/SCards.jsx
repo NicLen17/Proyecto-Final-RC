@@ -12,7 +12,7 @@ export default function Cards() {
             </section>
             <div>
                 <Tabs  className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
-                    <Tab eventKey="home" title="Tablets">
+                    <Tab className="tabss" eventKey="home" title="Tablets">
                     <div className="flexcard">
                     <Card className="cards">
                     <Card.Img className="cardimg" variant="top" src="https://d500.epimg.net/cincodias/imagenes/2020/01/09/tablets/1578563297_555928_1578563341_noticia_normal.jpg" />
@@ -40,7 +40,7 @@ export default function Cards() {
                 </Card>
             </div>
                     </Tab>
-                    <Tab eventKey="profile" title="Celulares">
+                    <Tab className="tabss" eventKey="profile" title="Celulares">
                     <div className="flexcard">
                     <Card className="cards">
                     <Card.Img className="cardimg" variant="top" src="https://images.samsung.com/is/image/samsung/latin-galaxy-s20-plus-g985-bts-sm-g985fzpjgto-frontbpurple-thumb-261222598" />
@@ -68,7 +68,7 @@ export default function Cards() {
                 </Card>
             </div>
                     </Tab>
-                    <Tab eventKey="contact" title="Accesorios">
+                    <Tab className="tabss" eventKey="contact" title="Accesorios">
                     <div className="flexcard">
                 <Card className="cards">
                     <Card.Img className="cardimg" variant="top" src="https://www.tuexperto.com/wp-content/uploads/2019/02/portada-e1550832415514.jpg" />
