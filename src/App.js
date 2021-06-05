@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import Productos from './components/Pages/Productos'
+import Admin from './components/Pages/Admin'
 
 function App() {
   return (
@@ -30,9 +31,6 @@ function App() {
       <Sabout/> 
 
       <Footer/> 
-
-      
-    
 
     </div>
   );

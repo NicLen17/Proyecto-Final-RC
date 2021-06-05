@@ -3,6 +3,7 @@
     color: rgb(255, 255, 255);
     font-family: "Roboto", sans-serif;
     text-shadow: 5px 4px 2px #df2121;
+    margin-bottom: 50px;
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
 }
 
@@ -40,6 +41,7 @@
 }
 
 .ofertasecundarias {
+    position: static;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -19,7 +19,7 @@ export default function Spublicidad() {
         <div className="titulo2">
             <h1>Aprobecha nuestras ofertas mensuales</h1>
         </div>
-        <Swiper loop={true} autoplay={true} slidesPerView={1} spaceBetween={0} pagination={{
+        <Swiper loop={true} autoplay={false} slidesPerView={1} spaceBetween={0} pagination={{
                             "clickable": true
                         }} className="mySwiper">
                             <SwiperSlide>

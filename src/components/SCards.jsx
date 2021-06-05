@@ -11,7 +11,7 @@ export default function Cards() {
                 <div>Productos populares</div>
             </section>
             <div>
-                <Tabs  className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
+                <Tabs fill variant="tabs" className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
                     <Tab className="tabss" eventKey="home" title="Tablets">
                     <div className="flexcard">
                     <Card className="cards">
