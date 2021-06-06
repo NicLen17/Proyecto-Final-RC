@@ -1,7 +1,6 @@
 import {Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './NavReactB.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function NavReactB() {
     return (
