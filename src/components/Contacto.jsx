@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 
 export default function Contacto() {
   return (
-    <div className="body">
-      <div className="p-3" style={{ textAlign: "center" }}>
+    <div className="body" style={{marginBottom: "60px"}}>
+      <div className="p-3" style={{ textAlign: "center", marginTop: "100px"}}>
         <h1>CONTACTA CON NOSOTROS</h1>
         <h3>Podes enviarnos tu consulta</h3>
         <p>
