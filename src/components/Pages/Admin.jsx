@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Tab } from 'react-bootstrap'
+import { Tabs, Tab , Table} from 'react-bootstrap'
 import './Admin.css'
 
 function Admin() {
