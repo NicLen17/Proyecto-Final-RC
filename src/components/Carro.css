@@ -23,6 +23,7 @@
   border-radius: 50px;
   margin: auto;
   height: 700px;
+  border: black solid 6px;
 }
 
 .Carro h3, p {

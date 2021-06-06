@@ -6,7 +6,7 @@
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
 }
 
-.publicidad {
+.publicidad { 
     background-color: white;
     display: flex;
     flex-wrap: wrap;
