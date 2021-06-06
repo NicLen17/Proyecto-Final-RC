@@ -10,22 +10,26 @@ export default function NavReactB() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
           <Nav className="mr-auto linknav">
-            <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="productos" activeClassName="active">Productos</Nav.Link>
-            <NavDropdown title="Celulares" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Samsung</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Motorola</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Iphone</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Huawei</NavDropdown.Item>          
+            <Nav.Link href="/" className="efecto-nav" >Inicio</Nav.Link>
+            <Nav.Link href="productos" activeClassName="active" className="efecto-nav">Productos</Nav.Link>
+            <NavDropdown title="Celulares" id="basic-nav-dropdown" className="efecto-nav">
+        <NavDropdown.Item href="#action/3.1" className="efecto-nav">Samsung</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2" className="efecto-nav">Motorola</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3" className="efecto-nav">Iphone</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3" className="efecto-nav">Huawei</NavDropdown.Item>          
       </NavDropdown>
-            <Nav.Link href="#link">Sobre nosotros</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
-            <Nav.Link href="#link">Log In</Nav.Link>
-            <Nav.Link href="#link">Registrarse</Nav.Link>
+            <Nav.Link href="#link" className="efecto-nav" >Sobre nosotros</Nav.Link>
+            <Nav.Link href="contacto" className="efecto-nav">Contacto</Nav.Link>
+            <Nav.Link href="#link" className="efecto-nav">Log In</Nav.Link>
+            <Nav.Link href="#link" className="efecto-nav">Registrarse</Nav.Link>
           </Nav>
             </Navbar.Collapse>
             <Nav className="">
-          <a className="me-5" href=""><FontAwesomeIcon icon={faShoppingCart} style={{ color: '', fontSize: '2.6em'}} /></a> 
+              
+            <Nav.Link className="contenedor-icon"><img src='https://icongr.am/fontawesome/user.svg?size=35&color=currentColor'/> </Nav.Link>
+            <Nav.Link className="contenedor-icon"><img src='https://icongr.am/material/cart.svg?size=35&color=currentColor'/> </Nav.Link>
+            
+            
           </Nav>
       </Navbar>
     );

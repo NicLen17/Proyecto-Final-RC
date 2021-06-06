@@ -1,5 +1,5 @@
 .img-logo{
-    height: 75px;
+    height: 65px;
     width: 150px;
 }
 
@@ -14,3 +14,23 @@
 font-weight: 600;
 font-size: 1.1em;
 }
+
+.contenedor-icon:hover img {
+    -webkit-transform:scale(1.25);
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
+    }
+
+ .efecto-nav:hover{
+    color:rgb(17, 0, 255) !important;
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    /* transform:scale(1.15); */
+    transform: translateY(-6px) ; 
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+     }
+  

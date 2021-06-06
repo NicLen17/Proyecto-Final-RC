@@ -1,4 +1,4 @@
-import { Card, Button, Navbar, Nav, NavLink } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import React from 'react'
 import './SCards.css'
 import {Tabs, Tab} from 'react-bootstrap'

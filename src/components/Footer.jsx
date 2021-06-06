@@ -1,4 +1,5 @@
 import React from 'react';
+import {Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -11,31 +12,32 @@ function Footer() {
                 <div className="links text-white pe-5" >
                     <h5>Enlances</h5>
                     <ul className="pt-2 pb-2">
-                        <a href=""><li className="pb-1">Sobre nosotros</li></a>
-                        <a href=""><li className="pt-2 pb-1">Contacto</li></a>
-                        <a href=""><li className="pt-2 pb-1">Celulares</li></a>
-                        <a href=""><li className="pt-2 pb-1">Registrarse</li></a>
-                        <a href=""><li className="pt-2 pb-1">Log In</li></a>
+                    <Nav.Link href="#link" className="efecto-nav" >Sobre nosotros</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Contacto</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Celulares</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Registrarse</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Log In</Nav.Link>
                     </ul>
                 </div>
                 <div className="marcas text-white pe-2">
                     <h5 className="">Marcas</h5>
                     <ul className="ps-0 pt-2 pb-2">
-                        <a href=""><li className=" pb-1">Samsung</li></a>
-                        <a href="">  <li className="pt-2 pb-1">Motorola</li></a>
-                        <a href=""> <li className="pt-2 pb-1">Apple</li></a>
-                        <a href="">  <li className="pt-2 pb-1">Xiaomi</li></a>
-                        <a href="">  <li className="pt-2 pb-1">Nokia</li></a>
-                    </ul>
+                    <Nav.Link href="#link" className="efecto-nav" >Samsung</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Motorola</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Apple</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Xiaomi</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Nokia</Nav.Link>
+                                      </ul>
                 </div>
                 <div className="marcas text-white ps-5">
                     <h5 className="">Top Celulares</h5>
                     <ul className="ps-0 pt-2 pb-2">
-                        <a href=""><li className=" pb-1">Samsung S21</li></a>
-                        <a href=""><li className="pt-2 pb-1">Motorola Razr</li></a>
-                        <a href=""><li className="pt-2 pb-1">Iphone 11</li></a>
-                        <a href=""><li className="pt-2 pb-1">Xiaomi MI 10</li></a>
-                        <a href=""><li className="pt-2 pb-1">Nokia</li></a>
+                    <Nav.Link href="#link" className="efecto-nav" >Samsung S21</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Motorola Razr</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Iphone 11</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Xiaomi MI 10</Nav.Link>
+                    <Nav.Link href="#link" className="efecto-nav" >Samsung Fold</Nav.Link>
+                      
                     </ul>
                 </div>
             </div>
@@ -61,9 +63,9 @@ function Footer() {
             <div className="d-flex flex-column pe-3">
                 <h5 className="text-white">Redes Sociales</h5>
                 <div className="d-flex flex-column align-items-center" >
-                    <FontAwesomeIcon icon={faFacebook} style={{ color: 'blue', fontSize: '2em', marginBottom: "1em" }} />
-                    <FontAwesomeIcon icon={faTwitter} style={{ color: 'blue', fontSize: '2em', marginBottom: "1em" }} />
-                    <FontAwesomeIcon icon={faInstagramSquare} style={{ color: 'red', fontSize: '2em', marginBottom: "1em" }} />
+                <Nav.Link><img src="https://icongr.am/devicon/facebook-original.svg?size=40&color=currentColor" alt="facebook" /></Nav.Link> 
+                <Nav.Link><img src="https://icongr.am/devicon/twitter-original.svg?size=40&color=currentColor" alt="twitter" /></Nav.Link> 
+                <Nav.Link><img src="https://icongr.am/devicon/facebook-original.svg?size=40&color=currentColor" alt="instagram" /></Nav.Link> 
                 </div>
             </div>
         </div>
