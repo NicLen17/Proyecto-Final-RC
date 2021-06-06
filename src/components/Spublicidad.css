@@ -1,8 +1,7 @@
 .titulo2 {
     margin-top: 185px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
-    text-shadow: 5px 4px 2px #df2121;
     margin-bottom: 50px;
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
 }
@@ -71,14 +70,14 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    border: black 6px solid;
 }
 
 .metodos p {
     font-size: 20px;
     margin-top: 16px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
-    text-shadow: 5px 4px 2px #ff0000;
 }
 
 .otrosmetodos:hover {

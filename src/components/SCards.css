@@ -14,18 +14,18 @@
     font-size: 21px;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
     background-color: black;
     color: rgb(255, 255, 255);
     border-radius: 20px;
 }
 
-
 .titulo {
     margin-top: 55px;
     font-size: 50px;
     color: rgb(255, 255, 255);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-shadow: 5px 4px 2px #4b4b4b;
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
 }
@@ -33,20 +33,33 @@
 .cards {
     align-items: center;
     width: 350px;
-    height: 350px;
+    height: 450px;
     transition: 0.6s ease;
     cursor: pointer;
+}
+
+.cardfooter {
+    margin-top: 10px;
+    
+    width: 350px;
+    border-bottom: white 6px solid;
+}
+
+.cardfooter p {
+    color: white;
 }
 
 .cardimg {
     width: 100%;
     height: 100%;
     margin: auto;
+    height: 300px;
 }
 
 .cards:hover {
     opacity: 82%;
-    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px -50px 15px -27px rgba(255,21,21,0); 
-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px -50px 15px -27px rgba(255,21,21,0);
+    -webkit-box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff, 15px 15px 0px 0px #a1d8ff,
+        20px 20px 0px 0px #cae6ff, 25px 25px 0px 0px #e1eeff, 5px -50px 15px -27px rgba(255, 21, 21, 0);
+    box-shadow: 5px 5px 0px 0px #000000, 10px 10px 0px 0px #ffffff, 15px 15px 0px 0px #000000, 20px 20px 0px 0px #ffffff,
+        25px 25px 0px 0px #000000, 5px -50px 15px -27px rgba(248, 248, 248, 0);
 }
-
