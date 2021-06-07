@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 
 export default function Contacto() {
   return (
-    <div className="body" style={{marginBottom: "60px"}}>
-      <div className="p-3" style={{ textAlign: "center", marginTop: "100px"}}>
+    <div className="body" style={{ marginBottom: "60px" }}>
+      <div className="p-3" style={{ textAlign: "center", marginTop: "100px" }}>
         <h1>CONTACTA CON NOSOTROS</h1>
         <h3>Podes enviarnos tu consulta</h3>
         <p>
@@ -55,7 +55,10 @@ export default function Contacto() {
               </a>
             </div>
           </div>
-          <div className=" p-5 mx-auto" style={{ width: "700px" }}>
+          <div
+            className=" p-5 mx-auto"
+            style={{ textAlign: "left", width: "700px" }}
+          >
             <Form>
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Nombre y Apellido</Form.Label>
@@ -73,7 +76,10 @@ export default function Contacto() {
                 <Form.Label>Mensaje</Form.Label>
                 <Form.Control as="textarea" placeholder="Mensaje" rows={3} />
               </Form.Group>
-              <Button type="submit" style={{ width: "100%" }}>
+              <Button
+                type="submit"
+                style={{ marginTop: "10px", width: "100%" }}
+              >
                 <img
                   src="https://icongr.am/fontawesome/paper-plane.svg?size=25&color=f5f5f5"
                   className="mr-3"
@@ -84,15 +90,16 @@ export default function Contacto() {
             </Form>
             <br />
             <p style={{ fontSize: "12px", textAlign: "justify" }}>
-              XXXXXX te informa que los datos de character personal que
-              proporciones rellenando este formulario seran tratados por XXXXX.
-              La finalidad de la recogida y tratamiento de tus datos personales
-              es dar respuesta a solicitudes de contacto y envio de contenidos.
-              La legitimación se realiza a través de tu consentimiento. Los
-              datos que me facilites estarán ubicados en los servidores de
-              nuestro proveedor de hosting XXXX (https://www.xxxx.com/) en EEUU.
-              Podras acceder, rectificar, limitar y suprimir tus datos a través
-              del email xxx@xmail.com asi como el derecho a presentar una
+              Phone Pixels te informa que los datos de caracter personal que
+              proporciones rellenando este formulario seran tratados de manera
+              confidencial. La finalidad de la recogida y tratamiento de los
+              mismos es dar respuesta a solicitudes de contacto y envio de
+              contenidos. La legitimación se realiza a través de tu
+              consentimiento. Los datos que me facilites estarán ubicados en los
+              servidores de nuestro proveedor de hosting XXXX
+              (https://www.phonepixels.com/) en EEUU. Podras acceder,
+              rectificar, limitar y suprimir tus datos a través del email
+              phonepixels@gmail.com asi como el derecho a presentar una
               reclamación ante una autoridad de control.
             </p>
             <Form.Group controlId="formBasicCheckbox">
