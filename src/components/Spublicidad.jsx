@@ -17,7 +17,7 @@ export default function Spublicidad() {
     return (
     <div>
         <div className="titulo2">
-            <h1>Aprovecha nuestras ofertas mensuales</h1>
+            <p>Aprovecha nuestras ofertas mensuales</p>
         </div>
         <Swiper loop={true} autoplay={false} slidesPerView={1} spaceBetween={0} pagination={{
                             "clickable": true

@@ -40,6 +40,8 @@
     cursor: pointer;
     border: black 3px solid !important;
     border-radius: 25px !important;
+    -webkit-box-shadow: 5px 5px 25px 10px #000000; 
+    box-shadow: 5px 5px 25px 10px #000000;
 }
 
 .cardfooter {
@@ -47,7 +49,7 @@
     background-color: black;
     width: 350px;
     border-bottom: rgb(255, 255, 255) 6px solid;
-    border-radius: 25px;
+    border-radius: 15px;
 
 }
 
