@@ -18,7 +18,7 @@ export default function Contacto() {
         <div className="d-flex col">
           <div className="row-cols-1">
             <img
-              className="p-5"
+              className="contacto p-5"
               style={{
                 width: "800px",
                 height: "600px",
@@ -32,26 +32,17 @@ export default function Contacto() {
               <a href="">
                 <img
                   src="https://icongr.am/fontawesome/facebook-official.svg?size=60&color=1002cf"
-                  className=""
+                  style={{ marginLeft: "30px" }}
                 />
               </a>
               <a href="">
-                <img
-                  src="https://icongr.am/fontawesome/instagram.svg?size=60&color=cf0298"
-                  className=""
-                />
+                <img src="https://icongr.am/fontawesome/instagram.svg?size=60&color=cf0298" />
               </a>
               <a href="">
-                <img
-                  src="https://icongr.am/fontawesome/google.svg?size=60&color=cf2102"
-                  className=""
-                />
+                <img src="https://icongr.am/fontawesome/google.svg?size=60&color=cf2102" />
               </a>
               <a href="">
-                <img
-                  src="https://icongr.am/fontawesome/whatsapp.svg?size=60&color=02cf35"
-                  className=""
-                />
+                <img src="https://icongr.am/fontawesome/whatsapp.svg?size=60&color=02cf35" />
               </a>
             </div>
           </div>
@@ -60,19 +51,31 @@ export default function Contacto() {
             style={{ textAlign: "left", width: "700px" }}
           >
             <Form>
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group
+                style={{ marginTop: "15px" }}
+                controlId="exampleForm.ControlInput1"
+              >
                 <Form.Label>Nombre y Apellido</Form.Label>
                 <Form.Control type="name" placeholder="Nombre y Apellido" />
               </Form.Group>
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group
+                style={{ marginTop: "15px" }}
+                controlId="exampleForm.ControlInput1"
+              >
                 <Form.Label>Correo electronico</Form.Label>
                 <Form.Control type="email" placeholder="Correo@example.com" />
               </Form.Group>
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group
+                style={{ marginTop: "15px" }}
+                controlId="exampleForm.ControlInput1"
+              >
                 <Form.Label>Telefono</Form.Label>
                 <Form.Control type="phone" placeholder="+549---" />
               </Form.Group>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Group
+                style={{ marginTop: "15px" }}
+                controlId="exampleForm.ControlTextarea1"
+              >
                 <Form.Label>Mensaje</Form.Label>
                 <Form.Control as="textarea" placeholder="Mensaje" rows={3} />
               </Form.Group>
@@ -81,12 +84,11 @@ export default function Contacto() {
                 style={{ marginTop: "10px", width: "100%" }}
               >
                 <img
-                  src="https://icongr.am/fontawesome/paper-plane.svg?size=25&color=f5f5f5"
+                  src="https://icongr.am/octicons/comment.svg?size=25&color=ffffff"
                   className="mr-3"
                 />
                 Enviar
               </Button>
-              {/*<FontAwesomeIcon icon={faPaperPlane} size="10px" />*/}
             </Form>
             <br />
             <p style={{ fontSize: "12px", textAlign: "justify" }}>

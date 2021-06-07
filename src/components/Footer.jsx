@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer d-flex justify-content-between ps-3 pt-4">
       <div className="d-flex contenedorli">
         <div className="links text-black pe-5">
-          <h5>Enlances</h5>
+          <h5>Phone Pixels</h5>
           <ul className="pt-2 pb-2">
             <Nav.Link href="#link" className="efecto-nav">
               Sobre nosotros
@@ -69,7 +69,14 @@ function Footer() {
       </div>
       <div className="datosEmpresa text-black d-flex">
         <ul className=" ">
-          <h5 className="pb-3 ms-0 text-start">Compañia</h5>
+          <h5 className="pb-3 ms-0 text-start">
+            {" "}
+            <img
+              src="https://icongr.am/material/copyright.svg?size=30&color=000000"
+              alt=""
+            />
+            Phone Pixels
+          </h5>
           <div className="d-flex mb-4">
             <img
               src="https://icongr.am/fontawesome/map-marker.svg?size=30&color=0d41fd"
@@ -86,7 +93,7 @@ function Footer() {
           </div>
           <div className="d-flex ">
             <img
-              src="https://icongr.am/fontawesome/clock-o.svg?size=30&color=ffffff"
+              src="https://icongr.am/fontawesome/clock-o.svg?size=30&color=currentColor"
               alt="clock"
             />
             <li className="ps-2 pe-2">Horarios: L a V de 9 a 16</li>
