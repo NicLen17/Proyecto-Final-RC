@@ -7,6 +7,24 @@ import { Tabs, Tab } from 'react-bootstrap'
 export default function Cards() {
     return (
         <div>
+            <section className="pagos">
+                <div className="metodos">
+                    <img src="https://media.istockphoto.com/vectors/delivery-truck-icon-vector-cargo-van-moving-fast-shipping-vector-id637864518?k=6&m=637864518&s=612x612&w=0&h=dhCH-S5hDTmau_t1clY0arGlahWyW9w3-Py_knkQbCs=" alt="" />
+                    <p>Envio gratis</p>
+                </div>
+                <div className="metodos">
+                    <img src="https://w7.pngwing.com/pngs/816/12/png-transparent-credit-card-online-banking-payment-mobile-banking-cards-rectangle-service-logo-thumbnail.png" alt="" />
+                    <p>Aceptamos debito y credito</p>
+                </div>
+                <div className="metodos">
+                    <img src="https://image.freepik.com/vector-gratis/dibujos-animados-dinero-mano-concepto-pagos-efectivo-empresario-manos-toma-dinero-cambio_221062-38.jpg" alt="" />
+                    <p>Compra en efectivo</p>
+                </div>
+                <div className="metodos">
+                    <img className="otrosmetodos" src="https://s3.eu-west-2.amazonaws.com/transeop/Blog/metodos-pago.jpg" alt="" />
+                    <p>Otros metodos de pago</p>
+                </div>
+            </section>
             <section className="titulo">
                 <div>Productos populares</div>
             </section>
@@ -16,44 +34,44 @@ export default function Cards() {
                         <div className="flexcard">
                             <div className="cardprincipal">
                                 <div className="cardimg">
-                                    <img className="imgsa" src="https://topesdegama.com/app/uploads-topesdegama.com/2021/03/AperTablets.jpg" alt="" />
+                                    <img className="imgsa" src="http://www.freepngimg.com/download/tablet/14-2-tablet-png-picture.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
                                         <li></li>
                                         <li></li>
                                         <li></li>
-                                        <li></li>
+
                                     </ul>
                                 </div>
                             </div>
 
                             <div className="cardprincipal">
                                 <div className="cardimg">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/I/61%2Bwysvj4dL._AC_SX425_.jpg" alt="" />
+                                    <img src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
                                         <li></li>
                                         <li></li>
                                         <li></li>
-                                        <li></li>
+
                                     </ul>
                                 </div>
                             </div>
                             <div className="cardprincipal">
                                 <div className="cardimg">
-                                    <img src="https://s1.eestatic.com/2020/09/03/elandroidelibre/el_androide_libre_517961105_180359768_1200x845.jpg" alt="" />
+                                    <img src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
                                         <li></li>
                                         <li></li>
                                         <li></li>
-                                        <li></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -66,24 +84,21 @@ export default function Cards() {
                                     <img className="imgsa" src="https://images.samsung.com/is/image/samsung/p6pim/pe/sm-g780fzglltp/gallery/pe-galaxy-s20-fe-g780-357343-sm-g780fzglltp-thumb-327368871?$LazyLoad_Home_IMG$" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
-                                        <li></li>
                                         <li></li>
                                         <li></li>
                                         <li></li>
                                     </ul>
                                 </div>
                             </div>
-
                             <div className="cardprincipal">
                                 <div className="cardimg">
                                     <img src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
-                                        <li></li>
                                         <li></li>
                                         <li></li>
                                         <li></li>
@@ -95,9 +110,8 @@ export default function Cards() {
                                     <img src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-12-64gb-purple-53017-mjn13ll-a?$device-lg$" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Nombre</h2>
                                     <ul>
-                                        <li></li>
                                         <li></li>
                                         <li></li>
                                         <li></li>
@@ -110,44 +124,36 @@ export default function Cards() {
                         <div className="flexcard">
                             <div className="cardprincipal">
                                 <div className="cardimg">
-                                    <img className="imgsa" src="https://lh3.googleusercontent.com/proxy/4FuND69wPkDcXXwZC4Uf512Q2z0ejhhG6-XZN4iiPhNiZgmUrpc-5eaOl5vgWL1x4PMLgiCaGLHY-cayCvQAGNi2SP7kFT2wvU4MgH2Ahinx8jf75cVGL-D3YAWqxezxBM2b" alt="" />
+                                    <img className="imgsa" src="https://celularya.com/show_image_producto_detalle.php?image=940&name=cargador-y-cable-de-datos-travel-adapter-fast-charging-celularya.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Cargadores</h2>
                                     <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="cardprincipal">
-                                <div className="cardimg">
-                                    <img src="https://zonaphone.com.co/wp-content/uploads/2020/05/tienda-online-zonaphone-balacas-airpods-manos-libres-compra-por-internet-cambio-de-display-servicio-tecnico-repuestos-accesorios-celulares-samsung-iphone-android-apple-cargadores-cables-blister-case.png" alt="" />
-                                </div>
-                                <div className="contenidocard">
-                                    <h1>Precio</h1>
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
+                                        <li>Tipo-A</li>
+                                        <li>Tipo-C</li>
+                                        <li>Micro-USB</li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="cardprincipal">
                                 <div className="cardimg">
-                                    <img src="https://tienda.claro.com.ar/wcsstore/Claro/images/catalog/productos/646x1000/7003415.jpg" alt="" />
+                                    <img src="https://uoopaa.com/wp-content/uploads/2021/02/S1B-1.png" alt="" />
                                 </div>
                                 <div className="contenidocard">
-                                    <h1>Precio</h1>
+                                    <h2>Fundas y Protectores</h2>
+                                    <p>Todos los tamaños y diseños</p>
+                                </div>
+                            </div>
+                            <div className="cardprincipal">
+                                <div className="cardimg">
+                                    <img src="http://assets.stickpng.com/thumbs/588a6be8d06f6719692a2d2b.png" alt="" />
+                                </div>
+                                <div className="contenidocard">
+                                    <h2>Audio</h2>
                                     <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
+                                        <li>Auriculares</li>
+                                        <li>Microfonos</li>
+                                        <li>Auriculares Bluetooth</li>
                                     </ul>
                                 </div>
                             </div>

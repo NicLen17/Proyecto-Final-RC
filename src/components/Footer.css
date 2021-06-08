@@ -1,27 +1,33 @@
-.footer{
+.footer {
     height: 15em;
     border-top: black 6px solid;
 }
 
-.links ul  {
+.mapa {
+    -webkit-box-shadow: 5px 5px 10px 3px #000000;
+    box-shadow: 5px 5px 10px 3px #000000;
+    border-radius: 25px;
+}
+
+.links ul {
     list-style: none;
     padding: 20px 2px;
 }
 .marcas ul {
     list-style: none;
 }
-.datosEmpresa ul{
+.datosEmpresa ul {
     list-style: none;
 }
-.contenedorli ul a{
+.contenedorli ul a {
     text-decoration: none;
     color: black;
 }
-.efecto-footer:hover{
-            -webkit-transform:scale(1.10);
-        -moz-transform:scale(1.10);
-        -ms-transform:scale(1.10);
-        -o-transform:scale(1.10);
-        transform:scale(1.5);
-        
-         }
+.efecto-footer:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.5);
+    transition: 0.3s;
+}

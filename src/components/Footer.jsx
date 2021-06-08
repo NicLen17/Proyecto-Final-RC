@@ -4,8 +4,8 @@ import "./Footer.css";
 import imagen from "../img/imagen.png";
 function Footer() {
   return (
-    <div className="footer d-flex justify-content-between ps-3 pt-4">
-      <div className="d-flex contenedorli">
+    <div className="footer d-flex flex-wrap justify-content-between ps-3 pt-4">
+      <div className="d-flex flex-wrap contenedorli">
         <div className="links text-black pe-5">
           <h5>Phone Pixels</h5>
           <ul className="pt-2 pb-2">
@@ -67,7 +67,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="datosEmpresa text-black d-flex">
+      <div className="datosEmpresa  d-flex flex-wrap text-black d-flex">
         <ul className=" ">
           <h5 className="pb-3 ms-0 text-start">
             {" "}
@@ -99,9 +99,9 @@ function Footer() {
             <li className="ps-2 pe-2">Horarios: L a V de 9 a 16</li>
           </div>
         </ul>
-        <div className="mt-2">
+        <div className="mt-2 mapa">
           <a href="https:www.google.com/maps/place/Espa%C3%B1a+1450,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n/@-26.8145095,-65.2180537,17z/data=!3m1!4b1!4m5!3m4!1s0x94225c4795c72827:0x5046b8948e56a325!8m2!3d-26.8145095!4d-65.215865">
-            <img src={imagen} alt="ubicacion" style={{ height: "12em" }} />
+            <img src={imagen} alt="ubicacion" style={{ height: "12em", borderRadius: "25px", maxWidth: "100%" }} />
           </a>
         </div>
       </div>

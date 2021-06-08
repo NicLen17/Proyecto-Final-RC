@@ -30,8 +30,8 @@ function App() {
             <SCards />
 
             <Spublicidad />
-
-            <Sabout />
+{/* 
+            <Sabout /> */}
           </Route>
 
           <Route path="/productos" exact>

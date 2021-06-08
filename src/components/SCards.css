@@ -21,10 +21,13 @@
     transition: 0.3s ease-in-out;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
 }
 
 .flexcard .cardprincipal:hover {
     height: 420px;
+    cursor: pointer;
 }
 
 .flexcard .cardprincipal .cardimg {

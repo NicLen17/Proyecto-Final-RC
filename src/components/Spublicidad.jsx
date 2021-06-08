@@ -53,24 +53,6 @@ export default function Spublicidad() {
         </div>
         </SwiperSlide>
         </Swiper>
-            <section className="pagos">
-                <div className="metodos">
-                <img src="https://media.istockphoto.com/vectors/delivery-truck-icon-vector-cargo-van-moving-fast-shipping-vector-id637864518?k=6&m=637864518&s=612x612&w=0&h=dhCH-S5hDTmau_t1clY0arGlahWyW9w3-Py_knkQbCs=" alt="" />
-                <p>Envio gratis</p>
-                </div>
-                <div className="metodos">
-                <img src="https://w7.pngwing.com/pngs/816/12/png-transparent-credit-card-online-banking-payment-mobile-banking-cards-rectangle-service-logo-thumbnail.png" alt="" />
-                <p>Aceptamos debito y credito</p>
-                </div>
-                <div className="metodos">
-                <img src="https://image.freepik.com/vector-gratis/dibujos-animados-dinero-mano-concepto-pagos-efectivo-empresario-manos-toma-dinero-cambio_221062-38.jpg" alt="" />
-                <p>Compra en efectivo</p>
-                </div>
-                <div className="metodos">
-                <img className="otrosmetodos" src="https://s3.eu-west-2.amazonaws.com/transeop/Blog/metodos-pago.jpg" alt="" />
-                <p>Otros metodos de pago</p>
-                </div>
-            </section>
     </div>
     )
 }
