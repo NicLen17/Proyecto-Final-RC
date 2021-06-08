@@ -125,7 +125,7 @@ function Footer() {
           <Nav.Link>
             <img
               className="efecto-footer"
-              src="https://icongr.am/devicon/facebook-original.svg?size=40&color=currentColor"
+              src="https://icongr.am/material/instagram.svg?size=50&color=a64e93"
               alt="instagram"
             />
           </Nav.Link>

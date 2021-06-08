@@ -104,6 +104,7 @@ export default function Contacto() {
               phonepixels@gmail.com asi como el derecho a presentar una
               reclamación ante una autoridad de control.
             </p>
+            <hr />
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check
                 type="checkbox"
