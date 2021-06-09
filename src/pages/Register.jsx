@@ -59,46 +59,49 @@ export default function Register({ setToken }) {
       <Row>
         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
           {alert && <Alert variant="danger">{alert}</Alert>}
-          <Card className="border">
-            <Card.Header className="bg-info">
-              <h4 className="text-white">Crea tu cuenta</h4>
+          <Card className="border registercontent">
+            <Card.Header className="text-white">
+              <h4 className="mt-1">Crea tu cuenta</h4>
             </Card.Header>
             <Card.Body>
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group controlId="validationCustom01">
-                  <Form.Label>Nombre y Apellido</Form.Label>
+                <Form.Group className="reginputconteiner"  controlId="validationCustom01">
+                  <Form.Label >Nombre y Apellido</Form.Label>
                   <Form.Control
                     name="nombre"
                     onChange={(e) => handleChange(e)}
                     required
                     type="text"
                     placeholder="Nombre y Apellido"
+                    className="registerlabel"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Celular</Form.Label>
+                  <Form.Label >Celular</Form.Label>
                   <Form.Control
                     name="celular"
                     onChange={(e) => handleChange(e)}
                     type="text"
                     placeholder="Celular"
+                    className="registerlabel"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group controlId="validationCustom02">
-                  <Form.Label>Email</Form.Label>
+                <Form.Group className="reginputconteiner" controlId="validationCustom02">
+                  <Form.Label >Email</Form.Label>
                   <Form.Control
                     name="email"
                     onChange={(e) => handleChange(e)}
                     required
                     type="text"
                     placeholder="Email"
+                    className="registerlabel"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group controlId="validationCustomUsername">
-                  <Form.Label>Password</Form.Label>
+                <Form.Group className="reginputconteiner" controlId="validationCustomUsername">
+                  <Form.Label >Password</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control
                       minLength="6"
@@ -107,6 +110,7 @@ export default function Register({ setToken }) {
                       type="password"
                       placeholder="****"
                       aria-describedby="inputGroupPrepend"
+                      className="registerlabel"
                       required
                     />
                     <Form.Control.Feedback type="invalid">
@@ -115,7 +119,7 @@ export default function Register({ setToken }) {
                   </InputGroup>
                 </Form.Group>
                 <Row>
-                  <Button type="submit" className="mx-auto">
+                  <Button className="registerbut" type="submit">
                     Registrarme
                   </Button>
                 </Row>
