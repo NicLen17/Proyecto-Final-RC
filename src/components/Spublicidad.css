@@ -1,21 +1,25 @@
 .titulo2 {
-    margin-top: 185px;
-    color: rgb(255, 255, 255);
+    font-size: 50px !important;
+    margin-top: 125px;
+    color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
-    text-shadow: 5px 4px 2px #df2121;
+    margin-bottom: 50px;
+    text-shadow: 5px 4px 2px #646262;
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
 }
 
-.publicidad {
+.publicidad { 
     background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 50px;
 }
+
 
 .ofertas img {
     margin-right: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
     background-color: white;
     border-radius: 80px;
@@ -26,6 +30,7 @@
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
     margin-bottom: 100px;
+    cursor: pointer;
 }
 
 .ofertas2 img {
@@ -37,14 +42,22 @@
     transition: 0.6s;
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .ofertasecundarias {
+    position: static;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 100px;
     margin-top: 10px;
+}
+
+.swiper-container {
+    width: 100%;
+    max-height: 100%;
 }
 
 .ofertas img:hover {
@@ -56,11 +69,12 @@
 }
 
 .pagos {
-    margin-top: 100px;
+    margin-top: 130px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
+    margin-bottom: 100px;
 }
 
 .metodos img {
@@ -69,14 +83,15 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    -webkit-box-shadow: 5px 5px 20px 5px #000000; 
+    box-shadow: 5px 5px 20px 5px #000000;
 }
 
 .metodos p {
     font-size: 20px;
     margin-top: 16px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
-    text-shadow: 5px 4px 2px #ff0000;
 }
 
 .otrosmetodos:hover {
