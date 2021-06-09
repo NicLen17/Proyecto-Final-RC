@@ -18,9 +18,7 @@ import Contacto from "./components/Contacto";
 import Admin from "./components/Pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-
-
-
+import Perfil from './components/Pages/Perfil'
 
 function App() {
   const [user, setUser] = useState("");
@@ -45,6 +43,10 @@ function App() {
 
           <Route path="/contacto" exact>
             <Contacto />
+          </Route>
+
+          <Route path="/perfil" exact>
+            <Perfil />
           </Route>
 
           <Route path="/login">

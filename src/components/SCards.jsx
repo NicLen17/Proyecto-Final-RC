@@ -35,28 +35,25 @@ export default function Cards() {
                   <img className="imgsa" src="http://www.freepngimg.com/download/tablet/14-2-tablet-png-picture.png" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-
-                  </ul>
+                  <h2>Memo Pad 10</h2>
+                  <p>
+                  Modelo del procesador: RK101. <br />
+                  Peso: 532 g. <br />
+                  Plataforma: Android.
+                  </p>
                 </div>
               </div>
-
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-
-                  </ul>
+                  <h2>Tablet Alcatel 1t </h2>
+                  <p>
+                  Memoria RAM: 2 GB <br />
+                  Capacidad: 32 GB <br /> 
+                  Quad core
+                  </p>
                 </div>
               </div>
               <div className="cardprincipal">
@@ -64,13 +61,12 @@ export default function Cards() {
                   <img src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-
-                  </ul>
+                  <h2>Tcl Tab 10 Neo + Soporte</h2>
+                  <p>
+                  Memoria RAM: 2 GB <br />
+                  Capacidad: 32 GB <br />
+                  Tamaño de la pantalla: 10 "
+                  </p>
                 </div>
               </div>
             </div>
@@ -82,12 +78,12 @@ export default function Cards() {
                   <img className="imgsa" src="https://images.samsung.com/is/image/samsung/p6pim/pe/sm-g780fzglltp/gallery/pe-galaxy-s20-fe-g780-357343-sm-g780fzglltp-thumb-327368871?$LazyLoad_Home_IMG$" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
+                  <h2>Galaxy S20 Fe</h2>
+                  <p>
+                    Adreno 650, Octa-core <br />
+                  Memoria RAM	6 Gb <br />
+                  Almacenamiento disponible	128/256 Gb
+                  </p>
                 </div>
               </div>
               <div className="cardprincipal">
@@ -95,12 +91,12 @@ export default function Cards() {
                   <img src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
+                  <h2>Samsumg A71</h2>
+                  <p>
+                  6 / 8 GB de memoria RAM <br />
+                  128 GB de almacenamiento <br />
+                  Tamaño: 6,7 pulgadas Infinity-O
+                  </p>
                 </div>
               </div>
               <div className="cardprincipal">
@@ -108,12 +104,12 @@ export default function Cards() {
                   <img src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-12-64gb-purple-53017-mjn13ll-a?$device-lg$" alt="" />
                 </div>
                 <div className="contenidocard">
-                  <h2>Nombre</h2>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
+                  <h2>Iphone 11 PRO</h2>
+                  <p>
+                  Cámara trasera triple <br />
+                  Resolución de 1792 x 828 pixeles<br />
+                  256 GB de Memoria
+                  </p>
                 </div>
               </div>
             </div>

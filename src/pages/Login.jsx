@@ -37,14 +37,14 @@ export default function Login({ setUser, setToken }) {
     <div class="container loginForm">
       <Form
         onSubmit={handleSubmit}
-        className="card mx-auto p-4 mt-5"
+        className="card mx-auto p-4 mt-5 logincontent "
         style={{ width: "400px" }}
       >
         {alert && <Alert variant="danger">{alert}</Alert>}
-
-        <Form.Group controlId="formBasicEmail">
+        <h1>Ingresa!</h1>
+        <Form.Group controlId="formBasicEmail" className="forminputconteiner">
           <Form.Label>Ingrese su Email</Form.Label>
-          <Form.Control
+          <Form.Control className="loginlabel"
             name="email"
             onChange={handleChange}
             type="email"
@@ -55,7 +55,7 @@ export default function Login({ setUser, setToken }) {
 
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Ingrese su Password</Form.Label>
-          <Form.Control
+          <Form.Control className="loginlabel"
             name="password"
             onChange={handleChange}
             type="password"
@@ -63,7 +63,7 @@ export default function Login({ setUser, setToken }) {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button className="loginbut" variant="primary" type="submit">
           Enviar
         </Button>
       </Form>
