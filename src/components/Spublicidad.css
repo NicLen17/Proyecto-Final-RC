@@ -1,6 +1,6 @@
 .titulo2 {
     font-size: 50px !important;
-    margin-top: 185px;
+    margin-top: 125px;
     color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
     margin-bottom: 50px;
@@ -30,6 +30,7 @@
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
     margin-bottom: 100px;
+    cursor: pointer;
 }
 
 .ofertas2 img {
@@ -42,6 +43,7 @@
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .ofertasecundarias {

@@ -42,11 +42,9 @@ export default function Cards() {
                                         <li></li>
                                         <li></li>
                                         <li></li>
-
                                     </ul>
                                 </div>
                             </div>
-
                             <div className="cardprincipal">
                                 <div className="cardimg">
                                     <img src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
@@ -57,7 +55,6 @@ export default function Cards() {
                                         <li></li>
                                         <li></li>
                                         <li></li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -71,7 +68,6 @@ export default function Cards() {
                                         <li></li>
                                         <li></li>
                                         <li></li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -128,11 +124,7 @@ export default function Cards() {
                                 </div>
                                 <div className="contenidocard">
                                     <h2>Cargadores</h2>
-                                    <ul>
-                                        <li>Tipo-A</li>
-                                        <li>Tipo-C</li>
-                                        <li>Micro-USB</li>
-                                    </ul>
+                                    <p>Tipo-A, Tipo-C, Micro-USB</p>
                                 </div>
                             </div>
                             <div className="cardprincipal">
@@ -150,11 +142,7 @@ export default function Cards() {
                                 </div>
                                 <div className="contenidocard">
                                     <h2>Audio</h2>
-                                    <ul>
-                                        <li>Auriculares</li>
-                                        <li>Microfonos</li>
-                                        <li>Auriculares Bluetooth</li>
-                                    </ul>
+                                    <p>Auriculares, Microfonos, Auriculares Bluetooth</p> 
                                 </div>
                             </div>
                         </div>
