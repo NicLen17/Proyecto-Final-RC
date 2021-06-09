@@ -26,14 +26,14 @@
 }
 
 .flexcard .cardprincipal:hover {
-    height: 420px;
+    height: 350px;
     cursor: pointer;
 }
 
 .flexcard .cardprincipal .cardimg {
     position: relative;
     width: 260px;
-    height: 160px;
+    height: 180px;
     top: -60px;
     z-index: 1;
 }
@@ -46,7 +46,7 @@
 
 .flexcard .cardprincipal .contenidocard {
     position: relative;
-    margin-top: -170px;
+    margin-top: -120px;
     padding: 10px 15px;
     text-align: center;
     color: #111;
@@ -55,18 +55,18 @@
     transition: 0.3s ease-in-out;
 }
 
-.flexcard .cardprincipal:hover  .contenidocard {
+.flexcard .cardprincipal:hover .contenidocard {
     visibility: visible;
     opacity: 1;
-    margin-top: -70px;
+    margin-top: -20px;
 }
 
 .navproductos {
-    margin-top: 50px;
+    margin-top: 30px;
     justify-content: center;
     background-color: white;
     font-size: 21px;
-    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
 }
 
@@ -84,45 +84,4 @@
     font-family: "Roboto", sans-serif;
     text-shadow: 5px 4px 2px #646262;
     /* border-bottom: rgb(255, 255, 255) 6px solid; */
-}
-
-.cards {
-    align-items: center;
-    width: 350px;
-    height: 450px;
-    transition: 0.6s ease;
-    cursor: pointer;
-    border: black 3px solid !important;
-    border-radius: 25px !important;
-    -webkit-box-shadow: 5px 5px 25px 10px #000000; 
-    box-shadow: 5px 5px 25px 10px #000000;
-}
-
-.cardfooter {
-    margin-top: 10px;
-    background-color: black;
-    width: 350px;
-    border-bottom: rgb(255, 255, 255) 6px solid;
-    border-radius: 15px;
-
-}
-
-.cardfooter p {
-    color: rgb(255, 255, 255);
-}
-
-.cardimg {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    height: 300px;
-    border-radius: 25px !important;
-}
-
-.cards:hover {
-    opacity: 82%;
-    -webkit-box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff, 15px 15px 0px 0px #a1d8ff,
-        20px 20px 0px 0px #cae6ff, 25px 25px 0px 0px #e1eeff, 5px -50px 15px -27px rgba(255, 21, 21, 0);
-    box-shadow: 5px 5px 0px 0px #000000, 10px 10px 0px 0px #000000, 15px 15px 0px 0px #000000, 20px 20px 0px 0px #000000,
-        25px 25px 0px 0px #000000, 5px -50px 15px -27px rgba(248, 248, 248, 0);
 }

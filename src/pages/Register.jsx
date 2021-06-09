@@ -12,6 +12,8 @@ import {
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import React, { Component } from "react";
+import './Register.css'
+
 
 export default function Register({ setToken }) {
   const [validated, setValidated] = useState(false);
@@ -53,7 +55,7 @@ export default function Register({ setToken }) {
   };
 
   return (
-    <Container>
+    <Container className="registerform">
       <Row>
         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
           {alert && <Alert variant="danger">{alert}</Alert>}

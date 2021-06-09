@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import React, { Component } from "react";
+import './Login.css'
 
 export default function Login({ setUser, setToken }) {
   const [input, setInput] = useState({});

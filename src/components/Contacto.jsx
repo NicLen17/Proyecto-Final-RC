@@ -20,14 +20,13 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Contacto() {
   return (
-    <>
+    <div>
       <div className="about">
         <div className="contentabout">
           <br />
           <p>P h o n e    P i x e l</p>
           <div className="subtitulo">
             <h3>Somos la nueva empresa de telefonia al alcance de todos</h3>
-            <>
               <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={0} pagination={{
                 "clickable": true
               }} className="mySwiper">
@@ -36,7 +35,6 @@ export default function Contacto() {
                 <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/samsung-galaxy-a72-claro-tienda-desktop.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img className="slogan" src="https://personal.vteximg.com.br/arquivos/h1-samsung-tienda-desktop02.png?v=637432871810700000" alt="" /></SwiperSlide>
               </Swiper>
-            </>
           </div>
         </div>
       </div>
@@ -153,6 +151,6 @@ export default function Contacto() {
         </div>
       </div>
       </div>
-    </>
+      </div>
   );
 }
