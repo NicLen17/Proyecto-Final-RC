@@ -30,10 +30,7 @@ export default function Register({ setToken }) {
     }
     try {
       const { data } = await axios.post("/auth/register", input);
-      console.log(
-        "🚀 ~ file: Register.jsx ~ line 21 ~ handleSubmit ~ data",
-        data
-      );
+      console.log( data  );
 
       localStorage.setItem("token", JSON.stringify(data));
       setToken(data.token);

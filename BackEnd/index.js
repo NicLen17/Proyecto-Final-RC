@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const usuarioRoute = require('./routes/usuarioRoute');
 const authRoute = require('./routes/authRoute');
+const productosRoute = require('./routes/productosRoute');
 // const memeRoute = require('./routes/memeRoute');
 
 // Conectar a mongodb
@@ -34,6 +35,7 @@ app.use(morgan('dev'));
 //importar rutas
 app.use('/api/usuarios', usuarioRoute);
 app.use('/api/auth', authRoute);
+app.use('/api/productos', productosRoute);
 // app.use('/api/memes', memeRoute);
 
 // puerto y arranque del servidor

@@ -54,7 +54,9 @@ function App() {
           </Route>
 
           <Route path="/register">
-            <Register setToken={setToken} /></Route>
+            <Admin/>
+            {/* <Register setToken={setToken} /> */}
+            </Route>
 
           <Route path="/">404</Route>
 

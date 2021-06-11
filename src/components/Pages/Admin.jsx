@@ -1,10 +1,10 @@
 import React from 'react'
 import { Tabs, Tab , Table} from 'react-bootstrap'
 import './Admin.css'
-
 function Admin() {
     return (
         <div>
+            
             <Tabs fill variant="tabs" defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 Tabsh">
                 <Tab className="colortab" eventKey="home" title="Productos">
                     <div>
