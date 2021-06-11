@@ -7,14 +7,23 @@ import SwiperCore, { EffectFade, Navigation, Pagination } from "swiper/core";
 import "./Carro.css";
 import { Autoplay } from "swiper/core";
 import React, { Component } from "react";
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 SwiperCore.use([EffectFade, Navigation, Pagination]);
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function App() {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+
   return (
     // <>
-    <Swiper
+    <Swiper data-aos="fade"
       autoplay={true}
       loop={true}
       spaceBetween={30}

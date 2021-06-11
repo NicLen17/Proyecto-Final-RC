@@ -14,13 +14,21 @@ import SwiperCore, {
 } from 'swiper/core';
 import { Autoplay, Navigation } from 'swiper/core';
 import './Contacto.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
+
 
 SwiperCore.use([Pagination]);
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Contacto() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+}, [])
   return (
-    <div>
+    <div data-aos="fade-down-right">
       <div className="about">
         <div className="contentabout">
           <br />

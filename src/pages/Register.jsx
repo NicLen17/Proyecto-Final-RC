@@ -13,6 +13,10 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import React, { Component } from "react";
 import './Register.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 
 export default function Register({ setToken }) {
@@ -51,8 +55,12 @@ export default function Register({ setToken }) {
     setInput(changedInput);
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+}, [])
+
   return (
-    <Container className="registerform">
+    <Container data-aos="fade-up" className="registerform">
       <Row>
         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
           {alert && <Alert variant="danger">{alert}</Alert>}

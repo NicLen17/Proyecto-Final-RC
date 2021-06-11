@@ -4,6 +4,9 @@ import { Alert, Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import React, { Component } from "react";
 import './Login.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
 
 export default function Login({ setUser, setToken }) {
   const [input, setInput] = useState({});
@@ -33,8 +36,12 @@ export default function Login({ setUser, setToken }) {
     }
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+}, [])
+
   return (
-    <div class="container loginForm">
+    <div data-aos="fade-up" class="container loginForm">
       <Form
         onSubmit={handleSubmit}
         className="card mx-auto p-4 mt-5 logincontent "

@@ -2,32 +2,41 @@ import { Card } from 'react-bootstrap'
 import React from 'react'
 import './SCards.css'
 import { Tabs, Tab } from 'react-bootstrap'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 export default function Cards() {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+
   return (
     <div>
       <section className="pagos">
-        <div className="metodos">
+        <div data-aos="fade-up"  className="metodos">
           <img src="https://media.istockphoto.com/vectors/delivery-truck-icon-vector-cargo-van-moving-fast-shipping-vector-id637864518?k=6&m=637864518&s=612x612&w=0&h=dhCH-S5hDTmau_t1clY0arGlahWyW9w3-Py_knkQbCs=" alt="" />
           <p>Envio gratis</p>
         </div>
-        <div className="metodos">
+        <div data-aos="fade-down" className="metodos">
           <img src="https://w7.pngwing.com/pngs/816/12/png-transparent-credit-card-online-banking-payment-mobile-banking-cards-rectangle-service-logo-thumbnail.png" alt="" />
           <p>Aceptamos debito y credito</p>
         </div>
-        <div className="metodos">
+        <div data-aos="fade-up" className="metodos">
           <img src="https://image.freepik.com/vector-gratis/dibujos-animados-dinero-mano-concepto-pagos-efectivo-empresario-manos-toma-dinero-cambio_221062-38.jpg" alt="" />
           <p>Compra en efectivo</p>
         </div>
-        <div className="metodos">
+        <div data-aos="fade-down" className="metodos">
           <img className="otrosmetodos" src="https://s3.eu-west-2.amazonaws.com/transeop/Blog/metodos-pago.jpg" alt="" />
           <p>Otros metodos de pago</p>
         </div>
       </section>
-      <section className="titulo">
+      <section data-aos="fade-up" className="titulo">
         <div>Productos populares</div>
       </section>
-      <div>
-        <Tabs fill variant="tabs" className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
+      <div data-aos="fade-up">
+        <Tabs data-aos="fade-up" fill variant="tabs" className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
           <Tab className="tabss" eventKey="home" title="Tablets">
             <div className="flexcard">
               <div className="cardprincipal">
@@ -37,9 +46,9 @@ export default function Cards() {
                 <div className="contenidocard">
                   <h2>Memo Pad 10</h2>
                   <p>
-                  Modelo del procesador: RK101. <br />
-                  Peso: 532 g. <br />
-                  Plataforma: Android.
+                    Modelo del procesador: RK101. <br />
+                    Peso: 532 g. <br />
+                    Plataforma: Android.
                   </p>
                 </div>
               </div>
@@ -50,9 +59,9 @@ export default function Cards() {
                 <div className="contenidocard">
                   <h2>Tablet Alcatel 1t </h2>
                   <p>
-                  Memoria RAM: 2 GB <br />
-                  Capacidad: 32 GB <br /> 
-                  Quad core
+                    Memoria RAM: 2 GB <br />
+                    Capacidad: 32 GB <br />
+                    Quad core
                   </p>
                 </div>
               </div>
@@ -63,9 +72,9 @@ export default function Cards() {
                 <div className="contenidocard">
                   <h2>Tcl Tab 10 Neo + Soporte</h2>
                   <p>
-                  Memoria RAM: 2 GB <br />
-                  Capacidad: 32 GB <br />
-                  Tamaño de la pantalla: 10 "
+                    Memoria RAM: 2 GB <br />
+                    Capacidad: 32 GB <br />
+                    Tamaño de la pantalla: 10 "
                   </p>
                 </div>
               </div>
@@ -81,8 +90,8 @@ export default function Cards() {
                   <h2>Galaxy S20 Fe</h2>
                   <p>
                     Adreno 650, Octa-core <br />
-                  Memoria RAM	6 Gb <br />
-                  Almacenamiento disponible	128/256 Gb
+                    Memoria RAM	6 Gb <br />
+                    Almacenamiento disponible	128/256 Gb
                   </p>
                 </div>
               </div>
@@ -93,9 +102,9 @@ export default function Cards() {
                 <div className="contenidocard">
                   <h2>Samsumg A71</h2>
                   <p>
-                  6 / 8 GB de memoria RAM <br />
-                  128 GB de almacenamiento <br />
-                  Tamaño: 6,7 pulgadas Infinity-O
+                    6 / 8 GB de memoria RAM <br />
+                    128 GB de almacenamiento <br />
+                    Tamaño: 6,7 pulgadas Infinity-O
                   </p>
                 </div>
               </div>
@@ -106,9 +115,9 @@ export default function Cards() {
                 <div className="contenidocard">
                   <h2>Iphone 11 PRO</h2>
                   <p>
-                  Cámara trasera triple <br />
-                  Resolución de 1792 x 828 pixeles<br />
-                  256 GB de Memoria
+                    Cámara trasera triple <br />
+                    Resolución de 1792 x 828 pixeles<br />
+                    256 GB de Memoria
                   </p>
                 </div>
               </div>
