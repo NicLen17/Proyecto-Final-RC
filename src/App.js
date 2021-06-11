@@ -6,12 +6,7 @@ import NavReactB from "./components/NavReactB";
 import SCards from "./components/SCards";
 import Spublicidad from "./components/Spublicidad";
 import Footer from "./components/Footer";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import {BrowserRouter as Router, Redirect, Route, Switch, } from "react-router-dom";
 import { useState } from "react";
 import Productos from "./components/Pages/Productos";
 import Contacto from "./components/Contacto";
@@ -19,6 +14,8 @@ import Admin from "./components/Pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Perfil from './components/Pages/Perfil'
+import PIndividuales from './components/Pages/PIndividual'
+import PIndividual from './components/Pages/PIndividual';
 
 function App() {
   const [user, setUser] = useState("");
@@ -49,13 +46,21 @@ function App() {
             <Perfil />
           </Route>
 
+          <Route path="/individual" exact>
+            <PIndividual />
+          </Route>
+
+          <Route path="/admin" exact>
+            <Admin />
+          </Route>
+
           <Route path="/login">
             <Login setUser={setUser} setToken={setToken} />
           </Route>
 
           <Route path="/register">
-            <Admin/>
-            {/* <Register setToken={setToken} /> */}
+            
+            <Register setToken={setToken} />
             </Route>
 
           <Route path="/">404</Route>

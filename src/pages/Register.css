@@ -64,7 +64,14 @@
     background: none;
     border: none;
     border-bottom: black 2px solid;
+    transition: 0.3s;
 }
+
+.registerlabel:hover {
+    border-bottom: rgb(255, 255, 255) 2px solid;
+}
+
+
 
 .registerbut {
     color: rgb(0, 0, 0);
@@ -76,6 +83,7 @@
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     margin: auto;
+    transition: 0.5s;
 }
 
 .registerbut:hover {

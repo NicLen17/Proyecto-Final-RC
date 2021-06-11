@@ -136,7 +136,7 @@ export default function Cards() {
               </div>
               <div className="cardprincipal">
                 <div className="cardimg">
-                  <img src="http://assets.stickpng.com/images/580b57fbd9996e24bc43bfbe.png" alt="" />
+                  <img src="https://www.primusgaming.com/media/foto-landing-PHS-101.png" alt="" />
                 </div>
                 <div className="contenidocard">
                   <h2>Audio</h2>
