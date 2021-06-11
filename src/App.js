@@ -50,6 +50,10 @@ function App() {
             <PIndividual />
           </Route>
 
+          <Route path="/admin" exact>
+            <Admin />
+          </Route>
+
           <Route path="/login">
             <Login setUser={setUser} setToken={setToken} />
           </Route>
