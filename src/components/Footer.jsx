@@ -99,12 +99,13 @@ function Footer() {
             <li className="ps-2 pe-2">Horarios: L a V de 9 a 16</li>
           </div>
         </ul>
-        <div className="mt-2 mapa">
+      </div>
+      <div className="mt-2 mapa">
+        <p>Puedes encontrarnos en...</p>
           <a href="https:www.google.com/maps/place/Espa%C3%B1a+1450,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n/@-26.8145095,-65.2180537,17z/data=!3m1!4b1!4m5!3m4!1s0x94225c4795c72827:0x5046b8948e56a325!8m2!3d-26.8145095!4d-65.215865">
             <img src={imagen} alt="ubicacion" style={{ height: "12em", borderRadius: "25px", maxWidth: "100%" }} />
           </a>
         </div>
-      </div>
       <div className="d-flex flex-column pe-3">
         <h5 className="text-black">Redes Sociales</h5>
         <div className="d-flex flex-column align-items-center">

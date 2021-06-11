@@ -7,6 +7,17 @@
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     border-radius: 25px;
+    margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+.mapa:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 }
 
 .links ul {
