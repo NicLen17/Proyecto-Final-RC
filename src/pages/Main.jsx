@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect, useHistory, useParams } from "react-router";
 import Memes from "../components/Memes";
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
 
 export default function Main({ currentUser }) {
   const [articles, setArticles] = useState([]);

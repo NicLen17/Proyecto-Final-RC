@@ -13,6 +13,10 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import React, { Component } from "react";
 import './Register.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 
 export default function Register({ setToken }) {
@@ -30,10 +34,7 @@ export default function Register({ setToken }) {
     }
     try {
       const { data } = await axios.post("/auth/register", input);
-      console.log(
-        "🚀 ~ file: Register.jsx ~ line 21 ~ handleSubmit ~ data",
-        data
-      );
+      console.log(data);
 
       localStorage.setItem("token", JSON.stringify(data));
       setToken(data.token);
@@ -54,8 +55,12 @@ export default function Register({ setToken }) {
     setInput(changedInput);
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+
   return (
-    <Container className="registerform">
+    <Container data-aos="fade-up" className="registerform">
       <Row>
         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
           {alert && <Alert variant="danger">{alert}</Alert>}
@@ -65,7 +70,7 @@ export default function Register({ setToken }) {
             </Card.Header>
             <Card.Body>
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="reginputconteiner"  controlId="validationCustom01">
+                <Form.Group className="reginputconteiner" controlId="validationCustom01">
                   <Form.Label >Nombre y Apellido</Form.Label>
                   <Form.Control
                     name="nombre"

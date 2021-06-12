@@ -14,13 +14,21 @@ import SwiperCore, {
 } from 'swiper/core';
 import { Autoplay, Navigation } from 'swiper/core';
 import './Contacto.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
+
 
 SwiperCore.use([Pagination]);
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Contacto() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+}, [])
   return (
-    <div>
+    <div data-aos="fade-down-right">
       <div className="about">
         <div className="contentabout">
           <br />
@@ -38,7 +46,7 @@ export default function Contacto() {
           </div>
         </div>
       </div>
-      <div className="body" style={{ marginBottom: "60px" }}>
+      <div className="body" style={{ marginBottom: "160px", maxWidth: "100%" }}>
         <div className="p-3 contacto" style={{ textAlign: "center", marginTop: "45px" }}>
           <h1>CONTACTA CON NOSOTROS</h1>
           <h3>Podes enviarnos tu consulta</h3>
@@ -48,26 +56,28 @@ export default function Contacto() {
             enlaces directos de nuestras redes sociales!
         </p>
         </div>
-        <div className="formulario">
-        <div className="row">
-          <div className="d-flex col">
+        <div className="formulario" style={{ maxWidth: "100%" }}>
+        <div className="row d-flex flex-wrap" style={{ maxWidth: "100%" }}>
+          <div className="d-flex flex-wrap col" style={{ maxWidth: "100%" }}>
             <div className="row-cols-1">
               <img
                 className="contactoimg"
                 style={{
-                  width: "800px",
-                  height: "600px",
+                  marginTop: "10px",
+                  width: "700px",
+                  height: "500px",
+                  maxWidth: "100%"
                 }}
                 src="https://485758.smushcdn.com/622655/wp-content/uploads/2019/07/cold-emailing.jpg?lossy=1&strip=1&webp=1" alt=""
               />
               <div
                 className="d-flex ml-3"
-                style={{ justifyContent: "space-evenly" }}
+                style={{ justifyContent: "space-evenly", maxWidth: "100%" }}
               >
                 <a className="redescontacto" href="">
                   <img
                     src="https://icongr.am/fontawesome/facebook-official.svg?size=60&color=1002cf"
-                    style={{ marginLeft: "30px" }} alt=""
+                    alt=""
                   />
                 </a>
                 <a className="redescontacto"  href="">

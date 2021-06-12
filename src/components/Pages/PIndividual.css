@@ -1,0 +1,97 @@
+.backgroundoP {
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+    background: -webkit-linear-gradient(top, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+}
+
+.pcontainers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.pcontainer {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    max-width: 100%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    height: 845px;
+    border-radius: 50px;
+    -webkit-box-shadow: 5px 5px 10px 3px #000000;
+    box-shadow: 5px 5px 10px 3px #000000;
+}
+
+.pcontainerinfo {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    max-width: 100%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    height: 845px;
+    border-radius: 50px;
+    -webkit-box-shadow: 5px 5px 10px 3px #000000;
+    box-shadow: 5px 5px 10px 3px #000000;
+}
+
+.pimgcont {
+    max-width: 100%;
+    border: white 6px solid;
+    border-radius: 50px;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    width: 525px;
+    height: 525px;
+    -webkit-box-shadow: 1px 1px 20px 4px #ffffff;
+    box-shadow: 1px 1px 12px 4px #ffffff;
+}
+
+.pcontainer .pimgcont {
+    position: relative;
+    top: 25px;
+}
+
+.imgpro {
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.contenido1 {
+    margin-top: 35px;
+    color: black;
+}
+
+.contenido1 p {
+    color: black;
+}
+
+.contenido2 {
+    color: black;
+}
+
+.validaciones {
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.imgval {
+    width: 20px;
+    width: 20px;
+}
+
+.btncompra {
+    border-radius: 50px ;
+    border: rgb(255, 255, 255) 2px solid;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.btncompra:hover {
+    color: black;
+    background-color: chartreuse;
+    border: rgb(255, 255, 255) 2px solid;
+}
