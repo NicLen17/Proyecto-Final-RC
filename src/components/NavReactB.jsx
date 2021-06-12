@@ -1,8 +1,10 @@
-import React from 'react'
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import React from "react";
+import { Nav, Navbar, NavDropdown,Button } from "react-bootstrap";
 import "./NavReactB.css";
+import { NavLink } from "react-router-dom";
 
-export default function NavReactB() {
+//extraemos el datos del usuario desde props
+export default function NavReactB({ userName, logout  }) {
   return (
     <Navbar bg="light" expand="lg" className="d-flex m navbar fixed-top">
       <Navbar.Brand href="#home">
@@ -27,22 +29,37 @@ export default function NavReactB() {
           <Nav.Link href="contacto" className="efecto-nav">
             Contacto
           </Nav.Link>
-          <Nav.Link href="login" className="efecto-nav">
-            Log In
-          </Nav.Link>
-          <Nav.Link href="register" className="efecto-nav">
-            Registrarse
-          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+
+      {userName && <h2 className="text-white mr-2">{userName}</h2>} 
+      {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
+     
+      {userName && (
+         <Button variant="primary" onClick={logout}>
+          Cerrar Sesión
+        </Button>
+       )} 
+
       <Nav className="">
+      {userName && (
         <Nav.Link href="perfil" className="contenedor-icon">
           <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" />{" "}
         </Nav.Link>
+      )}
+
+      {!userName && (
+        <Nav.Link href="login" className="contenedor-icon">
+         <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" />{" "}
+        </Nav.Link>
+      )}
+
         <Nav.Link className="contenedor-icon">
           <img src="https://icongr.am/material/cart.svg?size=35&color=currentColor" />{" "}
         </Nav.Link>
       </Nav>
     </Navbar>
+    
   );
 }
+git add [nombre del archivo]
