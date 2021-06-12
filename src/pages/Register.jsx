@@ -34,7 +34,7 @@ export default function Register({ setToken }) {
     }
     try {
       const { data } = await axios.post("/auth/register", input);
-      console.log( data  );
+      console.log(data);
 
       localStorage.setItem("token", JSON.stringify(data));
       setToken(data.token);
@@ -57,7 +57,7 @@ export default function Register({ setToken }) {
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
-}, [])
+  }, [])
 
   return (
     <Container data-aos="fade-up" className="registerform">
@@ -70,7 +70,7 @@ export default function Register({ setToken }) {
             </Card.Header>
             <Card.Body>
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="reginputconteiner"  controlId="validationCustom01">
+                <Form.Group className="reginputconteiner" controlId="validationCustom01">
                   <Form.Label >Nombre y Apellido</Form.Label>
                   <Form.Control
                     name="nombre"

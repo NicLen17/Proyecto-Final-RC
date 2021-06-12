@@ -32,8 +32,6 @@ function App() {
 
             <Spublicidad />
 
-            {/* <AgregadoProducto /> */}
-
           </Route>
 
           <Route path="/productos" exact>

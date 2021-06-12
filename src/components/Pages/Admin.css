@@ -1,5 +1,9 @@
-.Tabsh {
+.tablacont {
     margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.Tabsh {
     background-color: rgb(255, 255, 255);
     font-size: 21px;
 }
