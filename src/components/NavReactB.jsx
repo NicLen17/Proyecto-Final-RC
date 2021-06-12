@@ -32,11 +32,11 @@ export default function NavReactB({ userName, logout }) {
         </Nav>
       </Navbar.Collapse>
 
-      {userName && <h2 className="text-white mr-2">{userName}</h2>}
+      {userName && <h2 className="userbut">{userName}</h2>}
       {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
 
       {userName && (
-        <Button variant="primary" onClick={logout}>
+        <Button className="userbut2" onClick={logout}>
           Cerrar Sesión
         </Button>
       )}
