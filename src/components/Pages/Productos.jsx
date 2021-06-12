@@ -27,7 +27,7 @@ function Productos() {
               src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
             />
             <Card.Body>
-              <Card.Title>50.000</Card.Title>
+              <Card.Title>50.000 <a href="/individual"><a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></a></Card.Title>
               <Card.Text className="caracteristicas">
                 <li>Samsumg</li>
                 <li>Samsung Galaxy A50</li>
@@ -42,7 +42,7 @@ function Productos() {
               src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
             />
             <Card.Body>
-              <Card.Title>50.000</Card.Title>
+              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
               <Card.Text className="caracteristicas">
                 <li>Samsumg</li>
                 <li>Samsung Galaxy A50</li>
@@ -57,7 +57,7 @@ function Productos() {
               src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
             />
             <Card.Body>
-              <Card.Title>50.000</Card.Title>
+              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
               <Card.Text className="caracteristicas">
                 <li>Samsumg</li>
                 <li>Samsung Galaxy A50</li>
@@ -72,7 +72,7 @@ function Productos() {
               src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
             />
             <Card.Body>
-              <Card.Title>50.000</Card.Title>
+              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
               <Card.Text className="caracteristicas">
                 <li>Samsumg</li>
                 <li>Samsung Galaxy A50</li>
@@ -96,7 +96,7 @@ function Productos() {
               <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText className="sidetext">
-              Productos
+              Productos 
             </NavText>
           </NavItem>
           <NavItem eventKey="charts">

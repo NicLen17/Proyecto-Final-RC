@@ -14,8 +14,8 @@ import Admin from "./components/Pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Perfil from './components/Pages/Perfil'
-import PIndividuales from './components/Pages/PIndividual'
 import PIndividual from './components/Pages/PIndividual';
+import AgregadoProducto from "./components/AgregadoProducto";
 
 function App() {
   const [user, setUser] = useState("");
@@ -31,6 +31,8 @@ function App() {
             <SCards />
 
             <Spublicidad />
+
+            {/* <AgregadoProducto /> */}
 
           </Route>
 

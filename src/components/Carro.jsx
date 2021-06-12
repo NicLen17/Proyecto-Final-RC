@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     // <>
-    <Swiper data-aos="fade"
+    <Swiper data-aos="fade-down"
       autoplay={true}
       loop={true}
       spaceBetween={30}

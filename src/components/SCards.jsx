@@ -125,6 +125,7 @@ export default function Cards() {
           </Tab>
           <Tab className="tabss" eventKey="contact" title="Accesorios">
             <div className="flexcard">
+              <a style={{ textDecorationLine: "none" }} href="/productos">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img className="imgsa" src="https://celularya.com/show_image_producto_detalle.php?image=940&name=cargador-y-cable-de-datos-travel-adapter-fast-charging-celularya.png" alt="" />
@@ -134,6 +135,8 @@ export default function Cards() {
                   <p>Tipo-A, Tipo-C, Micro-USB</p>
                 </div>
               </div>
+              </a>
+              <a style={{ textDecorationLine: "none" }} href="/productos">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://uoopaa.com/wp-content/uploads/2021/02/S1B-1.png" alt="" />
@@ -143,6 +146,8 @@ export default function Cards() {
                   <p>Todos los tamaños y diseños</p>
                 </div>
               </div>
+              </a>
+              <a style={{ textDecorationLine: "none" }} href="/productos">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://www.primusgaming.com/media/foto-landing-PHS-101.png" alt="" />
@@ -152,6 +157,7 @@ export default function Cards() {
                   <p>Auriculares, Microfonos, Auriculares Bluetooth</p>
                 </div>
               </div>
+              </a>
             </div>
           </Tab>
         </Tabs>
