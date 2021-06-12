@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const ProductosSchema = mongoose.Schema({
+    categoria: {
+        type: String,
+        trim: true,
+        required: true
+    },
     marca: {
         type: String,
         trim: true,
@@ -28,7 +33,7 @@ const ProductosSchema = mongoose.Schema({
     },
     stock: {
         type: Number,
-        required: true
+        
     },
     img:{
      
