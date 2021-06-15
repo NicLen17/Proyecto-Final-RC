@@ -35,8 +35,17 @@ exports.crearUsuario = async (req, res) => {
     }
 };
 
-exports.obtenerUsuarios = (req, res) => {
+exports.obtenerUsuarios = async (req, res) => {
     console.log('funcion obtener usuarios');
+    try {
+        const users = await Usuario.find();
+        // await Usuario.send({ nombre });
+        // console.log('🚀 ~ file: usuarioController.js ~ line 43 ~ exports.getUsers= ~ users', users);
+        res.send(users);
+    } catch (error) {
+        res.status(400).json({ msg: 'error al obtener el usuarios' });
+        console.log('🚀 - error', error);
+    }
 };
 
 exports.updateUser = async (req, res) => {
@@ -46,5 +55,15 @@ exports.updateUser = async (req, res) => {
         res.send(updatedUser);
     } catch (error) {
         res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
+    }
+};
+
+exports.getUser = async (req, res) => {
+    try {
+        const usuario = await Usuario.findById(req.usuario.id).select('-password -__v'); //en el select se pone con signo - los atributos que no debe traer
+
+        res.send(usuario);
+    } catch (error) {
+        res.status(400).send({ msg: 'Hubo un error al obtener el usuario' });
     }
 };
