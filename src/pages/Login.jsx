@@ -70,7 +70,7 @@ export default function Login({ setUser, setToken }) {
             required
           />
         </Form.Group>
-        <Button className="loginbut" variant="primary" type="submit">
+        <Button className="loginbut" variant="loginbut" type="submit">
           Enviar
         </Button>
         <Row>

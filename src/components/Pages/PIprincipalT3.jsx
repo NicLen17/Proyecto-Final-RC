@@ -1,10 +1,19 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import './PIndividual.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 function PIndividual() {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, [])
+
     return (
-        <div className="backgroundoP">
+        <div data-aos="fade-down" className="backgroundoP">
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
@@ -25,7 +34,7 @@ function PIndividual() {
                             <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>Sobre los detalles técnicos del Samsung Galaxy S20 FE 5G, vale la pena destacar que la pantalla es de 6.5 pulgadas Full HD, el procesador es Qualcomm Snapdragon 865 y la memoria RAM es de 6GB.
                             </p>
                         </div>
-                        <Button className="btncompra" > Agregar al carrito </Button>
+                        <Button className="btncompra" variant="btncompra"> Agregar al carrito </Button>
                     </div>
                 </div>
             </div>

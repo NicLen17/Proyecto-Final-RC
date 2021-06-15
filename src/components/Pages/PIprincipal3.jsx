@@ -1,10 +1,19 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import './PIndividual.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 function PIndividual() {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, [])
+
     return (
-        <div className="backgroundoP">
+        <div data-aos="fade-down" className="backgroundoP">
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
@@ -25,7 +34,7 @@ function PIndividual() {
                             <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>El iPhone 11 es el que menor batería tiene sobre el papel de los tres dispositivos lanzados en 2019, pero ni mucho menos es una mala autonomía. Gracias a la gestión del procesador y del buen hacer de iOS 13 podemos aguantar perfectamente un día e incluso algo más sin necesidad de conectarlo a la corriente
                             </p>
                         </div>
-                        <Button className="btncompra" > Agregar al carrito </Button>
+                        <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                     </div>
                 </div>
             </div>

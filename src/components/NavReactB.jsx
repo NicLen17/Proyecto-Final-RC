@@ -36,7 +36,7 @@ export default function NavReactB({ userName, logout }) {
       {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
 
       {userName && (
-        <Button className="userbut2" onClick={logout}>
+        <Button className="userbut2" variant="userbut2" onClick={logout}>
           Cerrar Sesión
         </Button>
       )}

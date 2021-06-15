@@ -1,10 +1,19 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import './PIndividual.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import { useEffect } from 'react'
+
 
 function PIndividual() {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, [])
+
     return (
-        <div className="backgroundoP">
+        <div data-aos="fade-down" className="backgroundoP">
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
@@ -25,7 +34,7 @@ function PIndividual() {
                             <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>El procesador es un Snapdragon 730 de ocho núcleos que viene muy bien acompañado de configuraciones de memoria RAM de 6 y 8 GB. Y como espacio de almacenamiento interno contamos de serie con 128 GB que además podemos decidir ampliar con tarjetas microSD de hasta 512 GB
                             </p>
                         </div>
-                        <Button className="btncompra" > Agregar al carrito </Button>
+                        <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                     </div>
                 </div>
             </div>
