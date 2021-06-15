@@ -8,13 +8,13 @@ function PIndividual() {
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <img className="imgpro" src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
+                        <img className="imgpro" src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />
                     </div>
                     <div className="contenido1">
-                        <h2>Samsumg A71
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Celulares</a></p>
+                        <h2>Tcl Tab 10 Neo + Soporte
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Tablets</a></p>
                         </h2>
-                        <h2>$63.000,00</h2>
+                        <h2>$19.999,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
                         <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
                         <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>
@@ -22,7 +22,7 @@ function PIndividual() {
                     <div className="contenido1">
                         <div>
                             <h2 className="">Caracteristicas</h2>
-                            <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>El procesador es un Snapdragon 730 de ocho núcleos que viene muy bien acompañado de configuraciones de memoria RAM de 6 y 8 GB. Y como espacio de almacenamiento interno contamos de serie con 128 GB que además podemos decidir ampliar con tarjetas microSD de hasta 512 GB
+                            <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>Sobre los detalles técnicos del Samsung Galaxy S20 FE 5G, vale la pena destacar que la pantalla es de 6.5 pulgadas Full HD, el procesador es Qualcomm Snapdragon 865 y la memoria RAM es de 6GB.
                             </p>
                         </div>
                         <Button className="btncompra" > Agregar al carrito </Button>

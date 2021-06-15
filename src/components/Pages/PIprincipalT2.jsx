@@ -8,13 +8,13 @@ function PIndividual() {
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <img className="imgpro" src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
+                        <img className="imgpro" src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
                     </div>
                     <div className="contenido1">
-                        <h2>Samsumg A71
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Celulares</a></p>
+                        <h2>Tablet Alcatel 1t
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Tablets</a></p>
                         </h2>
-                        <h2>$63.000,00</h2>
+                        <h2>$17.999,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
                         <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
                         <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>

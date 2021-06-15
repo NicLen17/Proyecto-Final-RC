@@ -8,13 +8,13 @@ function PIndividual() {
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <img className="imgpro" src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
+                        <img className="imgpro" src="http://www.freepngimg.com/download/tablet/14-2-tablet-png-picture.png" alt="" />
                     </div>
                     <div className="contenido1">
-                        <h2>Samsumg A71
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Celulares</a></p>
+                        <h2>Memo Pad 10
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Tablets</a></p>
                         </h2>
-                        <h2>$63.000,00</h2>
+                        <h2>$13.999,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
                         <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
                         <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>
@@ -22,7 +22,7 @@ function PIndividual() {
                     <div className="contenido1">
                         <div>
                             <h2 className="">Caracteristicas</h2>
-                            <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>El procesador es un Snapdragon 730 de ocho núcleos que viene muy bien acompañado de configuraciones de memoria RAM de 6 y 8 GB. Y como espacio de almacenamiento interno contamos de serie con 128 GB que además podemos decidir ampliar con tarjetas microSD de hasta 512 GB
+                            <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>El iPhone 11 es el que menor batería tiene sobre el papel de los tres dispositivos lanzados en 2019, pero ni mucho menos es una mala autonomía. Gracias a la gestión del procesador y del buen hacer de iOS 13 podemos aguantar perfectamente un día e incluso algo más sin necesidad de conectarlo a la corriente
                             </p>
                         </div>
                         <Button className="btncompra" > Agregar al carrito </Button>

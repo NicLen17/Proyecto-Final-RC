@@ -39,7 +39,7 @@ export default function Cards() {
         <Tabs data-aos="fade-up" fill variant="tabs" className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
           <Tab className="tabss" eventKey="home" title="Tablets">
             <div className="flexcard">
-              <a style={{ textDecorationLine: "none" }} href="individualT1">
+              <a href="">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img className="imgsa" src="http://www.freepngimg.com/download/tablet/14-2-tablet-png-picture.png" alt="" />
@@ -54,7 +54,7 @@ export default function Cards() {
                 </div>
               </div>
               </a>
-              <a style={{ textDecorationLine: "none" }} href="individualT2">
+              <a href="">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
@@ -69,7 +69,7 @@ export default function Cards() {
                 </div>
               </div>
               </a>
-              <a style={{ textDecorationLine: "none" }} href="individualT3">
+              <a href="">
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />

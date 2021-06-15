@@ -28,6 +28,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import PIprincipal1 from "./components/Pages/PIprincipal1";
 import PIprincipal2 from "./components/Pages/PIprincipal2";
 import PIprincipal3 from "./components/Pages/PIprincipal3";
+import PIprincipalT1 from "./components/Pages/PIprincipalT1";
+import PIprincipalT2 from "./components/Pages/PIprincipalT2";
+import PIprincipalT3 from "./components/Pages/PIprincipalT3";
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -84,6 +87,19 @@ export default function App() {
           <Route path="/individual" exact>
             <PIndividual />
           </Route>
+
+          <Route path="/individualT1" exact>
+              <PIprincipalT1 />
+          </Route>
+
+          <Route path="/individualT2" exact>
+            <PIprincipalT2 />
+          </Route>
+
+          <Route path="/individualT3" exact>
+            <PIprincipalT3 />
+          </Route>
+
 
           <Route path="/individual1" exact>
             <PIprincipal1 />
