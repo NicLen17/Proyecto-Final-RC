@@ -57,7 +57,7 @@ export default function AgregadoProducto() {
                     <Row>
                         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
                             {alert && <Alert variant="danger">{alert}</Alert>}
-                            <Card style={{ height: "1080px"}} className="border registercontent">
+                            <Card style={{ height: "880px"}} className="border registercontent">
                                 <Card.Header className="text-white">
                                     <h4 className="mt-1">Ingresar Producto</h4>
                                 </Card.Header>
@@ -133,7 +133,7 @@ export default function AgregadoProducto() {
                                         <Form.Control
                                             style={{ height: "40px", width: "48px" }}
                                             type="color"
-                                            id="exampleColorInput"
+                                            
                                             defaultValue="#563d7c"
                                             title="Choose your color"
                                         />

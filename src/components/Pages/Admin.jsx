@@ -9,6 +9,7 @@ function Admin() {
             <Tabs fill variant="tabs" defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3 Tabsh">
                 <Tab className="colortab" eventKey="home" title="Productos">
                     <div>
+                    <AgregadoProducto/>
                     <Table striped bordered hover variant="dark">
                             <thead>
                                 <tr>
@@ -45,6 +46,7 @@ function Admin() {
                                 </tr>
                             </tbody>
                         </Table>
+                        
                     </div>
                 </Tab>
                 <Tab eventKey="profile" title="Usuarios">
@@ -56,6 +58,7 @@ function Admin() {
                                     <th>Sexo</th>
                                     <th>Email</th>
                                     <th>Ingreso</th>
+                                    <th>Funciones</th>
                                 </tr>
                             </thead>
                             <tbody>
