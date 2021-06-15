@@ -25,6 +25,9 @@ import AgregadoProducto from "./components/AgregadoProducto";
 import axios from "axios";
 import { Nav } from "react-bootstrap";
 import ScrollToTop from "./components/ScrollToTop";
+import PIprincipal1 from "./components/Pages/PIprincipal1";
+import PIprincipal2 from "./components/Pages/PIprincipal2";
+import PIprincipal3 from "./components/Pages/PIprincipal3";
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -80,6 +83,18 @@ export default function App() {
 
           <Route path="/individual" exact>
             <PIndividual />
+          </Route>
+
+          <Route path="/individual1" exact>
+            <PIprincipal1 />
+          </Route>
+
+          <Route path="/individual2" exact>
+            <PIprincipal2 />
+          </Route>
+          
+          <Route path="/individual3" exact>
+            <PIprincipal3 />
           </Route>
 
           <Route path="/admin" exact>

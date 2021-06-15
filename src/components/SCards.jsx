@@ -82,6 +82,7 @@ export default function Cards() {
           </Tab>
           <Tab className="tabss" eventKey="profile" title="Celulares">
             <div className="flexcard">
+              <a href="/individual1" style={{ textDecorationLine: "none" }}>
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img className="imgsa" src="https://images.samsung.com/is/image/samsung/p6pim/pe/sm-g780fzglltp/gallery/pe-galaxy-s20-fe-g780-357343-sm-g780fzglltp-thumb-327368871?$LazyLoad_Home_IMG$" alt="" />
@@ -95,6 +96,8 @@ export default function Cards() {
                   </p>
                 </div>
               </div>
+              </a>
+              <a href="/individual2" style={{ textDecorationLine: "none" }}>
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
@@ -108,6 +111,8 @@ export default function Cards() {
                   </p>
                 </div>
               </div>
+              </a>
+              <a href="/individual3" style={{ textDecorationLine: "none" }}>
               <div className="cardprincipal">
                 <div className="cardimg">
                   <img src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-12-64gb-purple-53017-mjn13ll-a?$device-lg$" alt="" />
@@ -121,6 +126,7 @@ export default function Cards() {
                   </p>
                 </div>
               </div>
+              </a>
             </div>
           </Tab>
           <Tab className="tabss" eventKey="contact" title="Accesorios">
