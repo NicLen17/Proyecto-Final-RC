@@ -3,6 +3,10 @@
   flex-wrap: wrap;
 }
 
+.contacto {
+  max-width: 100%;
+}
+
 .contactoimg {
   border-radius: 155px;
   max-width: 100%;
@@ -10,18 +14,22 @@
   box-shadow: 5px 5px 10px 3px #000000;
   margin-bottom: 20px;
 }
+
 .formulario {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
 }
 
 .labelform {
+  max-width: 100%;
   text-decoration: none;
   border: none;
   -webkit-box-shadow: 1px 2px 5px 1px #000000;
   box-shadow: 1px 2px 5px 2px #000000;
   transition: 0.5s;
+  border-radius: 25px;
 }
 
 .labelform:hover {
@@ -30,7 +38,7 @@
 }
 
 .redescontacto {
-  transition: all 0,5s ease-in-out;
+  transition: all 0,3s ease-in-out;
 }
 
 .redescontacto:hover {

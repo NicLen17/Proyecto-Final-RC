@@ -1,15 +1,12 @@
-.Tabsh {
+.tablacont {
     margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.Tabsh {
     background-color: rgb(255, 255, 255);
     font-size: 21px;
-<<<<<<< HEAD
-   
-     
-      }
-
-=======
 }
->>>>>>> f44780dcfc9c0d5a909e3ca17c5b4d7d9ba3cc82
 
 a{
     color: black;

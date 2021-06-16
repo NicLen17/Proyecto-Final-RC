@@ -1,7 +1,31 @@
+.backgroundoP {
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+    background: -webkit-linear-gradient(top, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #ADFFE3 97%, #94EBFF 100%);
+}
+
+.pcontainers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
 .pcontainer {
     background-color: rgb(255, 255, 255);
     width: 700px;
-    margin: auto;
+    max-width: 100%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    height: 845px;
+    border-radius: 50px;
+    -webkit-box-shadow: 5px 5px 10px 3px #000000;
+    box-shadow: 5px 5px 10px 3px #000000;
+}
+
+.pcontainerinfo {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
     max-width: 100%;
     margin-top: 120px;
     margin-bottom: 120px;

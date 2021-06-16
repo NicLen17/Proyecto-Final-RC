@@ -1,0 +1,13 @@
+.agregadocontent {
+    text-align: start;
+}
+
+.input {
+    background: none !important;
+}
+
+.selectsa {
+    justify-content: space-evenly !important;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}

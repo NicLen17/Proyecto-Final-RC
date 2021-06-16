@@ -7,7 +7,7 @@ const cors = require('cors');
 const usuarioRoute = require('./routes/usuarioRoute');
 const authRoute = require('./routes/authRoute');
 const productosRoute = require('./routes/productosRoute');
-// const memeRoute = require('./routes/memeRoute');
+const mensajesRouter = require('./routes/mensajesRoute');
 
 // Conectar a mongodb
 mongoose
@@ -35,8 +35,8 @@ app.use(morgan('dev'));
 //importar rutas
 app.use('/api/usuarios', usuarioRoute);
 app.use('/api/auth', authRoute);
-app.use('/api/productos', productosRoute);
-// app.use('/api/memes', memeRoute);
+app.use('/api/productos', productosRoute);  
+app.use('/api/mensajes', mensajesRouter)
 
 // puerto y arranque del servidor
 app.listen(4000, () => {

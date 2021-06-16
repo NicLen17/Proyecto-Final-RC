@@ -2,6 +2,8 @@ import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Footer.css";
 import imagen from "../img/imagen.png";
+
+
 function Footer() {
   return (
     <div className="footer d-flex flex-wrap justify-content-between ps-3 pt-4">

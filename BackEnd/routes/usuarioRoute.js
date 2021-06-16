@@ -9,6 +9,5 @@ const usuarioValidation = require('../validations/usuarioValidation');
 // Crear un usuario
 router.post('/', usuarioValidation.crearUsuario, usuarioController.crearUsuario);
 router.put('/', authMiddleware, usuarioController.updateUser);
-// router.get('/' , usuarioController.obtenerUsuario);
 
 module.exports = router;

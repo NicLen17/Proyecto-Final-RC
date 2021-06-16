@@ -29,14 +29,15 @@ const ProductosSchema = mongoose.Schema({
     color: {
         type: String,
         trim: true,
-        required: true
+        // required: true
     },
     stock: {
         type: Number,
         
     },
     img:{
-     
+        type: String,
+        trim:true,   
     },
     registro: {
         type: Date,
