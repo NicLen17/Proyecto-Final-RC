@@ -125,7 +125,7 @@ export default function Register({ setToken }) {
                   </InputGroup>
                 </Form.Group>
                 <Row>
-                  <Button className="registerbut" type="submit">
+                  <Button className="registerbut" variant="loginbut" type="submit">
                     Registrarme
                   </Button>
                 </Row>

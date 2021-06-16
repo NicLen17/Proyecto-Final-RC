@@ -1,12 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { Alert, Button, Form, Row } from "react-bootstrap";
+import { useHistory, Link } from "react-router-dom";
 import React, { Component } from "react";
-import './Login.css'
+import "./Login.css";
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
 
 export default function Login({ setUser, setToken }) {
   const [input, setInput] = useState({});
@@ -19,7 +18,6 @@ export default function Login({ setUser, setToken }) {
     const newInput = { ...input, [name]: value };
     setInput(newInput);
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -36,7 +34,7 @@ export default function Login({ setUser, setToken }) {
     }
   };
 
-  useEffect(() => {
+ useEffect(() => {
     Aos.init({ duration: 1000 });
 }, [])
 
@@ -51,7 +49,8 @@ export default function Login({ setUser, setToken }) {
         <h1>Ingresa!</h1>
         <Form.Group controlId="formBasicEmail" className="forminputconteiner">
           <Form.Label>Ingrese su Email</Form.Label>
-          <Form.Control className="loginlabel"
+          <Form.Control
+            className="loginlabel"
             name="email"
             onChange={handleChange}
             type="email"
@@ -62,7 +61,8 @@ export default function Login({ setUser, setToken }) {
 
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Ingrese su Password</Form.Label>
-          <Form.Control className="loginlabel"
+          <Form.Control
+            className="loginlabel"
             name="password"
             onChange={handleChange}
             type="password"
@@ -70,9 +70,14 @@ export default function Login({ setUser, setToken }) {
             required
           />
         </Form.Group>
-        <Button className="loginbut" variant="primary" type="submit">
+        <Button className="loginbut" variant="loginbut" type="submit">
           Enviar
         </Button>
+        <Row>
+          <Link className="mx-auto mt-2" to="/register">
+            ¿No tienes una cuenta? Registrate!
+          </Link>
+        </Row>
       </Form>
     </div>
   );

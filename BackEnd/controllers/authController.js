@@ -11,7 +11,7 @@ exports.register = async (req, res) => {
     }
 
     let { email, password } = req.body;
-    console.log('🚀 ~ file: authController.js ~ line 14 ~ exports.register= ~ req.body', req.body);
+    // console.log('🚀 ~ file: authController.js ~ line 14 ~ exports.register= ~ req.body', req.body);
 
     try {
         let usuarioEncontrado = await Usuario.findOne({ email });
@@ -100,7 +100,7 @@ exports.login = async (req, res) => {
 
 exports.getUser = async (req, res) => {
     try {
-        const usuario = await Usuario.findById(req.usuario.id).select('-password -__v');
+        const usuario = await Usuario.findById(req.usuario.id).select('-password -__v'); //en el select se pone con signo - los atributos que no debe traer
 
         res.send(usuario);
     } catch (error) {

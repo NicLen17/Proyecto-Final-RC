@@ -24,6 +24,12 @@ const UsuariosSchema = mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
+    category: {
+        type: String,
+    },
+    estado: {
+        type: String,
+    },
 });
 
 module.exports = mongoose.model('Usuario', UsuariosSchema);

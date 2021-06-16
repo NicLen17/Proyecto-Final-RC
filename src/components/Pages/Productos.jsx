@@ -4,10 +4,6 @@ import { Card, Button } from "react-bootstrap";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import { useEffect } from 'react'
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
-
 
 function Productos() {
 
@@ -82,68 +78,6 @@ function Productos() {
             </Card.Body>
           </Card>
         </div>
-      </div>
-
-      <div className="sidep">
-      <SideNav
-        onSelect={(selected) => {
-        }}
-      >
-        <SideNav.Toggle />
-        <SideNav.Nav defaultSelected="home">
-          <NavItem className="sidetext" eventKey="home">
-            <NavIcon>
-              <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText className="sidetext">
-              Productos 
-            </NavText>
-          </NavItem>
-          <NavItem eventKey="charts">
-            <NavIcon>
-              <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-              Categorias
-            </NavText>
-            <NavItem eventKey="charts/celulares">
-              <NavText>
-                Celulares
-              </NavText>
-            </NavItem>
-            <NavItem eventKey="charts/tablets">
-              <NavText>
-                Tablets
-              </NavText>
-            </NavItem>
-            <NavItem eventKey="charts/accesorios">
-              <NavText>
-                Accesorios
-              </NavText>
-            </NavItem>
-          </NavItem>
-          <NavItem eventKey="perfil">
-            <NavIcon>
-              <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-              Ayuda
-            </NavText>
-            <NavItem eventKey="charts/celulares">
-              <NavText>
-                <a className="sidea" href="perfil">
-                Perfil</a>
-              </NavText>
-            </NavItem>
-            <NavItem eventKey="charts/tablets">
-              <NavText>
-                <a className="sidea" href="contacto">
-                Contacto</a>
-              </NavText>
-            </NavItem>
-          </NavItem>
-        </SideNav.Nav>
-      </SideNav>
       </div>
       </div>
   );

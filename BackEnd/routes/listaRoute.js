@@ -6,11 +6,8 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const usuarioValidation = require('../validations/usuarioValidation');
 
 // api/usuarios
-// Crear un usuario
-router.post('/', usuarioValidation.crearUsuario, usuarioController.crearUsuario);
-router.put('/', authMiddleware, usuarioController.updateUser);
-router.get('/', usuarioController.obtenerUsuarios);
+// Trae usuario de la lista
 router.get('/', usuarioController.getUser);
-// router.get('/', () => {});
+router.put('/', authMiddleware, usuarioController.updateUser);
 
 module.exports = router;

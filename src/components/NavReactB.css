@@ -23,6 +23,11 @@
     -ms-transform: scale(1.25);
     -o-transform: scale(1.25);
     transform: scale(1.25);
+    transition: 0.3s;
+}
+
+.efecto-nav{
+    transition: 0.3s;
 }
 
 .efecto-nav:hover {
@@ -35,3 +40,38 @@
     transform: translateY(-6px);
     transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
 }
+
+.userbut {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: rgb(0, 0, 0) 5px solid;
+    margin-top: 20px;
+    width: 80px;
+    margin: auto;
+    transition: 0.5s;
+    margin-right: 10px;
+}
+
+.userbut2 {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: rgb(0, 0, 0) 5px solid;
+    margin-top: 20px;
+    width: 180px;
+
+    margin: auto;
+    transition: 0.5s;
+    height: 35px;
+}
+
+.userbut2:hover {
+    background-color: black !important;
+    color: white;
+    border-bottom: rgb(0, 0, 0) 5px solid;
+}
+
+
