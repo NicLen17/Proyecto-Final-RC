@@ -1,10 +1,8 @@
-import { Card } from 'react-bootstrap'
-import React from 'react'
 import './SCards.css'
 import { Tabs, Tab } from 'react-bootstrap'
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 export default function Cards() {
 

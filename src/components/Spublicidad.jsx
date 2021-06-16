@@ -1,4 +1,3 @@
-import React from 'react'
 import './Spublicidad.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,7 +9,7 @@ import SwiperCore, { Pagination } from 'swiper/core';
 import { Autoplay, Navigation } from 'swiper/core';
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 
 // install Swiper modules
@@ -21,7 +20,7 @@ export default function Spublicidad() {
 
 
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 900 });
     }, [])
 
     return (
