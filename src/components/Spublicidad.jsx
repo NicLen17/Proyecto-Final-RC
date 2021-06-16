@@ -29,7 +29,7 @@ export default function Spublicidad() {
             <div data-aos="fade-down-right" className="titulo2">
                 <p>Aprovecha nuestras ofertas mensuales</p>
             </div>
-            <Swiper data-aos="flip-left" loop={true} autoplay={false} slidesPerView={1} spaceBetween={0} pagination={{
+            <Swiper data-aos="flip-left" loop={true} autoplay={true} slidesPerView={1} spaceBetween={0} pagination={{
                 "clickable": true
             }} className="mySwiper">
                 <SwiperSlide>
