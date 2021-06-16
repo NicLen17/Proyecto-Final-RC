@@ -3,15 +3,12 @@ import axios from "axios";
 import { Tabs, Tab, Table } from 'react-bootstrap'
 import AgregadoProducto from '../AgregadoProducto'
 import './Admin.css'
-import Profile from "./Perfil";
-import Register from "./Productos";
-import Contacto from "../Contacto";
 
 function Admin() {
     const [products, setProducts] = useState([])
     const [mensajes, setMensajes] = useState([])
     const [lusers, setLusers] = useState([]);
-    
+
     useEffect(() => {
         const productos = async () => {
             const { data } = await axios.get('/productos');
@@ -25,29 +22,29 @@ function Admin() {
         const getListaUsuarios = async () => {
             const { data } = await axios.get("usuarios");
             setLusers(data);
-          };
+        };
         productos();
         mensajes();
         getListaUsuarios();
 
-             
-          
-    }, []);
-    
 
-    
+
+    }, []);
+
+
+
     const handleSubmit_activo = async (event) => {
-      // const [usersactual, setUsersactual] = useState([]);
-  
-      // useEffect(() => {
-      //   const getUsuarioactual = async () => {
-      //     const { data } = await axios.get("usuarios");
-      //     setUsersactual(data);
-      //   };
-  
-      //   getUsuarioactual();
-      // }, []);
-      console.log("Deshabilitar/HAbilitar Usuario");
+        // const [usersactual, setUsersactual] = useState([]);
+
+        // useEffect(() => {
+        //   const getUsuarioactual = async () => {
+        //     const { data } = await axios.get("usuarios");
+        //     setUsersactual(data);
+        //   };
+
+        //   getUsuarioactual();
+        // }, []);
+        console.log("Deshabilitar/HAbilitar Usuario");
     };
 
     return (
@@ -88,37 +85,37 @@ function Admin() {
                     </Tab>
                     <Tab eventKey="profile" title="Usuarios">
                         <div>
-                        <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Teléfono</th>
-                  <th>Email</th>
-                  <th>Funciones</th>
-                </tr>
-              </thead>
+                            <Table striped bordered hover variant="dark">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Teléfono</th>
+                                        <th>Email</th>
+                                        <th>Funciones</th>
+                                    </tr>
+                                </thead>
 
-              <tbody>
-                {lusers.map((usuarios) => (
-                  <tr>
-                    <td>{usuarios.nombre}</td>
-                    <td>{usuarios.celular}</td>
-                    <td>{usuarios.email}</td>
-                    <td>
-                      <button
-                        onClick={handleSubmit_activo}
-                        type="button"
-                        class="btn btn-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      >
-                        Habilitar/Deshab.
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+                                <tbody>
+                                    {lusers.map((usuarios) => (
+                                        <tr>
+                                            <td>{usuarios.nombre}</td>
+                                            <td>{usuarios.celular}</td>
+                                            <td>{usuarios.email}</td>
+                                            <td>
+                                                <button
+                                                    onClick={handleSubmit_activo}
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                >
+                                                    Habilitar/Deshab.
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </Table>
                         </div>
                     </Tab>
                     <Tab eventKey="contact" title="Mensajeria">

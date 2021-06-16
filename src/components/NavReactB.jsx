@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
+import { Nav, Navbar, Button } from "react-bootstrap";
 import "./NavReactB.css";
 import { NavLink } from "react-router-dom";
 
@@ -11,22 +11,23 @@ export default function NavReactB({ userName, logout }) {
         <img
           className="img-logo"
           src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png"
+          alt="imagen"
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav className="mr-auto linknav">
-          <Nav.Link href="/" className="efecto-nav">
+          <Nav.Link to="/" exact as={NavLink} className="efecto-nav">
             Inicio
           </Nav.Link>
           <Nav.Link
-            href="productos"
+            to="/productos" exact as={NavLink}
             activeClassName="active"
             className="efecto-nav"
           >
             Productos
           </Nav.Link>
-          <Nav.Link href="contacto" className="efecto-nav">
+          <Nav.Link to="/contacto" exact as={NavLink} className="efecto-nav">
             Contacto
           </Nav.Link>
         </Nav>
@@ -44,18 +45,18 @@ export default function NavReactB({ userName, logout }) {
       <Nav className="">
         {userName && (
           <Nav.Link href="perfil" className="contenedor-icon">
-            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" />{" "}
+            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor"  alt="imagen"/>{" "}
           </Nav.Link>
         )}
 
         {!userName && (
-          <Nav.Link href="login" className="contenedor-icon">
-            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" />{" "}
+          <Nav.Link to="/login" exact as={NavLink} className="contenedor-icon">
+            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" alt="imagen" />{" "}
           </Nav.Link>
         )}
 
-        <Nav.Link className="contenedor-icon">
-          <img src="https://icongr.am/material/cart.svg?size=35&color=currentColor" />{" "}
+        <Nav.Link to="/carrito" exact as={NavLink} className="contenedor-icon">
+          <img src="https://icongr.am/material/cart.svg?size=35&color=currentColor"  alt="imagen"/>{" "}
         </Nav.Link>
       </Nav>
     </Navbar>

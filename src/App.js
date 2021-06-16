@@ -8,8 +8,6 @@ import Spublicidad from "./components/Spublicidad";
 import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
-  Redirect,
-  NavLink,
   Route,
   Switch,
 } from "react-router-dom";
@@ -21,9 +19,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Perfil from "./components/Pages/Perfil";
 import PIndividual from "./components/Pages/PIndividual";
-import AgregadoProducto from "./components/AgregadoProducto";
 import axios from "axios";
-import { Nav } from "react-bootstrap";
 import ScrollToTop from "./components/ScrollToTop";
 import PIprincipal1 from "./components/Pages/PIprincipal1";
 import PIprincipal2 from "./components/Pages/PIprincipal2";

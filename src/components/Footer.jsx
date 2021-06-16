@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import "./Footer.css";
 import imagen from "../img/imagen.png";
 
@@ -11,19 +11,16 @@ function Footer() {
         <div className="links text-black pe-5">
           <h5>Phone Pixels</h5>
           <ul className="pt-2 pb-2">
-            <Nav.Link href="#link" className="efecto-nav">
-              Sobre nosotros
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
+            <Nav.Link href="contacto" className="efecto-nav">
               Contacto
             </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
+            <Nav.Link href="productos" className="efecto-nav">
               Celulares
             </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
+            <Nav.Link href="register" className="efecto-nav">
               Registrarse
             </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
+            <Nav.Link href="login" className="efecto-nav">
               Log In
             </Nav.Link>
           </ul>
@@ -79,14 +76,14 @@ function Footer() {
             />
             Phone Pixels
           </h5>
-          <div className="d-flex mb-4">
+          <div className="d-flex m-4">
             <img
               src="https://icongr.am/fontawesome/map-marker.svg?size=30&color=0d41fd"
               alt="Ubicacion"
             />
             <li className="ps-2">España 1450</li>
           </div>
-          <div className="d-flex mb-4">
+          <div className="d-flex m-4">
             <img
               src="https://icongr.am/fontawesome/whatsapp.svg?size=30&color=00f51d"
               alt="whatapps"

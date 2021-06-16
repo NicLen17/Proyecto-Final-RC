@@ -11,11 +11,11 @@ import {
   Alert,
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import './Register.css'
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
+
 
 
 
@@ -80,6 +80,8 @@ export default function Register({ setToken }) {
                     type="text"
                     placeholder="Nombre y Apellido"
                     className="registerlabel"
+                    maxLength="25"
+                    minLength="6"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>

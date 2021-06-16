@@ -34,7 +34,7 @@ function PIndividual() {
                                 Micrófono flexible y desmontable, con filtro pop de 4 mm para captar tu voz de forma clara y definida. Perfecto para comunicarte en línea en tus juegos favoritos, o en tus transmisiones de streaming.
                             </p>
                         </div>
-                        <Button className="btncompra" > Agregar al carrito </Button>
+                        <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                     </div>
                 </div>
             </div>

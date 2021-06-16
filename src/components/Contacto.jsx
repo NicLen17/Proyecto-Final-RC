@@ -4,7 +4,7 @@ import './Sabout.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
-import SwiperCore, { Pagination, Autoplay, Navigation  } from 'swiper/core';
+import SwiperCore, { Pagination, Autoplay, Navigation } from 'swiper/core';
 import './Contacto.css'
 import Aos from 'aos'
 import "aos/dist/aos.css"
@@ -19,7 +19,7 @@ export default function Contacto() {
   const [validated, setValidated] = useState(false);
   const [input, setInput] = useState({});
   const [alert, setAlert] = useState("");
-  const [alertSuccess ,setalertSuccess] = useState("")
+  const [alertSuccess, setalertSuccess] = useState("")
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -34,9 +34,9 @@ export default function Contacto() {
     }
     try {
       const { data } = await axios.post("/mensajes", input);
-     formulario.reset()
+      formulario.reset()
     } catch (error) {
-           error.response.data.msg
+      error.response.data.msg
         ? setAlert(error.response.data.msg)
         : setAlert("este error");
     }
@@ -49,7 +49,7 @@ export default function Contacto() {
     const mensaje = { ...input, [name]: value };
     setInput(mensaje);
   }
-  
+
   return (
     <div data-aos="fade-down-right">
       <div className="about">
@@ -91,26 +91,26 @@ export default function Contacto() {
                     height: "500px",
                     maxWidth: "100%"
                   }}
-                  src="https://485758.smushcdn.com/622655/wp-content/uploads/2019/07/cold-emailing.jpg?lossy=1&strip=1&webp=1" alt=""
+                  src="https://485758.smushcdn.com/622655/wp-content/uploads/2019/07/cold-emailing.jpg?lossy=1&strip=1&webp=1" alt="no disponile"
                 />
                 <div
                   className="d-flex ml-3"
                   style={{ justifyContent: "space-evenly", maxWidth: "100%" }}
                 >
-                  <a className="redescontacto" href="">
+                  <a className="redescontacto" href="facebook.com">
                     <img
                       src="https://icongr.am/fontawesome/facebook-official.svg?size=60&color=1002cf"
-                      alt=""
+                      alt="no disponile"
                     />
                   </a>
-                  <a className="redescontacto" href="">
-                    <img src="https://icongr.am/fontawesome/instagram.svg?size=60&color=cf0298" alt="" />
+                  <a className="redescontacto" href="https://www.instagram.com/">
+                    <img src="https://icongr.am/fontawesome/instagram.svg?size=60&color=cf0298" alt="imagen no disponile" />
                   </a>
-                  <a className="redescontacto" href="">
-                    <img src="https://icongr.am/fontawesome/google.svg?size=60&color=cf2102" alt="" />
+                  <a className="redescontacto" href="https://www.google.com/">
+                    <img src="https://icongr.am/fontawesome/google.svg?size=60&color=cf2102" alt="imagen no disponile" />
                   </a>
-                  <a className="redescontacto" href="">
-                    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=60&color=02cf35" alt="" />
+                  <a className="redescontacto" href="contacto">
+                    <img src="https://icongr.am/fontawesome/whatsapp.svg?size=60&color=02cf35" alt="imagen no disponile" />
                   </a>
                 </div>
               </div>
@@ -118,9 +118,9 @@ export default function Contacto() {
                 className="p-5 mx-auto"
                 style={{ textAlign: "left", width: "700px" }}
               >{alert && <Alert variant="danger">{alert}</Alert>}
-              {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
+                {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
                 <Form noValidate validated={validated} onSubmit={(e) => handleSubmit(e)}>
-                
+
                   <Form.Group
                     style={{ marginTop: "15px" }}
                     controlId="exampleForm.ControlInput1"
@@ -136,7 +136,7 @@ export default function Contacto() {
                     style={{ marginTop: "15px" }}
                     controlId="exampleForm.ControlInput1"       >
                     <Form.Label>Correo electronico</Form.Label>
-                    <Form.Control className="labelform" type="email" placeholder="Correo@example.com"  required name="email" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" type="email" placeholder="Correo@example.com" required name="email" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere correo Electronico!
                     </Form.Control.Feedback>
@@ -147,7 +147,7 @@ export default function Contacto() {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Telefono</Form.Label>
-                    <Form.Control className="labelform" minLenght="8" maxLength="10" type="number" placeholder="codigo de area + numero sin 15"  required name="tel" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" minLenght="8" maxLength="10" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere telefono!
                     </Form.Control.Feedback>
@@ -171,6 +171,7 @@ export default function Contacto() {
                     <img
                       src="https://icongr.am/octicons/comment.svg?size=25&color=ffffff"
                       className="mr-3"
+                      alt="imagen no disponible"
                     />
                     Enviar
                   </Button>

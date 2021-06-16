@@ -21,7 +21,7 @@ function PIndividual() {
                     </div>
                     <div className="contenido1">
                         <h2>Iphone 11 PRO
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Celulares</a></p>
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="celulares">Celulares</a></p>
                         </h2>
                         <h2>$150.000,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
