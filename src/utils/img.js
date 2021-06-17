@@ -1,6 +1,6 @@
 export function getBase64(img) {
     return new Promise((resolve, reject) => {
-        const reader = new FileReader();
+        const reader = new FileReader([]);
         reader.addEventListener('load', () => resolve(reader.result));
         reader.readAsDataURL(img);
     });

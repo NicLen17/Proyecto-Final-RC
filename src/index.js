@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 axios.defaults.baseURL = "http://localhost:4000/api";
+
 // axios.defaults.headers.common["X-Api-Key"] = "bb4af6c6f5c34c9ea5feb50daa586299";
 ReactDOM.render(
   <React.StrictMode>

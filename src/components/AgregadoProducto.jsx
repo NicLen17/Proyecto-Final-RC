@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import './AgregadoProducto.css'
 import axios from "axios";
 import {
@@ -16,13 +16,13 @@ import "aos/dist/aos.css"
 import { getBase64 } from '../utils/img';
 
 
-export default function AgregadoProducto({productos}) {
+export default function AgregadoProducto({ productos }) {
     const [validated, setValidated] = useState(false);
     const [input, setInput] = useState({});
     const [alert, setAlert] = useState("");
-    const [img, setImg] = useState("")
-    const [alertSuccess ,setalertSuccess] = useState("")
-    
+    const [imagenes, setImagenes] = useState({})
+    const [alertSuccess, setalertSuccess] = useState("")
+    console.log(input);
     const handleSubmit = async (event) => {
         const formulario = event.currentTarget;
         event.preventDefault();
@@ -33,7 +33,7 @@ export default function AgregadoProducto({productos}) {
         try {
             await axios.post("/productos", input);
             formulario.reset();
-           
+
         } catch (error) {
             error.response.data.msg
                 ? setAlert(error.response.data.msg[0].msg)
@@ -44,16 +44,20 @@ export default function AgregadoProducto({productos}) {
         setValidated(false);
     };
     const onChangeImg = async (e) => {
-        const img = e.target.files[0];
-        const base64 = await getBase64(img);
-        const imagen = { img: base64 };
-        setImg(imagen);
+        const imagenesArray = [];
+        const imagenesInput = e.target.files;
+        for (let i = 0; i < imagenesInput.length; i++) {
+            const base64 = await getBase64(imagenesInput[i]);
+            imagenesArray.push(base64);
+            const iman = {img: imagenesArray}
+            setImagenes(iman);
+        };
     }
 
     const handleChange = (e) => {
         setAlert("");
         const { name, value } = e.target;
-        const productoInput = { ...input, ...img, [name]: value };
+        const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase()};
         setInput(productoInput);
     };
 
@@ -66,7 +70,7 @@ export default function AgregadoProducto({productos}) {
                         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
                             {alert && <Alert variant="danger">{alert}</Alert>}
                             {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                            <Card style={{ height: "880px"}} className="border registercontent">
+                            <Card style={{ height: "880px" }} className="border registercontent">
                                 <Card.Header className="text-white">
                                     <h4 className="mt-1">Ingresar Producto</h4>
                                 </Card.Header>
@@ -136,7 +140,11 @@ export default function AgregadoProducto({productos}) {
                                         </Form.Group>
                                         <Form.Group controlId="formFile" className="mb-3">
                                             <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
-                                            <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
+                                            <Form.Group controlId="formFileMultiple" className="mb-3" onChange={(e) => onChangeImg(e)}>
+                                                <Form.Label>Multiple files input example</Form.Label>
+                                                <Form.Control type="file" multiple />
+                                            </Form.Group>
+                                            {/* <Form.Control required type="file" onChange={(e) => onChangeImg(e)} /> */}
                                             <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
                                                 <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px" }} placeholder="Agregar imagen del producto mediante URL" />
                                             </Form.Group>

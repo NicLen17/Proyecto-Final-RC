@@ -35,10 +35,9 @@ const ProductosSchema = mongoose.Schema({
         type: Number,
         
     },
-    img:{
-        type: String,
-        trim:true,   
-    },
+    img:[{
+        type: String
+    }],
     registro: {
         type: Date,
         default: Date.now(),

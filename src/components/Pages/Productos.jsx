@@ -28,7 +28,7 @@ function Productos() {
               <Card className="cardsp">
                 <Card.Img className="cardpimg"
                   variant="top"
-                  src={prod.img}                />
+                  src={prod.img[0]}/>
                 <p>{prod.marca}</p>
                 <p>{prod.modelo}</p>
                 <Card.Body>

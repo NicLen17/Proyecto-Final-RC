@@ -50,7 +50,6 @@ exports.updateProduct = async (req, res) => {
 
 exports.getproduct = async (req , res) =>{
     try{
-        console.log("aca toy")
         const productoEncontrado = await Productos.findById(req.params.id);
         res.json(productoEncontrado);
     }catch (error){
