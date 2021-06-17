@@ -6,14 +6,13 @@
     margin-bottom: 50px;
 }
 
-.publicidad { 
+.publicidad {
     background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 50px;
 }
-
 
 .ofertas img {
     margin-right: 20px;
@@ -30,6 +29,32 @@
     margin-bottom: 100px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1603px) {
+    .ofertas img {
+        height: 725px;
+    }
+}  
+
+@media only screen and (max-width: 760px) {
+    .ofertas img {
+        height: 700px;
+    }
+}   
+
+@media only screen and (max-width: 665px) {
+    .ofertas img {
+        height: 650px;
+    }
+}   
+
+@media only screen and (max-width: 455px) {
+    .ofertas img {
+        height: 550px;
+    }
+}   
+
+
 
 .ofertas2 img {
     background-color: white;
@@ -81,7 +106,7 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    -webkit-box-shadow: 5px 5px 20px 5px #000000; 
+    -webkit-box-shadow: 5px 5px 20px 5px #000000;
     box-shadow: 5px 5px 20px 5px #000000;
 }
 
@@ -97,8 +122,4 @@
     transition: 0.3s;
     cursor: pointer;
 }
-
-
-
-
 

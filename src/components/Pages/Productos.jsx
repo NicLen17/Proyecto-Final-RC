@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import axios from "axios"
+import Filtro from '../Filtro'
 
 function Productos() {
   const [products, setProducts] = useState([])
@@ -21,14 +22,14 @@ function Productos() {
   return (
     <div className="sideynav">
       <div data-aos="fade-up" className="productoscont" >
+      <Filtro/>
         <div className="flexcardp">
-        {products.map((prod) => (
-          <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
-           
-              <Card className="cardsp">
+          {products.map((prod) => (
+            <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
+              <Card data-aos="fade-up" className="cardsp">
                 <Card.Img className="cardpimg"
                   variant="top"
-                  src={prod.img}                />
+                  src={prod.img} />
                 <p>{prod.marca}</p>
                 <p>{prod.modelo}</p>
                 <Card.Body>
@@ -40,9 +41,9 @@ function Productos() {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              </NavLink>
-            ))}
-         
+            </NavLink>
+          ))}
+
         </div>
       </div>
     </div>

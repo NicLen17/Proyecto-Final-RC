@@ -24,7 +24,7 @@ function Sabout() {
             autoplay={true}
             loop={true}
             slidesPerView={1}
-            spaceBetween={30}
+            spaceBetween={0}
             pagination={{
               clickable: true,
             }}
