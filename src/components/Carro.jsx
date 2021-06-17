@@ -6,10 +6,9 @@ import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { EffectFade, Navigation, Pagination } from "swiper/core";
 import "./Carro.css";
 import { Autoplay } from "swiper/core";
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
 
 
 SwiperCore.use([EffectFade, Navigation, Pagination]);

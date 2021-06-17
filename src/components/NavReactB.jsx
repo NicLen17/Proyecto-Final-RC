@@ -10,23 +10,24 @@ export default function NavReactB({ userName, logout }) {
       <Navbar.Brand href="#home">
         <img
           className="img-logo"
-          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png" alt="logo empresa"
+          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png"
+          alt="imagen"
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav className="mr-auto linknav">
-          <Nav.Link href="/" className="efecto-nav">
+          <Nav.Link to="/" exact as={NavLink} className="efecto-nav">
             Inicio
           </Nav.Link>
           <Nav.Link
-            href="productos"
-            activeclassname="active"
+            to="/productos" exact as={NavLink}
+            activeClassName="active"
             className="efecto-nav"
           >
             Productos
           </Nav.Link>
-          <Nav.Link href="contacto" className="efecto-nav">
+          <Nav.Link to="/contacto" exact as={NavLink} className="efecto-nav">
             Contacto
           </Nav.Link>
         </Nav>
@@ -44,18 +45,18 @@ export default function NavReactB({ userName, logout }) {
       <Nav className="">
         {userName && (
           <Nav.Link href="perfil" className="contenedor-icon">
-            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" alt="iconoperfil"/>{" "}
+            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor"  alt="imagen"/>{" "}
           </Nav.Link>
         )}
 
         {!userName && (
-          <Nav.Link href="login" className="contenedor-icon">
-            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" alt="iconologin"/>{" "}
+          <Nav.Link to="/login" exact as={NavLink} className="contenedor-icon">
+            <img src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor" alt="imagen" />{" "}
           </Nav.Link>
         )}
 
-        <Nav.Link className="contenedor-icon">
-          <img src="https://icongr.am/material/cart.svg?size=35&color=currentColor" alt="icono"/>{" "}
+        <Nav.Link to="/carrito" exact as={NavLink} className="contenedor-icon">
+          <img src="https://icongr.am/material/cart.svg?size=35&color=currentColor"  alt="imagen"/>{" "}
         </Nav.Link>
       </Nav>
     </Navbar>

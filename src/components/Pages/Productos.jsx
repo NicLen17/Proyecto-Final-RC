@@ -1,6 +1,6 @@
-import React , { useEffect , useState }from "react";
+import React, { useEffect, useState } from "react";
 import "./Productos.css";
-import { Card} from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Aos from 'aos'
 import "aos/dist/aos.css"
@@ -17,36 +17,33 @@ function Productos() {
     productos();
     Aos.init({ duration: 1000 });
   }, [])
-    
+
   return (
     <div className="sideynav">
-     <div data-aos="fade-up" className="productoscont" >
-      <div className="flexcardp"> 
-        {products.map((prod) => (
-            
-          <Card className="cardsp" style={{ width: "18rem" }} >
-            <Card.Img className="cardpimg"
-              variant="top"
-              src={prod.img}
-            />
-            <Card.Body>
-              <Card.Title>${prod.price}
-              </Card.Title>
-              <Card.Text className="caracteristicas">
+      <div data-aos="fade-up" className="productoscont" >
+        <div className="flexcardp">
+          <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
+            {products.map((prod) => (
+              <Card className="cardsp">
+                <Card.Img className="cardpimg"
+                  variant="top"
+                  src={prod.img}                />
                 <p>{prod.marca}</p>
                 <p>{prod.modelo}</p>
-                <p>{prod.descripcion}</p>
-              </Card.Text>
-            </Card.Body>
-            <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
-              ver mas
-            </NavLink>
-          </Card>
-         
-        ))}
+                <Card.Body>
+                  <Card.Title className="cardtitulo">${prod.price}</Card.Title>
+                  <Card.Text className="caracteristicas">
+                    <p style={{ maxLines: "3" }}>
+                      {prod.descripcion}
+                    </p>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
+          </NavLink>
+        </div>
       </div>
-      </div>
-      </div>
+    </div>
   );
 }
 

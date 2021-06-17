@@ -6,8 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper/core";
-import { Autoplay, Navigation } from "swiper/core";
+import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper/core";
 
 // install Swiper modules
 SwiperCore.use([Pagination]);

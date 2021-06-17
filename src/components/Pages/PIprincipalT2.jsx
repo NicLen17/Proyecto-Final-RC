@@ -21,7 +21,7 @@ function PIndividual() {
                     </div>
                     <div className="contenido1">
                         <h2>Tablet Alcatel 1t
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Tablets</a></p>
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="tablets">Tablets</a></p>
                         </h2>
                         <h2>$17.999,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>

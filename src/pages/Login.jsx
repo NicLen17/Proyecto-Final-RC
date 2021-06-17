@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 import { Alert, Button, Form, Row } from "react-bootstrap";
 import { useHistory, Link } from "react-router-dom";
-import React, { Component } from "react";
+import React from "react";
 import "./Login.css";
 import Aos from 'aos'
 import "aos/dist/aos.css"

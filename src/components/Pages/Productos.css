@@ -8,42 +8,36 @@
     margin-bottom: 445px;
 }
 
-.sidenav---sidenav---_2tBP {
-    margin-top: 60px;
-    top: 0;
-    left: 0;
-    min-width: 64px;
-    background: #000000 !important;
-    -webkit-transition: min-width 0.2s;
-    -o-transition: min-width 0.2s;
-    transition: min-width 0.2s;
-}
-
-.sidea {
-    text-decoration: none !important;
-    color: white;
-}
-
-.sidea:hover {
-    color: white;
-}
-
 .flexcardp {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
+    text-decoration: none;
 }
 
 .cardsp {
     margin-right: 60px;
     margin-left: 60px;
-    margin-top: 50px;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
-    border-radius: 25px !important;
-    transition: 0.2s;
+    border-radius: 15px !important;
+    transition: 0.4s;
     width: 320px !important;
+}
+
+@media only screen and (max-width: 450px) {
+    .cardsp {
+        max-width: 250px;
+        max-height: 350px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}   
+
+.cardtitulo {
+    margin-top: 5px;
+    border-bottom: solid rgb(175, 174, 174) 0.5px;
 }
 
 .cardsp:hover {
@@ -52,9 +46,19 @@
 }
 
 .cardpimg {
-    border-radius: 25px !important;
+    border-radius: 15px !important;
     border-bottom: 3px gray solid;
+    width: 319px;
+    height: 320px;
 }
+
+
+@media only screen and (max-width: 450px) {
+    .cardpimg {
+        max-width: 249px;
+        max-height: 250px;
+    }
+}   
 
 .carritobut:hover {
     color: white;

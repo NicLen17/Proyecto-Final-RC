@@ -3,9 +3,6 @@ import axios from "axios";
 import { Tabs, Tab, Table, Alert, Modal, Button , Form , Row , Container , Col , Card ,InputGroup} from 'react-bootstrap'
 import AgregadoProducto from '../AgregadoProducto'
 import './Admin.css'
-import Profile from "./Perfil";
-import Register from "./Productos";
-import Contacto from "../Contacto";
 
 function Admin() {
     const [products, setProducts] = useState([])

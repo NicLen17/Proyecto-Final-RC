@@ -21,7 +21,7 @@ function PIndividual() {
                     </div>
                     <div className="contenido1">
                         <h2>Memo Pad 10
-                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="">Tablets</a></p>
+                            <p>Categoria: <a style={{ textDecorationLine: "none" }} href="tablets">Tablets</a></p>
                         </h2>
                         <h2>$13.999,00</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
