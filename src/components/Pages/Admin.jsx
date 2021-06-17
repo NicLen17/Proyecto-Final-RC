@@ -179,8 +179,6 @@ function Admin() {
                     </Tab>
                 </Tabs>
             </div>
-
-
             {products.map((productEsp) => (
                 <Modal
                     show={show}

@@ -22,6 +22,25 @@
   max-width: 100%;
 }
 
+.msgbut {
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: rgb(0, 0, 0) 5px solid;
+    margin-top: 20px;
+    width: 180px;
+    -webkit-box-shadow: 5px 5px 10px 3px #000000;
+    box-shadow: 5px 5px 10px 3px #000000;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.msgbut:hover {
+    background-color: black;
+    color: white;
+    border-bottom: rgb(255, 255, 255) 5px solid;
+}
+
 .labelform {
   max-width: 100%;
   text-decoration: none;

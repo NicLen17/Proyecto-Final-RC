@@ -61,10 +61,10 @@ export default function Contacto() {
             <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={0} pagination={{
               "clickable": true
             }} className="mySwiper">
-              <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/lanzamiento-samsung-galaxy-s21-evoucher-claro-desktop.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img className="slogan" src="https://doto.vteximg.com.br/arquivos/samsung-galaxy-s20-fe-ghosting.png" alt="" /></SwiperSlide>
-              <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/samsung-galaxy-a72-claro-tienda-desktop.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img className="slogan" src="https://personal.vteximg.com.br/arquivos/h1-samsung-tienda-desktop02.png?v=637432871810700000" alt="" /></SwiperSlide>
+              <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/lanzamiento-samsung-galaxy-s21-evoucher-claro-desktop.jpg" alt="slogan" /></SwiperSlide>
+              <SwiperSlide><img className="slogan" src="https://doto.vteximg.com.br/arquivos/samsung-galaxy-s20-fe-ghosting.png" alt="slogan" /></SwiperSlide>
+              <SwiperSlide><img className="slogan" src="https://tienda.claro.com.ar/wcsstore/Claro/Attachment/samsung-galaxy-a72-claro-tienda-desktop.jpg" alt="slogan" /></SwiperSlide>
+              <SwiperSlide><img className="slogan" src="https://personal.vteximg.com.br/arquivos/h1-samsung-tienda-desktop02.png?v=637432871810700000" alt="slogan" /></SwiperSlide>
             </Swiper>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function Contacto() {
                     </Form.Control.Feedback>
                     <Form.Control.Feedback>Recibido</Form.Control.Feedback>
                   </Form.Group>
-                  <Button
+                  <Button className="msgbut"
                     type="submit"
                     style={{ marginTop: "10px", width: "100%" }}
                   >
@@ -177,7 +177,7 @@ export default function Contacto() {
                   </Button>
                 </Form>
                 <br />
-                <p style={{ fontSize: "12px", textAlign: "justify" }}>
+                <p className="msgtext" style={{ fontSize: "12px", textAlign: "justify" }}>
                   Phone Pixels te informa que los datos de caracter personal que
                   proporciones rellenando este formulario seran tratados de manera
                   confidencial. La finalidad de la recogida y tratamiento de los

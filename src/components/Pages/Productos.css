@@ -19,17 +19,20 @@
 .cardsp {
     margin-right: 60px;
     margin-left: 60px;
+    margin-top: 20px;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     border-radius: 15px !important;
     transition: 0.4s;
     width: 320px !important;
+    max-height: 550px;
+    min-height: 550px;
 }
 
 @media only screen and (max-width: 450px) {
     .cardsp {
         max-width: 250px;
-        max-height: 350px;
+        max-height: 350px;  
         margin-right: 0px;
         margin-left: 0px;
     }

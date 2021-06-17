@@ -13,7 +13,7 @@
 .slogan {
     border-top: black 5px solid;
     border-bottom: black 5px solid;
-    max-width: 100%;
+    width: 100% !important;
     max-height: 380px;
     min-height: 380px;
     margin-bottom: 100px;
