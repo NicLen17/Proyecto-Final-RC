@@ -12,6 +12,11 @@
     flex-direction: row;
 }
 
+@media only screen and (max-width: 875px) {
+    .pcontainer {
+        justify-content: center;
+    }
+}
 
 .pimgcont {
     -webkit-box-shadow: 0px 0px 37px 11px rgba(0, 0, 0, 0.61);
@@ -24,9 +29,56 @@
 
 .imgpro {
     border-radius: 30px;
-    width: 100%;
+    max-width: 100%;
     width: 500px;
     height: 500px;
+}
+
+@media only screen and (max-width: 995px) {
+    .pimgcont {
+        text-align: start;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .pimgcont {
+        max-width: 450px;
+        max-width: 450px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .pimgcont {
+        max-width: 350px !important;
+        max-height: 350px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .pimgcont {
+        max-width: 250px !important;
+        max-height: 250px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .imgpro {
+        max-width: 350px !important;
+        max-height: 350px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .imgpro {
+        max-width: 250px !important;
+        max-height: 250px;
+    }
 }
 
 .contenido1 {
@@ -37,6 +89,21 @@
     justify-content: space-evenly;
     text-align: start;
 }
+
+@media only screen and (max-width: 995px) {
+    .contenido1 {
+        margin-top: 30px;
+        margin-right: 100px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .contenido1 {
+        margin-top: 30px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}   
 
 .imgval {
     width: 20px;
@@ -61,6 +128,18 @@
     border-bottom: rgb(0, 0, 0) 5px solid;
 }
 
+@media only screen and (max-width: 1500px) {
+    .btncompra {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .btncompra {
+        margin: auto;
+    }
+}
+
 .selectunit {
     color: rgb(0, 0, 0);
     border: none;
@@ -75,4 +154,3 @@
     background-color: black;
     color: white;
 }
-
