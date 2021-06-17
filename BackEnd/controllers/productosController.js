@@ -38,12 +38,32 @@ exports.getProducts = async (req ,res) => {
     }
 }
 
-// exports.updateUser = async (req, res) => {
-//     try {
-//         const { producto, body } = req;
-//         const updatedUser = await Usuario.findByIdAndUpdate(producto.id, body, { new: true });
-//         res.send(updatedUser);
-//     } catch (error) {
-//         res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
-//     }
-// };
+exports.updateProduct = async (req, res) => {
+    try {
+        const { body } = req;    
+        const updatedProducto = await Productos.findByIdAndUpdate(req.body.id, body, { new: true });
+        res.send(updatedProducto);
+    } catch (error) {
+        res.status(400).send({ msg: 'Hubo un error al actualizar el producto' });
+    }
+};  
+
+exports.getproduct = async (req , res) =>{
+    try{
+        console.log("aca toy")
+        const productoEncontrado = await Productos.findById(req.params.id);
+        res.json(productoEncontrado);
+    }catch (error){
+        res.status(400).send({ msg: 'Hubo un error al traer el producto' });
+    }
+}
+
+exports.removeProduct = async (req , res) => {
+          try{
+        console.log(req.params.id);
+        await Productos.findByIdAndDelete(req.params.id)
+        res.send("Producto Eliminado");
+    }catch(error) {
+        res.status(400).send({ msg: 'Hubo un error al eliminar el producto' });
+    }
+}

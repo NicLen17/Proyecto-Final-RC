@@ -16,12 +16,13 @@ import "aos/dist/aos.css"
 import { getBase64 } from '../utils/img';
 
 
-export default function AgregadoProducto() {
+export default function AgregadoProducto({productos}) {
     const [validated, setValidated] = useState(false);
     const [input, setInput] = useState({});
     const [alert, setAlert] = useState("");
     const [img, setImg] = useState("")
-
+    const [alertSuccess ,setalertSuccess] = useState("")
+    
     const handleSubmit = async (event) => {
         const formulario = event.currentTarget;
         event.preventDefault();
@@ -30,15 +31,17 @@ export default function AgregadoProducto() {
             return event.stopPropagation();
         }
         try {
-            const { data } = await axios.post("/productos", input);
+            await axios.post("/productos", input);
             formulario.reset();
-
+           
         } catch (error) {
             error.response.data.msg
                 ? setAlert(error.response.data.msg[0].msg)
                 : setAlert(error.response.data);
         }
-        
+        productos();
+        setalertSuccess(`PRODUCTO CREADO EXITOSAMENTE`);
+        setValidated(false);
     };
     const onChangeImg = async (e) => {
         const img = e.target.files[0];
@@ -62,6 +65,7 @@ export default function AgregadoProducto() {
                     <Row>
                         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
                             {alert && <Alert variant="danger">{alert}</Alert>}
+                            {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
                             <Card style={{ height: "880px"}} className="border registercontent">
                                 <Card.Header className="text-white">
                                     <h4 className="mt-1">Ingresar Producto</h4>
@@ -132,7 +136,7 @@ export default function AgregadoProducto() {
                                         </Form.Group>
                                         <Form.Group controlId="formFile" className="mb-3">
                                             <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
-                                            <Form.Control type="file" onChange={(e) => onChangeImg(e)} />
+                                            <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
                                             <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
                                                 <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px" }} placeholder="Agregar imagen del producto mediante URL" />
                                             </Form.Group>

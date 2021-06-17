@@ -30,12 +30,11 @@ exports.getMensajes = async (req ,res) => {
     }
 }
 
-// exports.updateUser = async (req, res) => {
-//     try {
-//         const { producto, body } = req;
-//         const updatedUser = await Usuario.findByIdAndUpdate(producto.id, body, { new: true });
-//         res.send(updatedUser);
-//     } catch (error) {
-//         res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
-//     }
-// };
+exports.deleteMensajes = async (req , res) => {
+    try{
+    await Mensajes.findByIdAndRemove(req.params.id)
+    res.send("Mensaje Eliminado");
+}catch(error) {
+    res.status(400).send({ msg: 'Hubo un error al eliminar el mensaje' });
+}
+}

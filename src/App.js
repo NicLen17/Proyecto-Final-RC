@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect, useState }from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Carro from "./components/Carro";
@@ -13,7 +13,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Productos from "./components/Pages/Productos";
 import Contacto from "./components/Contacto";
 import Admin from "./components/Pages/Admin";
@@ -23,7 +22,6 @@ import Perfil from "./components/Pages/Perfil";
 import PIndividual from "./components/Pages/PIndividual";
 import AgregadoProducto from "./components/AgregadoProducto";
 import axios from "axios";
-import { Nav } from "react-bootstrap";
 import ScrollToTop from "./components/ScrollToTop";
 import PIprincipal1 from "./components/Pages/PIprincipal1";
 import PIprincipal2 from "./components/Pages/PIprincipal2";
@@ -84,7 +82,7 @@ export default function App() {
             <Perfil />
           </Route>
 
-          <Route path="/individual" exact>
+          <Route path="/individual/:id" exact>
             <PIndividual />
           </Route>
 

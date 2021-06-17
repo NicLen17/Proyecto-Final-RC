@@ -1,83 +1,50 @@
-import React from "react";
+import React , { useEffect , useState }from "react";
 import "./Productos.css";
-import { Card, Button } from "react-bootstrap";
+import { Card} from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import { useEffect } from 'react'
+import axios from "axios"
 
 function Productos() {
-
+  const [products, setProducts] = useState([])
+  console.log(products);
   useEffect(() => {
+    const productos = async () => {
+      const { data } = await axios.get('/productos');
+      setProducts(data);
+    }
+    productos();
     Aos.init({ duration: 1000 });
   }, [])
-
+    
   return (
     <div className="sideynav">
-      <div data-aos="fade-up" className="productoscont" >
-        <div className="sidebar1">
-        </div>
-        <div className="flexcardp">
-          <Card className="cardsp" style={{ width: "18rem" }}>
+     <div data-aos="fade-up" className="productoscont" >
+      <div className="flexcardp"> 
+        {products.map((prod) => (
+            
+          <Card className="cardsp" style={{ width: "18rem" }} >
             <Card.Img className="cardpimg"
               variant="top"
-              src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
+              src={prod.img}
             />
             <Card.Body>
-              <Card.Title>50.000 <a href="/individual"><a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></a></Card.Title>
+              <Card.Title>${prod.price}
+              </Card.Title>
               <Card.Text className="caracteristicas">
-                <li>Samsumg</li>
-                <li>Samsung Galaxy A50</li>
-                <li>64GB de Almacenamiento</li>
-                <li>4GB Ram</li>
+                <p>{prod.marca}</p>
+                <p>{prod.modelo}</p>
+                <p>{prod.descripcion}</p>
               </Card.Text>
             </Card.Body>
+            <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
+              ver mas
+            </NavLink>
           </Card>
-          <Card className="cardsp" style={{ width: "18rem" }}>
-            <Card.Img className="cardpimg"
-              variant="top"
-              src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
-            />
-            <Card.Body>
-              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
-              <Card.Text className="caracteristicas">
-                <li>Samsumg</li>
-                <li>Samsung Galaxy A50</li>
-                <li>64GB de Almacenamiento</li>
-                <li>4GB Ram</li>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="cardsp" style={{ width: "18rem" }}>
-            <Card.Img className="cardpimg"
-              variant="top"
-              src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
-            />
-            <Card.Body>
-              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
-              <Card.Text className="caracteristicas">
-                <li>Samsumg</li>
-                <li>Samsung Galaxy A50</li>
-                <li>64GB de Almacenamiento</li>
-                <li>4GB Ram</li>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="cardsp" style={{ width: "18rem" }}>
-            <Card.Img className="cardpimg"
-              variant="top"
-              src="https://http2.mlstatic.com/D_NQ_NP_634554-MLA31848818020_082019-O.jpg"
-            />
-            <Card.Body>
-              <Card.Title>50.000 <a href="/individual"><i><img style={{width: "25px", height: "25px", marginBottom: "5px"}} src="https://icongr.am/fontawesome/cart-plus.svg?size=128&color=000000" alt="" /></i></a></Card.Title>
-              <Card.Text className="caracteristicas">
-                <li>Samsumg</li>
-                <li>Samsung Galaxy A50</li>
-                <li>64GB de Almacenamiento</li>
-                <li>4GB Ram</li>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
+         
+        ))}
+      </div>
       </div>
       </div>
   );

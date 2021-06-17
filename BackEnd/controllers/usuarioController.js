@@ -58,6 +58,16 @@ exports.updateUser = async (req, res) => {
     }
 };
 
+exports.stateUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const updatedUser = await Usuario.findByIdAndUpdate(userId, req.body, { new: true });
+        res.send(updatedUser);
+    } catch (error) {
+        res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
+    }
+};
+
 exports.getUser = async (req, res) => {
     try {
         const usuario = await Usuario.findById(req.usuario.id).select('-password -__v'); //en el select se pone con signo - los atributos que no debe traer

@@ -28,7 +28,8 @@ const UsuariosSchema = mongoose.Schema({
         type: String,
     },
     estado: {
-        type: String,
+        type: Boolean,
+        default: true,
     },
 });
 

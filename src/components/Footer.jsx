@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import "./Footer.css";
 import imagen from "../img/imagen.png";
 
