@@ -3,27 +3,6 @@
     margin-bottom: 200px;
 }
 
-.sideynav {
-    text-align: start;
-    margin-bottom: 445px;
-}
-
-.sidenav---sidenav---_2tBP {
-    margin-top: 60px;
-    top: 0;
-    left: 0;
-    min-width: 64px;
-    background: #000000 !important;
-    -webkit-transition: min-width 0.2s;
-    -o-transition: min-width 0.2s;
-    transition: min-width 0.2s;
-}
-
-.sidea {
-    text-decoration: none !important;
-    color: white;
-}
-
 .sidea:hover {
     color: white;
 }
@@ -54,6 +33,9 @@
 .cardpimg {
     border-radius: 25px !important;
     border-bottom: 3px gray solid;
+    width: 300px;
+    height: 300px;
+    align-items: center;
 }
 
 .carritobut:hover {

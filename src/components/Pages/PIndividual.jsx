@@ -20,7 +20,7 @@ function PIndividual() {
                     </div>
                     <div className="contenido1">
                         <h2>Nombre
-                            <p>Categoria</p>
+                            <p>Categoria <a style={{ textDecorationLine: "none" }} href="celulares">Link</a></p>
                         </h2>
                         <h2>$3599.99</h2>
                         <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
