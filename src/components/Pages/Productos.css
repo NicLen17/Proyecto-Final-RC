@@ -3,8 +3,9 @@
     margin-bottom: 200px;
 }
 
-.sidea:hover {
-    color: white;
+.sideynav {
+    text-align: start;
+    margin-bottom: 445px;
 }
 
 .flexcardp {
@@ -12,6 +13,7 @@
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
+    text-decoration: none;
 }
 
 .cardsp {
@@ -20,9 +22,14 @@
     margin-top: 50px;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
-    border-radius: 25px !important;
-    transition: 0.2s;
+    border-radius: 15px !important;
+    transition: 0.4s;
     width: 320px !important;
+}
+
+.cardtitulo {
+    margin-top: 5px;
+    border-bottom: solid rgb(175, 174, 174) 0.5px;
 }
 
 .cardsp:hover {
@@ -31,11 +38,10 @@
 }
 
 .cardpimg {
-    border-radius: 25px !important;
+    border-radius: 15px !important;
     border-bottom: 3px gray solid;
-    width: 300px;
-    height: 300px;
-    align-items: center;
+    width: 319px;
+    height: 320px;
 }
 
 .carritobut:hover {
