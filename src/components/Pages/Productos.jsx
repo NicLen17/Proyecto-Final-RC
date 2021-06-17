@@ -22,8 +22,9 @@ function Productos() {
     <div className="sideynav">
       <div data-aos="fade-up" className="productoscont" >
         <div className="flexcardp">
+        {products.map((prod) => (
           <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
-            {products.map((prod) => (
+           
               <Card className="cardsp">
                 <Card.Img className="cardpimg"
                   variant="top"
@@ -39,8 +40,9 @@ function Productos() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              </NavLink>
             ))}
-          </NavLink>
+         
         </div>
       </div>
     </div>
