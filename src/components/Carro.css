@@ -18,7 +18,7 @@
   max-width: 100%;
   border-radius: 50px;
   margin: auto;
-  height: 700px;
+  height: 700px !important;
   -webkit-box-shadow: 5px 5px 10px 3px #000000;
   box-shadow: 5px 5px 10px 3px #000000;
   margin-top: 15px;
@@ -40,42 +40,42 @@ p {
 @media only screen and (max-width: 1400px) {
   .cimg {
     max-width: 1200px;
-    height: 650px;
+    height: 650px !important;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .cimg {
     max-width: 1000px;
-    height: 600px;
+    height: 600px !important;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .cimg {
     max-width: 900px;
-    height: 500px;
+    height: 500px !important;
   }
 }
 
 @media only screen and (max-width: 915px) {
   .cimg {
     max-width: 800px;
-    height: 400px;
+    height: 400px !important;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .cimg {
     max-width: 700px;
-    height: 400px;
+    height: 400px !important;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .cimg {
     max-width: 650px;
-    height: 400px;
+    height: 400px !important;
   }
 }
 
@@ -83,7 +83,7 @@ p {
   .cimg {
     margin-top: 70px;
     max-width: 550px;
-    height: 290px;
+    height: 290px !important;
   }
 }
 
@@ -91,6 +91,6 @@ p {
   .cimg {
     margin-top: 70px;
     max-width: 100%;
-    height: 290px;
+    height: 290px !important;
   }
 }

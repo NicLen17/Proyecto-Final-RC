@@ -68,27 +68,13 @@ export default function Contacto() {
             </Swiper>
           </div>
         </div>
-      </div>
-      <div className="body" style={{ marginBottom: "160px", maxWidth: "100%" }}>
-        <div className="p-3 contacto" style={{ textAlign: "center", marginTop: "45px" }}>
-          <h1>CONTACTA CON NOSOTROS</h1>
-          <h3>Podes enviarnos tu consulta</h3>
-          <p>
-            Completa el formulario con tu consulta y nuestros asesores responderan
-            dentro de las 48hs habiles. Tambien podes contactarnos mediante los
-            enlaces directos de nuestras redes sociales!
-          </p>
-        </div>
-        <div className="formulario" style={{ maxWidth: "100%" }}>
-          <div className="row d-flex flex-wrap" style={{ maxWidth: "100%" }}>
-            <div className="d-flex flex-wrap col" style={{ maxWidth: "100%" }}>
-              <div className="row-cols-1">
+        <div className="row-cols-1">
                 <img
                   className="contactoimg"
                   style={{
-                    marginTop: "10px",
-                    width: "700px",
-                    height: "500px",
+                    marginTop: "15px",
+                    width: "900px",
+                    height: "600px",
                     maxWidth: "100%"
                   }}
                   src="https://485758.smushcdn.com/622655/wp-content/uploads/2019/07/cold-emailing.jpg?lossy=1&strip=1&webp=1" alt="no disponile"
@@ -114,6 +100,20 @@ export default function Contacto() {
                   </a>
                 </div>
               </div>
+      </div>
+      <div className="body" style={{ marginBottom: "160px", maxWidth: "100%" }}>
+        <div className="p-3 contacto" style={{ textAlign: "center", marginTop: "45px" }}>
+          <h1>CONTACTA CON NOSOTROS</h1>
+          <h3>Podes enviarnos tu consulta</h3>
+          <p>
+            Completa el formulario con tu consulta y nuestros asesores responderan
+            dentro de las 48hs habiles. Tambien podes contactarnos mediante los
+            enlaces directos de nuestras redes sociales!
+          </p>
+        </div>
+        <div className="formulario" style={{ maxWidth: "100%" }}>
+          <div className="row d-flex flex-wrap" style={{ maxWidth: "100%" }}>
+            <div className="d-flex flex-wrap col" style={{ maxWidth: "100%" }}>
               <div
                 className="p-5 mx-auto"
                 style={{ textAlign: "left", width: "700px" }}
@@ -165,6 +165,7 @@ export default function Contacto() {
                     <Form.Control.Feedback>Recibido</Form.Control.Feedback>
                   </Form.Group>
                   <Button className="msgbut"
+                  variant="msgbut"
                     type="submit"
                     style={{ marginTop: "10px", width: "100%" }}
                   >

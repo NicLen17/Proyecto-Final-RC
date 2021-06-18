@@ -1,4 +1,3 @@
-
 .pcontainers {
     display: flex;
     flex-wrap: wrap;
@@ -13,9 +12,9 @@
     flex-direction: row;
 }
 
-@media only screen and (max-width: 875px) {
-    .pcontainer {
-        justify-content: center;
+@media only screen and (max-width: 996px) {
+    .pcontainers {
+        justify-content: center !important;
     }
 }
 
@@ -37,74 +36,94 @@
 
 @media only screen and (max-width: 995px) {
     .pimgcont {
-        text-align: start;
+        text-align: start !important;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .pimgcont {
-        max-width: 450px;
-        max-width: 450px;
-        margin-left: 0px;
-        margin-right: 0px;
+        max-width: 450px !important;
+        max-width: 450px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 }
 
 @media only screen and (max-width: 520px) {
     .pimgcont {
         max-width: 350px !important;
-        max-height: 350px;
-        margin-left: 0px;
-        margin-right: 0px;
+        max-height: 350px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 }
 
 @media only screen and (max-width: 340px) {
     .pimgcont {
         max-width: 250px !important;
-        max-height: 250px;
-        margin-left: 0px;
-        margin-right: 0px;
+        max-height: 250px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .pimgcont {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 255px) {
+    .pimgcont {
+        margin-top: 50px;
+        max-width: 100% !important;
     }
 }
 
 @media only screen and (max-width: 520px) {
     .imgpro {
         max-width: 350px !important;
-        max-height: 350px;
+        max-height: 350px !important;
     }
 }
 
 @media only screen and (max-width: 340px) {
     .imgpro {
         max-width: 250px !important;
-        max-height: 250px;
+        max-height: 250px !important;
+    }
+}
+
+@media only screen and (max-width: 255px) {
+    .imgpro {
+        max-width: 150px !important;
+        max-height: 180px !important;
     }
 }
 
 .contenido1 {
-    margin-left: 100px;
+    margin-left: 70px;
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    text-align: start;
+    text-align: center;
 }
 
 @media only screen and (max-width: 995px) {
     .contenido1 {
-        margin-top: 30px;
-        margin-right: 100px;
+        margin-top: 30px !important;
+        margin-right: 100px !important;
     }
 }
 
 @media only screen and (max-width: 420px) {
     .contenido1 {
-        margin-top: 30px;
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-top: 30px !important;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
     }
-}   
+}
 
 .imgval {
     width: 20px;
@@ -116,8 +135,7 @@
     color: rgb(0, 0, 0);
     border: none;
     background-color: rgb(255, 255, 255);
-    border-bottom: rgb(0, 0, 0) 5px solid;
-    width: 180px;
+    border-bottom: rgb(0, 0, 0) 3px solid;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     transition: 0.5s;
@@ -131,59 +149,12 @@
 
 @media only screen and (max-width: 1500px) {
     .btncompra {
-        margin-top: 15px;
+        margin-top: 15px !important;
     }
 }
 
 @media only screen and (max-width: 420px) {
     .btncompra {
-        margin: auto;
+        margin: auto !important;
     }
 }
-
-.selectunit {
-    color: rgb(0, 0, 0);
-    border: none;
-    background-color: rgb(255, 255, 255);
-    margin-top: 20px;
-    width: 80px;
-    transition: 0.5s;
-    margin-left: 15px;
-}
-
-.selectunit:hover {
-    background-color: black;
-    color: white;
-}
-.swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
