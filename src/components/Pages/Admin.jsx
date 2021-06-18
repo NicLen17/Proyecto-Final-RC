@@ -3,16 +3,22 @@ import axios from "axios";
 import { Tabs, Tab, Table, Alert, Modal, Button, Form, Row, Container, Col, Card, InputGroup } from 'react-bootstrap'
 import AgregadoProducto from '../AgregadoProducto'
 import './Admin.css'
+import { getBase64 } from '../utils/img';
+
 
 function Admin() {
     const [products, setProducts] = useState([])
     const [mensajes, setMensajes] = useState([])
+    const [imagenes, setImagenes] = useState({})
     const [lusers, setLusers] = useState([]);
     const [alertSuccess, setalertSuccess] = useState("")
+    const [alert, setAlert] = useState("");
+    const [productEncontrado , setProductEncontrado] = useState({})
+    const [input, setInput] = useState({});
+
     // estados modal
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+        
     const [validated, setValidated] = useState(false);
 
     const productos = async () => {
@@ -25,7 +31,6 @@ function Admin() {
     }
 
     useEffect(() => {
-
         const getListaUsuarios = async () => {
             const { data } = await axios.get("usuarios");
             setLusers(data);
@@ -36,8 +41,7 @@ function Admin() {
     }, []);
 
     async function deleteProducto(id) {
-        console.log(id);
-        if (window.confirm("Estas seguro que deseas eliminar?")) {
+            if (window.confirm("Estas seguro que deseas eliminar?")) {
             await axios.delete(`/productos/${id}`);
             productos();
             setalertSuccess("Producto eliminado correctamente")
@@ -45,27 +49,56 @@ function Admin() {
     }
 
     async function deleteMensajes(id) {
-        console.log(id);
-        if (window.confirm("Estas seguro que deseas eliminar?")) {
+                if (window.confirm("Estas seguro que deseas eliminar?")) {
             await axios.delete(`/mensajes/${id}`);
             mensaje();
             setalertSuccess("Mensaje eliminado correctamente")
         }
     }
+    const updateProduct = (id) => {      
+      const productoEncontrado = products.find(p =>  p._id === id );
+      setShow(true);
+      setProductEncontrado(productoEncontrado);
+               }
 
-    const handleSubmit = () => {
-
-    }
-    const handleChange = () => {
-
-    }
-
-    const onChangeImg = () => {
-
-    }
-
-    console.log(products);
-    const handleSubmit_activo = async (event) => {
+               const handleSubmit = async (event) => {
+                const formulario = event.currentTarget;
+                event.preventDefault();
+                setValidated(true);
+                if (formulario.checkValidity() === false) {
+                    return event.stopPropagation();
+                }
+                try {
+                    await axios.put(`/productos`, input);
+                    setShow(false)
+                            
+                } catch (error) {
+                    error.response.data.msg
+                        ? setAlert(error.response.data.msg[0].msg)
+                        : setAlert(error.response.data);
+                }
+                productos();
+                setalertSuccess(`PRODUCTO MODIFICADO EXITOSAMENTE`);
+                setValidated(false);
+            };
+            const onChangeImg = async (e) => {
+                const imagenesArray = [];
+                const imagenesInput = e.target.files;
+                for (let i = 0; i < imagenesInput.length; i++) {
+                    const base64 = await getBase64(imagenesInput[i]);
+                    imagenesArray.push(base64);
+                    const iman = {img: imagenesArray}
+                    setImagenes(iman);
+                };
+            }
+        
+            const handleChange = (e) => {
+                setAlert("");
+                const { name, value } = e.target;
+                const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase()};
+                setInput(productoInput);
+            };
+       const handleSubmit_activo = async (event) => {
         // const [usersactual, setUsersactual] = useState([]);
 
         // useEffect(() => {
@@ -99,8 +132,8 @@ function Admin() {
                                 </thead>
                                 <tbody>
                                     {products.map((product) => (
-                                        <tr key={product.id}>
-                                            <td >{product.categoria}</td>
+                                        <tr key={product._id} >
+                                            <td>{product.categoria}</td>
                                             <td>{product.marca}</td>
                                             <td>{product.modelo}</td>
                                             <td>{product.descripcion}</td>
@@ -108,7 +141,7 @@ function Admin() {
                                             <td>{product.img.map((e) => (
                                                 <img style={{ width: "150px", height: "120px" }} src={e} alt="imagen celulares" />
                                             ))} </td>
-                                            <td><button className="btn btn-success mr-1" onClick={handleShow} >Editar</button><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteProducto(product._id)}>eliminar</button></td>
+                                            <td><button className="btn btn-success mr-1" onClick={() => updateProduct(product._id)} >Editar</button><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteProducto(product._id)}>eliminar</button></td>
                                         </tr>
                                     ))
                                     }
@@ -165,12 +198,11 @@ function Admin() {
                                 </thead>
                                 {mensajes.map((msj) => (
                                     <tr key={msj.id}>
-                                        <td >{msj.nombreyapellido}</td>
+                                        <td>{msj.nombreyapellido}</td>
                                         <td><a href={msj.email}>{msj.email}</a></td>
                                         <td>{msj.tel}</td>
                                         <td>{msj.mensaje}</td>
-                                        <td><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteMensajes(msj._id)} >eliminar</button></td>
-
+                                        <td><button className="btn btn-danger" onClick={() => deleteMensajes(msj._id)} >eliminar</button></td>
                                     </tr>
                                 ))
                                 }
@@ -179,28 +211,21 @@ function Admin() {
                     </Tab>
                 </Tabs>
             </div>
-            {products.map((productEsp) => (
+            {
                 <Modal
                     show={show}
-                    onHide={handleClose}
+                    // onHide={}
                     backdrop="static"
                     keyboard={false}
                 >
                     <Modal.Header closeButton>
-                        <Modal.Title>Editar {productEsp.marca} {productEsp.modelo}</Modal.Title>
+                        <Modal.Title>Editar {productEncontrado.marca} {productEncontrado.modelo}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Container className="registerform">
-                            <Row>
-                                <Col xs={12} sm={8} md={6} className="mx-auto">
                                     {alert && <Alert variant="danger">{alert}</Alert>}
                                     {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                                    <Card style={{ height: "880px" }} className="border registercontent">
-                                        <Card.Header className="text-white">
-                                            <h4 className="mt-1">Editar</h4>
-                                        </Card.Header>
-                                        <Card.Body>
-                                            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                                  <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                                 <Form.Group className="reginputconteiner" controlId="validationCustom02">
                                                     <Form.Label >Marca</Form.Label>
                                                     <Form.Control
@@ -210,7 +235,7 @@ function Admin() {
                                                         type="text"
                                                         placeholder="Fabricante del producto"
                                                         className="registerlabel"
-                                                        defaultValue={productEsp.marca}
+                                                        defaultValue={productEncontrado.marca}
                                                     />
                                                     <Form.Control.Feedback type="invalid">
                                                         Se requiere el fabricante del producto!
@@ -226,7 +251,7 @@ function Admin() {
                                                         type="text"
                                                         placeholder="Nombre del producto"
                                                         className="registerlabel"
-                                                        defaultValue={productEsp.modelo}
+                                                        defaultValue={productEncontrado.modelo}
                                                     />
                                                     <Form.Control.Feedback type="invalid">
                                                         Se requiere el nombre del producto!
@@ -242,7 +267,7 @@ function Admin() {
                                                         placeholder="$$$"
                                                         className="registerlabel"
                                                         required
-                                                        defaultValue={productEsp.price}
+                                                        defaultValue={productEncontrado.price}
                                                     />
                                                     <Form.Control.Feedback type="invalid">
                                                         Precio obligatorio!
@@ -260,7 +285,7 @@ function Admin() {
                                                             aria-describedby="inputGroupPrepend"
                                                             className="registerlabel"
                                                             required
-                                                            defaultValue={productEsp.descripcion}
+                                                            defaultValue={productEncontrado.descripcion}
                                                         />
                                                         <Form.Control.Feedback type="invalid">
                                                             Las caracteristicas son obligarorias!
@@ -269,11 +294,7 @@ function Admin() {
                                                 </Form.Group>
                                                 <Form.Group controlId="formFile" className="mb-3">
                                                     <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
-                                                    <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
-                                                    <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
-                                                        <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}></Form.Group></Form.Group>
-                                                    <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px" }} placeholder="Agregar imagen del producto mediante URL" />
-
+                                                    <Form.Control  type="file" onChange={(e) => onChangeImg(e)} />
                                                     <Form.Control.Feedback type="invalid">
                                                         la imagen es obligaroria!
                                                     </Form.Control.Feedback>
@@ -293,42 +314,36 @@ function Admin() {
                                                 </Form.Control.Feedback> */}
                                                 <Form.Group className="selectsa">
                                                     <select className="registerbut" aria-label="Default select example"
-                                                        name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEsp.categoria}>
-                                                        <option selected>Categoria</option>
+                                                        name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEncontrado.categoria}>
+                                                        <option valueDefault>Categoria</option>
                                                         <option value="Celular">Celular</option>
                                                         <option value="Tablet">Tablet</option>
                                                         <option value="Accesorios">Accesorio</option>
                                                         <option value="Otro">Otro</option>
                                                     </select>
-
-                                                    <select className="registerbut" aria-label="Default select example"
-                                                        name="stock" onChange={(e) => handleChange(e)} required defaultValue={productEsp.stock}>
-                                                        <option selected>Stock</option>
-                                                        <option value="1">1 unidad</option>
-                                                        <option value="2">2 unidades</option>
-                                                        <option value="3">3 unidades</option>
-                                                        <option value="4">4 unidades</option>
-                                                        <option value="5">5 unidades</option>
-                                                        <option value="6">+5 unidades</option>
-                                                    </select>
-                                                </Form.Group>
-                                                <img style={{ width: "200px", height: "200px" }} src={productEsp.img} />
-                                            </Form>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Modal.Body>
+                                               </Form.Group>
+                                                <img style={{ width: "200px", height: "200px" }} src={productEncontrado.img} alt="foto de celular" />                 
+                                                <Form.Control
+                                                        name="id"
+                                                        onChange={(e) => handleChange(e)}
+                                                        required
+                                                        type="text"
+                                                        placeholder="Fabricante del producto"
+                                                        className="registerlabel"
+                                                        defaultValue={productEncontrado._id}
+                                                    />
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
+                        <Button variant="secondary" onClick={() => setShow(false)}>
+                            Cerrar
                         </Button>
-                        <Button variant="primary">Understood</Button>
+                        <Button variant="primary" type="submit">Confirmar Edicion</Button>
                     </Modal.Footer>
+                    </Form>
+                    </Container>
+                    </Modal.Body>
                 </Modal>
-            ))}
-
+           
+                                            }
 
         </div>
     )

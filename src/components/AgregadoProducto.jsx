@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "aos/dist/aos.css"
-import { getBase64 } from '../utils/img';
+import { getBase64 } from './utils/img';
 
 
 export default function AgregadoProducto({ productos }) {
@@ -22,7 +22,6 @@ export default function AgregadoProducto({ productos }) {
     const [alert, setAlert] = useState("");
     const [imagenes, setImagenes] = useState({})
     const [alertSuccess, setalertSuccess] = useState("")
-    console.log(input);
     const handleSubmit = async (event) => {
         const formulario = event.currentTarget;
         event.preventDefault();
@@ -168,24 +167,13 @@ export default function AgregadoProducto({ productos }) {
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
                                                 name="categoria" onChange={(e) => handleChange(e)} required>
-                                                <option selected>Categoria</option>
+                                                <option >Categoria</option>
                                                 <option value="Celular">Celular</option>
                                                 <option value="Tablet">Tablet</option>
                                                 <option value="Accesorios">Accesorio</option>
                                                 <option value="Otro">Otro</option>
                                             </select>
-
-                                            <select className="registerbut" aria-label="Default select example"
-                                                name="stock" onChange={(e) => handleChange(e)} required>
-                                                <option selected>Stock</option>
-                                                <option value="1">1 unidad</option>
-                                                <option value="2">2 unidades</option>
-                                                <option value="3">3 unidades</option>
-                                                <option value="4">4 unidades</option>
-                                                <option value="5">5 unidades</option>
-                                                <option value="6">+5 unidades</option>
-                                            </select>
-                                        </Form.Group>
+                                                                                </Form.Group>
                                         <Row>
                                             <Button className="registerbut" type="submit">
                                                 Agregar

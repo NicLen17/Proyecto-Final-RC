@@ -33,7 +33,7 @@ export default function Contacto() {
       return e.stopPropagation();
     }
     try {
-      const { data } = await axios.post("/mensajes", input);
+      await axios.post("/mensajes", input);
       formulario.reset()
     } catch (error) {
       error.response.data.msg
