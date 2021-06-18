@@ -162,7 +162,7 @@ export default function AgregadoProducto({ productos }) {
                                             title="Choose your color"
                                             required
                                         />
-                                         <Form.Control.Feedback type="invalid">
+                                        <Form.Control.Feedback type="invalid">
                                                     El color es obligaroria!
                                                 </Form.Control.Feedback> */}
                                         <Form.Group className="selectsa">
@@ -173,17 +173,6 @@ export default function AgregadoProducto({ productos }) {
                                                 <option value="Tablet">Tablet</option>
                                                 <option value="Accesorios">Accesorio</option>
                                                 <option value="Otro">Otro</option>
-                                            </select>
-
-                                            <select className="registerbut" aria-label="Default select example"
-                                                name="stock" onChange={(e) => handleChange(e)} required>
-                                                <option selected>Stock</option>
-                                                <option value="1">1 unidad</option>
-                                                <option value="2">2 unidades</option>
-                                                <option value="3">3 unidades</option>
-                                                <option value="4">4 unidades</option>
-                                                <option value="5">5 unidades</option>
-                                                <option value="6">+5 unidades</option>
                                             </select>
                                         </Form.Group>
                                         <Row>

@@ -13,10 +13,10 @@ import './PIndividual.css';
 import axios from 'axios';
 
 export default function PIndividual() {
-SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+    SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
     const { id } = useParams();
     const [product, setProduct] = useState({});
-    
+
     const producto = async () => {
         const { data } = await axios.get(`/productos/${id}`);
         setProduct(data);
@@ -31,29 +31,26 @@ SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <Swiper cssMode={true} navigation={true} pagination={true} mousewheel={true} keyboard={true} className="mySwiper">
-                            {product.img?.map((e) => (
-                                <SwiperSlide> <img src={e} alt="imagen celulares" /></SwiperSlide>))}
-                            </Swiper>
+                        <img className="imgpro" src={product.img} alt="" />
                     </div>
-                    <div className="contenido1">
-                        <h2>{product.marca}  {product.modelo}
-                            <p>Categoria {product.categoria}</p>
-                        </h2>
-                        <h2>${product.price}</h2>
-                        <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
-                        <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
-                        <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>
+                </div>
+                <div className="contenido1">
+                    <h2>{product.marca}  {product.modelo}
+                        <p>Categoria {product.categoria}</p>
+                    </h2>
+                    <h2>${product.price}</h2>
+                    <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
+                    <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
+                    <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>
+                </div>
+                <div className="contenido1">
+                    <div>
+                        <h2 className="">Caracteristicas</h2>
+                        <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>
+                            {product.descripcion}
+                        </p>
                     </div>
-                    <div className="contenido1">
-                        <div>
-                            <h2 className="">Caracteristicas</h2>
-                            <p style={{ fontSize: "15px", maxInlineSize: "415px", marginTop: "20px", textJustify: "initial" }}>
-                                {product.descripcion}
-                            </p>
-                        </div>
-                        <Button className="btncompra" > Agregar al carrito </Button>
-                    </div>
+                    <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                 </div>
             </div>
         </div>
