@@ -176,7 +176,7 @@ export default function AgregadoProducto({ productos }) {
                                             </select>
                                         </Form.Group>
                                         <Row>
-                                            <Button className="registerbut" type="submit">
+                                            <Button className="registerbut" variant="registerbut" type="submit">
                                                 Agregar
                                             </Button>
                                         </Row>

@@ -170,7 +170,6 @@ function Admin() {
                                         <td>{msj.tel}</td>
                                         <td>{msj.mensaje}</td>
                                         <td><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteMensajes(msj._id)} >eliminar</button></td>
-
                                     </tr>
                                 ))
                                 }
@@ -284,10 +283,10 @@ function Admin() {
                         </Container>
                     </Modal.Body>
                     <Modal.Footer className="editarformtitulo">
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
+                        <Button className="registerbut" variant="registerbut" onClick={handleClose}>
+                            Cerrar
                         </Button>
-                        <Button variant="primary">Understood</Button>
+                        <Button className="registerbut" variant="registerbut">Listo</Button>
                     </Modal.Footer>
                 </Modal>
             ))}
