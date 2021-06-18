@@ -102,12 +102,12 @@
 }
 
 .contenido1 {
-    margin-left: 100px;
+    margin-left: 70px;
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    text-align: start;
+    text-align: center;
 }
 
 @media only screen and (max-width: 995px) {
@@ -135,8 +135,7 @@
     color: rgb(0, 0, 0);
     border: none;
     background-color: rgb(255, 255, 255);
-    border-bottom: rgb(0, 0, 0) 5px solid;
-    width: 180px;
+    border-bottom: rgb(0, 0, 0) 3px solid;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     transition: 0.5s;
@@ -158,19 +157,4 @@
     .btncompra {
         margin: auto !important;
     }
-}
-
-.selectunit {
-    color: rgb(0, 0, 0);
-    border: none;
-    background-color: rgb(255, 255, 255);
-    margin-top: 20px;
-    width: 80px;
-    transition: 0.5s;
-    margin-left: 15px;
-}
-
-.selectunit:hover {
-    background-color: black;
-    color: white;
 }

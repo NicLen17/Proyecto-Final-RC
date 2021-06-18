@@ -43,7 +43,6 @@ function Productos() {
               </Card>
             </NavLink>
           ))}
-
         </div>
       </div>
     </div>

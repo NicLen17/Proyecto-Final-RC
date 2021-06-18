@@ -141,30 +141,25 @@ export default function AgregadoProducto({ productos }) {
                                         <Form.Group controlId="formFile" className="mb-3">
                                             <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
                                             <Form.Group controlId="formFileMultiple" className="mb-3" onChange={(e) => onChangeImg(e)}>
-                                                <Form.Label>Multiple files input example</Form.Label>
                                                 <Form.Control type="file" multiple />
                                             </Form.Group>
                                             {/* <Form.Control required type="file" onChange={(e) => onChangeImg(e)} /> */}
                                             <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
-                                                <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px" }} placeholder="Agregar imagen del producto mediante URL" />
+                                                <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px", maxWidth: "100%" }} placeholder="Agregar imagen del producto mediante URL" />
                                             </Form.Group>
                                             <Form.Control.Feedback type="invalid">
                                                 la imagen es obligaroria!
                                             </Form.Control.Feedback>
                                         </Form.Group>
-                                        {/* <Form.Label htmlFor="exampleColorInput">Color</Form.Label>
-                                        <Form.Control
-
-                                            style={{ height: "40px", width: "48px" }}
-                                            type="color"
-                                            
-                                            defaultValue="#563d7c"
-                                            title="Choose your color"
-                                            required
-                                        />
-                                        <Form.Control.Feedback type="invalid">
-                                                    El color es obligaroria!
-                                                </Form.Control.Feedback> */}
+                                        <Form.Group className="selectsa">
+                                            <select className="registerbut" aria-label="Default select example"
+                                                name="categoria" onChange={(e) => handleChange(e)} required>
+                                                <option selected>Color</option>
+                                                <option value="Negro">Negro</option>
+                                                <option value="Blanco">Blanco</option>
+                                                <option value="Azul">Azul</option>
+                                            </select>
+                                        </Form.Group>
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
                                                 name="categoria" onChange={(e) => handleChange(e)} required>

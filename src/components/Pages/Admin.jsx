@@ -127,7 +127,6 @@ function Admin() {
                                         <th>Funciones</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     {lusers.map((usuarios) => (
                                         <tr key={usuarios.id}>
@@ -188,98 +187,105 @@ function Admin() {
                     <Modal.Header className="editarformtitulo" closeButton>
                         <Modal.Title>Editar {productEsp.marca} {productEsp.modelo}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="editarform" style={{width: "100%"}}>
+                    <Modal.Body className="editarform" style={{ width: "100%" }}>
                         <Container>
-                                    {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                                            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                                                <Form.Group className="" controlId="validationCustom02">
-                                                    <Form.Label >Marca</Form.Label>
-                                                    <Form.Control
-                                                        name="marca"
-                                                        onChange={(e) => handleChange(e)}
-                                                        required
-                                                        type="text"
-                                                        placeholder="Fabricante del producto"
-                                                        className="registerlabel"
-                                                        defaultValue={productEsp.marca}
-                                                    />
-                                                    <Form.Control.Feedback type="invalid">
-                                                        Se requiere el fabricante del producto!
-                                                    </Form.Control.Feedback>
-                                                    <Form.Control.Feedback>Recibido</Form.Control.Feedback>
-                                                </Form.Group>
-                                                <Form.Group className="" controlId="validationCustom01">
-                                                    <Form.Label >Modelo del producto</Form.Label>
-                                                    <Form.Control
-                                                        name="modelo"
-                                                        onChange={(e) => handleChange(e)}
-                                                        required
-                                                        type="text"
-                                                        placeholder="Nombre del producto"
-                                                        className="registerlabel"
-                                                        defaultValue={productEsp.modelo}
-                                                    />
-                                                    <Form.Control.Feedback type="invalid">
-                                                        Se requiere el nombre del producto!
-                                                    </Form.Control.Feedback>
-                                                    <Form.Control.Feedback>Recibido</Form.Control.Feedback>
-                                                </Form.Group>
-                                                <Form.Group>
-                                                    <Form.Label >Precio</Form.Label>
-                                                    <Form.Control
-                                                        name="price"
-                                                        onChange={(e) => handleChange(e)}
-                                                        type="text"
-                                                        placeholder="$$$"
-                                                        className="registerlabel"
-                                                        required
-                                                        defaultValue={productEsp.price}
-                                                    />
-                                                    <Form.Control.Feedback type="invalid">
-                                                        Precio obligatorio!
-                                                    </Form.Control.Feedback>
-                                                </Form.Group>
-                                                <Form.Group className="" controlId="validationCustomUsername">
-                                                    <Form.Label >Caracteristicas</Form.Label>
-                                                    <InputGroup hasValidation>
-                                                        <Form.Control
-                                                            minLength="6"
-                                                            name="descripcion"
-                                                            onChange={(e) => handleChange(e)}
-                                                            as="textarea"
-                                                            placeholder="Caracteristicas principales del producto"
-                                                            aria-describedby="inputGroupPrepend"
-                                                            className="registerlabel"
-                                                            required
-                                                            defaultValue={productEsp.descripcion}
-                                                        />
-                                                        <Form.Control.Feedback type="invalid">
-                                                            Las caracteristicas son obligarorias!
-                                                        </Form.Control.Feedback>
-                                                    </InputGroup>
-                                                </Form.Group>
-                                                <Form.Group controlId="formFile" className="mb-3">
-                                                    <Form.Label className="">Agregar imagen del producto de forma local</Form.Label>
-                                                    <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
-                                                    <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
-                                                        <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}></Form.Group></Form.Group>
-                                                    <input id="url" className="registerlabel" type="url" name="url" style={{ width: "390px" }} placeholder="Agregar imagen del producto mediante URL" />
-                                                    <Form.Control.Feedback type="invalid">
-                                                        la imagen es obligaroria!
-                                                    </Form.Control.Feedback>
-                                                </Form.Group>
-                                                <Form.Group className="selectsa">
-                                                    <select className="registerbut" aria-label="Default select example"
-                                                        name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEsp.categoria}>
-                                                        <option selected>Categoria</option>
-                                                        <option value="Celular">Celular</option>
-                                                        <option value="Tablet">Tablet</option>
-                                                        <option value="Accesorios">Accesorio</option>
-                                                        <option value="Otro">Otro</option>
-                                                    </select>
-                                                </Form.Group>
-                                                <img style={{ width: "200px", height: "200px" }} src={productEsp.img} />
-                                            </Form>
+                            {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
+                            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                                <Form.Group className="" controlId="validationCustom02">
+                                    <Form.Label >Marca</Form.Label>
+                                    <Form.Control
+                                        name="marca"
+                                        onChange={(e) => handleChange(e)}
+                                        required
+                                        type="text"
+                                        placeholder="Fabricante del producto"
+                                        className="registerlabel"
+                                        defaultValue={productEsp.marca}
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                        Se requiere el fabricante del producto!
+                                    </Form.Control.Feedback>
+                                    <Form.Control.Feedback>Recibido</Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group className="" controlId="validationCustom01">
+                                    <Form.Label >Modelo del producto</Form.Label>
+                                    <Form.Control
+                                        name="modelo"
+                                        onChange={(e) => handleChange(e)}
+                                        required
+                                        type="text"
+                                        placeholder="Nombre del producto"
+                                        className="registerlabel"
+                                        defaultValue={productEsp.modelo}
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                        Se requiere el nombre del producto!
+                                    </Form.Control.Feedback>
+                                    <Form.Control.Feedback>Recibido</Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label >Precio</Form.Label>
+                                    <Form.Control
+                                        name="price"
+                                        onChange={(e) => handleChange(e)}
+                                        type="text"
+                                        placeholder="$$$"
+                                        className="registerlabel"
+                                        required
+                                        defaultValue={productEsp.price}
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                        Precio obligatorio!
+                                    </Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group className="" controlId="validationCustomUsername">
+                                    <Form.Label >Caracteristicas</Form.Label>
+                                    <InputGroup hasValidation>
+                                        <Form.Control
+                                            minLength="6"
+                                            name="descripcion"
+                                            onChange={(e) => handleChange(e)}
+                                            as="textarea"
+                                            placeholder="Caracteristicas principales del producto"
+                                            aria-describedby="inputGroupPrepend"
+                                            className="registerlabel"
+                                            required
+                                            defaultValue={productEsp.descripcion}
+                                        />
+                                        <Form.Control.Feedback type="invalid">
+                                            Las caracteristicas son obligarorias!
+                                        </Form.Control.Feedback>
+                                    </InputGroup>
+                                </Form.Group>
+                                <Form.Group controlId="formFile" className="mb-3">
+                                    <Form.Label className="">Agregar imagen del producto de forma local</Form.Label>
+                                    <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
+                                    <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
+                                        <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}></Form.Group></Form.Group>
+                                    <input id="url" className="registerlabel" type="url" name="url" style={{ width: "390px" }} placeholder="Agregar imagen del producto mediante URL" />
+                                    <Form.Control.Feedback type="invalid">
+                                        la imagen es obligaroria!
+                                    </Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group className="selectsa">
+                                    <select className="registerbut" aria-label="Default select example"
+                                        name="categoria" onChange={(e) => handleChange(e)} required>
+                                        <option selected>Color</option>
+                                        <option value="Negro">Negro</option>
+                                        <option value="Blanco">Blanco</option>
+                                        <option value="Azul">Azul</option>
+                                    </select>
+                                    <select className="registerbut" aria-label="Default select example"
+                                        name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEsp.categoria}>
+                                        <option selected>Categoria</option>
+                                        <option value="Celular">Celular</option>
+                                        <option value="Tablet">Tablet</option>
+                                        <option value="Accesorios">Accesorio</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </Form.Group>
+                                <img style={{ width: "200px", height: "200px" }} src={productEsp.img} />
+                            </Form>
                         </Container>
                     </Modal.Body>
                     <Modal.Footer className="editarformtitulo">
