@@ -12,7 +12,7 @@
     flex-direction: row;
 }
 
-@media only screen and (max-width: 875px) {
+@media only screen and (max-width: 996px) {
     .pcontainers {
         justify-content: center !important;
     }
@@ -73,6 +73,13 @@
     }
 }
 
+@media only screen and (max-width: 255px) {
+    .pimgcont {
+        margin-top: 50px;
+        max-width: 100% !important;
+    }
+}
+
 @media only screen and (max-width: 520px) {
     .imgpro {
         max-width: 350px !important;
@@ -84,6 +91,13 @@
     .imgpro {
         max-width: 250px !important;
         max-height: 250px !important;
+    }
+}
+
+@media only screen and (max-width: 255px) {
+    .imgpro {
+        max-width: 150px !important;
+        max-height: 180px !important;
     }
 }
 

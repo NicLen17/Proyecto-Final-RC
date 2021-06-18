@@ -186,22 +186,14 @@ function Admin() {
                     backdrop="static"
                     keyboard={false}
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header className="editarformtitulo" closeButton>
                         <Modal.Title>Editar {productEsp.marca} {productEsp.modelo}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <Container className="registerform">
-                            <Row>
-                                <Col xs={12} sm={8} md={6} className="mx-auto">
-                                    {alert && <Alert variant="danger">{alert}</Alert>}
+                    <Modal.Body className="editarform" style={{width: "100%"}}>
+                        <Container>
                                     {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                                    <Card style={{ height: "880px" }} className="border registercontent">
-                                        <Card.Header className="text-white">
-                                            <h4 className="mt-1">Editar</h4>
-                                        </Card.Header>
-                                        <Card.Body>
                                             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                                                <Form.Group className="reginputconteiner" controlId="validationCustom02">
+                                                <Form.Group className="" controlId="validationCustom02">
                                                     <Form.Label >Marca</Form.Label>
                                                     <Form.Control
                                                         name="marca"
@@ -217,7 +209,7 @@ function Admin() {
                                                     </Form.Control.Feedback>
                                                     <Form.Control.Feedback>Recibido</Form.Control.Feedback>
                                                 </Form.Group>
-                                                <Form.Group className="reginputconteiner" controlId="validationCustom01">
+                                                <Form.Group className="" controlId="validationCustom01">
                                                     <Form.Label >Modelo del producto</Form.Label>
                                                     <Form.Control
                                                         name="modelo"
@@ -248,7 +240,7 @@ function Admin() {
                                                         Precio obligatorio!
                                                     </Form.Control.Feedback>
                                                 </Form.Group>
-                                                <Form.Group className="reginputconteiner" controlId="validationCustomUsername">
+                                                <Form.Group className="" controlId="validationCustomUsername">
                                                     <Form.Label >Caracteristicas</Form.Label>
                                                     <InputGroup hasValidation>
                                                         <Form.Control
@@ -268,29 +260,15 @@ function Admin() {
                                                     </InputGroup>
                                                 </Form.Group>
                                                 <Form.Group controlId="formFile" className="mb-3">
-                                                    <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
+                                                    <Form.Label className="">Agregar imagen del producto de forma local</Form.Label>
                                                     <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
                                                     <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
                                                         <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}></Form.Group></Form.Group>
-                                                    <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px" }} placeholder="Agregar imagen del producto mediante URL" />
-
+                                                    <input id="url" className="registerlabel" type="url" name="url" style={{ width: "390px" }} placeholder="Agregar imagen del producto mediante URL" />
                                                     <Form.Control.Feedback type="invalid">
                                                         la imagen es obligaroria!
                                                     </Form.Control.Feedback>
                                                 </Form.Group>
-                                                {/* <Form.Label htmlFor="exampleColorInput">Color</Form.Label>
-                                        <Form.Control
-
-                                            style={{ height: "40px", width: "48px" }}
-                                            type="color"
-                                            
-                                            defaultValue="#563d7c"
-                                            title="Choose your color"
-                                            required
-                                        />
-                                         <Form.Control.Feedback type="invalid">
-                                                    El color es obligaroria!
-                                                </Form.Control.Feedback> */}
                                                 <Form.Group className="selectsa">
                                                     <select className="registerbut" aria-label="Default select example"
                                                         name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEsp.categoria}>
@@ -300,27 +278,12 @@ function Admin() {
                                                         <option value="Accesorios">Accesorio</option>
                                                         <option value="Otro">Otro</option>
                                                     </select>
-
-                                                    <select className="registerbut" aria-label="Default select example"
-                                                        name="stock" onChange={(e) => handleChange(e)} required defaultValue={productEsp.stock}>
-                                                        <option selected>Stock</option>
-                                                        <option value="1">1 unidad</option>
-                                                        <option value="2">2 unidades</option>
-                                                        <option value="3">3 unidades</option>
-                                                        <option value="4">4 unidades</option>
-                                                        <option value="5">5 unidades</option>
-                                                        <option value="6">+5 unidades</option>
-                                                    </select>
                                                 </Form.Group>
                                                 <img style={{ width: "200px", height: "200px" }} src={productEsp.img} />
                                             </Form>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
                         </Container>
                     </Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Footer className="editarformtitulo">
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
