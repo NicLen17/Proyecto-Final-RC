@@ -22,22 +22,22 @@ function Productos() {
   return (
     <div className="sideynav">
       <div data-aos="fade-up" className="productoscont" >
-      <Filtro/>
+        <Filtro />
         <div className="flexcardp">
           {products.map((prod) => (
             <NavLink style={{ textDecorationLine: "none" }} to={`/individual/${prod._id}`} exact as={NavLink}>
               <Card data-aos="fade-up" className="cardsp">
                 <Card.Img className="cardpimg"
                   variant="top"
-                  src={prod.img[0]}/>
-                <p>{prod.marca}</p>
-                <p>{prod.modelo}</p>
+                  src={prod.img[0]} />
                 <Card.Body>
                   <Card.Title className="cardtitulo">${prod.price}</Card.Title>
                   <Card.Text className="caracteristicas">
-                    <p style={{ maxLines: "3" }}>
-                      {prod.descripcion}
-                    </p>
+                    <p>{prod.marca}</p>
+                    <p>{prod.modelo}</p>
+                    <div class="module line-clamp">
+                      <p>{prod.descripcion}</p>
+                    </div>
                   </Card.Text>
                 </Card.Body>
               </Card>

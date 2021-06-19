@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-// importacion del swiper 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css"
-import "swiper/components/navigation/navigation.min.css"
-import SwiperCore, {
-    Navigation, Pagination, Mousewheel, Keyboard
-} from 'swiper/core';
 import './PIndividual.css';
 import axios from 'axios';
 
+
 export default function PIndividual() {
-    SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
@@ -31,7 +24,7 @@ export default function PIndividual() {
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <img className="imgpro" src={product.img} alt="" />
+                        <img className="imgpro" src={product.img} alt="Producto principal" />
                     </div>
                 </div>
                 <div className="contenido1">
@@ -39,9 +32,9 @@ export default function PIndividual() {
                         <p>Categoria {product.categoria}</p>
                     </h2>
                     <h2>${product.price}</h2>
-                    <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=44ff00" alt="" /> Envio Gratis</i>
-                    <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=44ff00" alt="" /> Stock disponible</i>
-                    <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=44ff00&colored=false" alt="" /> Garantia 6 meses</i>
+                    <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=228b22" alt="" /><b>Envio Gratis</b> </i>
+                    <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=228b22" alt="" /><b> Stock disponible</b></i>
+                    <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=228b22&colored=false" alt="" /><b>Garantia 6 meses</b> </i>
                 </div>
                 <div className="contenido1">
                     <div>
@@ -52,6 +45,17 @@ export default function PIndividual() {
                     </div>
                     <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                 </div>
+                <div className="imagenesdesc">
+                <div>
+                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 1" />
+                </div>
+                <div>
+                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 2" />
+                </div>
+                <div>
+                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 3" />
+                </div>
+            </div>
             </div>
         </div>
     )
