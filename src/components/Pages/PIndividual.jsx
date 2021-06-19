@@ -29,7 +29,7 @@ export default function PIndividual() {
                 </div>
                 <div className="contenido1">
                     <h2>{product.marca}  {product.modelo}
-                        <p>Categoria {product.categoria}</p>
+                        <p>Categoria <a href="">{product.categoria}</a> </p>
                     </h2>
                     <h2>${product.price}</h2>
                     <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=228b22" alt="" /><b>Envio Gratis</b> </i>

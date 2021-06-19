@@ -119,7 +119,7 @@ export default function Cards() {
               <a href="/individual3" style={{ textDecorationLine: "none" }}>
               <div className="cardprincipal">
                 <div className="cardimg">
-                  <img src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-12-64gb-purple-53017-mjn13ll-a?$device-lg$" alt="" />
+                  <img src="https://personal.vteximg.com.br/arquivos/ids/403564-400-400/iPhone-11-Pro-Space-Grey-VPlan-5GB-1-1393025.jpg?v=637389272855430000" alt="" />
                 </div>
                 <div className="contenidocard">
                   <h2>Iphone 11 PRO</h2>

@@ -16,6 +16,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 .pimgcont {
@@ -171,6 +172,19 @@
     .imgpro {
         max-width: 150px !important;
         max-height: 180px !important;
+    }
+}
+
+@media only screen and (max-width: 1493px   ) {
+    .imagenesdesc {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 1493px   ) {
+    .imagenesdesc {
+        flex-wrap: wrap;
+        justify-content: center !important;
     }
 }
 
