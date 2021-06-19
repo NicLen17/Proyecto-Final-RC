@@ -1,0 +1,55 @@
+.navcss {
+  color: #000000;
+  size: 10rem;
+  -webkit-box-shadow: 5px 5px 10px 3px #000000;
+  box-shadow: 5px 5px 10px 3px #000000;
+  margin-bottom: 10px;
+  background-color: rgba(243, 243, 243, 0.808);
+}
+.carritocss {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.producto {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.8s;
+}
+
+.detalle {
+  -webkit-box-shadow: 5px 5px 5px 3px #a7a7a7;
+  box-shadow: 5px 5px 5px 3px #a7a7a7;
+  margin-bottom: 10px;
+}
+
+.pagoefectivo:hover {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.pagotarjeta:hover {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.retirosucursal:hover {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.enviodomicilio:hover {
+  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
+  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
