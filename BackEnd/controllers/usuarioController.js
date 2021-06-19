@@ -13,6 +13,7 @@ exports.crearUsuario = async (req, res) => {
     console.log('🚀 ~ file: usuarioController.js ~ line 13 ~ exports.crearUsuario= ~ req.body', req.body);
 
     try {
+        console.log('estoy en crearUsuario', req.body);
         let usuarioEncontrado = await Usuario.findOne({ email });
 
         if (usuarioEncontrado) {
@@ -61,8 +62,15 @@ exports.updateUser = async (req, res) => {
 exports.stateUser = async (req, res) => {
     try {
         const userId = req.params.id;
+        const usuario = await Usuario.findById(req.usuario.id).select('-password -__v');
+        if (req.body.estado) {
+            req.body.estado = 'false';
+        } else {
+            req.body.estado = 'true';
+        }
+
         const updatedUser = await Usuario.findByIdAndUpdate(userId, req.body, { new: true });
-        res.send(updatedUser);
+        res.send(stateUser);
     } catch (error) {
         res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
     }
