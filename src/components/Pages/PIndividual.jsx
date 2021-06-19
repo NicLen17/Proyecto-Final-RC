@@ -24,7 +24,7 @@ export default function PIndividual() {
             <div className="pcontainers">
                 <div className="pcontainer">
                     <div className="pimgcont">
-                        <img className="imgpro" src={product.img} alt="Producto principal" />
+                        <img className="imgpro" src={product.img?.[0]} alt="Producto principal" />
                     </div>
                 </div>
                 <div className="contenido1">
@@ -46,15 +46,10 @@ export default function PIndividual() {
                     <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
                 </div>
                 <div className="imagenesdesc">
+                 {product.img?.map((i) => (
                 <div>
-                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 1" />
-                </div>
-                <div>
-                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 2" />
-                </div>
-                <div>
-                    <img src="https://static-geektopia.com/storage/t/p/114/114322/816x381/galaxy-s21-plus.webp" alt="Producto principal vista 3" />
-                </div>
+                    <img src={i} alt="Producto principal vista 1" />
+                </div>))}
             </div>
             </div>
         </div>

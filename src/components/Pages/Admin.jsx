@@ -13,6 +13,8 @@ function Admin() {
     const [imagenes, setImagenes] = useState({})
     const [lusers, setLusers] = useState([]);
     const [alertSuccess, setalertSuccess] = useState("")
+    const [alertSuccessM, setalertSuccessM] = useState("")
+    
     const [alert, setAlert] = useState("");
     const [productEncontrado, setProductEncontrado] = useState({})
     const [input, setInput] = useState({});
@@ -36,10 +38,11 @@ function Admin() {
             const { data } = await axios.get("usuarios");
             setLusers(data);
         };
+        
         productos();
         mensaje();
         getListaUsuarios();
-    }, []);
+    }, [setalertSuccess]);
 
     async function deleteProducto(id) {
         if (window.confirm("Estas seguro que deseas eliminar?")) {
@@ -47,14 +50,16 @@ function Admin() {
             productos();
             setalertSuccess("Producto eliminado correctamente")
         }
+        setTimeout(() => { setalertSuccess("") }, 5000);
     }
 
     async function deleteMensajes(id) {
         if (window.confirm("Estas seguro que deseas eliminar?")) {
             await axios.delete(`/mensajes/${id}`);
             mensaje();
-            setalertSuccess("Mensaje eliminado correctamente")
+            setalertSuccessM("Mensaje eliminado correctamente")
         }
+        setTimeout(() => { setalertSuccess("") }, 5000);
     }
     const updateProduct = (id) => {
         const productoEncontrado = products.find(p => p._id === id);
@@ -189,7 +194,7 @@ function Admin() {
                     </Tab>
                     <Tab eventKey="contact" title="Mensajeria">
                         <div>
-                            {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
+                            {alertSuccessM && <Alert variant="success">{alertSuccessM}</Alert>}
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                     <tr>

@@ -41,7 +41,7 @@ export default function AgregadoProducto({ productos }) {
                 : setAlert(error.response.data);
         }
         productos();
-
+        setTimeout(() => { setalertSuccess("") }, 5000);
     };
     const onChangeImg = async (e) => {
         const imagenesArray = [];
@@ -111,7 +111,7 @@ export default function AgregadoProducto({ productos }) {
                                             <Form.Control
                                                 name="price"
                                                 onChange={(e) => handleChange(e)}
-                                                type="text"
+                                                type="number"
                                                 placeholder="$$$"
                                                 className="registerlabel"
                                                 required
