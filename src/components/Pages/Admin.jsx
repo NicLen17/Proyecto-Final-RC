@@ -4,6 +4,7 @@ import { Tabs, Tab, Table, Alert, Modal, Button, Form, Row, Container, Col, Card
 import AgregadoProducto from '../AgregadoProducto'
 import './Admin.css'
 import { getBase64 } from '../utils/img';
+import { NavLink } from "react-router-dom";
 
 
 function Admin() {
@@ -13,12 +14,12 @@ function Admin() {
     const [lusers, setLusers] = useState([]);
     const [alertSuccess, setalertSuccess] = useState("")
     const [alert, setAlert] = useState("");
-    const [productEncontrado , setProductEncontrado] = useState({})
+    const [productEncontrado, setProductEncontrado] = useState({})
     const [input, setInput] = useState({});
 
     // estados modal
     const [show, setShow] = useState(false);
-        
+
     const [validated, setValidated] = useState(false);
 
     const productos = async () => {
@@ -41,7 +42,7 @@ function Admin() {
     }, []);
 
     async function deleteProducto(id) {
-            if (window.confirm("Estas seguro que deseas eliminar?")) {
+        if (window.confirm("Estas seguro que deseas eliminar?")) {
             await axios.delete(`/productos/${id}`);
             productos();
             setalertSuccess("Producto eliminado correctamente")
@@ -49,56 +50,57 @@ function Admin() {
     }
 
     async function deleteMensajes(id) {
-                if (window.confirm("Estas seguro que deseas eliminar?")) {
+        if (window.confirm("Estas seguro que deseas eliminar?")) {
             await axios.delete(`/mensajes/${id}`);
             mensaje();
             setalertSuccess("Mensaje eliminado correctamente")
         }
     }
-    const updateProduct = (id) => {      
-      const productoEncontrado = products.find(p =>  p._id === id );
-      setShow(true);
-      setProductEncontrado(productoEncontrado);
-               }
+    const updateProduct = (id) => {
+        const productoEncontrado = products.find(p => p._id === id);
+        setShow(true);
+        setProductEncontrado(productoEncontrado);
+    }
+    const handleSubmit = async (event) => {
+        const formulario = event.currentTarget;
+        console.log(productEncontrado._id)
+        event.preventDefault();
+        setValidated(true);
+        if (formulario.checkValidity() === false) {
+            return event.stopPropagation();
+        }
+        try {
+            await axios.put(`/productos/${productEncontrado._id}`, input);
+            setShow(false)
+            setalertSuccess(`PRODUCTO MODIFICADO EXITOSAMENTE`);
+            setValidated(false);
 
-               const handleSubmit = async (event) => {
-                const formulario = event.currentTarget;
-                event.preventDefault();
-                setValidated(true);
-                if (formulario.checkValidity() === false) {
-                    return event.stopPropagation();
-                }
-                try {
-                    await axios.put(`/productos`, input);
-                    setShow(false)
-                            
-                } catch (error) {
-                    error.response.data.msg
-                        ? setAlert(error.response.data.msg[0].msg)
-                        : setAlert(error.response.data);
-                }
-                productos();
-                setalertSuccess(`PRODUCTO MODIFICADO EXITOSAMENTE`);
-                setValidated(false);
-            };
-            const onChangeImg = async (e) => {
-                const imagenesArray = [];
-                const imagenesInput = e.target.files;
-                for (let i = 0; i < imagenesInput.length; i++) {
-                    const base64 = await getBase64(imagenesInput[i]);
-                    imagenesArray.push(base64);
-                    const iman = {img: imagenesArray}
-                    setImagenes(iman);
-                };
-            }
-        
-            const handleChange = (e) => {
-                setAlert("");
-                const { name, value } = e.target;
-                const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase()};
-                setInput(productoInput);
-            };
-       const handleSubmit_activo = async (event) => {
+        } catch (error) {
+            error.response.data.msg
+                ? setAlert(error.response.data.msg[0].msg)
+                : setAlert(error.response.data);
+        }
+        productos();
+       
+    };
+    const onChangeImg = async (e) => {
+        const imagenesArray = [];
+        const imagenesInput = e.target.files;
+        for (let i = 0; i < imagenesInput.length; i++) {
+            const base64 = await getBase64(imagenesInput[i]);
+            imagenesArray.push(base64);
+            const iman = { img: imagenesArray }
+            setImagenes(iman);
+        };
+    }
+
+    const handleChange = (e) => {
+        setAlert("");
+        const { name, value } = e.target;
+        const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase() };
+        setInput(productoInput);
+    };
+    const handleSubmit_activo = async (event) => {
         // const [usersactual, setUsersactual] = useState([]);
 
         // useEffect(() => {
@@ -119,6 +121,7 @@ function Admin() {
                     <Tab className="colortab" eventKey="home" title="Productos">
                         <div>
                             <AgregadoProducto productos={productos} />
+                            {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                     <tr>
@@ -141,9 +144,10 @@ function Admin() {
                                             <td>{product.img.map((e) => (
                                                 <img style={{ width: "150px", height: "120px" }} src={e} alt="imagen celulares" />
                                             ))} </td>
-                                            <td><button className="btn btn-success mr-1" onClick={() => updateProduct(product._id)} >Editar</button><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteProducto(product._id)}>eliminar</button></td>
+                                            <td><button className="btn btn-success mr-1" onClick={() => updateProduct(product._id)} >Editar</button> <NavLink  className="btn btn-primary" style={{ textDecorationLine: "none" }} to={`/individual/${product._id}`} exact as={NavLink}>Ver</NavLink>  <button className="btn btn-danger" onClick={() => deleteProducto(product._id)}>eliminar</button></td>
                                         </tr>
                                     ))
+                                    // <button className="btn btn-primary mr-1" onClick={`/individual/${product._id}`}
                                     }
                                 </tbody>
                             </Table>
@@ -201,7 +205,7 @@ function Admin() {
                                         <td><a href={msj.email}>{msj.email}</a></td>
                                         <td>{msj.tel}</td>
                                         <td>{msj.mensaje}</td>
-                                        <td><button className="btn btn-primary mr-1" >Ver</button><button className="btn btn-danger" onClick={() => deleteMensajes(msj._id)} >eliminar</button></td>
+                                        <td><button className="btn btn-danger" onClick={() => deleteMensajes(msj._id)} >Eliminar</button></td>
                                     </tr>
                                 ))
                                 }
@@ -213,17 +217,16 @@ function Admin() {
             {
                 <Modal
                     show={show}
-                    // onHide={}
+                    
                     backdrop="static"
                     keyboard={false}
                 >
-                        <Modal.Header className="editarformtitulo" closeButton>
+                    <Modal.Header className="editarformtitulo" closeButton={() => setShow(false) }>
                         <Modal.Title>Editar {productEncontrado.marca} {productEncontrado.modelo}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="editarform" style={{ width: "100%" }}>
                         <Container>
-                            {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                                <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                 <Form.Group className="" controlId="validationCustom02">
                                     <Form.Label >Marca</Form.Label>
                                     <Form.Control
@@ -249,7 +252,7 @@ function Admin() {
                                         type="text"
                                         placeholder="Nombre del producto"
                                         className="registerlabel"
-                                        defaultValue={productEsp.modelo}
+                                        defaultValue={productEncontrado.modelo}
                                     />
                                     <Form.Control.Feedback type="invalid">
                                         Se requiere el nombre del producto!
@@ -292,7 +295,9 @@ function Admin() {
                                 </Form.Group>
                                 <Form.Group controlId="formFile" className="mb-3">
                                     <Form.Label className="">Agregar imagen del producto de forma local</Form.Label>
-                                    <Form.Control required type="file" onChange={(e) => onChangeImg(e)} />
+                                    <Form.Group controlId="formFileMultiple" className="mb-3" onChange={(e) => onChangeImg(e)}>
+                                                <Form.Control type="file" multiple />
+                                   </Form.Group>
                                     <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
                                         <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}></Form.Group></Form.Group>
                                     <input id="url" className="registerlabel" type="url" name="url" style={{ width: "390px" }} placeholder="Agregar imagen del producto mediante URL" />
@@ -302,35 +307,35 @@ function Admin() {
                                 </Form.Group>
                                 <Form.Group className="selectsa">
                                     <select className="registerbut" aria-label="Default select example"
-                                        name="categoria" onChange={(e) => handleChange(e)} required>
-                                        <option selected>Color</option>
+                                        name="color" onChange={(e) => handleChange(e)}  required >
+                                        <option selected>{productEncontrado.color}</option>
                                         <option value="Negro">Negro</option>
                                         <option value="Blanco">Blanco</option>
                                         <option value="Azul">Azul</option>
                                     </select>
-                                    <select className="registerbut" aria-label="Default select example"
-                                        name="categoria" onChange={(e) => handleChange(e)} required defaultValue={productEsp.categoria}>
-                                        <option selected>Categoria</option>
+                                    <select className="registerbut" aria-label="Default select example">
+                                        <option selected>{productEncontrado.categoria} </option>
                                         <option value="Celular">Celular</option>
                                         <option value="Tablet">Tablet</option>
                                         <option value="Accesorios">Accesorio</option>
                                         <option value="Otro">Otro</option>
                                     </select>
                                 </Form.Group>
-                                <img style={{ width: "200px", height: "200px" }} src={productEncontrado.img} />
-                                
+                                {productEncontrado.img?.map((i) => (   
+                                <img style={{ width: "200px", height: "200px" }} src={i} />
+                                ))}
                                 <Modal.Footer className="editarformtitulo">
-                        <Button className="registerbut" variant="registerbut" onClick={handleClose}>
-                            Cerrar
-                        </Button>
-                        <Button className="registerbut" variant="registerbut" type='submit'>Listo</Button>
-                    </Modal.Footer></Form>
+                                    <Button className="registerbut" variant="registerbut" onClick={() => setShow(false)}>
+                                        Cerrar
+                                    </Button>
+                                    <Button className="registerbut" variant="registerbut" type='submit'>Listo</Button>
+                                </Modal.Footer></Form>
                         </Container>
                     </Modal.Body>
-                    
-                    </Modal>}
-        </div>                                 
-          )
+
+                </Modal>}
+        </div>
+    )
 }
 
 export default Admin

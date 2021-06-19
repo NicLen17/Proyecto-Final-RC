@@ -158,7 +158,7 @@ export default function Contacto() {
                     controlId="exampleForm.ControlTextarea1"
                   >
                     <Form.Label>Mensaje</Form.Label>
-                    <Form.Control className="labelform" minLength="20" maxLength="200" as="textarea" placeholder="Mensaje" required rows={3} name="mensaje" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" minLength="20" maxLength="300" as="textarea" placeholder="Mensaje" required rows={3} name="mensaje" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere mensaje y un minimo de 20 caracteres!
                     </Form.Control.Feedback>

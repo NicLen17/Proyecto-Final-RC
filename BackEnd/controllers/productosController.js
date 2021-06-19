@@ -43,7 +43,7 @@ exports.updateProduct = async (req, res) => {
         const { body } = req;  
         console.log(req.body) 
         console.log(req.params.id) 
-        const updatedProducto = await Productos.findByIdAndUpdate(req.body.id, body, { new: true });
+        const updatedProducto = await Productos.findByIdAndUpdate(req.params.id, body, { new: true });
         res.send(updatedProducto);
     } catch (error) {
         res.status(400).send({ msg: 'Hubo un error al actualizar el producto' });

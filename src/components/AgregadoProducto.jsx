@@ -32,15 +32,16 @@ export default function AgregadoProducto({ productos }) {
         try {
             await axios.post("/productos", input);
             formulario.reset();
+            setalertSuccess(`PRODUCTO CREADO EXITOSAMENTE`);
+            setValidated(false);
 
         } catch (error) {
-            error.response.data.msg
-                ? setAlert(error.response.data.msg[0].msg)
+                    error.response.data.msg
+                ? setAlert(error.response.data.msg)
                 : setAlert(error.response.data);
         }
         productos();
-        setalertSuccess(`PRODUCTO CREADO EXITOSAMENTE`);
-        setValidated(false);
+
     };
     const onChangeImg = async (e) => {
         const imagenesArray = [];
@@ -48,7 +49,7 @@ export default function AgregadoProducto({ productos }) {
         for (let i = 0; i < imagenesInput.length; i++) {
             const base64 = await getBase64(imagenesInput[i]);
             imagenesArray.push(base64);
-            const iman = {img: imagenesArray}
+            const iman = { img: imagenesArray }
             setImagenes(iman);
         };
     }
@@ -56,7 +57,7 @@ export default function AgregadoProducto({ productos }) {
     const handleChange = (e) => {
         setAlert("");
         const { name, value } = e.target;
-        const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase()};
+        const productoInput = { ...input, ...imagenes, [name]: value.toUpperCase() };
         setInput(productoInput);
     };
 
@@ -142,17 +143,18 @@ export default function AgregadoProducto({ productos }) {
                                             <Form.Group controlId="formFileMultiple" className="mb-3" onChange={(e) => onChangeImg(e)}>
                                                 <Form.Control type="file" multiple />
                                             </Form.Group>
+                                            <Form.Control.Feedback type="invalid">
+                                                La imagen es obligaroria!
+                                            </Form.Control.Feedback>
                                             {/* <Form.Control required type="file" onChange={(e) => onChangeImg(e)} /> */}
                                             <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
                                                 <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px", maxWidth: "100%" }} placeholder="Agregar imagen del producto mediante URL" />
                                             </Form.Group>
-                                            <Form.Control.Feedback type="invalid">
-                                                la imagen es obligaroria!
-                                            </Form.Control.Feedback>
+
                                         </Form.Group>
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
-                                                name="categoria" onChange={(e) => handleChange(e)} required>
+                                                name="color" onChange={(e) => handleChange(e)} required>
                                                 <option selected>Color</option>
                                                 <option value="Negro">Negro</option>
                                                 <option value="Blanco">Blanco</option>
@@ -168,11 +170,7 @@ export default function AgregadoProducto({ productos }) {
                                                 <option value="Accesorios">Accesorio</option>
                                                 <option value="Otro">Otro</option>
                                             </select>
-<<<<<<< HEAD
-                                                                                </Form.Group>
-=======
                                         </Form.Group>
->>>>>>> 2c0ce1b293930c1b0bce77fc75c1c12f33eae8d0
                                         <Row>
                                             <Button className="registerbut" variant="registerbut" type="submit">
                                                 Agregar

@@ -5,7 +5,8 @@ exports.createProduct = [
     check('marca', 'La marca es obligatorio').not().isEmpty(),
     check('price', 'El precio es obligatorio').not().isEmpty(),
     check('descripcion', 'La descripcion es obligatoria').not().isEmpty(),
-    // check('color', 'Elija un color').not().isEmpty(),
+    check('img', 'La imagen es obligatoria').not().isEmpty(),
+    check('color', 'Elija un color').not().isEmpty(),
     check('categoria', 'La categoria es obligatoria').not().isEmpty(),
-    check('img', 'La imagen es obligatoria').not().isEmpty()
+    
     ];
