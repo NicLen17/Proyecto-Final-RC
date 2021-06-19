@@ -53,6 +53,7 @@
     -webkit-box-shadow: 0px 0px 17px 1px rgba(53, 53, 53, 0.61);
     box-shadow: 0px 0px 17px 1px rgba(56, 56, 56, 0.61);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .imagenesdesc img:hover {
