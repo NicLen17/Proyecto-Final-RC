@@ -20,6 +20,7 @@ import Perfil from "./components/Pages/Perfil";
 import PIndividual from "./components/Pages/PIndividual";
 import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
+import Carrito from './components/Carrito'
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -70,11 +71,15 @@ export default function App() {
           </Route>
 
           <Route path="/perfil" exact>
-            <Perfil />
+            <Perfil user={user} />
           </Route>
-
+          
           <Route path="/individual/:id" exact>
             <PIndividual />
+          </Route>
+
+          <Route path="/carrito" exact>
+            <Carrito />
           </Route>
 
           <Route path="/admin" exact>

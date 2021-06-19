@@ -95,7 +95,7 @@ export default function Cards(prod) {
           </Tab>
           <Tab className="tabss" eventKey="profile" title="Celulares">
             <div className="flexcard">
-            <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce27f9b131e40c8405ec9a/" exact as={NavLink}>
+            <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce27f9b131e40c8405ec9a" exact as={NavLink}>
                 <div className="cardprincipal">
                   <div className="cardimg">
                     <img className="imgsa" src="https://images.samsung.com/is/image/samsung/p6pim/pe/sm-g780fzglltp/gallery/pe-galaxy-s20-fe-g780-357343-sm-g780fzglltp-thumb-327368871?$LazyLoad_Home_IMG$" alt="" />

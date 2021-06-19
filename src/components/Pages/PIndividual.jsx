@@ -19,6 +19,13 @@ export default function PIndividual() {
         producto();
     }, [])
 
+    const productoscarrito = []
+
+    const agregarcarrito = () => {
+        productoscarrito.push(product);
+        localStorage.setItem("agregarcarrito", JSON.stringify(productoscarrito));
+    }
+
     return (
         <div className="backgroundoP">
             <div className="pcontainers">
@@ -43,14 +50,14 @@ export default function PIndividual() {
                             {product.descripcion}
                         </p>
                     </div>
-                    <Button className="btncompra" variant="btncompra" > Agregar al carrito </Button>
+                    <Button className="btncompra" variant="btncompra" onClick={agregarcarrito} > Agregar al carrito </Button>
                 </div>
                 <div className="imagenesdesc">
-                 {product.img?.map((i) => (
-                <div>
-                    <img src={i} alt="Producto principal vista 1" />
-                </div>))}
-            </div>
+                    {product.img?.map((i) => (
+                        <div>
+                            <img src={i} alt="Producto principal vista 1" />
+                        </div>))}
+                </div>
             </div>
         </div>
     )

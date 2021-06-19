@@ -34,7 +34,7 @@ export default function NavReactB({ userName, logout }) {
         </Nav>
       </Navbar.Collapse>
 
-      {userName && <h2 className="userbut">{userName}</h2>}
+      {userName && <h2 style={{width: "150px",maxWidth: "100%"  }} className="userbut">{userName}</h2>}
       {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
 
       {userName && (

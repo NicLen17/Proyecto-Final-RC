@@ -8,10 +8,10 @@ const usuarioValidation = require('../validations/usuarioValidation');
 // api/usuarios
 // Crear un usuario
 router.post('/', usuarioValidation.crearUsuario, usuarioController.crearUsuario);
-router.put('/', authMiddleware, usuarioController.updateUser);
+// router.put('/', authMiddleware, usuarioController.updateUser);
 router.put('/:id', authMiddleware, usuarioController.stateUser);
 router.get('/', usuarioController.obtenerUsuarios);
-router.get('/', usuarioController.getUser);
+// router.get('/', usuarioController.getUser);
 // router.get('/', () => {});
 
 module.exports = router;

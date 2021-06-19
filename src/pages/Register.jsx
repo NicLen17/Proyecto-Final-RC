@@ -12,12 +12,9 @@ import {
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
-import './Register.css'
-import Aos from 'aos'
-import "aos/dist/aos.css"
-
-
-
+import "./Register.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Register({ setToken }) {
   const [validated, setValidated] = useState(false);
@@ -58,7 +55,7 @@ export default function Register({ setToken }) {
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
-  }, [])
+  }, []);
 
   return (
     <Container data-aos="fade-up" className="registerform">
@@ -71,22 +68,25 @@ export default function Register({ setToken }) {
             </Card.Header>
             <Card.Body>
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="reginputconteiner" controlId="validationCustom01">
-                  <Form.Label >Nombre y Apellido</Form.Label>
+                <Form.Group
+                  className="reginputconteiner"
+                  controlId="validationCustom01"
+                >
+                  <Form.Label>Nombre y Apellido</Form.Label>
                   <Form.Control
                     name="nombre"
                     onChange={(e) => handleChange(e)}
                     required
                     type="text"
                     placeholder="Nombre y Apellido"
-                    className="registerlabel"
+                    className="registerlabel text-uppercase"
                     maxLength="25"
                     minLength="6"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label >Celular</Form.Label>
+                  <Form.Label>Celular</Form.Label>
                   <Form.Control
                     name="celular"
                     onChange={(e) => handleChange(e)}
@@ -96,20 +96,26 @@ export default function Register({ setToken }) {
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group className="reginputconteiner" controlId="validationCustom02">
-                  <Form.Label >Email</Form.Label>
+                <Form.Group
+                  className="reginputconteiner"
+                  controlId="validationCustom02"
+                >
+                  <Form.Label>Email</Form.Label>
                   <Form.Control
                     name="email"
                     onChange={(e) => handleChange(e)}
                     required
                     type="text"
                     placeholder="Email"
-                    className="registerlabel"
+                    className="registerlabel text-uppercase"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group className="reginputconteiner" controlId="validationCustomUsername">
-                  <Form.Label >Password</Form.Label>
+                <Form.Group
+                  className="reginputconteiner"
+                  controlId="validationCustomUsername"
+                >
+                  <Form.Label>Password</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control
                       minLength="6"
@@ -127,7 +133,11 @@ export default function Register({ setToken }) {
                   </InputGroup>
                 </Form.Group>
                 <Row>
-                  <Button className="registerbut" variant="loginbut" type="submit">
+                  <Button
+                    className="registerbut"
+                    variant="loginbut"
+                    type="submit"
+                  >
                     Registrarme
                   </Button>
                 </Row>

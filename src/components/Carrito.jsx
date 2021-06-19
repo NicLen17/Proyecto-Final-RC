@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import {useHistory} from 'react-router-dom'
 import { Button, Card, Form, Accordion } from "react-bootstrap";
 import Switch from "@material-ui/core/Switch";
 
 import "./Carrito.css";
 
-// const setLStorageItem = (key, value) => {
-//   localStorage.setItem(key, JSON.stringify(value));
+// const getLStorageItem = (key, value) => {
+//   localStorage.getItem(key, JSON.stringify(value));
 // };
-// const initialArticulos = JSON.parse(localStorage.getItem("articulos")) || [];
+
+let data1 = JSON.parse(localStorage.getItem("agregarcarrito"));
+console.log("🚀 ~ file: Carrito.jsx ~ line 13 ~ data1", data1)
 
 export default function Carrito() {
+
+  const history = useHistory();
+
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -26,48 +31,39 @@ export default function Carrito() {
     setOpen(true);
   };
 
-  //FUNCION ELIMINAR PRODUCTOS
+  const product = () => {
+    JSON.parse(localStorage.getItem("agregarcarrito"));
+  }
 
-  //   async function deleteProducto(id) {
-  //     console.log(id);
-  //     if (window.confirm("Estas seguro que deseas eliminar?")) {
-  //         await axios.delete(`/productos/${id}`);
-  //         productos();
-  //         setalertSuccess("Eliminado correctamente")
-  //     }
-  // }
+  useEffect(() => {
+    product();
+  }, []);
 
-  // FUNCION PARA OPERAR EN LOCALSTORAGE
+  const eliminarcarrito = (id) => {
+    const confirmar = window.confirm("Acepta eliminar del Carrito? ");
+    if (!confirmar) {
+      return;
+    }
+    let productosFiltrados = [];
+    data1.map ((e) => {
+      const coincideId = e._id === id;
+      
+      if (!coincideId) {
+        productosFiltrados.push(e);
+      }});
+      
+    localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
+    data1 = productosFiltrados;
+    console.log("Se eliminó exitosamente el Producto. 👨‍💻");
+    product();
+  }
 
-  // const [validated, setValidated] = useState(false);
-  // const [input, setInput] = useState({});
-  // const [articulos, setArticulos] = useState(initialArticulos);
-
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   event.preventDefault();
-  //   if (form.checkValidity() === true) {
-  //     //Cuando los campos esten completos, agregamos el articulo al array
-  //     const newArticulos = [...articulos, input];
-  //     setArticulos(newArticulos);
-  //     setLStorageItem("articulos", newArticulos);
-  //     form.reset();
-  //     setValidated(false);
-  //   } else {
-  //     setValidated(true);
-  //   }
-  // };
-
-  // const handleChange = (event) => {
-  //   // Extraemos y guardamos en variables, el nombre y el valor del input en el que escribio el usuario.
-  //   const { value, name } = event.target;
-
-  //   //Declaramos un objeto que contiene las propiedades del stat input,
-  //   //mas lo que escribe el usuario  usando el name  y value. Con ese objeto actualizamos el estado.
-
-  //   const newInput = { ...input, [name]: value };
-  //   setInput(newInput);
-  // };
+  const cancelarcompra = () => {
+    localStorage.setItem("agregarcarrito", JSON.stringify([]));
+    if (window.confirm("Seguro que desea cancelar?")) {
+      history.push("/")
+    }
+  }
 
   return (
     <div className="body">
@@ -111,77 +107,38 @@ export default function Carrito() {
         {/*-------------------Card de Producto--------------------*/}
         <Card className="card overflow container producto">
           {/*--------------Boton Eliminar Producto-------------*/}
-          <div className="mt-3" style={{ textAlign: "end" }}>
-            Este boton elimina el articulo cargado
-            <Button
-              className="btn-light btn-outline-light ml-1 "
-              style={{ backgroundColor: "transparent" }}
-            >
-              <img
-                src="https://icongr.am/fontawesome/trash.svg?size=40&color=currentColor"
-                alt=""
-              />
-            </Button>
-          </div>
+          {data1.map((p) => (
+            <div className="mt-3" style={{ textAlign: "end" }}>
+              <Button
+                onClick={() => eliminarcarrito(p._id)}
+                className="btn btn-light ml-1"
+                style={{ backgroundColor: "transparent" }}
+              >
+                <img
+                  src="https://icongr.am/fontawesome/trash.svg?size=40&color=currentColor"
+                  alt=""
+                />
+              </Button>
+            </div>
+          ))}
           <br />
           {/*-------------------Precio del Articulo------------------------*/}
-          <div className="card container" style={{ textAlign: "end" }}>
-            <div className="card-body">
-              <h5>Precio: AQUI VA EL PRECIO DEL ARTICULO CARGADO</h5>
-            </div>
-          </div>
           <br />
           <div className="container d-flex">
             <br />
-            <Card
-              className="card-body d-flex align-content-center m-4"
-              style={{ backgroundColor: "yellow" }}
-            >
-              <h1> AQUI VA EL CONTENIDO DE LA CARD DE PRODUCTO</h1>
-            </Card>
+            {data1.map((p) => (
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={p.img[0]} />
+                <Card.Body>
+                  <Card.Title>{p.marca} {p.modelo}</Card.Title>
+                  <Card.Text> <b> $
+                    {p.price}</b>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
             <br />
             <br />
-            {/*-----------------Datos del producto: Titulo, color?,-------------*/}
-
-            {/* {section === "Cards" && (
-        <div className="container d-flex">
-          {articulos.map((articulo) => (
-            <Card
-              imagen={articulo.image}
-              titulo={articulo.titulo}
-              descripcion={articulo.descripcion}
-            />
-          ))}
-        </div>
-      )} */}
-
-            {/*-----------------imagen del producto--------------------------*/}
-            {/* <div className="card-body d-flex">
-              <img
-                src="https://d34zlyc2cp9zm7.cloudfront.net/products/c332a0d34920e86555c0c6d2d3492e0a725fdbc1db35fb10ee2a6adc22c061d4.jpg_500"
-                alt=""
-              />
-            </div> */}
-
-            {/* <div
-              className="container"
-              style={{
-                flexDirection: "column",
-              }}
-            >
-              <div className="card-body d-flex">
-                <b>Marca:</b>
-              </div>
-              <div className="card-body d-flex">
-                <b>Modelo:</b>
-              </div>
-              <div className="card-body d-flex">
-                <b>Color:</b>
-              </div>
-              <div className="card-body d-flex">
-                <b>Cantidad:</b>
-              </div>
-            </div>*/}
           </div>
         </Card>
         <br />
@@ -192,7 +149,9 @@ export default function Carrito() {
           style={{ textAlign: "end", flexDirection: "column" }}
         >
           <div className="card-body ">
-            <h3>Total: AQUI VA EL TOTAL DE LA COMPRA</h3>
+            {data1.map((p) => (
+              <h3>Total: ${p.price}</h3>
+            ))}
           </div>
         </div>
         <br />
@@ -584,8 +543,8 @@ export default function Carrito() {
             textAlign: "end",
           }}
         >
-          <Button variant="danger" size="lg" style={{ float: "left" }}>
-            Cancelar
+          <Button onClick={cancelarcompra} variant="danger" size="lg" style={{ float: "left" }}>
+            Cancelar compra
           </Button>{" "}
           {/* <Button variant="primary" size="lg">
             Modificar Compra

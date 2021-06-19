@@ -146,11 +146,6 @@ export default function AgregadoProducto({ productos }) {
                                             <Form.Control.Feedback type="invalid">
                                                 La imagen es obligaroria!
                                             </Form.Control.Feedback>
-                                            {/* <Form.Control required type="file" onChange={(e) => onChangeImg(e)} /> */}
-                                            <Form.Group placeholder="Agregar imagen del producto mediante URL" style={{ marginTop: "15px" }}>
-                                                <input id="url" className="registerlabel" type="url" name="url" style={{ width: "490px", maxWidth: "100%" }} placeholder="Agregar imagen del producto mediante URL" />
-                                            </Form.Group>
-
                                         </Form.Group>
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
