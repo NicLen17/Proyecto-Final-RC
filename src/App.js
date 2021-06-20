@@ -25,6 +25,7 @@ import Carrito from './components/Carrito'
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
 export default function App() {
+  const productosCarrito = []
   const [user, setUser] = useState({});
   const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
   //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
@@ -75,7 +76,7 @@ export default function App() {
           </Route>
           
           <Route path="/individual/:id" exact>
-            <PIndividual />
+            <PIndividual productosCarrito={productosCarrito} />
           </Route>
 
           <Route path="/carrito" exact>

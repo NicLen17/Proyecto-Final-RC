@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import './PIndividual.css';
 import axios from 'axios';
 
 
-export default function PIndividual() {
-
+export default function PIndividual({ productosCarrito }) {
+    const [alertSuccess, setalertSuccess] = useState("")
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
@@ -19,11 +19,10 @@ export default function PIndividual() {
         producto();
     }, [])
 
-    const productoscarrito = []
-
     const agregarcarrito = () => {
-        productoscarrito.push(product);
-        localStorage.setItem("agregarcarrito", JSON.stringify(productoscarrito));
+        productosCarrito.push(product);
+        localStorage.setItem("agregarcarrito", JSON.stringify(productosCarrito));
+        setalertSuccess(`${product.marca} ${product.modelo} agregado al carrito!`)
     }
 
     return (
@@ -39,6 +38,7 @@ export default function PIndividual() {
                         <p>Categoria <a href="">{product.categoria}</a> </p>
                     </h2>
                     <h2>${product.price}</h2>
+                    {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
                     <i> <img className="imgval" src="https://icongr.am/fontawesome/truck.svg?size=128&color=228b22" alt="" /><b>Envio Gratis</b> </i>
                     <i> <img className="imgval" src="https://icongr.am/octicons/check.svg?size=128&color=228b22" alt="" /><b> Stock disponible</b></i>
                     <i> <img className="imgval" src="https://icongr.am/simple/adguard.svg?size=128&color=228b22&colored=false" alt="" /><b>Garantia 6 meses</b> </i>

@@ -8,14 +8,9 @@ import "aos/dist/aos.css"
 
 export default function Cards(prod) {
   
-  const [products, setProducts] = useState([])
-  console.log(products);
+
   useEffect(() => {
-    const productos = async () => {
-      const { data } = await axios.get('/productos');
-      setProducts(data);
-    }
-    productos();
+   
     Aos.init({ duration: 1000 });
   }, [])
 

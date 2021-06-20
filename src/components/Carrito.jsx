@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {useHistory} from 'react-router-dom'
-import { Button, Card, Form, Accordion } from "react-bootstrap";
+import { Button, Card, Form, Accordion ,Alert } from "react-bootstrap";
 import Switch from "@material-ui/core/Switch";
 
 import "./Carrito.css";
@@ -9,17 +9,17 @@ import "./Carrito.css";
 //   localStorage.getItem(key, JSON.stringify(value));
 // };
 
-let data1 = JSON.parse(localStorage.getItem("agregarcarrito"));
-console.log("🚀 ~ file: Carrito.jsx ~ line 13 ~ data1", data1)
+
 
 export default function Carrito() {
 
   const history = useHistory();
-
+  const [alert, setAlert] = useState("");
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-
-  const handleHiddenChange = (event) => {
+ let [productoCart , setProductoCart] = useState([])
+ let [total ,setTotal] = useState("");
+    const handleHiddenChange = (event) => {
     setHidden(event.target.checked);
   };
 
@@ -31,12 +31,20 @@ export default function Carrito() {
     setOpen(true);
   };
 
-  const product = () => {
-    JSON.parse(localStorage.getItem("agregarcarrito"));
-  }
-
-  useEffect(() => {
-    product();
+  // let productoCart = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+ 
+  let producto = () => {
+    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+    setProductoCart(productoStorage);
+    let sum = 0
+    productoStorage.map((p) => {
+     sum = sum + p.price
+    })
+    setTotal(sum);
+    }
+    useEffect(() => {
+      producto()
+   
   }, []);
 
   const eliminarcarrito = (id) => {
@@ -45,7 +53,7 @@ export default function Carrito() {
       return;
     }
     let productosFiltrados = [];
-    data1.map ((e) => {
+    productoCart.map ((e) => {
       const coincideId = e._id === id;
       
       if (!coincideId) {
@@ -53,10 +61,11 @@ export default function Carrito() {
       }});
       
     localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
-    data1 = productosFiltrados;
-    console.log("Se eliminó exitosamente el Producto. 👨‍💻");
-    product();
-  }
+    setProductoCart(productosFiltrados);
+    setAlert("PRODUCTO ELIMINADO");
+    setTimeout(() => { setAlert("") }, 8000);
+    producto();
+    }
 
   const cancelarcompra = () => {
     localStorage.setItem("agregarcarrito", JSON.stringify([]));
@@ -105,9 +114,11 @@ export default function Carrito() {
           </h1>
         </div>
         {/*-------------------Card de Producto--------------------*/}
+        {alert && <Alert variant="danger">{alert}</Alert>}
         <Card className="card overflow container producto">
           {/*--------------Boton Eliminar Producto-------------*/}
-          {data1.map((p) => (
+          {productoCart.length === 0 && <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>}    
+            {productoCart.map((p) => (
             <div className="mt-3" style={{ textAlign: "end" }}>
               <Button
                 onClick={() => eliminarcarrito(p._id)}
@@ -126,7 +137,7 @@ export default function Carrito() {
           <br />
           <div className="container d-flex">
             <br />
-            {data1.map((p) => (
+            {productoCart.map((p) => (
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={p.img[0]} />
                 <Card.Body>
@@ -149,9 +160,9 @@ export default function Carrito() {
           style={{ textAlign: "end", flexDirection: "column" }}
         >
           <div className="card-body ">
-            {data1.map((p) => (
-              <h3>Total: ${p.price}</h3>
-            ))}
+            
+              <h3>Total: ${total}</h3>
+            
           </div>
         </div>
         <br />
