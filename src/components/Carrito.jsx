@@ -1,50 +1,29 @@
 import React, { useState, useEffect } from "react";
-import {useHistory} from 'react-router-dom'
-import { Button, Card, Form, Accordion ,Alert } from "react-bootstrap";
-import Switch from "@material-ui/core/Switch";
+import { useHistory } from "react-router-dom";
+import { Button, Card, Form, Alert } from "react-bootstrap";
 
 import "./Carrito.css";
 
-// const getLStorageItem = (key, value) => {
-//   localStorage.getItem(key, JSON.stringify(value));
-// };
-
-
-
 export default function Carrito() {
-
   const history = useHistory();
   const [alert, setAlert] = useState("");
-  const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
- let [productoCart , setProductoCart] = useState([])
- let [total ,setTotal] = useState("");
-    const handleHiddenChange = (event) => {
-    setHidden(event.target.checked);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  let [productoCart, setProductoCart] = useState([]);
+  let [total, setTotal] = useState("");
 
   // let productoCart = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
- 
+
   let producto = () => {
-    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+    let productoStorage =
+      JSON.parse(localStorage.getItem("agregarcarrito")) || [];
     setProductoCart(productoStorage);
-    let sum = 0
+    let sum = 0;
     productoStorage.map((p) => {
-     sum = sum + p.price
-    })
+      sum = sum + p.price;
+    });
     setTotal(sum);
-    }
-    useEffect(() => {
-      producto()
-   
+  };
+  useEffect(() => {
+    producto();
   }, []);
 
   const eliminarcarrito = (id) => {
@@ -53,49 +32,33 @@ export default function Carrito() {
       return;
     }
     let productosFiltrados = [];
-    productoCart.map ((e) => {
+    productoCart.map((e) => {
       const coincideId = e._id === id;
-      
+
       if (!coincideId) {
         productosFiltrados.push(e);
-      }});
-      
+      }
+    });
+
     localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
     setProductoCart(productosFiltrados);
     setAlert("PRODUCTO ELIMINADO");
-    setTimeout(() => { setAlert("") }, 8000);
+    setTimeout(() => {
+      setAlert("");
+    }, 8000);
     producto();
-    }
+  };
 
   const cancelarcompra = () => {
     localStorage.setItem("agregarcarrito", JSON.stringify([]));
     if (window.confirm("Seguro que desea cancelar?")) {
-      history.push("/")
+      history.push("/");
     }
-  }
+  };
 
   return (
-    <div className="body">
-      {/*---------------------------NavBar---------------------------------------- */}
-      <div className="navcss">
-        <div className="d-flex">
-          <div className="m-1 d-flex " href="#home">
-            {/* <h3>Phone Pixel</h3> */}
-            <img
-              src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png"
-              style={{ width: "150px", height: "65px" }}
-            />
-          </div>
-          <div
-            className="card-body d-flex "
-            style={{ justifyContent: "flex-end" }}
-          >
-            <a href="#login">
-              <h3>Ayuda!</h3>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div className="body mt-5">
+      <br />
       {/*----------------------Detalle de la compra ------------------------*/}
       <div
         className="card container carritocss"
@@ -117,8 +80,10 @@ export default function Carrito() {
         {alert && <Alert variant="danger">{alert}</Alert>}
         <Card className="card overflow container producto">
           {/*--------------Boton Eliminar Producto-------------*/}
-          {productoCart.length === 0 && <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>}    
-            {productoCart.map((p) => (
+          {productoCart.length === 0 && (
+            <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
+          )}
+          {productoCart.map((p) => (
             <div className="mt-3" style={{ textAlign: "end" }}>
               <Button
                 onClick={() => eliminarcarrito(p._id)}
@@ -138,12 +103,15 @@ export default function Carrito() {
           <div className="container d-flex">
             <br />
             {productoCart.map((p) => (
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={p.img[0]} />
                 <Card.Body>
-                  <Card.Title>{p.marca} {p.modelo}</Card.Title>
-                  <Card.Text> <b> $
-                    {p.price}</b>
+                  <Card.Title>
+                    {p.marca} {p.modelo}
+                  </Card.Title>
+                  <Card.Text>
+                    {" "}
+                    <b> ${p.price}</b>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -160,391 +128,181 @@ export default function Carrito() {
           style={{ textAlign: "end", flexDirection: "column" }}
         >
           <div className="card-body ">
-            
-              <h3>Total: ${total}</h3>
-            
+            <h3>Total: ${total}</h3>
           </div>
         </div>
         <br />
-        {/*-------------------Forma de Pago-----------------------------*/}
+        {/*-------------------Seccion forma de Pago y Envio-----------------------------*/}
         <div>
-          <div className="container d-flex" style={{ alignContent: "center" }}>
+          <div className="container d-flex">
             <h5>Mi forma de pago</h5>
           </div>
           <br />
 
-          {/* <Accordion className="m-2 pagoefectivo">
-            <Card>
-              <div
-                className="container d-flex "
-                style={{ alignItems: "center" }}
-              >
+          <Card className="pagotarjeta">
+            <div className="container d-flex" style={{ textAlign: "start" }}>
+              <b className="card-body">Ingresa los datos de tu tarjeta</b>
+            </div>
+            <Card.Body>
+              <div className="container d-flex m-2">
                 <div
-                  className="card-body d-flex "
-                  style={{ alignItems: "center" }}
-                >
-                  {/* <input
-                    type="radio"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                    name="pago"
-                  /> *
-                  <b>Efectivo en Puntos de Pago</b>
-                </div>
-
-                <Accordion.Toggle
-                  as={Button.light}
-                  className="btn btn-outline-light"
-                  eventKey="0"
-                  name="pago"
-                >
-                  <img
-                    src="https://icongr.am/entypo/chevron-small-down.svg?size=30&color=currentColor"
-                    alt=""
-                  />
-                </Accordion.Toggle>
-              </div>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body>
-                  <hr />
-                  <div className="container d-flex">
-                    <div
-                      className="card-body d-flex"
-                      style={{ alignItems: "center" }}
-                    >
-                      <input
-                        type="radio"
-                        class="form-check-input only-one"
-                        id="exampleCheck1"
-                        size="lg"
-                        name="efectivo"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="exampleCheck1"
-                        size="lg"
-                      />
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrDcGOl3dBn0AZJtlFL-dFyFfLfvjBsys9mYuwwTZjKpgEnLJjlnGhHUfD5ldwgkat2A&usqp=CAU"
-                        alt=""
-                        style={{
-                          width: "180px",
-                          height: "50px",
-                          marginLeft: "1rem",
-                        }}
-                      />
-                    </div>
-
-                    <div
-                      className="card-body d-flex"
-                      style={{ alignItems: "center" }}
-                    >
-                      <input
-                        type="radio"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                        name="efectivo"
-                      />
-                      <label class="form-check-label" for="exampleCheck1" />
-
-                      <img
-                        src="http://1.bp.blogspot.com/_dsMAErmQ_4o/TPf1eRuaF2I/AAAAAAAAAdM/P54twgtwOMM/s1600/PAGOFACIL.jpg"
-                        alt=""
-                        style={{
-                          width: "120px",
-                          height: "75px",
-                          marginLeft: "1rem",
-                        }}
-                      />
-                    </div>
-                    <div
-                      className="card-body d-flex"
-                      style={{
-                        alignItems: "center",
-                        width: "250px",
-                        height: "100px",
-                      }}
-                    >
-                      <b>
-                        IMPORTANTE: cuando confirmes la compra por cualquiera de
-                        estos medios, te enviamos un link de Mercado Pago!
-                      </b>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-                    </Accordion> */}
-
-          <br />
-
-          <Accordion className="m-2 pagotarjeta">
-            <Card>
-              <div
-                className="container d-flex"
-                style={{ alignItems: "center" }}
-              >
-                <div
-                  className="card-body d-flex"
-                  style={{ alignContent: "center" }}
-                >
-                  {/* <input
-                    type="radio"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                    name="pago"
-                  /> */}
-                  <b>Pago con Tarjeta</b>
-                </div>
-                <Accordion.Toggle
-                  as={Button.light}
-                  className="btn btn-outline-light"
-                  eventKey="0"
-                  name="pago"
+                  className="container mt-4"
+                  style={{ width: "500px" }}
+                  name="efectivo"
                   required
                 >
-                  <img
-                    src="https://icongr.am/entypo/chevron-small-down.svg?size=30&color=currentColor"
-                    alt=""
+                  <Form.Control
+                    className="ml-3 mb-2"
+                    type="numeric"
+                    placeholder="Nro. de Tarjeta"
+                    textarea
                   />
-                </Accordion.Toggle>
-              </div>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body>
-                  <hr />
-                  <div
-                    className="container d-flex m-2"
-                    style={{ alignContent: "center" }}
-                  >
-                    <div
-                      className="container mt-4"
-                      style={{ width: "500px" }}
-                      name="efectivo"
-                    >
-                      <Form.Control
-                        className="ml-3 mb-2"
-                        type="text"
-                        placeholder="Nro. de Tarjeta"
-                      />
-                      <Form.Control
-                        className="ml-3 mb-2"
-                        type="text"
-                        placeholder="Codigo de Seguridad"
-                      />
-                      <Form.Control
-                        className="ml-3 mb-2"
-                        type="text"
-                        placeholder="Fecha de Expiracion"
-                      />
-                      <Form.Control
-                        className="ml-3 mb-2"
-                        type="text"
-                        placeholder="Nombre y Apellido"
-                      />
-                      <Form.Control
-                        className="ml-3"
-                        type="text"
-                        placeholder="DNI del titular"
-                      />
-                    </div>
-                    <div
-                      className="container d-flex ml-3 mt-3"
-                      style={{
-                        flexDirection: "column",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <div>
-                        <b>
-                          IMPORTANTE: cuando confirmes la compra, te enviamos un
-                          comprobante de pago!
-                        </b>
-                        <hr />
-                      </div>
 
-                      <img
-                        src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png"
-                        alt=""
-                        style={{
-                          width: "400px",
-                          height: "180px",
-                          marginLeft: "50px",
-                        }}
-                      />
-                    </div>
+                  <Form.Control
+                    className="ml-3 mb-2"
+                    type="numeric"
+                    placeholder="Codigo de Seguridad"
+                  />
+
+                  <Form.Control
+                    className="ml-3 mb-2"
+                    type="month"
+                    placeholder="Fecha de Expiracion"
+                  />
+
+                  <Form.Control
+                    className="ml-3 mb-2"
+                    type="text"
+                    placeholder="Nombre y Apellido"
+                  />
+
+                  <Form.Control
+                    className="ml-3"
+                    type="numeric"
+                    placeholder="DNI del titular"
+                  />
+                </div>
+
+                <div
+                  className="container d-flex ml-3 mt-3"
+                  style={{
+                    flexDirection: "column",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div className="mb-4">
+                    <b>
+                      IMPORTANTE: cuando confirmes la compra, te enviamos un
+                      comprobante de pago!
+                    </b>
                   </div>
-                  <div
-                    className="container d-flex card-body"
-                    style={{ justifyContent: "space-around" }}
-                  >
-                    <div className="card-body d-flex">
-                      <input
-                        type="radio"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                        name="efectivo"
-                      />
-                      <label class="form-check-label" for="exampleCheck1" />
-                      Pago Unico
-                    </div>
-                    <div className="card-body d-flex">
-                      <input
-                        type="radio"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                        name="efectivo"
-                      />
-                      <label class="form-check-label" for="exampleCheck1" />3
-                      Cuotas Sin Interes
-                    </div>
-                    <div className="card-body d-flex">
-                      <input
-                        type="radio"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                        name="efectivo"
-                      />
-                      <label class="form-check-label" for="exampleCheck1" />6
-                      Cuotas Sin Interes
-                    </div>
-                    <div className="card-body d-flex">
-                      <input
-                        type="radio"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                        name="efectivo"
-                      />
-                      <label class="form-check-label" for="exampleCheck1" />
-                      12 Cuotas Sin Interes
-                    </div>
-                  </div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
-        </div>
-        <br />
-        {/*-------------------Forma de Envio-----------------------------------*/}
-        <div defaultActiveKey="1">
-          <div className="container d-flex" style={{ alignContent: "center" }}>
-            <h5>Mi envio</h5>
-          </div>
-          <br />
-          <Accordion className="m-2 retirosucursal">
-            <Card>
+                  <img
+                    src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png"
+                    alt=""
+                    style={{
+                      width: "400px",
+                      height: "180px",
+                      marginLeft: "50px",
+                    }}
+                  />
+                </div>
+              </div>
               <div
-                className="container d-flex"
-                style={{ alignItems: "center" }}
+                className="container d-flex card-body"
+                style={{ justifyContent: "space-around" }}
+                required
               >
                 <div className="card-body d-flex">
                   <input
-                    control={
-                      <Switch checked={hidden} onClick={handleHiddenChange} />
-                    }
                     type="radio"
-                    class="form-check-input"
+                    className="form-check-input"
                     id="exampleCheck1"
-                    name="envio"
+                    name="efectivo"
                   />
                   <label class="form-check-label" for="exampleCheck1" />
-                  <b>Retiro en Sucursal</b>
+                  Pago Unico
                 </div>
-
-                <Accordion.Toggle
-                  as={Button.light}
-                  className="btn btn-outline-light"
-                  eventKey="1"
-                  hidden={hidden}
-                  onClose={handleClose}
-                  onOpen={handleOpen}
-                  open={open}
-                  target
-                >
-                  <img
-                    src="https://icongr.am/entypo/chevron-small-down.svg?size=30&color=currentColor"
-                    alt=""
-                  />
-                </Accordion.Toggle>
-              </div>
-
-              <Accordion.Collapse eventKey="1">
-                <Card.Body>
-                  <hr />
-                  <b>
-                    IMPORTANTE: cuando confirmes tu compra te enviamos un mail
-                    con fecha de retiro!
-                  </b>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
-          <br />
-          <Accordion className="p-2 ">
-            <Card className="enviodomicilio">
-              <div
-                className="container d-flex"
-                style={{ alignItems: "center" }}
-              >
-                <div
-                  className="card-body container"
-                  style={{ alignItems: "center" }}
-                >
+                <div className="card-body d-flex">
                   <input
                     type="radio"
-                    value="required"
+                    className="form-check-input"
+                    id="exampleCheck1"
+                    name="efectivo"
+                  />
+                  <label className="form-check-label" for="exampleCheck1" />3
+                  Cuotas Sin Interes
+                </div>
+                <div className="card-body d-flex">
+                  <input
+                    type="radio"
+                    className="form-check-input"
+                    id="exampleCheck1"
+                    name="efectivo"
+                  />
+                  <label class="form-check-label" for="exampleCheck1" />6 Cuotas
+                  Sin Interes
+                </div>
+                <div className="card-body d-flex">
+                  <input
+                    type="radio"
                     class="form-check-input"
                     id="exampleCheck1"
-                    name="envio"
+                    name="efectivo"
                   />
                   <label class="form-check-label" for="exampleCheck1" />
-                  <b>Envio a Domicilio</b>
+                  12 Cuotas Sin Interes
                 </div>
-
-                <Accordion.Toggle
-                  as={Button.light}
-                  className="btn btn-outline-light"
-                  eventKey="1"
-                  style={{ marginLeft: "10px" }}
-                >
-                  <div></div>
-                  <img
-                    src="https://icongr.am/entypo/chevron-small-down.svg?size=30&color=currentColor"
-                    alt=""
-                  />
-                </Accordion.Toggle>
               </div>
-              <Accordion.Collapse eventKey="1">
-                <Card.Body>
-                  <div className="card-body d-flex">
-                    <Form.Control
-                      className="ml-3"
-                      type="text"
-                      eventKey="1"
-                      placeholder="Ingresar CP"
-                    />
-                    <Form.Control
-                      className="ml-2"
-                      type="text"
-                      eventKey="1"
-                      placeholder="Ingresar Localidad"
-                    />
-                    <Form.Control
-                      className="ml-2"
-                      type="text"
-                      eventKey="1"
-                      placeholder="Ingresar Domicilio de Entrega"
-                    />
-                  </div>
-                  <hr />
-                  <b>
-                    IMPORTANTE: cuando confirmes tu compra te enviamos un mail
-                    con fecha de despacho y codigo de seguimiento!
-                  </b>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
+            </Card.Body>
+          </Card>
         </div>
+        <br />
+        {/*-------------------Forma de Envio-----------------------------------*/}
+        <div>
+          <div className="container d-flex">
+            <h5>Mi envio</h5>
+          </div>
+          <br />
+
+          <Card className="enviodomicilio">
+            <div className="container d-flex">
+              <div
+                className="card-body container"
+                style={{ textAlign: "start" }}
+              >
+                <b>Envio a Domicilio</b>
+              </div>
+            </div>
+
+            <Card.Body>
+              <div className="card-body d-flex">
+                <Form.Control
+                  className="ml-3"
+                  type="numeric"
+                  placeholder="Ingresar CP"
+                />
+                <Form.Control
+                  className="ml-2"
+                  type="text"
+                  placeholder="Ingresar Localidad"
+                />
+                <Form.Control
+                  className="ml-2"
+                  type="text"
+                  placeholder="Ingresar Domicilio de Entrega"
+                />
+              </div>
+              <hr />
+              <b>
+                IMPORTANTE: cuando confirmes tu compra te enviamos un mail con
+                fecha de despacho y codigo de seguimiento!
+              </b>
+            </Card.Body>
+          </Card>
+        </div>
+
+        {/*--------- Final Seccion envio y pago----------*/}
+
         <br />
         <hr />
         {/*--------------------Confirmacion de la compra-----------------------*/}
@@ -554,7 +312,12 @@ export default function Carrito() {
             textAlign: "end",
           }}
         >
-          <Button onClick={cancelarcompra} variant="danger" size="lg" style={{ float: "left" }}>
+          <Button
+            onClick={cancelarcompra}
+            variant="danger"
+            size="lg"
+            style={{ float: "left" }}
+          >
             Cancelar compra
           </Button>{" "}
           {/* <Button variant="primary" size="lg">
