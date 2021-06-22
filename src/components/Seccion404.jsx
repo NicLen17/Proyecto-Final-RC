@@ -1,11 +1,17 @@
-import React from 'react'
 import { NavLink } from 'react-bootstrap'
 import './Seccion404.css'
-
+import Aos from 'aos'
+import "aos/dist/aos.css"
+import React, { useEffect } from "react";
 
 function Seccion404() {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, [])
+
     return (
-        <div className="celbody">
+        <div data-aos="fade-down" className="celbody">
             <div className="celpantalla">
                 <div className="cosascel">
                 <img className="bateria" style={{ width: "25px", height: "25px" }} src="https://icongr.am/fontawesome/battery-3.svg?size=128&color=ffffff" alt="" />
