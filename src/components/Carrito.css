@@ -1,11 +1,7 @@
-.navcss {
-  color: #000000;
-  size: 10rem;
-  -webkit-box-shadow: 5px 5px 10px 3px #000000;
-  box-shadow: 5px 5px 10px 3px #000000;
-  margin-bottom: 10px;
-  background-color: rgba(243, 243, 243, 0.808);
+.bodycarrito {
+  font-family: "Roboto", sans-serif;
 }
+
 .carritocss {
   -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
   box-shadow: 5px 5px 10px 3px #a7a7a7;
@@ -26,30 +22,65 @@
   margin-bottom: 10px;
 }
 
-.pagoefectivo:hover {
+.pagotarjeta {
   -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
   box-shadow: 5px 5px 10px 3px #a7a7a7;
   margin-bottom: 10px;
   transition: 0.5s;
 }
 
-.pagotarjeta:hover {
+.enviodomicilio {
   -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
   box-shadow: 5px 5px 10px 3px #a7a7a7;
   margin-bottom: 10px;
   transition: 0.5s;
 }
 
-.retirosucursal:hover {
-  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
-  box-shadow: 5px 5px 10px 3px #a7a7a7;
-  margin-bottom: 10px;
-  transition: 0.5s;
+.carritorespon3 {
+  display: flex !important;
+  flex-direction: row !important;
 }
 
-.enviodomicilio:hover {
-  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
-  box-shadow: 5px 5px 10px 3px #a7a7a7;
-  margin-bottom: 10px;
-  transition: 0.5s;
+.botoneliminar {
+  margin: auto;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around !important;
+}
+
+.containercardcarrito {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardcarrito {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 255, 255);
+  width: 460px;
+  height: 250px;
+  margin-bottom: 30px !important;
+  box-shadow: gray 2px 2px 2px 2px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .carritoresp {
+      display: none !important;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .carritoresp2 {
+      width: 180px !important;
+      margin: auto !important;
+      margin-right: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .carritorespon3 {
+    display: flex !important;
+      flex-wrap: wrap !important;
+  }
 }

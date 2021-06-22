@@ -55,7 +55,7 @@ export default function Contacto() {
       <div className="about">
         <div className="contentabout">
           <br />
-          <p>P h o n e    P i x e l</p>
+          <p className="tittleabout">P h o n e    P i x e l</p>
           <div className="subtitulo">
             <h3>Somos la nueva empresa de telefonia al alcance de todos</h3>
             <Swiper autoplay={true} loop={true} slidesPerView={1} spaceBetween={0} pagination={{
@@ -169,12 +169,12 @@ export default function Contacto() {
                     type="submit"
                     style={{ marginTop: "10px", width: "100%" }}
                   >
+                    Enviar
                     <img
                       src="https://icongr.am/octicons/comment.svg?size=25&color=ffffff"
                       className="mr-3"
                       alt="imagen no disponible"
                     />
-                    Enviar
                   </Button>
                 </Form>
                 <br />

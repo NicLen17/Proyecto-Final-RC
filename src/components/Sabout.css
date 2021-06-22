@@ -18,3 +18,9 @@
     min-height: 380px;
     margin-bottom: 100px;
 }
+
+@media only screen and (max-width: 355px) {
+    .tittleabout {
+        font-size: 35px;
+    }
+}

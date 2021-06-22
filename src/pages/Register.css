@@ -89,5 +89,5 @@
 .registerbut:hover {
     background-color: black;
     color: white;
-    border-bottom: rgb(255, 255, 255) 5px solid;
+    border-bottom: rgb(255, 255, 255) 2px solid;
 }

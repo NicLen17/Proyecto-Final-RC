@@ -21,6 +21,8 @@ import PIndividual from "./components/Pages/PIndividual";
 import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
 import Carrito from './components/Carrito'
+import SCompraFinalizada from './components/SCompraFinalizada'
+import Seccion404 from './components/Seccion404'
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -99,6 +101,15 @@ export default function App() {
 
           <Route path="/carrito" exact></Route>
         </Switch>
+
+        <Route path="/compra" exact>
+            <SCompraFinalizada />
+          </Route>
+
+          <Route path="/404" exact>
+            <Seccion404 />
+          </Route>
+
       </Router>
 
       <Footer />

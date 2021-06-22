@@ -23,7 +23,7 @@
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     border-radius: 15px !important;
-    transition: 0.4s;
+    transition: 0.4s !important;
     width: 320px !important;
     max-height: 550px;
     min-height: 550px;
@@ -46,29 +46,15 @@
     -webkit-box-orient: vertical;
 }
 
-@media only screen and (max-width: 450px) {
-    .module {
-        width: 200px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .cardsp {
-        max-width: 250px;
-        max-height: 350px;
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-}
-
 .cardtitulo {
     margin-top: 5px;
     border-bottom: solid rgb(175, 174, 174) 0.5px;
 }
 
 .cardsp:hover {
-    -webkit-box-shadow: 5px 5px 10px 3px #55a7dd;
-    box-shadow: 5px 5px 10px 3px #55a7dd;
+    -webkit-box-shadow: 5px 5px 10px 3px #a2c8e0;
+    box-shadow: 5px 5px 10px 3px #95b5ca;
+    transition: 0.s;
 }
 
 .cardpimg {
@@ -82,6 +68,21 @@
     .cardpimg {
         max-width: 249px;
         max-height: 250px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .module {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .cardsp {
+        max-width: 250px;
+        max-height: 350px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 }
 
