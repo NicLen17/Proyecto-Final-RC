@@ -70,7 +70,7 @@ export default function Carrito() {
   };
 
   return (
-    <div data-aos="fade-up" className="body mt-5">
+    <div data-aos="fade-up" className="body bodycarrito mt-5">
       <br />
       {/*----------------------Detalle de la compra ------------------------*/}
       <div
