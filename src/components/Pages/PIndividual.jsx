@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import './PIndividual.css';
 import axios from 'axios';
@@ -10,14 +10,13 @@ export default function PIndividual({ productosCarrito }) {
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
-    const producto = async () => {
-        const { data } = await axios.get(`/productos/${id}`);
-        setProduct(data);
-    }
     useEffect(() => {
-
-        producto();
-    }, [])
+        const producto = async () => {
+            const { data } = await axios.get(`/productos/${id}`);
+            setProduct(data);
+        }
+        producto()
+    }, [id])
 
     const agregarcarrito = () => {
         productosCarrito.push(product);
@@ -28,6 +27,7 @@ export default function PIndividual({ productosCarrito }) {
     return (
         <div className="backgroundoP">
             <div className="pcontainers">
+            <NavLink className="ml-2 mt-2" to='/productos' as={NavLink}><img src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=50&color=currentColor" alt="atras" /></NavLink>
                 <div className="pcontainer">
                     <div className="pimgcont">
                         <img className="imgpro" src={product.img?.[0]} alt="Producto principal" />
@@ -35,7 +35,7 @@ export default function PIndividual({ productosCarrito }) {
                 </div>
                 <div className="contenido1">
                     <h2>{product.marca}  {product.modelo}
-                        <p>Categoria <a href="">{product.categoria}</a> </p>
+                        <p>Categoria: {product.categoria} </p>
                     </h2>
                     <h2>${product.price}</h2>
                     {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
@@ -60,6 +60,7 @@ export default function PIndividual({ productosCarrito }) {
                 </div>
             </div>
         </div>
+        
     )
 }
 

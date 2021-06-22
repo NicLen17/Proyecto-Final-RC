@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { NavLink } from "react-router-dom";
 import './SCards.css'
 import { Tabs, Tab } from 'react-bootstrap'
-import axios from "axios"
 import Aos from 'aos'
 import "aos/dist/aos.css"
 

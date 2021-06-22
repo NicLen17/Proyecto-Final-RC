@@ -24,7 +24,6 @@ function Admin() {
     const [lusers, setLusers] = useState([]);
     const [alertSuccess, setalertSuccess] = useState("");
     const [alertSuccessM, setalertSuccessM] = useState("");
-
     const [alert, setAlert] = useState("");
     const [productEncontrado, setProductEncontrado] = useState({});
     const [input, setInput] = useState({});
@@ -297,6 +296,7 @@ function Admin() {
                     </Modal.Header>
                     <Modal.Body className="editarform" style={{ width: "100%" }}>
                         <Container>
+                        {alert && <Alert variant="danger">{alert}</Alert>}
                             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                 <Form.Group className="" controlId="validationCustom02">
                                     <Form.Label>Marca</Form.Label>
@@ -421,7 +421,7 @@ function Admin() {
                                     </select>
                                 </Form.Group>
                                 {productEncontrado.img?.map((i) => (
-                                    <img style={{ width: "200px", height: "200px" }} src={i} />
+                                    <img style={{ width: "200px", height: "200px" }} src={i} alt="imagen del celular" />
                                 ))}
                                 <Modal.Footer className="editarformtitulo">
                                     <Button
