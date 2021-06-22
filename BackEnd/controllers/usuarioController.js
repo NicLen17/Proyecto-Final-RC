@@ -62,8 +62,12 @@ exports.updateUser = async (req, res) => {
 exports.stateUser = async (req, res) => {
     try {
         const userId = req.params.id;
-        const usuario = await Usuario.findById(req.usuario.id).select('-password -__v');
-        if (req.body.estado) {
+        const usuario = await Usuario.findById(userId).select('-password -__v');
+        console.log(
+            '🚀 ~ file: usuarioController.js ~ line 67 ~ exports.stateUser= ~ usuario.estado',
+            usuario.estado
+        );
+        if (usuario.estado) {
             req.body.estado = 'false';
         } else {
             req.body.estado = 'true';

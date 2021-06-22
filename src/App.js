@@ -1,4 +1,4 @@
-import React , { useEffect, useState }from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Carro from "./components/Carro";
@@ -6,11 +6,7 @@ import NavReactB from "./components/NavReactB";
 import SCards from "./components/SCards";
 import Spublicidad from "./components/Spublicidad";
 import Footer from "./components/Footer";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Productos from "./components/Pages/Productos";
 import Contacto from "./components/Contacto";
 import Admin from "./components/Pages/Admin";
@@ -20,15 +16,16 @@ import Perfil from "./components/Pages/Perfil";
 import PIndividual from "./components/Pages/PIndividual";
 import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
-import Carrito from './components/Carrito'
-import SCompraFinalizada from './components/SCompraFinalizada'
-import Seccion404 from './components/Seccion404'
+import Carrito from "./components/Carrito";
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
 export default function App() {
-  const productosCarrito = []
+  const productosCarrito = [];
+  let [productoCart, setProductoCart] = useState([]);
   const [user, setUser] = useState({});
+  const [carritoLleno, setcarritoLleno] = useState({});
+
   const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
   //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
   useEffect(() => {
@@ -40,7 +37,11 @@ export default function App() {
       };
       request(); //realiza el pedido
     }
-  }, [token]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
+    const productoStorage =
+      JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+    const carritoLleno = productoStorage.length;
+    setcarritoLleno(carritoLleno);
+  }, [token, carritoLleno]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
 
   const logout = () => {
     localStorage.removeItem("token"); //elimina el token
@@ -49,13 +50,36 @@ export default function App() {
     setToken(""); //limpia el token
   };
 
+  // const productoStorage =
+  //   JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+  // const carritoLleno = productoStorage.length;
+  // console.log("totalCarrito", carritoLleno);
+
+  // let producto = () => {
+  //   let productoStorage =
+  //     JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+  //   console.log(
+  //     "🚀 ~ file: App.js ~ line 51 ~ App ~ totalCarrito",
+  //     productoStorage
+  //   );
+  // };
+
+  // useEffect(() => {
+  //   producto();
+  // }, []);
+
   return (
     <div className="App">
       <Router>
         <Route>
           <ScrollToTop></ScrollToTop>
         </Route>
-        <NavReactB userName={user.nombre} logout={logout} />
+        <NavReactB
+          userName={user.nombre}
+          userCategory={user.category}
+          logout={logout}
+          carritoLleno={carritoLleno}
+        />
         <Switch>
           <Route path="/" exact>
             <Carro />
@@ -76,7 +100,7 @@ export default function App() {
           <Route path="/perfil" exact>
             <Perfil user={user} />
           </Route>
-          
+
           <Route path="/individual/:id" exact>
             <PIndividual productosCarrito={productosCarrito} />
           </Route>
@@ -86,7 +110,7 @@ export default function App() {
           </Route>
 
           <Route path="/admin" exact>
-            <Admin />
+            <Admin user={user.nombre} />
           </Route>
 
           <Route path="/login">
@@ -101,15 +125,6 @@ export default function App() {
 
           <Route path="/carrito" exact></Route>
         </Switch>
-
-        <Route path="/compra" exact>
-            <SCompraFinalizada />
-          </Route>
-
-          <Route path="/404" exact>
-            <Seccion404 />
-          </Route>
-
       </Router>
 
       <Footer />

@@ -70,7 +70,7 @@ export default function Cards(prod) {
                   </div>
                 </div>
               </NavLink>
-              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce39f4a39f3f350c3122bf" exact as={NavLink}>
+              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60d260344070c9149c2904dd" exact as={NavLink}>
                 <div className="cardprincipal">
                   <div className="cardimg">
                     <img src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />

@@ -97,20 +97,10 @@ export default function Carrito() {
             <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
           )}
           <div className="botoneliminar">
-          {productoCart.map((p) => (
-            <div className="mt-3" style={{ textAlign: "end" }}>
-              <Button
-                onClick={() => eliminarcarrito(p._id)}
-                className="btn btn-light ml-1"
-                style={{ backgroundColor: "transparent" }}
-              >
-                <img
-                  src="https://icongr.am/fontawesome/trash.svg?size=40&color=currentColor"
-                  alt=""
-                />
-              </Button>
-            </div>
-          ))}
+            {productoCart.map((p) => (
+              <div className="mt-3" style={{ textAlign: "end" }}>
+              </div>
+            ))}
           </div>
           <br />
           {/*-------------------Precio del Articulo------------------------*/}
@@ -128,6 +118,16 @@ export default function Carrito() {
                   <p><b>
                     ${p.price}
                   </b></p>
+                  <Button
+                  onClick={() => eliminarcarrito(p._id)}
+                  className="btn botoneliminar btn-light ml-1"
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <img
+                    src="https://icongr.am/fontawesome/trash.svg?size=33&color=currentColor"
+                    alt=""
+                  />
+                </Button>
                 </div>
               </div>
             ))}
