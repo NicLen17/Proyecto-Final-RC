@@ -36,21 +36,21 @@ export default function App() {
       <SwiperSlide>
         <img
           className="cimg"
-          src="https://i.blogs.es/577f1e/imagen-lest/1366_2000.jpg"
+          src="https://www.optimagazine.com/wp-content/uploads/2020/11/Huawei-P50.jpg"
           alt="imagencarro"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="cimg"
-          src="https://www.muycomputer.com/wp-content/uploads/2021/02/Samsung-Galaxy-F62-e1613391724450.jpg"
+          src="https://www.ventasrosario.com.ar/wp-content/uploads/2020/07/Samsung-Galaxy-A21s-portada.jpg"
           alt="imagencarro"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="cimg"
-          src="https://cdn.pocket-lint.com/r/s/970x/assets/images/156147-phones-news-samsung-main-pics-image1-uhsmkahfla.jpg"
+          src="https://i.blogs.es/cfa3f7/xiaomi-mi-11-ultra-03/1366_2000.jpg"
           alt="imagencarro"
         />
       </SwiperSlide>

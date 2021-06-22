@@ -7,10 +7,10 @@ import imagen from "../img/imagen.png";
 function Footer() {
   return (
     <div className="footer d-flex flex-wrap justify-content-between ps-3 pt-4">
-      <div className="d-flex flex-wrap contenedorli">
-        <div className="links text-black pe-5">
+      <div className="d-flex flex-wrap contenedorli phonefoot" >
+        <div className="links text-black pe-5 phonefoot">
           <h5>Phone Pixels</h5>
-          <ul className="pt-2 pb-2">
+          <ul className="pt-2 pb-2 phonefoot">
             <Nav.Link href="contacto" className="efecto-nav">
               Contacto
             </Nav.Link>
@@ -25,7 +25,7 @@ function Footer() {
             </Nav.Link>
           </ul>
         </div>
-        <div className="marcas text-black pe-2">
+        {/* <div className="marcas text-black pe-2">
           <h5 className="">Marcas</h5>
           <ul className="ps-0 pt-2 pb-2">
             <Nav.Link href="#link" className="efecto-nav">
@@ -44,8 +44,8 @@ function Footer() {
               Nokia
             </Nav.Link>
           </ul>
-        </div>
-        <div className="marcas text-black ps-5">
+        </div> */}
+        {/* <div className="marcas text-black ps-5">
           <h5 className="">Top Celulares</h5>
           <ul className="ps-0 pt-2 pb-2">
             <Nav.Link href="#link" className="efecto-nav">
@@ -64,7 +64,7 @@ function Footer() {
               Samsung Fold
             </Nav.Link>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className="datosEmpresa  d-flex flex-wrap text-black d-flex">
         <ul className=" ">
@@ -105,9 +105,9 @@ function Footer() {
             <img src={imagen} alt="ubicacion" style={{ height: "12em", borderRadius: "25px", maxWidth: "100%" }} />
           </a>
         </div>
-      <div className="d-flex flex-column pe-3">
+      <div className="d-flex flex-column pe-3 redesfoott">
         <h5 className="text-black">Redes Sociales</h5>
-        <div className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column align-items-center redesfoot ">
           <Nav.Link>
             <img
               className="efecto-footer"

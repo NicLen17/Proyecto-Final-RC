@@ -1,6 +1,7 @@
 .footer {
     height: 15em;
     border-top: black 1px solid;
+    font-family: "Roboto", sans-serif;
 }
 
 .mapa {
@@ -41,4 +42,46 @@
     -o-transform: scale(1.1);
     transform: scale(1.5);
     transition: 0.3s;
+}
+
+@media only screen and (max-width: 930px) {
+    .redesfoot {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+}
+
+@media only screen and (max-width: 891px) {
+    .redesfoot {
+        display: flex !important;
+        flex-direction: row !important;
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 891px) {
+    .redesfoott {
+        margin: auto !important;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .mapa {
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .phonefoot {
+        margin: auto;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .datosEmpresa {
+        margin: auto;
+        margin-bottom: 15px;
+    }
 }

@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Card, Form, Alert } from "react-bootstrap";
-
+import Aos from 'aos'
+import "aos/dist/aos.css"
 import "./Carrito.css";
 
 export default function Carrito() {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+
+
   const history = useHistory();
   const [alert, setAlert] = useState("");
   let [productoCart, setProductoCart] = useState([]);
@@ -56,8 +63,14 @@ export default function Carrito() {
     }
   };
 
+  const confirmarcompra = () => {
+    if (window.confirm("Confirmar compra?")) {
+      history.push("/compra");
+    }
+  };
+
   return (
-    <div className="body mt-5">
+    <div data-aos="fade-up" className="body mt-5">
       <br />
       {/*----------------------Detalle de la compra ------------------------*/}
       <div
@@ -83,6 +96,7 @@ export default function Carrito() {
           {productoCart.length === 0 && (
             <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
           )}
+          <div className="botoneliminar">
           {productoCart.map((p) => (
             <div className="mt-3" style={{ textAlign: "end" }}>
               <Button
@@ -97,24 +111,25 @@ export default function Carrito() {
               </Button>
             </div>
           ))}
+          </div>
           <br />
           {/*-------------------Precio del Articulo------------------------*/}
           <br />
-          <div className="container d-flex">
+          <div className="container containercardcarrito d-flex">
             <br />
             {productoCart.map((p) => (
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={p.img[0]} />
-                <Card.Body>
-                  <Card.Title>
-                    {p.marca} {p.modelo}
-                  </Card.Title>
-                  <Card.Text>
-                    {" "}
-                    <b> ${p.price}</b>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              <div className="cardcarrito">
+                <div className="carritoimg">
+                  <img style={{ marginTop: "15px", marginBottom: "15px", maxWidth: "300px", maxHeight: "250px", margin: "auto" }} src={p.img[0]} alt="" />
+                </div>
+                <div className="infocarrito">
+                  <p>{p.marca} {p.modelo}
+                  </p>
+                  <p><b>
+                    ${p.price}
+                  </b></p>
+                </div>
+              </div>
             ))}
             <br />
             <br />
@@ -144,9 +159,9 @@ export default function Carrito() {
               <b className="card-body">Ingresa los datos de tu tarjeta</b>
             </div>
             <Card.Body>
-              <div className="container d-flex m-2">
+              <div className="container carritoresp2 d-flex m-2">
                 <div
-                  className="container mt-4"
+                  className="container carritoresp2 mt-4"
                   style={{ width: "500px" }}
                   name="efectivo"
                   required
@@ -184,7 +199,7 @@ export default function Carrito() {
                 </div>
 
                 <div
-                  className="container d-flex ml-3 mt-3"
+                  className="container carritoresp d-flex ml-3 mt-3"
                   style={{
                     flexDirection: "column",
                     justifyContent: "center",
@@ -208,11 +223,11 @@ export default function Carrito() {
                 </div>
               </div>
               <div
-                className="container d-flex card-body"
+                className="card-body carritorespon3"
                 style={{ justifyContent: "space-around" }}
                 required
               >
-                <div className="card-body d-flex">
+                <div className="card-body">
                   <input
                     type="radio"
                     className="form-check-input"
@@ -222,7 +237,7 @@ export default function Carrito() {
                   <label class="form-check-label" for="exampleCheck1" />
                   Pago Unico
                 </div>
-                <div className="card-body d-flex">
+                <div className="card-body">
                   <input
                     type="radio"
                     className="form-check-input"
@@ -232,7 +247,7 @@ export default function Carrito() {
                   <label className="form-check-label" for="exampleCheck1" />3
                   Cuotas Sin Interes
                 </div>
-                <div className="card-body d-flex">
+                <div className="card-body">
                   <input
                     type="radio"
                     className="form-check-input"
@@ -242,7 +257,7 @@ export default function Carrito() {
                   <label class="form-check-label" for="exampleCheck1" />6 Cuotas
                   Sin Interes
                 </div>
-                <div className="card-body d-flex">
+                <div className="card-body">
                   <input
                     type="radio"
                     class="form-check-input"
@@ -313,17 +328,21 @@ export default function Carrito() {
           }}
         >
           <Button
+            className="registerbut"
             onClick={cancelarcompra}
-            variant="danger"
+            variant="registerbut"
             size="lg"
-            style={{ float: "left" }}
+            style={{ float: "left", width: "250px" }}
           >
             Cancelar compra
           </Button>{" "}
           {/* <Button variant="primary" size="lg">
             Modificar Compra
           </Button>{" "} */}
-          <Button variant="success" size="lg">
+          <Button
+            className="registerbut"
+            onClick={confirmarcompra}
+            variant="registerbut" size="lg">
             COMPRAR!
           </Button>{" "}
         </div>
