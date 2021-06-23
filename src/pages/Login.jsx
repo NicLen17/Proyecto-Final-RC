@@ -39,7 +39,7 @@ export default function Login({ setUser, setToken }) {
 }, [])
 
   return (
-    <div data-aos="fade-up" class="container loginForm">
+    <div data-aos="fade-up" className="container loginForm">
       <Form
         onSubmit={handleSubmit}
         className="card mx-auto p-4 mt-5 logincontent "

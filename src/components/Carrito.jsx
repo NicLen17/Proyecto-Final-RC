@@ -177,7 +177,6 @@ export default function Carrito() {
                     className="ml-3 mb-2"
                     type="numeric"
                     placeholder="Nro. de Tarjeta"
-                    textarea
                   />
 
                   <Form.Control
