@@ -9,42 +9,19 @@ import axios from "axios"
 
 function Productos() {
   const [products, setProducts] = useState([])
-  // const [celulares, setCelulares] = useState("")
-  // const [accesorios, setAccesorios] = useState([])
-  // const [tablet, setTablet] = useState([])
-
 
   useEffect(() => {
     const productos = async () => {
       const { data } = await axios.get('/productos');
       setProducts(data);
     }
-
-
     productos();
     Aos.init({ duration: 1000 });
   }, [])
 
-  const filtro = () => {
-    const celulares = products.filter((p) => {
-      return p.categoria === 'CELULAR';
-    })
-    const accesorios = products.filter((p) => {
-      return p.categoria === 'ACCESORIO';
-    })
-    const tablet = products.filter((p) => {
-      return p.categoria === 'TABLET';
-    })
-    // setCelulares(celulares)
-    // setAccesorios(accesorios)
-    // setTablet(tablet);
-  }
-  {/* <button onClick={() => filtro()}>LLamar a celulares solamente</button> */ }
-
   return (
     <div className="sideynav">
       <div data-aos="fade-up" className="productoscont" >
-        <button onClick={() => filtro()}>LLamar a celulares solamente</button>
         <h1 className="text-center mt-3 shadow flexcardp">Celulares</h1>
         <div className="flexcardp">
           {products.map((prod) => {
