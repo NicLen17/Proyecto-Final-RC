@@ -241,7 +241,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label class="form-check-label" for="exampleCheck1" />
+                  <label className="form-check-label" for="exampleCheck1" />
                   Pago Unico
                 </div>
                 <div className="card-body">
@@ -271,7 +271,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label class="form-check-label" for="exampleCheck1" />
+                  <label className="form-check-label" for="exampleCheck1" />
                   12 Cuotas Sin Interes
                 </div>
               </div>
