@@ -30,15 +30,15 @@ Este proyecto surge a partir del ultimo desafio dado a los integrandes de la com
 
 ## *Comision 7i - Grupo N°2*
 
-**Integrantes:**
+## **Integrantes:**
 
-###Fabio Ramos **SM**
+### Fabio Ramos **SM**
 
-###Mauro Grezzana 
+### Mauro Grezzana 
 
-###Constanza Mejuto 
+### Constanza Mejuto 
 
-###Lucas Rivadeneira 
+### Lucas Rivadeneira 
 
 Acceso al [Tablero de actividades](https://trello.com/b/mRCbL92M/proyecto-integrado-final-rc "Tablero de actividades")
 
