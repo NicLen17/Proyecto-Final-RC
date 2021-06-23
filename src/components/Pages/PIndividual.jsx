@@ -27,7 +27,7 @@ export default function PIndividual({ productosCarrito }) {
     return (
         <div className="backgroundoP">
             <div className="pcontainers">
-            <NavLink className="ml-2 mt-2" to='/productos' as={NavLink}><img src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=50&color=currentColor" alt="atras" /></NavLink>
+            <NavLink className="ml-2 mt-2" to='/productos' as={NavLink}><img className="btnatras" src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=50&color=currentColor" alt="atras" /></NavLink>
                 <div className="pcontainer">
                     <div className="pimgcont">
                         <img className="imgpro" src={product.img?.[0]} alt="Producto principal" />

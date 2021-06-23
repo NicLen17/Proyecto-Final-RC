@@ -8,9 +8,6 @@ import axios from "axios";
 
 function Productos() {
   const [products, setProducts] = useState([]);
-  // const [celulares, setCelulares] = useState("")
-  // const [accesorios, setAccesorios] = useState([])
-  // const [tablet, setTablet] = useState([])
 
   useEffect(() => {
     const productos = async () => {
@@ -25,30 +22,24 @@ function Productos() {
   return (
     <div className="sideynav">
       <div data-aos="fade-up" className="productoscont">
-        <br />
-        <br />
-        <br />
-
         <ButtonGroup
           size="lg"
-          className="container d-flex p-3"
-          style={{ justifyContent: "space-between" }}
+          className="containerbtns d-flex"
         >
-          <Button variant="outline-dark" href="#celulares">
+          <Button className="ml-3 mr-3 registerbut" data-aos="fade-right" variant="outline-dark registerbut" href="#celulares">
             <b>Celulares</b>
           </Button>
-          <Button variant="outline-dark" href="#tablet">
+          <Button className="ml-3 mr-3 registerbut" data-aos="fade-up" variant="outline-dark registerbut" href="#tablet">
             <b>Tablets</b>
           </Button>
-          <Button variant="outline-dark" href="#accesorios">
+          <Button className="ml-3 mr-3 registerbut" data-aos="fade-left" variant="outline-dark registerbut" href="#accesorios">
             <b>Accesorios</b>
           </Button>
         </ButtonGroup>
         <br />
-        <br />
-        <br />
         <div id="celulares">
-          <h1 className="text-center mt-3 shadow flexcardp">Celulares</h1>
+          <h1 data-aos="fade-right" className="text-center mt-3 shadow titulosp">
+            Celulares</h1>
         </div>
         <br />
         <br />
@@ -90,14 +81,16 @@ function Productos() {
                       </Card.Title>
                     </Card.Body>
                   </Card>
+                  <br />
+                  <br />
                 </NavLink>
               );
             } return console.log
           })}
         </div>
 
-        <h1 className="text-center mt-5 shadow" id="tablet">
-          Tablet
+        <h1 data-aos="fade-right" className="text-center mt-5 shadow titulosp" id="tablet">
+          Tablets
         </h1>
         <br />
         <br />
@@ -142,11 +135,11 @@ function Productos() {
                   </Card>
                 </NavLink>
               );
-            }return console.log
+            } return console.log
           })}
         </div>
 
-        <h1 className="text-center mt-5 shadow" id="accesorios">
+        <h1 data-aos="fade-right" className="text-center mt-5 shadow titulosp" id="accesorios">
           Accesorios
         </h1>
         <br />
@@ -191,7 +184,7 @@ function Productos() {
                   </Card>
                 </NavLink>
               );
-            }return console.log
+            } return console.log
           })}
         </div>
       </div>

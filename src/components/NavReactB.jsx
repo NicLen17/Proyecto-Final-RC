@@ -12,7 +12,7 @@ export default function NavReactB({
 }) {
   return (
     <Navbar bg="light" expand="lg" className="d-flex m navbar fixed-top">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand>
         <img
           className="img-logo"
           src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png"

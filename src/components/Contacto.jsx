@@ -83,7 +83,7 @@ export default function Contacto() {
                   className="d-flex ml-3"
                   style={{ justifyContent: "space-evenly", maxWidth: "100%" }}
                 >
-                  <a className="redescontacto" href="facebook.com">
+                  <a className="redescontacto" href="https://facebook.com">
                     <img
                       src="https://icongr.am/fontawesome/facebook-official.svg?size=60&color=1002cf"
                       alt="no disponile"
@@ -95,7 +95,7 @@ export default function Contacto() {
                   <a className="redescontacto" href="https://www.google.com/">
                     <img src="https://icongr.am/fontawesome/google.svg?size=60&color=cf2102" alt="imagen no disponile" />
                   </a>
-                  <a className="redescontacto" href="contacto">
+                  <a className="redescontacto" href="wats">
                     <img src="https://icongr.am/fontawesome/whatsapp.svg?size=60&color=02cf35" alt="imagen no disponile" />
                   </a>
                 </div>

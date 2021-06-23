@@ -390,23 +390,6 @@ function Admin() {
                                     >
                                         <Form.Control type="file" multiple />
                                     </Form.Group>
-                                    <Form.Group
-                                        placeholder="Agregar imagen del producto mediante URL"
-                                        style={{ marginTop: "15px" }}
-                                    >
-                                        <Form.Group
-                                            placeholder="Agregar imagen del producto mediante URL"
-                                            style={{ marginTop: "15px" }}
-                                        ></Form.Group>
-                                    </Form.Group>
-                                    <input
-                                        id="url"
-                                        className="registerlabel"
-                                        type="url"
-                                        name="url"
-                                        style={{ width: "390px" }}
-                                        placeholder="Agregar imagen del producto mediante URL"
-                                    />
                                     <Form.Control.Feedback type="invalid">
                                         la imagen es obligaroria!
                                     </Form.Control.Feedback>

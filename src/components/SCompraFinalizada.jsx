@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Button} from 'react-bootstrap'
 import './SCompraFinalizada.css'
 import Aos from 'aos'
 import "aos/dist/aos.css"
@@ -19,6 +20,10 @@ function SCompraFinalizada() {
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, [])
+
+    const limpiar = () => {
+        localStorage.removeItem("agregarcarrito")
+    }
 
     return (
         <div data-aos="fade-up" className="fincont">
@@ -56,6 +61,7 @@ function SCompraFinalizada() {
                     </div>
                 ))}
             </div>
+            <a href="/"><Button className="btncompra" variant="btncompra" style={{marginTop: "15px"}} onClick={limpiar}> Volver a inicio! </Button></a>
         </div>
     )
 }

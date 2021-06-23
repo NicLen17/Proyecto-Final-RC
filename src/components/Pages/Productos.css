@@ -1,11 +1,14 @@
 .productoscont {
     margin-top: 80px;
     margin-bottom: 200px;
+    font-family: "Roboto", sans-serif;
 }
 
 .sideynav {
     text-align: start;
     margin-bottom: 445px;
+    scroll-behavior: smooth !important; 
+    font-family: "Roboto", sans-serif;
 }
 
 .flexcardp {
@@ -14,12 +17,26 @@
     justify-content: center;
     justify-content: space-around;
     text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.containerbtns {
+    padding: 10px 10px 10px 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.titulosp {
+    margin-left: 85px;
+    margin-right: 85px;
+    text-align: start !important;
+    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .cardsp {
     margin-right: 60px;
     margin-left: 60px;
-    margin-top: 20px;
+    margin-top: 30px;
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     border-radius: 15px !important;
@@ -27,6 +44,8 @@
     width: 320px !important;
     max-height: 550px;
     min-height: 550px;
+    margin-bottom: 42px;
+    font-family: "Roboto", sans-serif;
 }
 
 .module {
@@ -64,6 +83,14 @@
     height: 320px;
 }
 
+@media only screen and (max-width: 367px) {
+    .titulosp {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        margin: auto !important;
+    }
+}
+
 @media only screen and (max-width: 450px) {
     .cardpimg {
         max-width: 249px;
@@ -93,3 +120,36 @@
 .caracteristicas {
     list-style: none;
 }
+
+@media only screen and (max-width: 991px) {
+    .containerbtns {
+        margin-top: 130px;
+    }
+}
+
+@media only screen and (max-width: 597px) {
+    .containerbtns {
+        margin-top: 180px;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    .containerbtns {
+        margin-top: 240px !important;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .containerbtns {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 451px) {
+    .titulosp {
+        text-align: center !important;
+    }
+}
+

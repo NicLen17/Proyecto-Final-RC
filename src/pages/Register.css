@@ -83,7 +83,7 @@
     -webkit-box-shadow: 5px 5px 10px 3px #000000;
     box-shadow: 5px 5px 10px 3px #000000;
     margin: auto;
-    transition: 0.5s;
+    transition: 0.5s !important;
 }
 
 .registerbut:hover {

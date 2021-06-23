@@ -1,5 +1,6 @@
 .agregadocontent {
     text-align: start;
+    font-family: "Roboto", sans-serif;
 }
 
 .input {
@@ -7,6 +8,7 @@
 }
 
 .selectsa {
+    font-family: "Roboto", sans-serif;
     justify-content: space-evenly !important;
     margin-top: 15px;
     margin-bottom: 30px;
@@ -18,6 +20,7 @@
 }
 
 .text-whiteagregado {
+    font-family: "Roboto", sans-serif;
     background-color: black;
     border-radius: 10px !important;
 }

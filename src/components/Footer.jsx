@@ -9,62 +9,22 @@ function Footer() {
     <div className="footer d-flex flex-wrap justify-content-between ps-3 pt-4">
       <div className="d-flex flex-wrap contenedorli phonefoot" >
         <div className="links text-black pe-5 phonefoot">
-          <h5>Phone Pixels</h5>
+          <h5><b> Phone Pixels</b></h5>
           <ul className="pt-2 pb-2 phonefoot">
-            <Nav.Link href="contacto" className="efecto-nav">
+            <Nav.Link to="contacto" className="efecto-nav">
               Contacto
             </Nav.Link>
-            <Nav.Link href="productos" className="efecto-nav">
+            <Nav.Link to="productos" className="efecto-nav">
               Celulares
             </Nav.Link>
-            <Nav.Link href="register" className="efecto-nav">
+            <Nav.Link to="register" className="efecto-nav">
               Registrarse
             </Nav.Link>
-            <Nav.Link href="login" className="efecto-nav">
+            <Nav.Link to="login" className="efecto-nav">
               Log In
             </Nav.Link>
           </ul>
         </div>
-        {/* <div className="marcas text-black pe-2">
-          <h5 className="">Marcas</h5>
-          <ul className="ps-0 pt-2 pb-2">
-            <Nav.Link href="#link" className="efecto-nav">
-              Samsung
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Motorola
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Apple
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Xiaomi
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Nokia
-            </Nav.Link>
-          </ul>
-        </div> */}
-        {/* <div className="marcas text-black ps-5">
-          <h5 className="">Top Celulares</h5>
-          <ul className="ps-0 pt-2 pb-2">
-            <Nav.Link href="#link" className="efecto-nav">
-              Samsung S21
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Motorola Razr
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Iphone 11
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Xiaomi MI 10
-            </Nav.Link>
-            <Nav.Link href="#link" className="efecto-nav">
-              Samsung Fold
-            </Nav.Link>
-          </ul>
-        </div> */}
       </div>
       <div className="datosEmpresa  d-flex flex-wrap text-black d-flex">
         <ul className=" ">
@@ -72,11 +32,11 @@ function Footer() {
             {" "}
             <img
               src="https://icongr.am/material/copyright.svg?size=30&color=000000"
-              alt=""
+              alt="imagen"
             />
-            Phone Pixels
+            <b> Phone Pixels </b>
           </h5>
-          <div className="d-flex m-4">
+          <div className="d-flex m-3">
             <img
               src="https://icongr.am/fontawesome/map-marker.svg?size=30&color=0d41fd"
               alt="Ubicacion"
@@ -100,29 +60,29 @@ function Footer() {
         </ul>
       </div>
       <div className="mt-2 mapa">
-        <p>Puedes encontrarnos en...</p>
+        <p><b>Puedes encontrarnos en...</b> </p>
           <a href="https:www.google.com/maps/place/Espa%C3%B1a+1450,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n/@-26.8145095,-65.2180537,17z/data=!3m1!4b1!4m5!3m4!1s0x94225c4795c72827:0x5046b8948e56a325!8m2!3d-26.8145095!4d-65.215865">
             <img src={imagen} alt="ubicacion" style={{ height: "12em", borderRadius: "25px", maxWidth: "100%" }} />
           </a>
         </div>
       <div className="d-flex flex-column pe-3 redesfoott">
-        <h5 className="text-black">Redes Sociales</h5>
+        <h5 className="text-black"><b>Redes Sociales</b> </h5>
         <div className="d-flex flex-column align-items-center redesfoot ">
-          <Nav.Link>
+          <Nav.Link href="https://www.facebook.com/">
             <img
               className="efecto-footer"
               src="https://icongr.am/devicon/facebook-original.svg?size=40&color=currentColor"
               alt="facebook"
             />
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href="https://twitter.com/">
             <img
               className="efecto-footer"
               src="https://icongr.am/devicon/twitter-original.svg?size=40&color=currentColor"
               alt="twitter"
             />
           </Nav.Link>
-          <Nav.Link>
+          <Nav.Link href="https://www.instagram.com/">
             <img
               className="efecto-footer"
               src="https://icongr.am/material/instagram.svg?size=50&color=a64e93"
