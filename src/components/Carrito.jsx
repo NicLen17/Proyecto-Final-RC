@@ -261,13 +261,13 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label class="form-check-label" for="exampleCheck1" />6 Cuotas
+                  <label className="form-check-label" for="exampleCheck1" />6 Cuotas
                   Sin Interes
                 </div>
                 <div className="card-body">
                   <input
                     type="radio"
-                    class="form-check-input"
+                    className="form-check-input"
                     id="exampleCheck1"
                     name="efectivo"
                   />
