@@ -37,11 +37,8 @@ exports.crearUsuario = async (req, res) => {
 };
 
 exports.obtenerUsuarios = async (req, res) => {
-    console.log('funcion obtener usuarios');
     try {
         const users = await Usuario.find();
-        // await Usuario.send({ nombre });
-        // console.log('🚀 ~ file: usuarioController.js ~ line 43 ~ exports.getUsers= ~ users', users);
         res.send(users);
     } catch (error) {
         res.status(400).json({ msg: 'error al obtener el usuarios' });
@@ -63,20 +60,15 @@ exports.stateUser = async (req, res) => {
     try {
         const userId = req.params.id;
         const usuario = await Usuario.findById(userId).select('-password -__v');
-        console.log(
-            '🚀 ~ file: usuarioController.js ~ line 67 ~ exports.stateUser= ~ usuario.estado',
-            usuario.estado
-        );
         if (usuario.estado) {
             req.body.estado = 'false';
         } else {
             req.body.estado = 'true';
         }
-
         const updatedUser = await Usuario.findByIdAndUpdate(userId, req.body, { new: true });
-        res.send(stateUser);
+        res.send(updatedUser);
     } catch (error) {
-        res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
+            res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
     }
 };
 
