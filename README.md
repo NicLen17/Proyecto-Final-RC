@@ -17,7 +17,8 @@ Entre las funcionalidades del proyecto se encuentran🕹:
 
 -*Seccion de mensajeria donde se archivan los mensajes realizados por parte de los ususarios con la informacion de correo, celular, y nombre para la rapida respuesta*.
 
-#### *Para desplegar el proyecto en local seguir los siguientes pasos 🦾*
+### *Para desplegar el proyecto en local seguir los siguientes pasos 🦾*
+
 1.  Clonar el repositorio de la siguiente manera **git clone** **https://github.com/NicLen17/Proyecto-Final-RC.git**
 
 2.  Instalar las librerias utilazadas mediante **npm install** en la consola de desarrollador, una vez terminada la instalacion, ejecutar **npm start** para abrir el servidor localmente.
