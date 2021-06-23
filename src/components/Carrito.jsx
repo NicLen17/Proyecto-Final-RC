@@ -64,9 +64,16 @@ export default function Carrito() {
   };
 
   const confirmarcompra = () => {
+    console.log(productoCart)
+    if(productoCart.length === 0){
+       return setAlert(`No hay productos en el carrito`);
+  }
     if (window.confirm("Confirmar compra?")) {
       history.push("/compra");
     }
+    setTimeout(() => {
+      setAlert("");
+    }, 8000);
   };
 
   return (
