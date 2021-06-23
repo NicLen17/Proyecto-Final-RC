@@ -74,7 +74,10 @@ exports.login = async (req, res) => {
         if (!passCorrect) {
             return res.status(400).json({ msg: 'Password incorrecto' });
         }
-
+        //Controla que esté usuario habilitado
+        if (!usuario.estado) {
+            return res.status(400).json({ msg: 'El Usuario no está habilitado' });
+        }
         // Si todo es correcto Crear y firmar JWT
         const payload = {
             usuario: {

@@ -96,22 +96,6 @@ export default function Carrito() {
           {productoCart.length === 0 && (
             <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
           )}
-          <div className="botoneliminar">
-          {productoCart.map((p) => (
-            <div className="mt-3" style={{ textAlign: "end" }}>
-              <Button
-                onClick={() => eliminarcarrito(p._id)}
-                className="btn btn-light ml-1"
-                style={{ backgroundColor: "transparent" }}
-              >
-                <img
-                  src="https://icongr.am/fontawesome/trash.svg?size=40&color=currentColor"
-                  alt=""
-                />
-              </Button>
-            </div>
-          ))}
-          </div>
           <br />
           {/*-------------------Precio del Articulo------------------------*/}
           <br />
@@ -128,7 +112,30 @@ export default function Carrito() {
                   <p><b>
                     ${p.price}
                   </b></p>
+                  <Button
+                  onClick={() => eliminarcarrito(p._id)}
+                  className="btn btn-danger botoneliminarnone ml-1"
+                  style={{ backgroundColor: "transparent", display: "none" }}
+                >Eliminar
+                  <img 
+                    className="botoneliminar"
+                    src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
+                    alt=""
+                  />
+                </Button>
                 </div>
+                <Button
+                  onClick={() => eliminarcarrito(p._id)}
+                  className="btn botoneliminar ml-1"
+                  variant="botoneliminar"
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <img 
+                    className="botoneliminar"
+                    src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
+                    alt=""
+                  />
+                </Button>
               </div>
             ))}
             <br />

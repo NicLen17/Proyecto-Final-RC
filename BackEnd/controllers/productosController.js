@@ -41,8 +41,6 @@ exports.getProducts = async (req ,res) => {
 exports.updateProduct = async (req, res) => {
     try {
         const { body } = req;  
-        console.log(req.body) 
-        console.log(req.params.id) 
         const updatedProducto = await Productos.findByIdAndUpdate(req.params.id, body, { new: true });
         res.send(updatedProducto);
     } catch (error) {

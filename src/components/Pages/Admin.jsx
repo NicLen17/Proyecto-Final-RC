@@ -15,9 +15,14 @@ import {
 import AgregadoProducto from "../AgregadoProducto";
 import "./Admin.css";
 import { getBase64 } from "../utils/img";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 function Admin() {
+    const history = useHistory();
+    const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
+    const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
+    //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
+    const [useraut, setUseraut] = useState({});
     const [products, setProducts] = useState([]);
     const [mensajes, setMensajes] = useState([]);
     const [imagenes, setImagenes] = useState({});
@@ -26,12 +31,31 @@ function Admin() {
     const [alertSuccessM, setalertSuccessM] = useState("");
     const [alert, setAlert] = useState("");
     const [productEncontrado, setProductEncontrado] = useState({});
-    const [input, setInput] = useState({});
-
+    const [input, setInput] = useState({}); 
     // estados modal
     const [show, setShow] = useState(false);
-
     const [validated, setValidated] = useState(false);
+
+    useEffect(() => {
+        if (token) {
+            const request = async () => {
+                axios.defaults.headers = { "x-auth-token": token }; //> en el midleware/auth está definido el header que va a ser cabecera
+                const { data } = await axios.get("/auth");
+                if (data.category !== "A") {
+                    window.location = "/";
+                }
+            };
+            request(); //realiza el pedido
+        } else {
+            history.push("/login");
+        }
+        mensaje();
+        productos();
+        getListaUsuarios();
+    }, [token]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
+
+    
+    
 
     const productos = async () => {
         const { data } = await axios.get("/productos");
@@ -41,17 +65,6 @@ function Admin() {
         const { data } = await axios.get("/mensajes");
         setMensajes(data);
     };
-
-    useEffect(() => {
-        const getListaUsuarios = async () => {
-            const { data } = await axios.get("usuarios");
-            setLusers(data);
-        };
-
-        productos();
-        mensaje();
-        getListaUsuarios();
-    }, [setalertSuccess]);
 
     async function deleteProducto(id) {
         if (window.confirm("Estas seguro que deseas eliminar?")) {
@@ -74,15 +87,20 @@ function Admin() {
             setalertSuccess("");
         }, 5000);
     }
+    const getListaUsuarios = async () => {
+        const { data } = await axios.get("usuarios");
+        setLusers(data);
+    };
     async function stateUser(id) {
-        console.log("🚀 ~ file: Admin.jsx ~ line 71 ~ stateUser ~ id", id);
-
         if (window.confirm("Seguro desea modificar el estado?")) {
             await axios.put(`/usuarios/${id}`);
             setalertSuccess("Estado modificado correctamente");
-        }
-    }
-
+            getListaUsuarios();
+            }
+            setTimeout(() => {
+                setalertSuccess("");
+            }, 5000);
+            }
     const updateProduct = (id) => {
         const productoEncontrado = products.find((p) => p._id === id);
         setShow(true);
@@ -198,14 +216,14 @@ function Admin() {
                                                 </td>
                                             </tr>
                                         ))
-                                        // <button className="btn btn-primary mr-1" onClick={`/individual/${product._id}`}
-                                    }
+                                                                          }
                                 </tbody>
                             </Table>
                         </div>
                     </Tab>
                     <Tab eventKey="profile" title="Usuarios">
                         <div>
+                        {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                     <tr>
@@ -235,9 +253,7 @@ function Admin() {
                                                     onClick={() => stateUser(usuarios._id)}
                                                     type="button"
                                                     className="btn btn-primary"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"
-                                                >
+                                                    >
                                                     Habil./Deshab.
                                                 </button>
                                             </td>
@@ -296,7 +312,7 @@ function Admin() {
                     </Modal.Header>
                     <Modal.Body className="editarform" style={{ width: "100%" }}>
                         <Container>
-                        {alert && <Alert variant="danger">{alert}</Alert>}
+                            {alert && <Alert variant="danger">{alert}</Alert>}
                             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                 <Form.Group className="" controlId="validationCustom02">
                                     <Form.Label>Marca</Form.Label>
@@ -404,7 +420,7 @@ function Admin() {
                                         onChange={(e) => handleChange(e)}
                                         required
                                     >
-                                        <option selected>{productEncontrado.color}</option>
+                                        <option defaulValue>{productEncontrado.color}</option>
                                         <option value="Negro">Negro</option>
                                         <option value="Blanco">Blanco</option>
                                         <option value="Azul">Azul</option>
