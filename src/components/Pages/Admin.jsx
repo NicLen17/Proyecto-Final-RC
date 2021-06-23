@@ -22,7 +22,6 @@ function Admin() {
     const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
     const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
     //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
-    const [useraut, setUseraut] = useState({});
     const [products, setProducts] = useState([]);
     const [mensajes, setMensajes] = useState([]);
     const [imagenes, setImagenes] = useState({});
@@ -429,7 +428,7 @@ function Admin() {
                                         className="registerbut"
                                         aria-label="Default select example"
                                     >
-                                        <option selected>{productEncontrado.categoria} </option>
+                                        <option defaultValue>{productEncontrado.categoria} </option>
                                         <option value="Celular">Celular</option>
                                         <option value="Tablet">Tablet</option>
                                         <option value="Accesorios">Accesorio</option>

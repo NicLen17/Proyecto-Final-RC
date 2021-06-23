@@ -25,7 +25,7 @@ export default function Carrito() {
     setProductoCart(productoStorage);
     let sum = 0;
     productoStorage.map((p) => {
-      sum = sum + p.price;
+      return sum = sum + p.price;
     });
     setTotal(sum);
   };
@@ -41,10 +41,10 @@ export default function Carrito() {
     let productosFiltrados = [];
     productoCart.map((e) => {
       const coincideId = e._id === id;
-
       if (!coincideId) {
         productosFiltrados.push(e);
       }
+      
     });
 
     localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));

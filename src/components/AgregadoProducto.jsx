@@ -150,7 +150,7 @@ export default function AgregadoProducto({ productos }) {
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
                                                 name="color" onChange={(e) => handleChange(e)} required>
-                                                <option selected>Color</option>
+                                                <option defaultValue>Color</option>
                                                 <option value="Negro">Negro</option>
                                                 <option value="Blanco">Blanco</option>
                                                 <option value="Azul">Azul</option>
@@ -159,7 +159,7 @@ export default function AgregadoProducto({ productos }) {
                                         <Form.Group className="selectsa">
                                             <select className="registerbut" aria-label="Default select example"
                                                 name="categoria" onChange={(e) => handleChange(e)} required>
-                                                <option >Categoria</option>
+                                                <option defaultValue >Categoria</option>
                                                 <option value="Celular">Celular</option>
                                                 <option value="Tablet">Tablet</option>
                                                 <option value="Accesorios">Accesorio</option>
