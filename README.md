@@ -1,4 +1,4 @@
-# **Proyecto Grupal Integral - Rolling Code **
+# *Proyecto Grupal Integral - Rolling Code*
 ![image](https://user-images.githubusercontent.com/78326860/123147185-21c75980-d435-11eb-9b97-66954b112f56.png)
 
 ## Introduccion
@@ -6,7 +6,7 @@
 Este proyecto surge a partir del ultimo desafio dado a los integrandes de la comision i7, con el objetivo de verificar todo lo aprendido a lo largo de curso, en el mismo se utilizan todos los conocimiento anteriormente adquiridos.
 
 ##  📱 Proyecto 📱    
-Entre las funcionalidades del proyecto se encuentran🕹:
+###Entre las funcionalidades del proyecto se encuentran🕹:
 - La posibilidad de Log in y Registro para usuarios nuevos 
 - Agregado de productos de interes al carrito para posteriormente efectuar la compra
 - Cuenta con una seccion de contacto con los administradores por cualquier problema que pueda llegar a tener el cliente.
