@@ -18,6 +18,7 @@ import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
 import Carrito from "./components/Carrito";
 import Seccion404 from './components/Seccion404'
+import SCompraFinalizada from './components/SCompraFinalizada'
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -103,6 +104,9 @@ export default function App() {
             <Register setToken={setToken} />
           </Route>
 
+          <Route path="/compra">
+            <SCompraFinalizada />
+          </Route>
           <Route path="*" component={Seccion404}/>
 
           <Route path="/carrito" exact></Route>
