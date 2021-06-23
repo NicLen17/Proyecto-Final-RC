@@ -32,6 +32,7 @@ Este proyecto surge a partir del ultimo desafio dado a los integrandes de la com
 Acceso al [Tablero de actividades](https://trello.com/b/mRCbL92M/proyecto-integrado-final-rc "Tablero de actividades")
 
 **Integrantes:**
+
 Fabio Ramos **SM**
 
 Mauro Grezzana 
