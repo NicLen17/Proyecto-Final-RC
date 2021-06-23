@@ -44,7 +44,7 @@ export default function Carrito() {
       if (!coincideId) {
         productosFiltrados.push(e);
       }
-      
+      return productosFiltrados;
     });
 
     localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
@@ -113,16 +113,16 @@ export default function Carrito() {
                     ${p.price}
                   </b></p>
                   <Button
-                  onClick={() => eliminarcarrito(p._id)}
-                  className="btn btn-danger botoneliminarnone ml-1"
-                  style={{ backgroundColor: "transparent", display: "none" }}
-                >Eliminar
-                  <img 
-                    className="botoneliminar"
-                    src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
-                    alt=""
-                  />
-                </Button>
+                    onClick={() => eliminarcarrito(p._id)}
+                    className="btn btn-danger botoneliminarnone ml-1"
+                    style={{ backgroundColor: "transparent", display: "none" }}
+                  >Eliminar
+                    <img
+                      className="botoneliminar"
+                      src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
+                      alt=""
+                    />
+                  </Button>
                 </div>
                 <Button
                   onClick={() => eliminarcarrito(p._id)}
@@ -130,7 +130,7 @@ export default function Carrito() {
                   variant="botoneliminar"
                   style={{ backgroundColor: "transparent" }}
                 >
-                  <img 
+                  <img
                     className="botoneliminar"
                     src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
                     alt=""
@@ -177,7 +177,6 @@ export default function Carrito() {
                     className="ml-3 mb-2"
                     type="numeric"
                     placeholder="Nro. de Tarjeta"
-                    textarea
                   />
 
                   <Form.Control
@@ -241,7 +240,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label className="form-check-label" for="exampleCheck1" />
+                  <label className="form-check-label" htmlFor="exampleCheck1" />
                   Pago Unico
                 </div>
                 <div className="card-body">
@@ -251,7 +250,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label className="form-check-label" for="exampleCheck1" />3
+                  <label className="form-check-label" htmlFor="exampleCheck1" />3
                   Cuotas Sin Interes
                 </div>
                 <div className="card-body">
@@ -261,7 +260,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label className="form-check-label" for="exampleCheck1" />6 Cuotas
+                  <label className="form-check-label" htmlFor="exampleCheck1" />6 Cuotas
                   Sin Interes
                 </div>
                 <div className="card-body">
@@ -271,7 +270,7 @@ export default function Carrito() {
                     id="exampleCheck1"
                     name="efectivo"
                   />
-                  <label className="form-check-label" for="exampleCheck1" />
+                  <label className="form-check-label" htmlFor="exampleCheck1" />
                   12 Cuotas Sin Interes
                 </div>
               </div>

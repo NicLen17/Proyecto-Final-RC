@@ -18,7 +18,6 @@ import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
 import Carrito from "./components/Carrito";
 import Seccion404 from './components/Seccion404'
-import SCompraFinalizada from './components/SCompraFinalizada'
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
 
@@ -51,25 +50,7 @@ export default function App() {
     setToken(""); //limpia el token
   };
 
-  // const productoStorage =
-  //   JSON.parse(localStorage.getItem("agregarcarrito")) || [];
-  // const carritoLleno = productoStorage.length;
-  // console.log("totalCarrito", carritoLleno);
-
-  // let producto = () => {
-  //   let productoStorage =
-  //     JSON.parse(localStorage.getItem("agregarcarrito")) || [];
-  //   console.log(
-  //     "🚀 ~ file: App.js ~ line 51 ~ App ~ totalCarrito",
-  //     productoStorage
-  //   );
-  // };
-
-  // useEffect(() => {
-  //   producto();
-  // }, []);
-
-  return (
+    return (
     <div className="App">
       <Router>
         <Route>
@@ -120,10 +101,6 @@ export default function App() {
 
           <Route path="/register">
             <Register setToken={setToken} />
-          </Route>
-
-          <Route path="/compra">
-            <SCompraFinalizada />
           </Route>
 
           <Route path="*" component={Seccion404}/>

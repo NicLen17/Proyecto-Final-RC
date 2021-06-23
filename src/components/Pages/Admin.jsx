@@ -51,7 +51,7 @@ function Admin() {
         mensaje();
         productos();
         getListaUsuarios();
-    }, [token]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
+    }, [token ,history]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
 
 
 

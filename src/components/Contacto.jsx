@@ -35,13 +35,14 @@ export default function Contacto() {
     try {
       await axios.post("/mensajes", input);
       formulario.reset()
+      setalertSuccess("Mensaje enviado. Gracias en breve le responderemos");
+      setValidated(false);
     } catch (error) {
       error.response.data.msg
         ? setAlert(error.response.data.msg)
         : setAlert("este error");
     }
-    setalertSuccess("Mensaje enviado. Gracias en breve le responderemos");
-    setValidated(false);
+    
   };
   const handleChange = (e) => {
     setAlert("");
@@ -147,7 +148,7 @@ export default function Contacto() {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Telefono</Form.Label>
-                    <Form.Control className="labelform" minLenght="8" maxLength="10" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" maxLength="10" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere telefono!
                     </Form.Control.Feedback>
@@ -192,12 +193,7 @@ export default function Contacto() {
                   reclamación ante una autoridad de control.
                 </p>
                 <hr />
-                <Form.Group controlId="formBasicCheckbox">
-                  <Form.Check
-                    type="checkbox"
-                    label="Aceptar Politica de Privacidad"
-                  />
-                </Form.Group>
+                
               </div>
             </div>
           </div>
