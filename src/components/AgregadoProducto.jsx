@@ -65,18 +65,18 @@ export default function AgregadoProducto({ productos }) {
     return (
         <div className="agregadoform">
             <div className="agregadocontent">
-                <Container className="registerform">
+                <Container className="registerformagregado">
                     <Row>
                         <Col xs={12} sm={8} md={6} className="mx-auto my-5">
                             {alert && <Alert variant="danger">{alert}</Alert>}
                             {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-                            <Card style={{ height: "880px" }} className="border registercontent">
-                                <Card.Header className="text-white">
-                                    <h4 className="mt-1">Ingresar Producto</h4>
+                            <Card style={{ height: "880px" }} className="border registercontentagregado">
+                                <Card.Header className="text-whiteagregado">
+                                    <h4 style={{color: "white"}} className="mt-1">Ingresar Producto</h4>
                                 </Card.Header>
                                 <Card.Body>
                                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                                        <Form.Group className="reginputconteiner" controlId="validationCustom02">
+                                        <Form.Group className="reginputconteineragregado" controlId="validationCustom02">
                                             <Form.Label >Marca</Form.Label>
                                             <Form.Control
                                                 name="marca"
@@ -84,14 +84,14 @@ export default function AgregadoProducto({ productos }) {
                                                 required
                                                 type="text"
                                                 placeholder="Fabricante del producto"
-                                                className="registerlabel"
+                                                className="registerlabelagregado"
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Se requiere el fabricante del producto!
                                             </Form.Control.Feedback>
                                             <Form.Control.Feedback>Recibido</Form.Control.Feedback>
                                         </Form.Group>
-                                        <Form.Group className="reginputconteiner" controlId="validationCustom01">
+                                        <Form.Group className="reginputconteineragregado" controlId="validationCustom01">
                                             <Form.Label >Modelo del producto</Form.Label>
                                             <Form.Control
                                                 name="modelo"
@@ -99,7 +99,7 @@ export default function AgregadoProducto({ productos }) {
                                                 required
                                                 type="text"
                                                 placeholder="Nombre del producto"
-                                                className="registerlabel"
+                                                className="registerlabelagregado"
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Se requiere el nombre del producto!
@@ -113,14 +113,14 @@ export default function AgregadoProducto({ productos }) {
                                                 onChange={(e) => handleChange(e)}
                                                 type="number"
                                                 placeholder="$$$"
-                                                className="registerlabel"
+                                                className="registerlabelagregado"
                                                 required
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Precio obligatorio!
                                             </Form.Control.Feedback>
                                         </Form.Group>
-                                        <Form.Group className="reginputconteiner" controlId="validationCustomUsername">
+                                        <Form.Group className="reginputconteineragregado" controlId="validationCustomUsername">
                                             <Form.Label >Caracteristicas</Form.Label>
                                             <InputGroup hasValidation>
                                                 <Form.Control
@@ -130,7 +130,7 @@ export default function AgregadoProducto({ productos }) {
                                                     as="textarea"
                                                     placeholder="Caracteristicas principales del producto"
                                                     aria-describedby="inputGroupPrepend"
-                                                    className="registerlabel"
+                                                    className="registerlabelagregado"
                                                     required
                                                 />
                                                 <Form.Control.Feedback type="invalid">
@@ -139,7 +139,7 @@ export default function AgregadoProducto({ productos }) {
                                             </InputGroup>
                                         </Form.Group>
                                         <Form.Group controlId="formFile" className="mb-3">
-                                            <Form.Label className="registerlabel">Agregar imagen del producto de forma local</Form.Label>
+                                            <Form.Label className="registerlabelagregado">Agregar imagen del producto de forma local</Form.Label>
                                             <Form.Group controlId="formFileMultiple" className="mb-3" onChange={(e) => onChangeImg(e)}>
                                                 <Form.Control type="file" multiple />
                                             </Form.Group>

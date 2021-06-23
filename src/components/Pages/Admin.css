@@ -60,3 +60,15 @@ a {
     background-color: black;
     color: white;
 }
+
+@media only screen and (max-width: 670px) {
+    .tablacont {
+        margin-top: 150px;
+    }
+}
+
+@media only screen and (max-width: 597px) {
+    .tablacont {
+        margin-top: 180px;
+    }
+}

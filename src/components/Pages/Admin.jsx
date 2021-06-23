@@ -180,7 +180,7 @@ function Admin() {
             <div>
               <AgregadoProducto productos={productos} />
               {alertSuccess && <Alert variant="success">{alertSuccess}</Alert>}
-              <Table striped bordered hover variant="dark">
+              <Table responsive striped bordered hover variant="dark">
                 <thead>
                   <tr>
                     <th>Categoria</th>
@@ -242,7 +242,7 @@ function Admin() {
           </Tab>
           <Tab eventKey="profile" title="Usuarios">
             <div>
-              <Table striped bordered hover variant="dark">
+              <Table responsive striped bordered hover variant="dark">
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -288,7 +288,7 @@ function Admin() {
               {alertSuccessM && (
                 <Alert variant="success">{alertSuccessM}</Alert>
               )}
-              <Table striped bordered hover variant="dark">
+              <Table responsive  striped bordered hover variant="dark">
                 <thead>
                   <tr>
                     <th>Nombre y apellido</th>
