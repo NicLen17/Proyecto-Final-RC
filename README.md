@@ -29,7 +29,10 @@ Este proyecto surge a partir del ultimo desafio dado a los integrandes de la com
 4. **Luego de completar los pasos mencionados la aplicacion debera funcionar de forma correcta, en caso de que no sea asi instalar manualmente las librerias utilizadas, nombradas mas adelante**
 
 ## *Comision 7i - Grupo N°2*
+
 Acceso al [Tablero de actividades](https://trello.com/b/mRCbL92M/proyecto-integrado-final-rc "Tablero de actividades")
+
+Acceso al proyecto funcionando en [Vercel](https://proyecto-final-rc.vercel.app/ "Vercel")
 
 **Integrantes:**
 
