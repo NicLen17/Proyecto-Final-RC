@@ -8,7 +8,6 @@ export default function NavReactB({
   userName,
   userCategory,
   logout,
-  carritoLleno,
 }) {
   return (
     <Navbar bg="light" expand="lg" className="d-flex m navbar fixed-top">
@@ -76,22 +75,18 @@ export default function NavReactB({
             />{" "}
           </Nav.Link>
         )}
-
-        {carritoLleno === 0 && (
-          <Nav.Link
-            to="/carrito"
-            exact
-            as={NavLink}
-            className="contenedor-icon"
-          >
-            <img
-              src="https://icongr.am/material/cart.svg?size=35&0a0a0a"
-              alt="imagen"
-            />{" "}
-          </Nav.Link>
-        )}
-
-        {carritoLleno > 0 && (
+        <Nav.Link
+          to="/carrito"
+          exact
+          as={NavLink}
+          className="contenedor-icon"
+        >
+          <img
+            src="https://icongr.am/material/cart.svg?size=35&0a0a0a"
+            alt="imagen"
+          />{" "}
+        </Nav.Link>
+        {/* {carritoLleno > 0 && (
           <Nav.Link
             to="/carrito"
             exact
@@ -103,7 +98,7 @@ export default function NavReactB({
               alt="imagen"
             />{" "}
           </Nav.Link>
-        )}
+        )} */}
       </Nav>
     </Navbar>
   );

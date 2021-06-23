@@ -5,6 +5,10 @@
 
 Este proyecto surge a partir del ultimo desafio dado a los integrandes de la comision i7, con el objetivo de verificar todo lo aprendido a lo largo de curso, en el mismo se utilizan todos los conocimiento anteriormente adquiridos.
 
+## Tema del Grupo
+
+Nos inspiramos de grandes productoras como samsumg, apple, xiaomi y otras de de la misma categora y diseñamos esta web con el objetivo en mente de estar a la altura de las mismas.
+
 ##  📱 Proyecto 📱    
 ### Entre las funcionalidades del proyecto se encuentran🕹:
 - La posibilidad de Log in y Registro para usuarios nuevos 
@@ -41,8 +45,6 @@ Este proyecto surge a partir del ultimo desafio dado a los integrandes de la com
 ### Lucas Rivadeneira 
 
 Acceso al [Tablero de actividades](https://trello.com/b/mRCbL92M/proyecto-integrado-final-rc "Tablero de actividades")
-
-Acceso al proyecto funcionando en [Vercel](https://proyecto-final-rc.vercel.app/ "Vercel")
 
 ## Librerias utilizadas
 - *Bootstrap*
