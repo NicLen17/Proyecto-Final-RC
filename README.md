@@ -30,19 +30,19 @@ Este proyecto surge a partir del ultimo desafio dado a los integrandes de la com
 
 ## *Comision 7i - Grupo N°2*
 
+**Integrantes:**
+
+###Fabio Ramos **SM**
+
+###Mauro Grezzana 
+
+###Constanza Mejuto 
+
+###Lucas Rivadeneira 
+
 Acceso al [Tablero de actividades](https://trello.com/b/mRCbL92M/proyecto-integrado-final-rc "Tablero de actividades")
 
 Acceso al proyecto funcionando en [Vercel](https://proyecto-final-rc.vercel.app/ "Vercel")
-
-**Integrantes:**
-
-Fabio Ramos **SM**
-
-Mauro Grezzana 
-
-Constanza Mejuto 
-
-Lucas Rivadeneira 
 
 ## Librerias utilizadas
 - *Bootstrap*
