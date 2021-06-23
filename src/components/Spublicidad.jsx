@@ -1,18 +1,16 @@
 import './Spublicidad.css'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
-// import Swiper core and required modules
 import SwiperCore, { Pagination } from 'swiper/core';
 import { Autoplay, Navigation } from 'swiper/core';
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import React, { useEffect } from 'react'
+import {NavLink} from 'react-router-dom'
 
 
-// install Swiper modules
+
 SwiperCore.use([Pagination]);
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -26,12 +24,12 @@ export default function Spublicidad() {
     return (
         <div>
             <div data-aos="fade-down-right" className="titulo2">
-                <p>Aprovecha nuestras ofertas mensuales</p>
+                <p>Aprovecha lo mejor que tenemos para ofrecer</p>
             </div>
             <Swiper data-aos="flip-left" loop={true} autoplay={true} slidesPerView={1} spaceBetween={0} pagination={{
                 "clickable": true
             }} className="mySwiper">
-                <SwiperSlide>
+                <SwiperSlide><NavLink to={"productos"}>
                     <div className="publicidad">
                         <div className="ofertas">
                             <img src="https://images.samsung.com/is/image/samsung/assets/ar/p6_gro2/684x684-Hotweek.jpg?$684_684_JPG$" alt="" />
@@ -45,8 +43,10 @@ export default function Spublicidad() {
                             </div>
                         </div>
                     </div>
+                    </NavLink>
                 </SwiperSlide>
                 <SwiperSlide>
+                <NavLink to={"productos"}>
                     <div className="publicidad">
                         <div className="ofertas">
                             <img src="https://tiaecuador.vteximg.com.br/arquivos/ids/177592-1000-1000/131076001c.png?v=637535789174930000" alt="" />
@@ -60,6 +60,7 @@ export default function Spublicidad() {
                             </div>
                         </div>
                     </div>
+                    </NavLink>
                 </SwiperSlide>
             </Swiper>
         </div>

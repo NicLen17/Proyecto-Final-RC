@@ -14,7 +14,7 @@ function Perfil({ user }) {
       <div className="perfilbody">
         <img
           className="userimg"
-          src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg"
+          src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png"
           alt=""
         />
         <p className="username">{user.nombre}</p>
