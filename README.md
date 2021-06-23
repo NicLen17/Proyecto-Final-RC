@@ -2,6 +2,7 @@
 ![image](https://user-images.githubusercontent.com/78326860/123147185-21c75980-d435-11eb-9b97-66954b112f56.png)
 
 🎇 ## Introduccion 🎇
+
 Este proyecto surge a partir del ultimo desafio dado a los integrandes de la comision i7, con el objetivo de verificar todo lo aprendido a lo largo de curso, en el mismo se utilizan todos los conocimiento anteriormente adquiridos.
 
 ##  📱 Proyecto 📱    
