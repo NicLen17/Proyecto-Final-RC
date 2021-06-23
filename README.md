@@ -10,8 +10,11 @@ Entre las funcionalidades del proyecto se encuentran🕹:
 - Agregado de productos de interes al carrito para posteriormente efectuar la compra
 - Cuenta con una seccion de contacto con los administradores por cualquier problema que pueda llegar a tener el cliente.
 - Cuenta con una seccion exclusiva para el administrador donde se encuentra todo lo relacionado a la administracion de la web. Ej:
+- 
 *-Seccion de agregado de producto donde se puede agregar, editar, eliminar y ver el estado de la publicacion realizada.
--Seccion de usuarios donde se pueden ver todos los usuarios que se registraron en el sitio y asignarles un estado de habilitado/deshabilitado en caso de infraccion a las normas
+
+-Seccion de usuarios donde se pueden ver todos los usuarios que se registraron en el sitio y asignarles un estado de habilitado/deshabilitado en caso de infraccion a las normas.
+
 -Seccion de mensajeria donde se archivan los mensajes realizados por parte de los ususarios con la informacion de correo, celular, y nombre para la rapida respuesta. *
 
 #### *Para desplegar el proyecto en local seguir los siguientes pasos 🦾*
