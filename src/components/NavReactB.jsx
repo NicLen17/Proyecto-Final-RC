@@ -41,24 +41,9 @@ export default function NavReactB({
           <Nav.Link to="/contacto" exact as={NavLink} className="efecto-nav">
             Contacto
           </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
 
-      {userName && (
-        <h2 style={{ width: "150px", maxWidth: "100%" }} className="userbut">
-          {userName}
-        </h2>
-      )}
-      {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
-
-      {userName && (
-        <Button className="userbut2" variant="userbut2" onClick={logout}>
-          Cerrar Sesión
-        </Button>
-      )}
-
-      <Nav className="">
-        {userName && (
+            <div className="iconosnav">
+          {userName && (
           <Nav.Link href="perfil" className="contenedor-icon">
             <img
               src="https://icongr.am/fontawesome/user.svg?size=35&color=currentColor"
@@ -99,7 +84,22 @@ export default function NavReactB({
             />{" "}
           </Nav.Link>
         )} */}
-      </Nav>
+
+      {userName && (
+        <h2 style={{ width: "150px", maxWidth: "100%" }} className="userbut">
+          {userName}
+        </h2>
+      )}
+      {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
+
+      {userName && (
+        <Button className="userbut2" variant="userbut2" onClick={logout}>
+          Cerrar Sesión
+        </Button>
+      )}
+      </div>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 }

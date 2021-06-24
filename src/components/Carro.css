@@ -89,6 +89,8 @@ p {
 
 @media only screen and (max-width: 560px) {
   .cimg {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
     margin-top: 70px;
     max-width: 100%;
     height: 290px !important;
