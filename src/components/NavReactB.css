@@ -52,7 +52,6 @@
     color: rgb(0, 0, 0);
     border: none;
     background-color: rgb(255, 255, 255);
-    border-bottom: rgb(0, 0, 0) 5px solid;
     margin-top: 20px;
     width: 80px;
     margin: auto;
@@ -64,19 +63,19 @@
     color: rgb(0, 0, 0);
     border: none;
     background-color: rgb(255, 255, 255);
-    border-bottom: rgb(0, 0, 0) 5px solid;
     margin-top: 20px;
     width: 180px;
-
+    border: solid 1px black;
     margin: auto;
     transition: 0.5s;
     height: 35px;
+    -webkit-box-shadow: 3px 1px 5px 2px #000000;
+    box-shadow: 3px 1px 5px 2px #000000;
 }
 
 .userbut2:hover {
     background-color: black !important;
     color: white;
-    border-bottom: rgb(0, 0, 0) 5px solid;
 }
 
 @media only screen and (max-width: 2082px) {

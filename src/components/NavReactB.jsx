@@ -41,7 +41,7 @@ export default function NavReactB({
           <Nav.Link to="/contacto" exact as={NavLink} className="efecto-nav">
             Contacto
           </Nav.Link>
-
+          </Nav>
             <div className="iconosnav">
           {userName && (
           <Nav.Link href="perfil" className="contenedor-icon">
@@ -60,6 +60,18 @@ export default function NavReactB({
             />{" "}
           </Nav.Link>
         )}
+              {userName && (
+        <h2 style={{ width: "150px", maxWidth: "100%" }} className="userbut">
+          {userName}
+        </h2>
+      )}
+      {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
+
+      {userName && (
+        <Button className="userbut2" variant="userbut2" onClick={logout}>
+          Cerrar Sesión
+        </Button>
+      )}
         <Nav.Link
           to="/carrito"
           exact
@@ -84,21 +96,7 @@ export default function NavReactB({
             />{" "}
           </Nav.Link>
         )} */}
-
-      {userName && (
-        <h2 style={{ width: "150px", maxWidth: "100%" }} className="userbut">
-          {userName}
-        </h2>
-      )}
-      {/* muestra el nombre del usuario, con la codicion que si no está logueado no muestre nada */}
-
-      {userName && (
-        <Button className="userbut2" variant="userbut2" onClick={logout}>
-          Cerrar Sesión
-        </Button>
-      )}
       </div>
-        </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
