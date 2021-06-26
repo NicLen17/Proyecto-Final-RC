@@ -137,7 +137,7 @@ export default function Contacto() {
                     style={{ marginTop: "15px" }}
                     controlId="exampleForm.ControlInput1"       >
                     <Form.Label>Correo electronico</Form.Label>
-                    <Form.Control className="labelform" maxLength="50" type="email" placeholder="Correo@example.com" required name="email" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" minLength="6" maxLength="35" type="email" placeholder="Correo@example.com" required name="email" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere correo Electronico!
                     </Form.Control.Feedback>
