@@ -180,33 +180,43 @@ export default function Carrito() {
                   required
                 >
                   <Form.Control
+                    required
                     className="ml-3 mb-2"
                     type="numeric"
+                    min="0"
                     placeholder="Nro. de Tarjeta"
                   />
 
                   <Form.Control
+                    required
                     className="ml-3 mb-2"
                     type="numeric"
+                    min="0"
                     placeholder="Codigo de Seguridad"
                   />
 
                   <Form.Control
+                    required
                     className="ml-3 mb-2"
                     type="month"
                     placeholder="Fecha de Expiracion"
                   />
 
                   <Form.Control
+                    required
                     className="ml-3 mb-2"
                     type="text"
                     placeholder="Nombre y Apellido"
+                    maxLength="25"
                   />
 
                   <Form.Control
+                    required
+                    min="0"
                     className="ml-3"
                     type="numeric"
                     placeholder="DNI del titular"
+                    maxLength="25"
                   />
                 </div>
 
@@ -290,7 +300,6 @@ export default function Carrito() {
             <h5>Mi envio</h5>
           </div>
           <br />
-
           <Card className="enviodomicilio">
             <div className="container d-flex">
               <div
@@ -300,20 +309,25 @@ export default function Carrito() {
                 <b>Envio a Domicilio</b>
               </div>
             </div>
-
             <Card.Body>
               <div className="card-body d-flex">
                 <Form.Control
+                  maxLength="25"
+                  required
                   className="ml-3"
                   type="numeric"
                   placeholder="Ingresar CP"
                 />
                 <Form.Control
                   className="ml-2"
+                  required
+                  maxLength="25"
                   type="text"
                   placeholder="Ingresar Localidad"
                 />
                 <Form.Control
+                  required
+                  maxLength="25"
                   className="ml-2"
                   type="text"
                   placeholder="Ingresar Domicilio de Entrega"
@@ -348,10 +362,8 @@ export default function Carrito() {
           >
             Cancelar compra
           </Button>{" "}
-          {/* <Button variant="primary" size="lg">
-            Modificar Compra
-          </Button>{" "} */}
           <Button
+            id="btncompras"
             className="registerbut"
             onClick={confirmarcompra}
             variant="registerbut" size="lg">

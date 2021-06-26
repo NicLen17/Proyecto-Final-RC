@@ -109,6 +109,7 @@ export default function AgregadoProducto({ productos }) {
                                         <Form.Group>
                                             <Form.Label >Precio</Form.Label>
                                             <Form.Control
+                                                min="0"
                                                 name="price"
                                                 onChange={(e) => handleChange(e)}
                                                 type="number"

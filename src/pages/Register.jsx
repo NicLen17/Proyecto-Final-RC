@@ -90,7 +90,9 @@ export default function Register({ setToken }) {
                   <Form.Control
                     name="celular"
                     onChange={(e) => handleChange(e)}
-                    type="text"
+                    type="number"
+                    min="0"
+                    maxLength="25"
                     placeholder="Celular"
                     className="registerlabel"
                   />
@@ -107,6 +109,7 @@ export default function Register({ setToken }) {
                     required
                     type="text"
                     placeholder="Email"
+                    maxLength="40"
                     className="registerlabel text-uppercase"
                   />
                   <Form.Control.Feedback>Ok!</Form.Control.Feedback>

@@ -46,49 +46,46 @@ function Productos() {
         <br />
         <div className="flexcardp">
           {products.map((prod) => {
-            if (prod.categoria === "CELULAR") {
-              return (
-                <NavLink
-                  key={prod._id}
-                  style={{ textDecorationLine: "none" }}
-                  to={`/individual/${prod._id}`}
-                  exact
-                  as={NavLink}
-                >
-                  <Card data-aos="fade-up" className="cardsp">
-                    <Card.Img
-                      className="cardpimg"
-                      variant="top"
-                      src={prod.img[0]}
-                      alt="imagen celular"
-                    />
-                    <Card.Body>
-                      <Card.Title className="cardtitulo">
-                        ${prod.price}
-                      </Card.Title>
-                      <Card.Title className="caracteristicas">
-                        <div>
-                          <h5>
-                            <b>{prod.marca}</b>
-                          </h5>
-                          <h5>
-                            <b>{prod.modelo}</b>
-                          </h5>
-                          <div className="module line-clamp">
-                            <h6>{prod.descripcion}</h6>
-                          </div>
+            return (
+              <NavLink
+                key={prod._id}
+                style={{ textDecorationLine: "none" }}
+                to={`/individual/${prod._id}`}
+                exact
+                as={NavLink}
+              >
+                <Card data-aos="fade-up" className="cardsp">
+                  <Card.Img
+                    className="cardpimg"
+                    variant="top"
+                    src={prod.img[0]}
+                    alt="imagen celular"
+                  />
+                  <Card.Body>
+                    <Card.Title className="cardtitulo">
+                      ${prod.price}
+                    </Card.Title>
+                    <Card.Title className="caracteristicas">
+                      <div>
+                        <h5>
+                          <b>{prod.marca}</b>
+                        </h5>
+                        <h5>
+                          <b>{prod.modelo}</b>
+                        </h5>
+                        <div className="module line-clamp">
+                          <h6>{prod.descripcion}</h6>
                         </div>
-                      </Card.Title>
-                    </Card.Body>
-                  </Card>
-                  <br />
-                  <br />
-                </NavLink>
-              );
-            } return console.log()
+                      </div>
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+                <br />
+                <br />
+              </NavLink>
+            );
           })}
         </div>
-
         <h1 data-aos="fade-right" className="text-center mt-5 shadow titulosp" id="tablet">
           Tablets
         </h1>
@@ -98,47 +95,44 @@ function Productos() {
         <br className="solid" />
         <div className="flexcardp">
           {products.map((prod) => {
-            if (prod.categoria === "TABLET") {
-              return (
-                <NavLink
-                  key={prod._id}
-                  style={{ textDecorationLine: "none" }}
-                  to={`/individual/${prod._id}`}
-                  exact
-                  as={NavLink}
-                >
-                  <Card data-aos="fade-up" className="cardsp">
-                    <Card.Img
-                      className="cardpimg"
-                      variant="top"
-                      src={prod.img[0]}
-                      alt="imagen celular"
-                    />
-                    <Card.Body>
-                      <Card.Title className="cardtitulo">
-                        ${prod.price}
-                      </Card.Title>
-                      <Card.Title className="caracteristicas">
-                        <div>
-                          <h5>
-                            <b>{prod.marca}</b>
-                          </h5>
-                          <h5>
-                            <b>{prod.modelo}</b>
-                          </h5>
-                          <div className="module line-clamp">
-                            <h6>{prod.descripcion}</h6>
-                          </div>
+            return (
+              <NavLink
+                key={prod._id}
+                style={{ textDecorationLine: "none" }}
+                to={`/individual/${prod._id}`}
+                exact
+                as={NavLink}
+              >
+                <Card data-aos="fade-up" className="cardsp">
+                  <Card.Img
+                    className="cardpimg"
+                    variant="top"
+                    src={prod.img[0]}
+                    alt="imagen celular"
+                  />
+                  <Card.Body>
+                    <Card.Title className="cardtitulo">
+                      ${prod.price}
+                    </Card.Title>
+                    <Card.Title className="caracteristicas">
+                      <div>
+                        <h5>
+                          <b>{prod.marca}</b>
+                        </h5>
+                        <h5>
+                          <b>{prod.modelo}</b>
+                        </h5>
+                        <div className="module line-clamp">
+                          <h6>{prod.descripcion}</h6>
                         </div>
-                      </Card.Title>
-                    </Card.Body>
-                  </Card>
-                </NavLink>
-              );
-            } return console.log
+                      </div>
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </NavLink>
+            );
           })}
         </div>
-
         <h1 data-aos="fade-right" className="text-center mt-5 shadow titulosp" id="accesorios">
           Accesorios
         </h1>
@@ -147,44 +141,42 @@ function Productos() {
         <br />
         <div className="flexcardp">
           {products.map((prod) => {
-            if (prod.categoria === "ACCESORIOS") {
-              return (
-                <NavLink
-                  key={prod._id}
-                  style={{ textDecorationLine: "none" }}
-                  to={`/individual/${prod._id}`}
-                  exact
-                  as={NavLink}
-                >
-                  <Card data-aos="fade-up" className="cardsp">
-                    <Card.Img
-                      className="cardpimg"
-                      variant="top"
-                      src={prod.img[0]}
-                      alt="imagen celular"
-                    />
-                    <Card.Body>
-                      <Card.Title className="cardtitulo">
-                        ${prod.price}
-                      </Card.Title>
-                      <Card.Title className="caracteristicas">
-                        <div>
-                          <h5>
-                            <b>{prod.marca}</b>
-                          </h5>
-                          <h5>
-                            <b>{prod.modelo}</b>
-                          </h5>
-                          <div className="module line-clamp">
-                            <h6>{prod.descripcion}</h6>
-                          </div>
+            return (
+              <NavLink
+                key={prod._id}
+                style={{ textDecorationLine: "none" }}
+                to={`/individual/${prod._id}`}
+                exact
+                as={NavLink}
+              >
+                <Card data-aos="fade-up" className="cardsp">
+                  <Card.Img
+                    className="cardpimg"
+                    variant="top"
+                    src={prod.img[0]}
+                    alt="imagen celular"
+                  />
+                  <Card.Body>
+                    <Card.Title className="cardtitulo">
+                      ${prod.price}
+                    </Card.Title>
+                    <Card.Title className="caracteristicas">
+                      <div>
+                        <h5>
+                          <b>{prod.marca}</b>
+                        </h5>
+                        <h5>
+                          <b>{prod.modelo}</b>
+                        </h5>
+                        <div className="module line-clamp">
+                          <h6>{prod.descripcion}</h6>
                         </div>
-                      </Card.Title>
-                    </Card.Body>
-                  </Card>
-                </NavLink>
-              );
-            } return console.log()
+                      </div>
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </NavLink>
+            );
           })}
         </div>
       </div>

@@ -148,7 +148,7 @@ export default function Contacto() {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Telefono</Form.Label>
-                    <Form.Control className="labelform" max="9999999999" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" min="0" max="9999999999" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere telefono valido!
                     </Form.Control.Feedback>
