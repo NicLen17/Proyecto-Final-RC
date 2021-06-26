@@ -9,7 +9,7 @@ function Footer() {
     <div className="footer d-flex flex-wrap justify-content-between ps-3 pt-4">
       <div className="d-flex flex-wrap contenedorli phonefoot" >
         <div className="links text-black pe-5 phonefoot">
-          <h5><b> Phone Pixels</b></h5>
+          <h5 className="ml-3"><b> Phone Pixels</b></h5>
           <ul className="pt-2 pb-2 phonefoot">
             <Nav.Link to="contacto" className="efecto-nav">
               Contacto
@@ -31,6 +31,7 @@ function Footer() {
           <h5 className="pb-3 ms-0 text-start">
             {" "}
             <img
+              className="mr-2"
               src="https://icongr.am/material/copyright.svg?size=30&color=000000"
               alt="imagen"
             />
@@ -38,13 +39,15 @@ function Footer() {
           </h5>
           <div className="d-flex m-3">
             <img
+              className="mr-2"
               src="https://icongr.am/fontawesome/map-marker.svg?size=30&color=0d41fd"
               alt="Ubicacion"
             />
-            <li className="ps-2">España 1450</li>
+            <li className="ps-2 mr">España 1450</li>
           </div>
           <div className="d-flex m-4">
             <img
+              className="mr-2"
               src="https://icongr.am/fontawesome/whatsapp.svg?size=30&color=00f51d"
               alt="whatapps"
             />
@@ -52,6 +55,7 @@ function Footer() {
           </div>
           <div className="d-flex ">
             <img
+              className="mr-2"
               src="https://icongr.am/fontawesome/clock-o.svg?size=30&color=currentColor"
               alt="clock"
             />
@@ -66,7 +70,7 @@ function Footer() {
           </a>
         </div>
       <div className="d-flex flex-column pe-3 redesfoott">
-        <h5 className="text-black"><b>Redes Sociales</b> </h5>
+        <h5 className="text-black mr-3"><b>Redes Sociales</b> </h5>
         <div className="d-flex flex-column align-items-center redesfoot ">
           <Nav.Link href="https://www.facebook.com/">
             <img

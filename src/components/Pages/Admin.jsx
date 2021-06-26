@@ -348,7 +348,8 @@ console.log(input)
                                     <Form.Control
                                         name="price"
                                         onChange={(e) => handleChange(e)}
-                                        type="text"
+                                        type="number"
+                                        min="0"
                                         placeholder="$$$"
                                         className="registerlabel"
                                         required

@@ -7,9 +7,7 @@ import "aos/dist/aos.css"
 
 export default function Cards(prod) {
   
-
   useEffect(() => {
-   
     Aos.init({ duration: 1000 });
   }, [])
 
