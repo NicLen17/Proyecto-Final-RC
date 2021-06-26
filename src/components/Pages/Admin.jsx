@@ -278,7 +278,7 @@ console.log(input)
                                     <tr key={msj.id}>
                                         <td>{msj.nombreyapellido}</td>
                                         <td>
-                                            <a href={msj.email}>{msj.email}</a>
+                                            <a className="text-white" href={msj.email}>{msj.email}</a>
                                         </td>
                                         <td>{msj.tel}</td>
                                         <td>{msj.mensaje}</td>

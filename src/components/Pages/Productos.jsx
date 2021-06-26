@@ -46,7 +46,7 @@ function Productos() {
         <br />
         <div className="flexcardp">
           {products.map((prod) => {
-            return (
+            return ( prod.categoria === "CELULAR" && ( 
               <NavLink
                 key={prod._id}
                 style={{ textDecorationLine: "none" }}
@@ -82,7 +82,7 @@ function Productos() {
                 </Card>
                 <br />
                 <br />
-              </NavLink>
+              </NavLink>)
             );
           })}
         </div>
@@ -95,7 +95,7 @@ function Productos() {
         <br className="solid" />
         <div className="flexcardp">
           {products.map((prod) => {
-            return (
+            return (prod.categoria === "TABLET" && ( 
               <NavLink
                 key={prod._id}
                 style={{ textDecorationLine: "none" }}
@@ -129,7 +129,7 @@ function Productos() {
                     </Card.Title>
                   </Card.Body>
                 </Card>
-              </NavLink>
+              </NavLink>)
             );
           })}
         </div>
@@ -140,8 +140,8 @@ function Productos() {
         <br />
         <br />
         <div className="flexcardp">
-          {products.map((prod) => {
-            return (
+          {products.map((prod) => { 
+            return ( prod.categoria === "ACCESORIOS" && ( 
               <NavLink
                 key={prod._id}
                 style={{ textDecorationLine: "none" }}
@@ -175,7 +175,7 @@ function Productos() {
                     </Card.Title>
                   </Card.Body>
                 </Card>
-              </NavLink>
+              </NavLink>)
             );
           })}
         </div>
