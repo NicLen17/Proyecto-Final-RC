@@ -21,15 +21,15 @@ import Seccion404 from './components/Seccion404'
 import SCompraFinalizada from './components/SCompraFinalizada'
 
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
-
+// const productosCarrito = [];
 export default function App() {
-  const productosCarrito = [];
+  
   const [user, setUser] = useState({});
-  const [carritoLleno, setcarritoLleno] = useState({});
-
+  const [productosCarrito , setProductosCarrito ] = useState([])
   const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
   //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
   useEffect(() => {
+    
     if (token) {
       const request = async () => {
         axios.defaults.headers = { "x-auth-token": token }; //> en el midleware/auth está definido el header que va a ser cabecera
@@ -38,19 +38,13 @@ export default function App() {
       };
       request(); //realiza el pedido
     }
-    const productoStorage =
-      JSON.parse(localStorage.getItem("agregarcarrito")) || [];
-    const carritoLleno = productoStorage.length;
-    setcarritoLleno(carritoLleno);
-  }, [token, carritoLleno]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
-
+    }, [token]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
   const logout = () => {
     localStorage.removeItem("token"); //elimina el token
     axios.defaults.headers = { "x-auth-token": "" };
     setUser({}); //limpia el usuario
     setToken(""); //limpia el token
   };
-
     return (
     <div className="App">
       <Router>
@@ -61,7 +55,7 @@ export default function App() {
           userName={user.nombre}
           userCategory={user.category}
           logout={logout}
-          carritoLleno={carritoLleno}
+          productosCarrito={productosCarrito}
         />
         <Switch>
           <Route path="/" exact>
@@ -85,11 +79,11 @@ export default function App() {
           </Route>
 
           <Route path="/individual/:id" exact>
-            <PIndividual productosCarrito={productosCarrito} />
+            <PIndividual productosCarrito={productosCarrito} setProductosCarrito= {setProductosCarrito}/>
           </Route>
 
           <Route path="/carrito" exact>
-            <Carrito />
+            <Carrito productosCarrito={productosCarrito} setProductosCarrito= {setProductosCarrito} />
           </Route>
 
           <Route path="/admin" exact>

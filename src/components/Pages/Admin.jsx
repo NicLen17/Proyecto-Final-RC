@@ -21,7 +21,6 @@ function Admin() {
     const history = useHistory();
     const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
     const [token, setToken] = useState(localToken); //cuando no tenemos un token generado la const Token es un string vacio.
-    //llama a axios con el token del usuario, con useEffect reemplaza a un condicional, sólo se va a ejecutar cuando el token cambie de valor
     const [products, setProducts] = useState([]);
     const [mensajes, setMensajes] = useState([]);
     const [imagenes, setImagenes] = useState({});
@@ -52,9 +51,6 @@ function Admin() {
         productos();
         getListaUsuarios();
     }, [token ,history]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
-
-
-
 
     const productos = async () => {
         const { data } = await axios.get("/productos");
@@ -103,11 +99,11 @@ function Admin() {
     const updateProduct = (id) => {
         const productoEncontrado = products.find((p) => p._id === id);
         setShow(true);
-        setProductEncontrado(productoEncontrado);
+        setProductEncontrado(productoEncontrado)
+        setInput(productoEncontrado);
     };
     const handleSubmit = async (event) => {
         const formulario = event.currentTarget;
-        console.log(productEncontrado._id);
         event.preventDefault();
         setValidated(true);
         if (formulario.checkValidity() === false) {
@@ -120,7 +116,7 @@ function Admin() {
             setValidated(false);
         } catch (error) {
             error.response.data.msg
-                ? setAlert(error.response.data.msg[0].msg)
+                ? setAlert(error.response.data.msg)
                 : setAlert(error.response.data);
         }
         productos();
@@ -146,7 +142,7 @@ function Admin() {
         };
         setInput(productoInput);
     };
-
+console.log(input)
     return (
         <div>
             <div className="tablacont">
@@ -167,6 +163,7 @@ function Admin() {
                                         <th>Categoria</th>
                                         <th>Marca</th>
                                         <th>Modelo</th>
+                                        <th>Stock</th>
                                         <th>Descripcion</th>
                                         <th>Color</th>
                                         <th>imagen</th>
@@ -179,6 +176,7 @@ function Admin() {
                                                 <td>{product.categoria}</td>
                                                 <td>{product.marca}</td>
                                                 <td>{product.modelo}</td>
+                                                <td>{product.stock}</td>
                                                 <td>{product.descripcion}</td>
                                                 <td>{product.color}</td>
                                                 <td>
@@ -394,6 +392,23 @@ function Admin() {
                                         la imagen es obligaroria!
                                     </Form.Control.Feedback>
                                 </Form.Group>
+                                <Form.Group>
+                                            <Form.Label >Stock Disponible</Form.Label>
+                                            <Form.Control
+                                                name="stock"
+                                                onChange={(e) => handleChange(e)}
+                                                type="number"
+                                                placeholder="stock"
+                                                className="registerlabelagregado w-25"
+                                                required
+                                                defaultValue={productEncontrado.stock}
+                                                min="0"
+                                                max="100"
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                La cantidad disponible es obligatoria! STOCK
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
                                 <Form.Group className="selectsa">
                                     <select
                                         className="registerbut"
@@ -402,7 +417,7 @@ function Admin() {
                                         onChange={(e) => handleChange(e)}
                                         required
                                     >
-                                        <option defaulValue>{productEncontrado.color}</option>
+                                        <option defaultValue>{productEncontrado.color}</option>
                                         <option value="Negro">Negro</option>
                                         <option value="Blanco">Blanco</option>
                                         <option value="Azul">Azul</option>
@@ -425,7 +440,7 @@ function Admin() {
                                     <Button
                                         className="registerbut"
                                         variant="registerbut"
-                                        onClick={() => setShow(false)}
+                                        onClick={() =>{ setShow(false); setInput({}) ; setAlert("") ; setValidated(false)}}
                                     >
                                         Cerrar
                                     </Button>

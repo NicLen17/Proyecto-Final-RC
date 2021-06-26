@@ -33,7 +33,6 @@ const ProductosSchema = mongoose.Schema({
     },
     stock: {
         type: Number,
-        
     },
     img:[{
         type: String

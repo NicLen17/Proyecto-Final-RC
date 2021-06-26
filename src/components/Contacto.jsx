@@ -42,7 +42,9 @@ export default function Contacto() {
         ? setAlert(error.response.data.msg)
         : setAlert("este error");
     }
-    
+    setTimeout(() => {
+      setAlert("");
+  }, 5000);
   };
   const handleChange = (e) => {
     setAlert("");
@@ -127,7 +129,7 @@ export default function Contacto() {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Nombre y Apellido</Form.Label>
-                    <Form.Control className="labelform" type="name" placeholder="Nombre y Apellido" required name="nombreyapellido" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" type="name" placeholder="Nombre y Apellido" required name="nombreyapellido"  maxLength="50" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere nombre y apellido!
                     </Form.Control.Feedback>
@@ -137,7 +139,7 @@ export default function Contacto() {
                     style={{ marginTop: "15px" }}
                     controlId="exampleForm.ControlInput1"       >
                     <Form.Label>Correo electronico</Form.Label>
-                    <Form.Control className="labelform" type="email" placeholder="Correo@example.com" required name="email" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" type="email" placeholder="Correo@example.com" required maxLength="30" name="email" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
                       Se requiere correo Electronico!
                     </Form.Control.Feedback>
@@ -148,9 +150,9 @@ export default function Contacto() {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Telefono</Form.Label>
-                    <Form.Control className="labelform" maxLength="10" type="number" placeholder="codigo de area + numero sin 15" required name="tel" onChange={(e) => handleChange(e)} />
+                    <Form.Control className="labelform" maxLength="10" type="number" placeholder="codigo de area + numero sin 15" required max="999999999999" name="tel" onChange={(e) => handleChange(e)} />
                     <Form.Control.Feedback type="invalid">
-                      Se requiere telefono!
+                      Se requiere telefono valido!
                     </Form.Control.Feedback>
                     <Form.Control.Feedback>Recibido</Form.Control.Feedback>
                   </Form.Group>

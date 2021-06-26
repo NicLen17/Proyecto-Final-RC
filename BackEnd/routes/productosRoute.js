@@ -6,7 +6,7 @@ const productosValidation = require('../validations/productosValidation');
 // Crear producto
 router.post('/', productosValidation.createProduct ,createProduct);
 router.get('/' , getProducts);
-router.put('/:id', productosValidation.createProduct, updateProduct);
+router.put('/:id', productosValidation.updateProduct, updateProduct);
 router.delete('/:id', removeProduct)
 router.get('/:id' ,getproduct )
 

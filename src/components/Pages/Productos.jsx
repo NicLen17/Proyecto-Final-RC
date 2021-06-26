@@ -14,8 +14,8 @@ function Productos() {
       const { data } = await axios.get("/productos");
       setProducts(data);
     };
-
-    productos();
+    productos()
+    
     Aos.init({ duration: 1000 });
   }, []);
 
@@ -85,7 +85,7 @@ function Productos() {
                   <br />
                 </NavLink>
               );
-            } return console.log
+            } 
           })}
         </div>
 
@@ -135,7 +135,7 @@ function Productos() {
                   </Card>
                 </NavLink>
               );
-            } return console.log
+            } 
           })}
         </div>
 
@@ -184,7 +184,7 @@ function Productos() {
                   </Card>
                 </NavLink>
               );
-            } return console.log
+            } return console.log()
           })}
         </div>
       </div>

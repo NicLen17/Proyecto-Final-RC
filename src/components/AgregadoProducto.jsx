@@ -85,6 +85,7 @@ export default function AgregadoProducto({ productos }) {
                                                 type="text"
                                                 placeholder="Fabricante del producto"
                                                 className="registerlabelagregado"
+                                                maxLength="20"
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Se requiere el fabricante del producto!
@@ -100,6 +101,7 @@ export default function AgregadoProducto({ productos }) {
                                                 type="text"
                                                 placeholder="Nombre del producto"
                                                 className="registerlabelagregado"
+                                                maxLength="20"
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Se requiere el nombre del producto!
@@ -115,6 +117,7 @@ export default function AgregadoProducto({ productos }) {
                                                 placeholder="$$$"
                                                 className="registerlabelagregado"
                                                 required
+                                                min="0"
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Precio obligatorio!
@@ -145,6 +148,22 @@ export default function AgregadoProducto({ productos }) {
                                             </Form.Group>
                                             <Form.Control.Feedback type="invalid">
                                                 La imagen es obligaroria!
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                        <Form.Group>
+                                            <Form.Label >Stock Disponible</Form.Label>
+                                            <Form.Control
+                                                name="stock"
+                                                onChange={(e) => handleChange(e)}
+                                                type="number"
+                                                placeholder="stock"
+                                                className="registerlabelagregado w-25"
+                                                required
+                                                min="0"
+                                                max="100"
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                La cantidad disponible es obligatoria! STOCK
                                             </Form.Control.Feedback>
                                         </Form.Group>
                                         <Form.Group className="selectsa">

@@ -9,27 +9,20 @@ exports.register = async (req, res) => {
     if (!errores.isEmpty()) {
         return res.status(400).json(errores.array()[0]);
     }
-
     let { email, password } = req.body;
-    // console.log('🚀 ~ file: authController.js ~ line 14 ~ exports.register= ~ req.body', req.body);
-
     try {
         let usuarioEncontrado = await Usuario.findOne({ email });
 
         if (usuarioEncontrado) {
             return res.status(400).send({ msg: 'Email ya esta en uso' });
         }
-
         //nuevo usuario
         let usuario = new Usuario(req.body);
-
         //hashear el password
         const salt = await bcryptjs.genSalt(10);
         usuario.password = await bcryptjs.hash(password, salt);
-
         //guardar usuario
         await usuario.save();
-
         // Crear y firmar JWT
         const payload = {
             usuario: {

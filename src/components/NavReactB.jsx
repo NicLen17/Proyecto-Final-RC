@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./NavReactB.css";
@@ -8,8 +8,9 @@ export default function NavReactB({
   userName,
   userCategory,
   logout,
-  carritoLleno,
-}) {
+  productosCarrito,
+}) 
+{
   return (
     <Navbar bg="light" expand="lg" className="d-flex m navbar fixed-top">
       <Navbar.Brand>
@@ -77,7 +78,7 @@ export default function NavReactB({
           </Nav.Link>
         )}
 
-        {carritoLleno === 0 && (
+        {productosCarrito.length === 0 ? (
           <Nav.Link
             to="/carrito"
             exact
@@ -87,23 +88,21 @@ export default function NavReactB({
             <img
               src="https://icongr.am/material/cart.svg?size=35&0a0a0a"
               alt="imagen"
-            />{" "}
+            />
           </Nav.Link>
-        )}
+        ) : (<Nav.Link
+        to="/carrito"
+        exact
+        as={NavLink}
+        className="contenedor-icon"
+      >
+        <img
+          src="https://icongr.am/material/cart.svg?size=35&color=06b711"
+          alt="imagen"
+        />
+      </Nav.Link>)
+}
 
-        {carritoLleno > 0 && (
-          <Nav.Link
-            to="/carrito"
-            exact
-            as={NavLink}
-            className="contenedor-icon"
-          >
-            <img
-              src="https://icongr.am/material/cart.svg?size=35&color=06b711"
-              alt="imagen"
-            />{" "}
-          </Nav.Link>
-        )}
       </Nav>
     </Navbar>
   );

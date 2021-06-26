@@ -5,33 +5,26 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 import "./Carrito.css";
 
-export default function Carrito() {
+export default function Carrito({ productosCarrito, setProductosCarrito }) {
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+       Aos.init({ duration: 1000 });
   }, [])
-
 
   const history = useHistory();
   const [alert, setAlert] = useState("");
-  let [productoCart, setProductoCart] = useState([]);
   let [total, setTotal] = useState("");
 
-  // let productoCart = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
 
   let producto = () => {
-    let productoStorage =
-      JSON.parse(localStorage.getItem("agregarcarrito")) || [];
-    setProductoCart(productoStorage);
+    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+    setProductosCarrito(productoStorage);
     let sum = 0;
     productoStorage.map((p) => {
       return sum = sum + p.price;
     });
     setTotal(sum);
   };
-  useEffect(() => {
-    producto();
-  }, []);
 
   const eliminarcarrito = (id) => {
     const confirmar = window.confirm("Acepta eliminar del Carrito? ");
@@ -39,16 +32,13 @@ export default function Carrito() {
       return;
     }
     let productosFiltrados = [];
-    productoCart.map((e) => {
+    productosCarrito.map((e) => {
       const coincideId = e._id === id;
       if (!coincideId) {
         productosFiltrados.push(e);
       }
-      return productosFiltrados;
     });
-
     localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
-    setProductoCart(productosFiltrados);
     setAlert("PRODUCTO ELIMINADO");
     setTimeout(() => {
       setAlert("");
@@ -64,8 +54,7 @@ export default function Carrito() {
   };
 
   const confirmarcompra = () => {
-    console.log(productoCart)
-    if(productoCart.length === 0){
+      if(productosCarrito.length === 0){
        return setAlert(`No hay productos en el carrito`);
   }
     if (window.confirm("Confirmar compra?")) {
@@ -100,7 +89,7 @@ export default function Carrito() {
         {alert && <Alert variant="danger">{alert}</Alert>}
         <Card className="card overflow container producto">
           {/*--------------Boton Eliminar Producto-------------*/}
-          {productoCart.length === 0 && (
+          {productosCarrito.length === 0 && (
             <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
           )}
           <br />
@@ -108,7 +97,7 @@ export default function Carrito() {
           <br />
           <div className="container containercardcarrito d-flex">
             <br />
-            {productoCart.map((p) => (
+            {productosCarrito.map((p) => (
               <div className="cardcarrito">
                 <div className="carritoimg">
                   <img style={{ marginTop: "15px", marginBottom: "15px", maxWidth: "300px", maxHeight: "250px", margin: "auto" }} src={p.img[0]} alt="" />
