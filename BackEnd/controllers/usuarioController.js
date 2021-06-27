@@ -10,10 +10,8 @@ exports.crearUsuario = async (req, res) => {
     }
 
     let { email, password } = req.body;
-    console.log('🚀 ~ file: usuarioController.js ~ line 13 ~ exports.crearUsuario= ~ req.body', req.body);
 
     try {
-        console.log('estoy en crearUsuario', req.body);
         let usuarioEncontrado = await Usuario.findOne({ email });
 
         if (usuarioEncontrado) {
@@ -60,15 +58,19 @@ exports.stateUser = async (req, res) => {
     try {
         const userId = req.params.id;
         const usuario = await Usuario.findById(userId).select('-password -__v');
-        if (usuario.estado) {
-            req.body.estado = 'false';
+        if (usuario.category === 'A') {
+            res.status(400).send({ msg: 'No está permitido deshabilitar este usuario' });
         } else {
-            req.body.estado = 'true';
+            if (usuario.estado) {
+                req.body.estado = 'false';
+            } else {
+                req.body.estado = 'true';
+            }
+            const updatedUser = await Usuario.findByIdAndUpdate(userId, req.body, { new: true });
+            res.send(updatedUser);
         }
-        const updatedUser = await Usuario.findByIdAndUpdate(userId, req.body, { new: true });
-        res.send(updatedUser);
     } catch (error) {
-            res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
+        res.status(400).send({ msg: 'Hubo un error al actualizar el Usuario' });
     }
 };
 
