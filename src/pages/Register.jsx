@@ -31,13 +31,17 @@ export default function Register({ setToken }) {
       return event.stopPropagation();
     }
     try {
-      const { data } = await axios.post("/auth/register", input);
-      console.log(data);
+      if (input.password === input.password1) {
+        const { data } = await axios.post("/auth/register", input);
+        console.log(data);
 
-      localStorage.setItem("token", JSON.stringify(data));
-      setToken(data.token);
-      history.push("/");
-      // window.location.replace('/');
+        localStorage.setItem("token", JSON.stringify(data));
+        setToken(data.token);
+        history.push("/");
+        // window.location.replace('/');
+      } else {
+        window.alert("Password no coinciden");
+      }
     } catch (error) {
       console.log(error.response.data);
       error.response.data.msg
@@ -88,11 +92,13 @@ export default function Register({ setToken }) {
                 <Form.Group>
                   <Form.Label>Celular</Form.Label>
                   <Form.Control
-                    name="celular"
+                    name="celular"  
+                    required
                     onChange={(e) => handleChange(e)}
-                    type="number"
+                    type="text"
                     min="0"
-                    maxLength="25"
+                    maxLength="15"
+                    pattern="[0-9,.]+"
                     placeholder="Celular"
                     className="registerlabel"
                   />
@@ -134,10 +140,31 @@ export default function Register({ setToken }) {
                       Password requiere un mínimo de 6 caracteres!
                     </Form.Control.Feedback>
                   </InputGroup>
+                  </Form.Group>
+                  <Form.Group
+                  className="reginputconteiner"
+                  controlId="validationCustomUsername"
+                >
+                  <Form.Label>Confirmar Password</Form.Label>
+                  <InputGroup hasValidation>
+                    <Form.Control
+                      minLength="6"
+                      name="password1"
+                      onChange={(e) => handleChange(e)}
+                      type="password"
+                      placeholder="****"
+                      aria-describedby="inputGroupPrepend"
+                      className="registerlabel"
+                      required
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Password requiere un mínimo de 6 caracteres!
+                    </Form.Control.Feedback>
+                  </InputGroup>
                 </Form.Group>
                 <Row>
                   <Button
-                    className="registerbut"
+                    className="registerbut mt-3"
                     variant="loginbut"
                     type="submit"
                   >
