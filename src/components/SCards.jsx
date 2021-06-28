@@ -1,12 +1,23 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import './SCards.css'
 import { Tabs, Tab } from 'react-bootstrap'
 import Aos from 'aos'
 import "aos/dist/aos.css"
+import axios from "axios";
 
 export default function Cards(prod) {
-  
+
+  const [products, setProducts] = useState([]);
+
+  const productos = async () => {
+    const { data } = await axios.get("/productos");
+    setProducts(data);
+  };
+  productos()
+
+  const sliceproducts = products.slice(0, 9)
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])
@@ -37,101 +48,57 @@ export default function Cards(prod) {
       <div data-aos="fade-up">
         <Tabs data-aos="fade-up" fill variant="tabs" className="navproductos" defaultActiveKey="profile" id="uncontrolled-tab-example">
           <Tab className="tabss" eventKey="home" title="Tablets">
-            <div className="flexcard">
-            <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce37aca39f3f350c3122bd/" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img className="imgsa" src="http://www.freepngimg.com/download/tablet/14-2-tablet-png-picture.png" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Memo Pad 10</h2>
-                    <p>
-                      Modelo del procesador: RK101. <br />
-                      Peso: 532 g. <br />
-                      Plataforma: Android.
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
-              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce38e3a39f3f350c3122be" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img src="https://pngimg.com/uploads/tablet/tablet_PNG8563.png" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Tablet Alcatel 1t </h2>
-                    <p>
-                      Memoria RAM: 2 GB <br />
-                      Capacidad: 32 GB <br />
-                      Quad core
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
-              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60d260344070c9149c2904dd" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img src="http://3nstar.com//wp-content/uploads/2016/02/TB005-2.png" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Tcl Tab 10 Neo + Soporte</h2>
-                    <p>
-                      Memoria RAM: 2 GB <br />
-                      Capacidad: 32 GB <br />
-                      Tamaño de la pantalla: 10 "
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
+          <div className="flexcard">
+              {sliceproducts.map((prod) => {
+                return (prod.categoria === "TABLET" && ( 
+                  <NavLink
+                    key={prod._id}
+                    style={{ textDecorationLine: "none" }}
+                    to={`/individual/${prod._id}`}
+                    exact
+                    as={NavLink}
+                  >
+                    <div className="cardprincipal">
+                      <div className="cardimg">
+                        <img src={prod.img[0]} alt="" />
+                      </div>
+                      <div className="contenidocard">
+                        <h2>{prod.modelo}</h2>
+                        <div className="module2 line-clamp2">
+                          <h6>{prod.descripcion}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </NavLink>)
+                );
+              })}
             </div>
           </Tab>
           <Tab className="tabss" eventKey="profile" title="Celulares">
             <div className="flexcard">
-            <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce27f9b131e40c8405ec9a" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img className="imgsa" src="https://images.samsung.com/is/image/samsung/p6pim/pe/sm-g780fzglltp/gallery/pe-galaxy-s20-fe-g780-357343-sm-g780fzglltp-thumb-327368871?$LazyLoad_Home_IMG$" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Galaxy S20 Fe</h2>
-                    <p>
-                      Adreno 650, Octa-core <br />
-                      Memoria RAM	6 Gb <br />
-                      Almacenamiento disponible	128/256 Gb
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
-              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce27bbb131e40c8405ec99" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img src="https://cdn.tmobile.com/content/dam/t-mobile/ntm/devices/samsung/a71/fg/fg-ss-Galaxy-A71-5G-Black-750x750.png" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Samsumg A71</h2>
-                    <p>
-                      6 / 8 GB de memoria RAM <br />
-                      128 GB de almacenamiento <br />
-                      Tamaño: 6,7 pulgadas Infinity-O
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
-              <NavLink style={{ textDecorationLine: "none" }} to="/individual/60ce275eb131e40c8405ec98" exact as={NavLink}>
-                <div className="cardprincipal">
-                  <div className="cardimg">
-                    <img src="https://personal.vteximg.com.br/arquivos/ids/403564-400-400/iPhone-11-Pro-Space-Grey-VPlan-5GB-1-1393025.jpg?v=637389272855430000" alt="" />
-                  </div>
-                  <div className="contenidocard">
-                    <h2>Iphone 11 PRO</h2>
-                    <p>
-                      Cámara trasera triple <br />
-                      Resolución de 1792 x 828 pixeles<br />
-                      256 GB de Memoria
-                    </p>
-                  </div>
-                </div>
-              </NavLink>
+              {sliceproducts.map((prod) => {
+                return (prod.categoria === "CELULAR" && (
+                  <NavLink
+                    key={prod._id}
+                    style={{ textDecorationLine: "none" }}
+                    to={`/individual/${prod._id}`}
+                    exact
+                    as={NavLink}
+                  >
+                    <div className="cardprincipal">
+                      <div className="cardimg">
+                        <img src={prod.img[0]} alt="" />
+                      </div>
+                      <div className="contenidocard">
+                        <h2>{prod.modelo}</h2>
+                        <div className="module2 line-clamp2">
+                          <h6>{prod.descripcion}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </NavLink>)
+                );
+              })}
             </div>
           </Tab>
           <Tab className="tabss" eventKey="contact" title="Accesorios">

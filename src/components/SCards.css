@@ -61,6 +61,23 @@
     margin-top: -20px;
 }
 
+.module2 {
+    width: 250px;
+    margin: 0 0 1em 0;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.module2 p {
+    margin: 0;
+}
+
+.line-clamp2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
 .navproductos {
     margin-top: 30px;
     justify-content: center;
