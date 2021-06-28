@@ -18,6 +18,7 @@ export default function PIndividual({ productosCarrito, setProductosCarrito }) {
         }
         producto()
     }, [id])
+
     const agregarcarrito = () => {
         if (product.stock === 0) return setAlert("No hay stock!");
         if (!productosCarrito.find(p => p.modelo === product.modelo)) {

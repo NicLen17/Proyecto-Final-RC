@@ -6,18 +6,18 @@ import "aos/dist/aos.css"
 import "./Carrito.css";
 
 export default function Carrito({ productosCarrito, setProductosCarrito }) {
-
-  useEffect(() => {
-       Aos.init({ duration: 1000 });
-  }, [])
-
+  const [count , setCount] = useState(0)
   const history = useHistory();
   const [alert, setAlert] = useState("");
   let [total, setTotal] = useState("");
-
+  useEffect(() => {
+    console.log(productosCarrito);
+      producto()
+       Aos.init({ duration: 1000 });
+  }, [count])
 
   let producto = () => {
-    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) || [];
+    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito"))? JSON.parse(localStorage.getItem("agregarcarrito"))   : [] ;
     setProductosCarrito(productoStorage);
     let sum = 0;
     productoStorage.map((p) => {
@@ -25,7 +25,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
     });
     setTotal(sum);
   };
-
+ 
   const eliminarcarrito = (id) => {
     const confirmar = window.confirm("Acepta eliminar del Carrito? ");
     if (!confirmar) {
@@ -44,7 +44,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
       setAlert("");
     }, 8000);
     producto();
-  };
+  }; 
 
   const cancelarcompra = () => {
     localStorage.setItem("agregarcarrito", JSON.stringify([]));
@@ -108,6 +108,35 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                   <p><b>
                     ${p.price}
                   </b></p>
+                  <div className="d-flex justify-content-center ">
+                    {count > 0 ? <Button
+                   onClick={() => setCount(count - 1)}>
+                  <img
+                      className=""
+                      src="https://icongr.am/clarity/window-min.svg?size=10&color=currentColor"
+                      alt="resta"
+                    />
+                    </Button>:<Button
+                  >
+                  <img
+                      className=""
+                      src="https://icongr.am/clarity/window-min.svg?size=10&color=currentColor"
+                      alt="resta"
+                    />
+                
+                  </Button>}
+                 
+                  <h4 className="border border-dark" style={{width:56 , height:50, margin:0 , paddingTop:10  }}>{count}</h4>
+                  <Button
+                   onClick={() => setCount(count + 1)}>
+                  <img
+                      className=""
+                      src="https://icongr.am/clarity/add.svg?size=10&color=currentColor"
+                      alt="suma"
+                    />
+                  
+                  </Button>
+                  </div>
                   <Button
                     onClick={() => eliminarcarrito(p._id)}
                     className="btn btn-danger botoneliminarnone ml-1"

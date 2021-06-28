@@ -61,7 +61,6 @@ export default function AgregadoProducto({ productos }) {
         setInput(productoInput);
     };
 
-
     return (
         <div className="agregadoform">
             <div className="agregadocontent">

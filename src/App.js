@@ -17,11 +17,10 @@ import PIndividual from "./components/Pages/PIndividual";
 import axios from "axios";
 import ScrollToTop from "./components/ScrollToTop";
 import Carrito from "./components/Carrito";
-import Seccion404 from './components/Seccion404'
-import SCompraFinalizada from './components/SCompraFinalizada'
-
+import Seccion404 from './components/Seccion404';
+import SCompraFinalizada from './components/SCompraFinalizada';
+// localStorage.setItem("agregarcarrito" , JSON.stringify([]));
 const localToken = JSON.parse(localStorage.getItem("token"))?.token || "";
-// const productosCarrito = [];
 export default function App() {
   
   const [user, setUser] = useState({});
@@ -39,7 +38,8 @@ export default function App() {
       request(); //realiza el pedido
     }
     }, [token]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
-  const logout = () => {
+  
+    const logout = () => {
     localStorage.removeItem("token"); //elimina el token
     axios.defaults.headers = { "x-auth-token": "" };
     setUser({}); //limpia el usuario
@@ -58,6 +58,7 @@ export default function App() {
           productosCarrito={productosCarrito}
         />
         <Switch>
+          
           <Route path="/" exact>
             <Carro />
 

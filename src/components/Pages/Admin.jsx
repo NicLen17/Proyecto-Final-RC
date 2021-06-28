@@ -47,10 +47,11 @@ function Admin() {
         } else {
             history.push("/login");
         }
+        
         mensaje();
         productos();
         getListaUsuarios();
-    }, [token ,history]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
+    }, [token, history , imagenes]); //se pone "token" como parámetro para que llame a useEffect cada vez que cambie
 
     const productos = async () => {
         const { data } = await axios.get("/productos");
@@ -96,12 +97,14 @@ function Admin() {
             setalertSuccess("");
         }, 5000);
     }
-    const updateProduct = (id) => {
-        const productoEncontrado = products.find((p) => p._id === id);
+    const updateProduct = async (id) => {
+        const productoEncontrado = await products.find((p) => p._id === id);
         setShow(true);
         setProductEncontrado(productoEncontrado)
-        setInput(productoEncontrado);
+        setImagenes(productoEncontrado.img)
+        setInput(productoEncontrado)        
     };
+
     const handleSubmit = async (event) => {
         const formulario = event.currentTarget;
         event.preventDefault();
@@ -127,9 +130,10 @@ function Admin() {
         for (let i = 0; i < imagenesInput.length; i++) {
             const base64 = await getBase64(imagenesInput[i]);
             imagenesArray.push(base64);
-            const iman = { img: imagenesArray };
-            setImagenes(iman);
-        }
+            const iman = { ...input ,  img: imagenesArray };
+            setInput(iman);
+                    }
+                    
     };
 
     const handleChange = (e) => {
@@ -140,9 +144,16 @@ function Admin() {
             ...imagenes,
             [name]: value.toUpperCase(),
         };
+        console.log(productoInput)
         setInput(productoInput);
     };
-console.log(input)
+    
+    const borrarImagen = (index) => {
+        console.log(productEncontrado.img);
+        const removeImg = productEncontrado.img.splice(index , 1);       
+        setImagenes(removeImg);
+    }
+    console.log(imagenes);
     return (
         <div>
             <div className="tablacont">
@@ -164,6 +175,7 @@ console.log(input)
                                         <th>Marca</th>
                                         <th>Modelo</th>
                                         <th>Stock</th>
+                                        <th>Precio</th>
                                         <th>Descripcion</th>
                                         <th>Color</th>
                                         <th>imagen</th>
@@ -177,6 +189,7 @@ console.log(input)
                                                 <td>{product.marca}</td>
                                                 <td>{product.modelo}</td>
                                                 <td>{product.stock}</td>
+                                                <td>{product.price}</td>
                                                 <td>{product.descripcion}</td>
                                                 <td>{product.color}</td>
                                                 <td>
@@ -385,7 +398,7 @@ console.log(input)
                                     <Form.Group
                                         controlId="formFileMultiple"
                                         className="mb-3"
-                                        onChange={(e) => onChangeImg(e)}
+                                        onChange={(e) => {onChangeImg(e);}}
                                     >
                                         <Form.Control type="file" multiple />
                                     </Form.Group>
@@ -394,22 +407,22 @@ console.log(input)
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group>
-                                            <Form.Label >Stock Disponible</Form.Label>
-                                            <Form.Control
-                                                name="stock"
-                                                onChange={(e) => handleChange(e)}
-                                                type="number"
-                                                placeholder="stock"
-                                                className="registerlabelagregado w-25"
-                                                required
-                                                defaultValue={productEncontrado.stock}
-                                                min="0"
-                                                max="100"
-                                            />
-                                            <Form.Control.Feedback type="invalid">
-                                                La cantidad disponible es obligatoria! STOCK
-                                            </Form.Control.Feedback>
-                                        </Form.Group>
+                                    <Form.Label >Stock Disponible</Form.Label>
+                                    <Form.Control
+                                        name="stock"
+                                        onChange={(e) => handleChange(e)}
+                                        type="number"
+                                        placeholder="stock"
+                                        className="registerlabelagregado w-25"
+                                        required
+                                        defaultValue={productEncontrado.stock}
+                                        min="0"
+                                        max="100"
+                                    />
+                                    <Form.Control.Feedback type="invalid">
+                                        La cantidad disponible es obligatoria! STOCK
+                                    </Form.Control.Feedback>
+                                </Form.Group>
                                 <Form.Group className="selectsa">
                                     <select
                                         className="registerbut"
@@ -434,14 +447,19 @@ console.log(input)
                                         <option value="Otro">Otro</option>
                                     </select>
                                 </Form.Group>
-                                {productEncontrado.img?.map((i) => (
-                                    <img style={{ width: "200px", height: "200px" }} src={i} alt="imagen del celular" />
-                                ))}
+                                <div className="d-flex flex-wrap">
+                                {productEncontrado.img?.map((i, index) => (
+                                    <div>
+                                        <Button variant="btn btn-white" style={{position:"absolute"}} onClick={() => borrarImagen(index)}><img src="https://icongr.am/fontawesome/remove.svg?size=15&color=currentColor" alt="cerrar" /></Button>
+                                        <img style={{ width: "200px", height: "200px" }} src={i} alt="imagen del celular" />
+                                     </div>
+                                 ))}
+                                 </div>
                                 <Modal.Footer className="editarformtitulo">
                                     <Button
                                         className="registerbut"
                                         variant="registerbut"
-                                        onClick={() =>{ setShow(false); setInput({}) ; setAlert("") ; setValidated(false)}}
+                                        onClick={() => { setShow(false); setInput({}); setAlert(""); setValidated(false) }}
                                     >
                                         Cerrar
                                     </Button>

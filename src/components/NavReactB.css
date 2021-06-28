@@ -33,7 +33,7 @@
 
 .iconosnav {
     display: flex !important;
-    margin-left: 1250px;
+    margin-left: auto;
 }
 
 .efecto-nav:hover {
