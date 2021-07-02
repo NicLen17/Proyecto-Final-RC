@@ -68,7 +68,7 @@
   "bugs": {
     "url": "https://github.com/NicLen17/Proyecto-Final-RC/issues"
   },
-  "homepage": "https://github.com/NicLen17/Proyecto-Final-RC#readme",
+  "homepage": "",
   "devDependencies": {
     "nodemon": "^2.0.7"
   }
