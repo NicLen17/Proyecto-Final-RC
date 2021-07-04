@@ -36,7 +36,7 @@ export default function App() {
       <SwiperSlide>
         <img
           className="cimg"
-          src="https://www.optimagazine.com/wp-content/uploads/2020/11/Huawei-P50.jpg"
+          src="https://i.blogs.es/cfa3f7/xiaomi-mi-11-ultra-03/1366_2000.jpg"
           alt="imagencarro"
         />
       </SwiperSlide>
@@ -50,7 +50,7 @@ export default function App() {
       <SwiperSlide>
         <img
           className="cimg"
-          src="https://i.blogs.es/cfa3f7/xiaomi-mi-11-ultra-03/1366_2000.jpg"
+          src="https://www.optimagazine.com/wp-content/uploads/2020/11/Huawei-P50.jpg"
           alt="imagencarro"
         />
       </SwiperSlide>

@@ -123,19 +123,12 @@
 
 @media only screen and (max-width: 991px) {
     .containerbtns {
-        margin-top: 130px;
-    }
-}
-
-@media only screen and (max-width: 597px) {
-    .containerbtns {
-        margin-top: 180px;
+        margin-top: 105px;
     }
 }
 
 @media only screen and (max-width: 374px) {
     .containerbtns {
-        margin-top: 240px !important;
         margin-bottom: 30px;
     }
 }

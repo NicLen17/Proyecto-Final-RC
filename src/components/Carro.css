@@ -1,4 +1,3 @@
-
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -10,7 +9,7 @@
 }
 
 .Carro {
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
 .cimg {
@@ -21,7 +20,7 @@
   height: 700px !important;
   -webkit-box-shadow: 5px 5px 10px 3px #000000;
   box-shadow: 5px 5px 10px 3px #000000;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 50px;
 }
 
@@ -81,7 +80,6 @@ p {
 
 @media only screen and (max-width: 665px) {
   .cimg {
-    margin-top: 70px;
     max-width: 550px;
     height: 290px !important;
   }
@@ -89,9 +87,8 @@ p {
 
 @media only screen and (max-width: 560px) {
   .cimg {
-    margin-left: 5px !important;
+    margin-left: 1px !important;
     margin-right: 5px !important;
-    margin-top: 70px;
     max-width: 100%;
     height: 290px !important;
   }
