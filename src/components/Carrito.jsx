@@ -25,9 +25,16 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      setValidated(true);
+      return setAlert("Completa tus Datos!")
+    }
+    if (productosCarrito.length === 0) {
+      return setAlert(`No hay productos en el carrito`);
+    }
+    if (window.confirm("Confirmar compra?")) {
+      history.push("/compra");
     }
 
-    setValidated(true);
   };
 
   let producto = () => {
@@ -66,25 +73,6 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
       history.push("/");
     }
   };
-
-  const confirmarcompra = () => {
-    if (productosCarrito.length === 0) {
-      return setAlert(`No hay productos en el carrito`);
-    }
-    if (window.confirm("Confirmar compra?")) {
-      history.push("/compra");
-    }
-    setTimeout(() => {
-      setAlert("");
-    }, 8000);
-  };
-
-  const mostrarbtncompra = () => {
-    document.getElementById('btncompras').style.display = 'block' 
-    document.getElementById('ocultarbtn').style.display = 'none'
-  }
-
- 
 
   return (
     <div data-aos="fade-up" className="body bodycarrito mt-5">
@@ -278,14 +266,6 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
             }}
           >
             <Button
-              type="submit"
-              className="registerbut"
-              id="ocultarbtn"
-              onClick={mostrarbtncompra}
-              variant="registerbut" size="lg">
-              Confirmar Datos
-            </Button>{" "}
-            <Button
               className="registerbut"
               onClick={cancelarcompra}
               variant="registerbut"
@@ -295,11 +275,9 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
               Cancelar compra
             </Button>{" "}
             <Button
-              style={{display: "none"}}
               type="submit"
               id="btncompras"
-              className="registerbut mr-5"
-              onClick={confirmarcompra}
+              className="registerbut"
               variant="registerbut" 
               size="lg">
               COMPRAR!
