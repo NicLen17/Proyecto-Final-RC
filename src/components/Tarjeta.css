@@ -1,0 +1,62 @@
+.tarjetasec {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    margin: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tarjetasecform {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: auto;
+}
+
+.tarjetasecform input {
+    padding: 5px 5px 5px 5px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 450px;
+    border: rgb(192, 192, 192) 1px solid !important;
+    border: none;
+}
+
+.rccs {
+    margin: auto;
+}
+
+.rccs__card--unknown {
+    background: linear-gradient(25deg, #000, #999);
+    border-radius: 25px;
+    width: 300px;
+    height: 200px;
+    box-shadow: rgb(46, 45, 45) 10px 10px 15px 2px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .tarjetasec {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .rccs__card--unknown {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .rccs__card--unknown {
+        box-shadow: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .tarjetasecform input {
+        width: 300px !important;
+    }
+}
+

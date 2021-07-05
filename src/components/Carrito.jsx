@@ -4,6 +4,7 @@ import { Button, Card, Form, Alert } from "react-bootstrap";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import "./Carrito.css";
+import Tarjeta from './Tarjeta'
 
 export default function Carrito({ productosCarrito, setProductosCarrito }) {
   const [count, setCount] = useState(0)
@@ -15,6 +16,19 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
     producto()
     Aos.init({ duration: 1000 });
   }, [count])
+
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault()
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
 
   let producto = () => {
     let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) ? JSON.parse(localStorage.getItem("agregarcarrito")) : [];
@@ -64,6 +78,13 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
       setAlert("");
     }, 8000);
   };
+
+  const mostrarbtncompra = () => {
+    document.getElementById('btncompras').style.display = 'block' 
+    document.getElementById('ocultarbtn').style.display = 'none'
+  }
+
+ 
 
   return (
     <div data-aos="fade-up" className="body bodycarrito mt-5">
@@ -123,9 +144,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                         src="https://icongr.am/clarity/window-min.svg?size=10&color=currentColor"
                         alt="resta"
                       />
-
                     </Button>}
-
                     <h4 className="border border-dark" style={{ width: 56, height: 50, margin: 0, paddingTop: 10 }}>{count}</h4>
                     <Button
                       onClick={() => setCount(count + 1)}>
@@ -134,7 +153,6 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                         src="https://icongr.am/clarity/add.svg?size=10&color=currentColor"
                         alt="suma"
                       />
-
                     </Button>
                   </div>
                   <Button
@@ -185,210 +203,114 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
             <h5>Mi forma de pago</h5>
           </div>
           <br />
-
-          <Card className="pagotarjeta">
-            <div className="container d-flex" style={{ textAlign: "start" }}>
-              <b className="card-body">Ingresa los datos de tu tarjeta</b>
-            </div>
-            <Card.Body>
-              <div className="container carritoresp2 d-flex m-2">
-                <div
-                  className="container carritoresp2 mt-4"
-                  style={{ width: "500px" }}
-                  name="efectivo"
-                  required
-                >
-                  <Form.Control
-                    required
-                    className="ml-3 mb-2"
-                    type="numeric"
-                    min="0"
-                    placeholder="Nro. de Tarjeta"
-                  />
-
-                  <Form.Control
-                    required
-                    className="ml-3 mb-2"
-                    type="numeric"
-                    min="0"
-                    placeholder="Codigo de Seguridad"
-                  />
-
-                  <Form.Control
-                    required
-                    className="ml-3 mb-2"
-                    type="month"
-                    placeholder="Fecha de Expiracion"
-                  />
-
-                  <Form.Control
-                    required
-                    className="ml-3 mb-2"
-                    type="text"
-                    placeholder="Nombre y Apellido"
-                    maxLength="25"
-                  />
-
-                  <Form.Control
-                    required
-                    min="0"
-                    className="ml-3"
-                    type="numeric"
-                    placeholder="DNI del titular"
-                    maxLength="25"
-                  />
-                </div>
-
-                <div
-                  className="container carritoresp d-flex ml-3 mt-3"
-                  style={{
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div className="mb-4">
-                    <b>
-                      IMPORTANTE: cuando confirmes la compra, te enviamos un
-                      comprobante de pago!
-                    </b>
-                  </div>
-                  <img
-                    src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png"
-                    alt=""
-                    style={{
-                      width: "400px",
-                      height: "180px",
-                      marginLeft: "50px",
-                    }}
-                  />
-                </div>
-              </div>
-              <div
-                className="card-body carritorespon3"
-                style={{ justifyContent: "space-around" }}
-                required
-              >
-                <div className="card-body">
-                  <input
-                    type="radio"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                    name="efectivo"
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1" />
-                  Pago Unico
-                </div>
-                <div className="card-body">
-                  <input
-                    type="radio"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                    name="efectivo"
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1" />3
-                  Cuotas Sin Interes
-                </div>
-                <div className="card-body">
-                  <input
-                    type="radio"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                    name="efectivo"
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1" />6 Cuotas
-                  Sin Interes
-                </div>
-                <div className="card-body">
-                  <input
-                    type="radio"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                    name="efectivo"
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1" />
-                  12 Cuotas Sin Interes
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
+          <div className="pagotarjeta">
+            <br />
+            <br />
+            <Tarjeta />
+            <br />
+            <br />
+          </div>
         </div>
         <br />
         {/*-------------------Forma de Envio-----------------------------------*/}
-        <div>
-          <div className="container d-flex">
-            <h5>Mi envio</h5>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <div>
+            <div className="container d-flex">
+              <h5>Mi envio</h5>
+            </div>
+            <br />
+            <Card className="enviodomicilio">
+              <div className="container d-flex">
+                <div
+                  className="card-body container"
+                  style={{ textAlign: "start" }}
+                >
+                  <b>Envio a Domicilio</b>
+                </div>
+              </div>
+              <Card.Body>
+                <div className="card-body d-flex">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    className="ml-3"
+                    type="numeric"
+                    placeholder="Ingresar CP"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Ingresar codigo postal valido!
+                  </Form.Control.Feedback>
+                  <Form.Control
+                    className="ml-2"
+                    required
+                    maxLength="25"
+                    type="text"
+                    placeholder="Ingresar Localidad"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Ingresar localidad valida!
+                  </Form.Control.Feedback>
+                  <Form.Control
+                    required
+                    maxLength="25"
+                    className="ml-2"
+                    type="text"
+                    placeholder="Ingresar Domicilio de Entrega"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Ingresar domicilio valido!
+                  </Form.Control.Feedback>
+                </div>
+                <hr />
+                <b>
+                  IMPORTANTE: cuando confirmes tu compra te enviamos un mail con
+                  fecha de despacho y codigo de seguimiento!
+                </b>
+              </Card.Body>
+            </Card>
           </div>
           <br />
-          <Card className="enviodomicilio">
-            <div className="container d-flex">
-              <div
-                className="card-body container"
-                style={{ textAlign: "start" }}
-              >
-                <b>Envio a Domicilio</b>
-              </div>
-            </div>
-            <Card.Body>
-              <div className="card-body d-flex">
-                <Form.Control
-                  maxLength="25"
-                  required
-                  className="ml-3"
-                  type="numeric"
-                  placeholder="Ingresar CP"
-                />
-                <Form.Control
-                  className="ml-2"
-                  required
-                  maxLength="25"
-                  type="text"
-                  placeholder="Ingresar Localidad"
-                />
-                <Form.Control
-                  required
-                  maxLength="25"
-                  className="ml-2"
-                  type="text"
-                  placeholder="Ingresar Domicilio de Entrega"
-                />
-              </div>
-              <hr />
-              <b>
-                IMPORTANTE: cuando confirmes tu compra te enviamos un mail con
-                fecha de despacho y codigo de seguimiento!
-              </b>
-            </Card.Body>
-          </Card>
-        </div>
-
+          <br />
+          <div
+            className="mb-2 p-2 conteinerbotonescarrito"
+            style={{
+              textAlign: "end",
+            }}
+          >
+            <Button
+              type="submit"
+              className="registerbut"
+              id="ocultarbtn"
+              onClick={mostrarbtncompra}
+              variant="registerbut" size="lg">
+              Confirmar Datos
+            </Button>{" "}
+            <Button
+              className="registerbut"
+              onClick={cancelarcompra}
+              variant="registerbut"
+              size="lg"
+              style={{ float: "left", width: "250px" }}
+            >
+              Cancelar compra
+            </Button>{" "}
+            <Button
+              style={{display: "none"}}
+              type="submit"
+              id="btncompras"
+              className="registerbut mr-5"
+              onClick={confirmarcompra}
+              variant="registerbut" 
+              size="lg">
+              COMPRAR!
+            </Button>{" "}
+          </div>
+        </Form>
         {/*--------- Final Seccion envio y pago----------*/}
 
         <br />
         <hr />
         {/*--------------------Confirmacion de la compra-----------------------*/}
-        <div
-          className="mb-2 p-2 conteinerbotonescarrito"
-          style={{
-            textAlign: "end",
-          }}
-        >
-          <Button
-            className="registerbut"
-            onClick={cancelarcompra}
-            variant="registerbut"
-            size="lg"
-            style={{ float: "left", width: "250px" }}
-          >
-            Cancelar compra
-          </Button>{" "}
-          <Button
-            id="btncompras"
-            className="registerbut"
-            onClick={confirmarcompra}
-            variant="registerbut" size="lg">
-            COMPRAR!
-          </Button>{" "}
-        </div>
       </div>
     </div>
   );
