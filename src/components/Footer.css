@@ -67,21 +67,21 @@
 
 @media only screen and (max-width: 665px) {
     .mapa {
-        margin: auto;
-        margin-bottom: 10px;
+        margin: auto !important;
+        margin-bottom: 10px !important;
     }
 }
 
 @media only screen and (max-width: 375px) {
     .phonefoot {
-        margin: auto;
-        margin-bottom: 15px;
+        margin: auto !important;
+        margin-bottom: 15px !important;
     }
 }
 
-@media only screen and (max-width: 335px) {
+@media only screen and (max-width: 375px) {
     .datosEmpresa {
-        margin: auto;
-        margin-bottom: 15px;
+        margin: auto !important;
+        margin-bottom: 15px !important;
     }
 }

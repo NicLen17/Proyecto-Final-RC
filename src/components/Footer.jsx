@@ -28,7 +28,7 @@ function Footer() {
       </div>
       <div className="datosEmpresa  d-flex flex-wrap text-black d-flex">
         <ul className=" ">
-          <h5 className="pb-3 ms-0 text-start">
+          <h5 className="pb-3 mr-5 text-start">
             {" "}
             <img
               className="mr-2"
@@ -37,15 +37,15 @@ function Footer() {
             />
             <b> Phone Pixels </b>
           </h5>
-          <div className="d-flex m-3">
+          <div className="d-flex m-2">
             <img
-              className="mr-2"
+              className="mr-2 mt-2"
               src="https://icongr.am/fontawesome/map-marker.svg?size=30&color=0d41fd"
               alt="Ubicacion"
             />
-            <li className="ps-2 mr">España 1450</li>
+            <li className="ps-2">España 1450</li>
           </div>
-          <div className="d-flex m-4">
+          <div className="d-flex m-2 mt-2">
             <img
               className="mr-2"
               src="https://icongr.am/fontawesome/whatsapp.svg?size=30&color=00f51d"
@@ -53,13 +53,13 @@ function Footer() {
             />
             <li className="ps-2">3815401511</li>
           </div>
-          <div className="d-flex ">
+          <div className="d-flex m2 mt-2">
             <img
               className="mr-2"
               src="https://icongr.am/fontawesome/clock-o.svg?size=30&color=currentColor"
               alt="clock"
             />
-            <li className="ps-2 pe-2">Horarios: L a V de 9 a 16</li>
+            <li className="ps-2 pe-2 mt-2">Horarios: L a V de 9 a 16</li>
           </div>
         </ul>
       </div>
