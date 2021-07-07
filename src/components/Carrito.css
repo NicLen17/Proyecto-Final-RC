@@ -31,8 +31,8 @@
 }
 
 .enviodomicilio {
-  -webkit-box-shadow: 5px 5px 10px 3px #a7a7a7;
-  box-shadow: 5px 5px 10px 3px #a7a7a7;
+  -webkit-box-shadow: 5px 5px 10px 3px rgb(182, 182, 182);
+  box-shadow: 2px 5px 8px 3px rgb(179, 179, 179);
   margin-bottom: 10px;
   transition: 0.5s;
 }
@@ -57,7 +57,6 @@
   border: none;
   box-shadow: black 1px 1px 10px 1px;
 }
-
 
 .botoneliminar:hover {
   transform: scale(1.1);
@@ -85,24 +84,82 @@
   margin: auto;
 }
 
+.contenedorformadepago {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+}
+
+.imagentarjeta {
+  justify-content: start !important;
+  -webkit-box-shadow: 5px 5px 10px 3px #999;
+  box-shadow: 2px 5px 10px 3px #999;
+  border-radius: 25px;
+}
+
+.cfpinputs {
+  flex-direction: column;
+}
+
+.inputstarjeta {
+  -webkit-box-shadow: 5px 5px 10px 3px rgb(182, 182, 182);
+  box-shadow: 2px 5px 8px 3px rgb(179, 179, 179);
+  width: 450px;
+  margin-right: 60px;
+  max-width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column !important;
+  padding: 5px 5px 5px 5px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  .contenedorformadepago {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .imagentarjeta {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .cfpinputs {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .inputstarjeta {
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 35px;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .carritoresp {
-      display: none !important;
+    display: none !important;
   }
 }
 
 @media only screen and (max-width: 390px) {
   .carritoresp2 {
-      width: 180px !important;
-      margin: auto !important;
-      margin-right: 500px !important;
+    width: 180px !important;
+    margin: auto !important;
+    margin-right: 500px !important;
   }
 }
 
 @media only screen and (max-width: 390px) {
   .carritorespon3 {
     display: flex !important;
-      flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
   }
 }
 
@@ -170,7 +227,6 @@
   }
 }
 
-
 @media only screen and (max-width: 992px) {
   .infocarrito {
     margin: 0px !important;
@@ -197,7 +253,7 @@
 }
 
 @media only screen and (max-width: 417px) {
-  .carritoimg img{
+  .carritoimg img {
     width: 200px !important;
   }
 }
@@ -209,6 +265,22 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .inputstarjeta {
+    width: 250px !important;
+  }
+}
 
+@media only screen and (max-width: 455px) {
+  .tarjeta1 {
+    border-radius: 25px;
+    width: 240px !important;
+    height: 180px !important;
+  }
+}
 
-
+@media only screen and (max-width: 455px) {
+  .inputstarjeta {
+    width: 240px !important;
+  }
+}

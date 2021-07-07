@@ -4,7 +4,7 @@ import { Button, Card, Form, Alert } from "react-bootstrap";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import "./Carrito.css";
-import Tarjeta from './Tarjeta'
+
 
 export default function Carrito({ productosCarrito, setProductosCarrito }) {
   const [count, setCount] = useState(0)
@@ -187,30 +187,75 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
         <br />
         {/*-------------------Seccion forma de Pago y Envio-----------------------------*/}
         <div>
-          <div className="container d-flex">
-            <h5>Mi forma de pago</h5>
-          </div>
-          <br />
-          <div className="pagotarjeta">
-            <br />
-            <br />
-            <Tarjeta />
-            <br />
-            <br />
-          </div>
         </div>
         <br />
         {/*-------------------Forma de Envio-----------------------------------*/}
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <div>
             <div className="container d-flex">
-              <h5>Mi envio</h5>
+              <h5>Datos de mi compra</h5>
             </div>
             <br />
             <Card className="enviodomicilio">
+            <div
+                style={{textAlign: "start"}}
+                className="card-body container ml-3 mb-4 mt-3"
+              >
+                <b>Forma de Pago</b>
+              </div>
+              <div className="contenedorformadepago">
+              <div className="imagentarjeta">
+                  <img className="tarjeta1" style={{ width: "400px", height: "250px" }} src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png" alt="Tarjeta de credito" />
+                </div>
+                <div className="cfpinputs">
+                <Form.Control
+                  maxLength="25"
+                  required
+                  min="0"
+                  className="inputstarjeta"
+                  type="numeric"
+                  placeholder="Numero de Tarjeta"
+                />
+                <Form.Control.Feedback type="invalid">
+                    Ingresa el numero de tarjeta!
+                  </Form.Control.Feedback>
+                <Form.Control
+                  maxLength="25"
+                  required
+                  className="inputstarjeta"
+                  type="text"
+                  placeholder="Nombre del dueño"
+                />
+                <Form.Control.Feedback type="invalid">
+                    Ingresa tu nombre!
+                  </Form.Control.Feedback>
+                <Form.Control
+                  maxLength="25"
+                  required
+                  min="0"
+                  className="inputstarjeta"
+                  type="numeric"
+                  placeholder="Vencimiento"
+                />
+                <Form.Control.Feedback type="invalid">
+                    Ingresa el vencimiento!
+                  </Form.Control.Feedback>
+                <Form.Control
+                  maxLength="25"
+                  required
+                  min="0"
+                  className="inputstarjeta"
+                  type="numeric"
+                  placeholder="Codigo de seguridad"
+                />
+                <Form.Control.Feedback type="invalid">
+                    Ingresa Codigo de seguridad!
+                  </Form.Control.Feedback>
+                </div>
+              </div>
               <div className="container d-flex">
                 <div
-                  className="card-body container"
+                  className="card-body container ml-2 mt-5"
                   style={{ textAlign: "start" }}
                 >
                   <b>Envio a Domicilio</b>
@@ -221,7 +266,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                   <Form.Control
                     maxLength="25"
                     required
-                    className="ml-3"
+                    className="ml-3 enviodomicilio"
                     type="numeric"
                     placeholder="Ingresar CP"
                   />
@@ -229,7 +274,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                     Ingresar codigo postal valido!
                   </Form.Control.Feedback>
                   <Form.Control
-                    className="ml-2"
+                    className="ml-2 enviodomicilio"
                     required
                     maxLength="25"
                     type="text"
@@ -241,7 +286,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
                   <Form.Control
                     required
                     maxLength="25"
-                    className="ml-2"
+                    className="ml-2 enviodomicilio"
                     type="text"
                     placeholder="Ingresar Domicilio de Entrega"
                   />
@@ -278,7 +323,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
               type="submit"
               id="btncompras"
               className="registerbut"
-              variant="registerbut" 
+              variant="registerbut"
               size="lg">
               COMPRAR!
             </Button>{" "}
