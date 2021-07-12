@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Card, Form, Alert } from "react-bootstrap";
-import Aos from 'aos'
-import "aos/dist/aos.css"
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import "./Carrito.css";
+import CardCarrito from "./CardCarrito";
 
 
 export default function Carrito({ productosCarrito, setProductosCarrito }) {
-  const [count, setCount] = useState(0)
   const history = useHistory();
   const [alert, setAlert] = useState("");
-  let [total, setTotal] = useState("");
+  let [total, setTotal] = useState();
+  let [subTotal, setSubTotal] = useState();
+
   useEffect(() => {
-    console.log(productosCarrito);
-    producto()
     Aos.init({ duration: 1000 });
-  }, [count])
+    // setTotal()
+  }, [subTotal])
 
   const [validated, setValidated] = useState(false);
 
@@ -37,41 +38,24 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
 
   };
 
-  let producto = () => {
-    let productoStorage = JSON.parse(localStorage.getItem("agregarcarrito")) ? JSON.parse(localStorage.getItem("agregarcarrito")) : [];
-    setProductosCarrito(productoStorage);
-    let sum = 0;
-    productoStorage.map((p) => {
-      return sum = sum + p.price;
-    });
-    setTotal(sum);
-  };
-
-  const eliminarcarrito = (id) => {
-    const confirmar = window.confirm("Acepta eliminar del Carrito? ");
-    if (!confirmar) {
-      return;
-    }
-    let productosFiltrados = [];
-    productosCarrito.map((e) => {
-      const coincideId = e._id === id;
-      if (!coincideId) {
-        productosFiltrados.push(e);
-      }
-    });
-    localStorage.setItem("agregarcarrito", JSON.stringify(productosFiltrados));
-    setAlert("PRODUCTO ELIMINADO");
-    setTimeout(() => {
-      setAlert("");
-    }, 8000);
-    producto();
-  };
 
   const cancelarcompra = () => {
     localStorage.setItem("agregarcarrito", JSON.stringify([]));
     if (window.confirm("Seguro que desea cancelar?")) {
       history.push("/");
     }
+  };
+
+  const confirmarcompra = () => {
+    if (productosCarrito.length === 0) {
+      return setAlert(`No hay productos en el carrito`);
+    }
+    if (window.confirm("Confirmar compra?")) {
+      history.push("/compra");
+    }
+    setTimeout(() => {
+      setAlert("");
+    }, 8000);
   };
 
   return (
@@ -94,85 +78,18 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
             />
           </h1>
         </div>
-        {/*-------------------Card de Producto--------------------*/}
+        {productosCarrito.length === 0 && (
+          <Card className="card overflow container producto">
+            <div className="container containercardcarrito d-flex">
+              <h1 className="mt-5 mb-5 pt-5 pb-5 mx-auto">No hay productos en el carrito</h1>
+            </div>
+          </Card>)}
+
+        <br />
         {alert && <Alert variant="danger">{alert}</Alert>}
-        <Card className="card overflow container producto">
-          {/*--------------Boton Eliminar Producto-------------*/}
-          {productosCarrito.length === 0 && (
-            <h1 className="pt-5 mt-5">No hay productos en el carrito</h1>
-          )}
-          <br />
-          {/*-------------------Precio del Articulo------------------------*/}
-          <br />
-          <div className="container containercardcarrito d-flex">
-            <br />
-            {productosCarrito.map((p) => (
-              <div className="cardcarrito">
-                <div className="carritoimg">
-                  <img style={{ marginTop: "15px", marginBottom: "15px", maxWidth: "300px", maxHeight: "250px", margin: "auto" }} src={p.img[0]} alt="" />
-                </div>
-                <div className="infocarrito">
-                  <p>{p.marca} {p.modelo}
-                  </p>
-                  <p><b>
-                    ${p.price}
-                  </b></p>
-                  <div className="d-flex justify-content-center ">
-                    {count > 0 ? <Button
-                      onClick={() => setCount(count - 1)}>
-                      <img
-                        className=""
-                        src="https://icongr.am/clarity/window-min.svg?size=10&color=currentColor"
-                        alt="resta"
-                      />
-                    </Button> : <Button
-                    >
-                      <img
-                        className=""
-                        src="https://icongr.am/clarity/window-min.svg?size=10&color=currentColor"
-                        alt="resta"
-                      />
-                    </Button>}
-                    <h4 className="border border-dark" style={{ width: 56, height: 50, margin: 0, paddingTop: 10 }}>{count}</h4>
-                    <Button
-                      onClick={() => setCount(count + 1)}>
-                      <img
-                        className=""
-                        src="https://icongr.am/clarity/add.svg?size=10&color=currentColor"
-                        alt="suma"
-                      />
-                    </Button>
-                  </div>
-                  <Button
-                    onClick={() => eliminarcarrito(p._id)}
-                    className="btn btn-danger botoneliminarnone ml-1"
-                    style={{ backgroundColor: "transparent", display: "none" }}
-                  >Eliminar
-                    <img
-                      className="botoneliminar"
-                      src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
-                      alt=""
-                    />
-                  </Button>
-                </div>
-                <Button
-                  onClick={() => eliminarcarrito(p._id)}
-                  className="btn botoneliminar ml-1"
-                  variant="botoneliminar"
-                  style={{ backgroundColor: "transparent" }}
-                >
-                  <img
-                    className="botoneliminar"
-                    src="https://icongr.am/fontawesome/trash.svg?size=35&color=ffffff"
-                    alt=""
-                  />
-                </Button>
-              </div>
-            ))}
-            <br />
-            <br />
-          </div>
-        </Card>
+        {productosCarrito.map((p) => (
+          <CardCarrito p={p} subTotal={subTotal} setSubTotal={setSubTotal} setTotal={setTotal} productosCarrito={productosCarrito} setProductosCarrito={setProductosCarrito} />
+        ))}
         <br />
         <br />
         {/*---------------------Detalle de Compra------------------*/}
@@ -181,7 +98,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
           style={{ textAlign: "end", flexDirection: "column" }}
         >
           <div className="card-body ">
-            <h3>Total: ${total}</h3>
+            <h3>Total: ${subTotal}</h3>
           </div>
         </div>
         <br />
@@ -197,58 +114,58 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
             </div>
             <br />
             <Card className="enviodomicilio">
-            <div
-                style={{textAlign: "start"}}
+              <div
+                style={{ textAlign: "start" }}
                 className="card-body container ml-3 mb-4 mt-3"
               >
                 <b>Forma de Pago</b>
               </div>
               <div className="contenedorformadepago">
-              <div className="imagentarjeta">
+                <div className="imagentarjeta">
                   <img className="tarjeta1" style={{ width: "400px", height: "250px" }} src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png" alt="Tarjeta de credito" />
                 </div>
                 <div className="cfpinputs">
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Numero de Tarjeta"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Numero de Tarjeta"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa el numero de tarjeta!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  className="inputstarjeta"
-                  type="text"
-                  placeholder="Nombre del dueño"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    className="inputstarjeta"
+                    type="text"
+                    placeholder="Nombre del dueño"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa tu nombre!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Vencimiento"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Vencimiento"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa el vencimiento!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Codigo de seguridad"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Codigo de seguridad"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa Codigo de seguridad!
                   </Form.Control.Feedback>
                 </div>

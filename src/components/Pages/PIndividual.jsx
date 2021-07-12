@@ -35,21 +35,20 @@ export default function PIndividual({ productosCarrito, setProductosCarrito }) {
                 setAlert("");
             }, 4000);
         }
-        else {
-            setalertSuccess("");
-            setAlert("Este producto ya se encuentra en el carrito");
-        }
+        else{
+        setalertSuccess("");
+        setAlert("Este producto ya se encuentra en el carrito");
+    }}
+    
 
-    }
-    localStorage.setItem("agregarcarrito", JSON.stringify(productosCarrito));
-    return (
-        <div data-aos="fade-up" className="backgroundoP">
-            <div className="pcontainers">
-                <NavLink className="ml-2 mt-2" to='/productos' as={NavLink}><img className="btnatras" src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=50&color=currentColor" alt="atras" /></NavLink>
-                <div className="pcontainer">
-                    <div className="pimgcont">
-                        <img className="imgpro" src={product.img?.[0]} alt="Producto principal" />
-                    </div>
+localStorage.setItem("agregarcarrito", JSON.stringify(productosCarrito));
+return (
+    <div className="backgroundoP">
+        <div className="pcontainers">
+            <NavLink className="ml-2 mt-2" to='/productos' as={NavLink}><img className="btnatras" src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=50&color=currentColor" alt="atras" /></NavLink>
+            <div className="pcontainer">
+                <div className="pimgcont">
+                    <img className="imgpro" src={product.img?.[0]} alt="Producto principal" />
                 </div>
                 <div className="contenido1">
                     <h2>{product.marca}  {product.modelo}
@@ -79,7 +78,7 @@ export default function PIndividual({ productosCarrito, setProductosCarrito }) {
                 </div>
             </div>
         </div>
-
+        </div>
     )
 }
 
