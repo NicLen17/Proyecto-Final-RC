@@ -58,18 +58,6 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
     }
   };
 
-  const confirmarCompra = () => {
-    if (productosCarrito.length === 0) {
-      return setAlert(`No hay productos en el carrito`);
-    }
-    if (window.confirm("Confirmar compra?")) {
-      history.push("/compra");
-    }
-    setTimeout(() => {
-      setAlert("");
-    }, 8000);
-  };
-
   return (
     <div data-aos="fade-up" className="body bodycarrito mt-5">
       <br />
@@ -250,7 +238,6 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
               Cancelar compra
             </Button>{" "}
             <Button
-             onClick={confirmarCompra}
               type="submit"
               id="btncompras"
               className="registerbut"

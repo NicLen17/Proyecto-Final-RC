@@ -30,7 +30,7 @@ export default function Cards(prod) {
           <p>Envio gratis</p>
         </div>
         <div data-aos="fade-down" className="metodos">
-          <img src="https://w7.pngwing.com/pngs/816/12/png-transparent-credit-card-online-banking-payment-mobile-banking-cards-rectangle-service-logo-thumbnail.png" alt="" />
+          <img src="https://static.vecteezy.com/system/resources/previews/002/299/361/original/realistic-green-blue-and-red-credit-card-mockup-template-illustration-free-vector.jpg" alt="" />
           <p>Aceptamos debito y credito</p>
         </div>
         <div data-aos="fade-up" className="metodos">
