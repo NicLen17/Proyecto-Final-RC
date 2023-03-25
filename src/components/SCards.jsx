@@ -16,7 +16,7 @@ export default function Cards(prod) {
   };
   productos()
 
-  const sliceproducts = products.slice(0, 9)
+  const sliceproducts = products.slice(0, 10)
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
