@@ -4,7 +4,7 @@ import axios from "axios";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-axios.defaults.baseURL = "https://backendphonepx.onrender.com";
+axios.defaults.baseURL = "https://backendphonepx.onrender.com/api";
 
 // axios.defaults.headers.common["X-Api-Key"] = "bb4af6c6f5c34c9ea5feb50daa586299";
 ReactDOM.render(

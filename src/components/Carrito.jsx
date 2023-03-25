@@ -12,27 +12,28 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
   const [alert, setAlert] = useState("");
   let [total, setTotal] = useState(0);
   const [validated, setValidated] = useState(false);
-  
+
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });   
-    if(productosCarrito.length === 0) {
+    Aos.init({ duration: 1000 });
+    if (productosCarrito.length === 0) {
       setTotal(0);
     }
-    sumaTotal()    
+    sumaTotal()
   }, [productosCarrito])
-     
-      console.log(productosCarrito)
-      console.log(total);
-    
-      const sumaTotal = () =>{
-      
-      var sum = 0;
-      productosCarrito.map((p) => {
-       sum = sum + ( p.cantidad * p.price);
-       console.log(sum)
-       return setTotal(sum)
-      })}
+
+  console.log(productosCarrito)
+  console.log(total);
+
+  const sumaTotal = () => {
+
+    var sum = 0;
+    productosCarrito.map((p) => {
+      sum = sum + (p.cantidad * p.price);
+      console.log(sum)
+      return setTotal(sum)
+    })
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -87,7 +88,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
           </Card>)}
 
         <br />
-        
+
         {productosCarrito.map((p) => (
           <CardCarrito p={p} setTotal={setTotal} productosCarrito={productosCarrito} setProductosCarrito={setProductosCarrito} sumaTotal={sumaTotal} />
         ))}
@@ -115,58 +116,58 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
             </div>
             <br />
             <Card className="enviodomicilio">
-            <div
-                style={{textAlign: "start"}}
+              <div
+                style={{ textAlign: "start" }}
                 className="card-body container ml-3 mb-4 mt-3"
               >
                 <b>Forma de Pago</b>
               </div>
               <div className="contenedorformadepago">
-              <div className="imagentarjeta">
+                <div className="imagentarjeta">
                   <img className="tarjeta1" style={{ width: "400px", height: "250px" }} src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png" alt="Tarjeta de credito" />
                 </div>
                 <div className="cfpinputs">
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Numero de Tarjeta"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Numero de Tarjeta"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa el numero de tarjeta!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  className="inputstarjeta"
-                  type="text"
-                  placeholder="Nombre del dueño"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    className="inputstarjeta"
+                    type="text"
+                    placeholder="Nombre del dueño"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa tu nombre!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Vencimiento"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Vencimiento"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa el vencimiento!
                   </Form.Control.Feedback>
-                <Form.Control
-                  maxLength="25"
-                  required
-                  min="0"
-                  className="inputstarjeta"
-                  type="numeric"
-                  placeholder="Codigo de seguridad"
-                />
-                <Form.Control.Feedback type="invalid">
+                  <Form.Control
+                    maxLength="25"
+                    required
+                    min="0"
+                    className="inputstarjeta"
+                    type="numeric"
+                    placeholder="Codigo de seguridad"
+                  />
+                  <Form.Control.Feedback type="invalid">
                     Ingresa Codigo de seguridad!
                   </Form.Control.Feedback>
                 </div>
@@ -243,7 +244,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
               className="registerbut"
               variant="registerbut"
               size="lg">
-              
+
               COMPRAR!
             </Button>{" "}
           </div>
