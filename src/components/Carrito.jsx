@@ -4,7 +4,7 @@ import { Button, Card, Form, Alert } from "react-bootstrap";
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import "./Carrito.css";
-import CardCarrito from "./Cardcarrito";
+import CardCarrito from "./CardCarrito";
 
 
 export default function Carrito({ productosCarrito, setProductosCarrito }) {
