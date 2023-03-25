@@ -25,11 +25,7 @@ export default function Spublicidad() {
         <div>
             <div data-aos="fade-down-right" className="titulo2">
                 <p>Aprovecha lo mejor que tenemos para ofrecer</p>
-            </div>
-            <Swiper data-aos="flip-left" loop={true} autoplay={true} slidesPerView={1} spaceBetween={0} pagination={{
-                "clickable": true
-            }} className="mySwiper">
-                <SwiperSlide><NavLink to={"productos"}>
+            </div><NavLink to={"productos"}>
                     <div className="publicidad">
                         <div className="ofertas">
                             <img src="https://images.samsung.com/is/image/samsung/assets/ar/p6_gro2/684x684-Hotweek.jpg?$684_684_JPG$" alt="" />
@@ -44,25 +40,6 @@ export default function Spublicidad() {
                         </div>
                     </div>
                     </NavLink>
-                </SwiperSlide>
-                <SwiperSlide>
-                <NavLink to={"productos"}>
-                    <div className="publicidad">
-                        <div className="ofertas">
-                            <img src="https://tiaecuador.vteximg.com.br/arquivos/ids/177592-1000-1000/131076001c.png?v=637535789174930000" alt="" />
-                        </div>
-                        <div className="ofertasecundarias">
-                            <div className="ofertas2">
-                                <img src="https://www.tusequipos.com/wp-content/uploads/2017/06/ofertas_Samsung_Phone_House_01.jpg" alt="" />
-                            </div>
-                            <div className="ofertas2">
-                                <img src="https://personal.vteximg.com.br/arquivos/h1-samsung-tienda-mobile02.jpg?v=637432871816100000" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    </NavLink>
-                </SwiperSlide>
-            </Swiper>
         </div>
     )
 }

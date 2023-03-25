@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./NavReactB.css";
+import Logo from '../img/Logo.png';
 
 //extraemos el datos del usuario desde props
 export default function NavReactB({
@@ -15,7 +16,7 @@ export default function NavReactB({
       <Navbar.Brand>
         <img
           className="img-logo"
-          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0106_t_phone-pixels-logo_2.png"
+          src={Logo}
           alt="imagen"
         />
       </Navbar.Brand>

@@ -124,7 +124,7 @@ export default function Carrito({ productosCarrito, setProductosCarrito }) {
               </div>
               <div className="contenedorformadepago">
                 <div className="imagentarjeta">
-                  <img className="tarjeta1" style={{ width: "400px", height: "250px" }} src="https://1nen2cjw5gsxixyx3z0nqfgi-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/deposit-image3.png" alt="Tarjeta de credito" />
+                  <img className="tarjeta1" style={{ width: "400px", height: "250px" }} src="https://i.pinimg.com/originals/ba/2b/92/ba2b92904706759ede13a3fbf8fd8d7b.jpg" alt="Tarjeta de credito" />
                 </div>
                 <div className="cfpinputs">
                   <Form.Control
